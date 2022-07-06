@@ -30,6 +30,7 @@ class SecondViewController: UIViewController {
         titleLabel.textColor = .red
         titleLabel.font = .boldSystemFont(ofSize: 30)
 
+        
     }
     
     @IBAction func resultButtonClicked(_ sender: UIButton) {
