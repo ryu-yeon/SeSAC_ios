@@ -15,13 +15,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageView1.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView2.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView3.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView4.image = UIImage(named: "movie\(Int.random(in: 1...20))")
+        var arr = (1...20).map{$0}
+        
+        let firstMovie = arr.remove(at: Int.random(in: 0...19))
+        let secondMovie = arr.remove(at: Int.random(in: 0...18))
+        let thirdMovie = arr.remove(at: Int.random(in: 0...17))
+        let fourthMovie = arr.remove(at: Int.random(in: 0...16))
+        
+        imageView1.image = UIImage(named: "movie\(firstMovie)")
+        imageView2.image = UIImage(named: "movie\(secondMovie)")
+        imageView3.image = UIImage(named: "movie\(thirdMovie)")
+        imageView4.image = UIImage(named: "movie\(fourthMovie)")
         
         imageView1.layer.cornerRadius = 110/2
         imageView2.layer.cornerRadius = 110/2
@@ -38,10 +46,17 @@ class ViewController: UIViewController {
     }
 
     @IBAction func playButtonClicked(_ sender: UIButton) {
-        imageView1.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView2.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView3.image = UIImage(named: "movie\(Int.random(in: 1...20))")
-        imageView4.image = UIImage(named: "movie\(Int.random(in: 1...20))")
+        var arr = (1...20).map{$0}
+        
+        let firstMovie = arr.remove(at: Int.random(in: 0...19))
+        let secondMovie = arr.remove(at: Int.random(in: 0...18))
+        let thirdMovie = arr.remove(at: Int.random(in: 0...17))
+        let fourthMovie = arr.remove(at: Int.random(in: 0...16))
+        
+        imageView1.image = UIImage(named: "movie\(firstMovie)")
+        imageView2.image = UIImage(named: "movie\(secondMovie)")
+        imageView3.image = UIImage(named: "movie\(thirdMovie)")
+        imageView4.image = UIImage(named: "movie\(fourthMovie)")
     }
     
 }
