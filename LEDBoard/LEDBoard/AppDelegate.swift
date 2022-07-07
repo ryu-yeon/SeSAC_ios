@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        sleep(2) //런치스크린 타임 조절 (아무것도안하고 시간만)
+//        sleep(2) //런치스크린 타임 조절 (아무것도안하고 시간만)
         
         return true
     }
