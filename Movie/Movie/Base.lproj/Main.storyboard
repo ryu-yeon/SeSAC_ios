@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hNg-RC-v6B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="thb-yt-alC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -44,7 +44,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYI-DQ-L6t">
-                                <rect key="frame" x="20" y="44" width="51" height="84"/>
+                                <rect key="frame" x="20" y="59" width="51" height="84"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -150,7 +150,7 @@
                             <constraint firstItem="lBR-2E-uIo" firstAttribute="trailing" secondItem="BaV-5O-usw" secondAttribute="trailing" constant="20" id="NUu-4Y-pcE"/>
                             <constraint firstItem="hpl-GV-dCF" firstAttribute="centerY" secondItem="qGl-7F-dzk" secondAttribute="centerY" id="ODJ-dx-Fod"/>
                             <constraint firstItem="BNX-1M-mlu" firstAttribute="centerY" secondItem="qGl-7F-dzk" secondAttribute="centerY" id="Rb4-GD-nzh"/>
-                            <constraint firstItem="PYI-DQ-L6t" firstAttribute="top" secondItem="lBR-2E-uIo" secondAttribute="top" id="UNm-2b-F24"/>
+                            <constraint firstItem="PYI-DQ-L6t" firstAttribute="top" secondItem="lBR-2E-uIo" secondAttribute="top" constant="15" id="UNm-2b-F24"/>
                             <constraint firstItem="WUt-if-ceo" firstAttribute="centerY" secondItem="nGd-zr-KjR" secondAttribute="centerY" id="URm-0G-bvk"/>
                             <constraint firstItem="aep-ld-wW3" firstAttribute="top" secondItem="VvM-Yy-CR4" secondAttribute="bottom" constant="20" id="Uf3-Mp-Egi"/>
                             <constraint firstItem="lYe-jp-Qcn" firstAttribute="leading" secondItem="lBR-2E-uIo" secondAttribute="leading" id="XzW-2q-BKB"/>
