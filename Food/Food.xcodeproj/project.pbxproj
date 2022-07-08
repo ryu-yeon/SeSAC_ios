@@ -15,6 +15,7 @@
 		427B24752873358B00F6E0D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427B24732873358B00F6E0D2 /* Main.storyboard */; };
 		427B24772873358D00F6E0D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 427B24762873358D00F6E0D2 /* Assets.xcassets */; };
 		427B247A2873358D00F6E0D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 427B24782873358D00F6E0D2 /* LaunchScreen.storyboard */; };
+		42E8EE3C2877B6280069A024 /* githubTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E8EE3B2877B6280069A024 /* githubTestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		427B24762873358D00F6E0D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		427B24792873358D00F6E0D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		427B247B2873358D00F6E0D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E8EE3B2877B6280069A024 /* githubTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = githubTestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				427B246F2873358B00F6E0D2 /* SceneDelegate.swift */,
 				427B24712873358B00F6E0D2 /* ViewController.swift */,
 				427B24732873358B00F6E0D2 /* Main.storyboard */,
+				42E8EE3B2877B6280069A024 /* githubTestViewController.swift */,
 				42030B5C2873DA5100AA7CC9 /* FirstViewController.swift */,
 				42030B5E2873DAAF00AA7CC9 /* SecondViewController.swift */,
 				427B24762873358D00F6E0D2 /* Assets.xcassets */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				427B24722873358B00F6E0D2 /* ViewController.swift in Sources */,
+				42E8EE3C2877B6280069A024 /* githubTestViewController.swift in Sources */,
 				427B246E2873358B00F6E0D2 /* AppDelegate.swift in Sources */,
 				427B24702873358B00F6E0D2 /* SceneDelegate.swift in Sources */,
 				42030B5F2873DAAF00AA7CC9 /* SecondViewController.swift in Sources */,
