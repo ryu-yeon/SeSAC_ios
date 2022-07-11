@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class HomeController: UIViewController {
    
     
     //뷰컨트롤러 생명주기 종류 중 하나
@@ -16,6 +16,8 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .clear
+        
     }
     
 }
