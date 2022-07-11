@@ -19,16 +19,19 @@ class FirstViewController: UIViewController {
         } else {
             // Fallback on earlier versions
         }
+        
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .white
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.black]
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         topView.layer.cornerRadius = 8
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .white
     }
 
 
