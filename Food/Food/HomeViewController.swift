@@ -19,7 +19,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
 
         bannerImageView.image = UIImage(named: "banner0\(Int.random(in: 1...3))")
-        baeminButton.layer.cornerRadius = 30
+        baeminButton.layer.cornerRadius = 10
         
     }
     
