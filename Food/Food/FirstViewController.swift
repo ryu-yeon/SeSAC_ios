@@ -11,10 +11,24 @@ class FirstViewController: UIViewController {
     
     @IBOutlet weak var topView: UIView!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if #available(iOS 15.0, *) {
+            self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .systemMint
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         topView.layer.cornerRadius = 8
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .white
     }
 
 
