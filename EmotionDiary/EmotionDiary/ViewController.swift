@@ -26,11 +26,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         displayLabel()
         
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func buttonClicked(_ sender: UIButton) {
-        count[Int(sender.currentTitle!)! - 1] += 1
+        count[sender.tag] += 1
         displayLabel()
     }
     
