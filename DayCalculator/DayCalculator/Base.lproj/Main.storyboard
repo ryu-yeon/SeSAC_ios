@@ -1,24 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DayCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PA6-9N-tNX">
+                                <rect key="frame" x="0.0" y="84" width="414" height="358.5"/>
+                            </datePicker>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I76-Cb-eJt">
+                                <rect key="frame" x="34" y="470.5" width="160" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icecream" translatesAutoresizingMaskIntoConstraints="NO" id="2nY-ax-NAn">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igc-G0-hhe">
+                                        <rect key="frame" x="8" y="8" width="57.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 03월 27일" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-tE-8aT">
+                                        <rect key="frame" x="47" y="62" width="65.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstItem="igc-G0-hhe" firstAttribute="leading" secondItem="I76-Cb-eJt" secondAttribute="leading" constant="8" id="2RB-ig-qfJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="2nY-ax-NAn" secondAttribute="trailing" id="5Zd-MT-OZY"/>
+                                    <constraint firstItem="2nY-ax-NAn" firstAttribute="leading" secondItem="I76-Cb-eJt" secondAttribute="leading" id="6UZ-9n-4bD"/>
+                                    <constraint firstItem="TIz-tE-8aT" firstAttribute="centerY" secondItem="I76-Cb-eJt" secondAttribute="centerY" id="Eh5-DB-ZIb"/>
+                                    <constraint firstItem="TIz-tE-8aT" firstAttribute="centerX" secondItem="I76-Cb-eJt" secondAttribute="centerX" id="Iuq-QL-4ZD"/>
+                                    <constraint firstItem="igc-G0-hhe" firstAttribute="top" secondItem="I76-Cb-eJt" secondAttribute="top" constant="8" id="ata-6N-00y"/>
+                                    <constraint firstAttribute="bottom" secondItem="2nY-ax-NAn" secondAttribute="bottom" id="fkG-rH-hOj"/>
+                                    <constraint firstAttribute="width" secondItem="I76-Cb-eJt" secondAttribute="height" multiplier="1:1" id="jUf-Th-U1w"/>
+                                    <constraint firstItem="2nY-ax-NAn" firstAttribute="top" secondItem="I76-Cb-eJt" secondAttribute="top" id="wGi-VL-Tkv"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPl-s3-x4B">
+                                <rect key="frame" x="220" y="470.5" width="160" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macaroon" translatesAutoresizingMaskIntoConstraints="NO" id="0KN-7d-dAv">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 03월 27일" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-eE-KsX">
+                                        <rect key="frame" x="47.5" y="62" width="65.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zpF-rx-AnH">
+                                        <rect key="frame" x="8" y="8" width="57.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="ifH-eE-KsX" firstAttribute="centerX" secondItem="sPl-s3-x4B" secondAttribute="centerX" id="Aou-yU-8Jz"/>
+                                    <constraint firstAttribute="trailing" secondItem="0KN-7d-dAv" secondAttribute="trailing" id="Bcw-pm-Om4"/>
+                                    <constraint firstItem="zpF-rx-AnH" firstAttribute="leading" secondItem="sPl-s3-x4B" secondAttribute="leading" constant="8" id="WiP-Ae-7cC"/>
+                                    <constraint firstAttribute="width" secondItem="sPl-s3-x4B" secondAttribute="height" multiplier="1:1" id="cLx-mi-tFZ"/>
+                                    <constraint firstItem="0KN-7d-dAv" firstAttribute="leading" secondItem="sPl-s3-x4B" secondAttribute="leading" id="fKM-fG-hmI"/>
+                                    <constraint firstItem="0KN-7d-dAv" firstAttribute="top" secondItem="sPl-s3-x4B" secondAttribute="top" id="iHd-9J-mEL"/>
+                                    <constraint firstItem="zpF-rx-AnH" firstAttribute="top" secondItem="sPl-s3-x4B" secondAttribute="top" constant="8" id="mYV-ar-xnt"/>
+                                    <constraint firstItem="ifH-eE-KsX" firstAttribute="centerY" secondItem="sPl-s3-x4B" secondAttribute="centerY" id="sal-Zx-cls"/>
+                                    <constraint firstAttribute="bottom" secondItem="0KN-7d-dAv" secondAttribute="bottom" id="yro-nD-sY0"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnY-h9-XVv">
+                                <rect key="frame" x="34" y="650.5" width="160" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="fNU-lZ-vmF">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 03월 27일" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9a6-AB-Cpu">
+                                        <rect key="frame" x="47" y="62" width="65.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QN-fZ-0DZ">
+                                        <rect key="frame" x="8" y="8" width="57.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qnY-h9-XVv" secondAttribute="height" multiplier="1:1" id="07b-MI-76F"/>
+                                    <constraint firstItem="6QN-fZ-0DZ" firstAttribute="top" secondItem="qnY-h9-XVv" secondAttribute="top" constant="8" id="6u1-Nx-VlW"/>
+                                    <constraint firstItem="fNU-lZ-vmF" firstAttribute="top" secondItem="qnY-h9-XVv" secondAttribute="top" id="Bwx-03-EMB"/>
+                                    <constraint firstItem="9a6-AB-Cpu" firstAttribute="centerY" secondItem="qnY-h9-XVv" secondAttribute="centerY" id="EUa-du-iXf"/>
+                                    <constraint firstAttribute="bottom" secondItem="fNU-lZ-vmF" secondAttribute="bottom" id="JzR-b0-Nim"/>
+                                    <constraint firstItem="9a6-AB-Cpu" firstAttribute="centerX" secondItem="qnY-h9-XVv" secondAttribute="centerX" id="MtG-vj-i92"/>
+                                    <constraint firstAttribute="trailing" secondItem="fNU-lZ-vmF" secondAttribute="trailing" id="VoQ-SS-Vd0"/>
+                                    <constraint firstItem="6QN-fZ-0DZ" firstAttribute="leading" secondItem="qnY-h9-XVv" secondAttribute="leading" constant="8" id="ohL-ba-CYe"/>
+                                    <constraint firstItem="fNU-lZ-vmF" firstAttribute="leading" secondItem="qnY-h9-XVv" secondAttribute="leading" id="xOG-sS-2xn"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-Fb-0In">
+                                <rect key="frame" x="220" y="650.5" width="160" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cake" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-as-aKV">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2021년 03월 27일" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFg-j3-yJP">
+                                        <rect key="frame" x="47.5" y="62" width="65.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D+100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGr-xZ-0py">
+                                        <rect key="frame" x="8" y="8" width="57.5" height="21.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Ro9-as-aKV" firstAttribute="leading" secondItem="Fee-Fb-0In" secondAttribute="leading" id="38g-kZ-oYL"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ro9-as-aKV" secondAttribute="trailing" id="3WL-c8-HV7"/>
+                                    <constraint firstItem="Ro9-as-aKV" firstAttribute="top" secondItem="Fee-Fb-0In" secondAttribute="top" id="NVg-PK-Ae1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ro9-as-aKV" secondAttribute="bottom" id="Rjz-H7-Oqs"/>
+                                    <constraint firstItem="TGr-xZ-0py" firstAttribute="leading" secondItem="Fee-Fb-0In" secondAttribute="leading" constant="8" id="dbi-PR-5OY"/>
+                                    <constraint firstAttribute="width" secondItem="Fee-Fb-0In" secondAttribute="height" multiplier="1:1" id="deQ-R9-cLm"/>
+                                    <constraint firstItem="xFg-j3-yJP" firstAttribute="centerX" secondItem="Fee-Fb-0In" secondAttribute="centerX" id="gSX-d1-cKQ"/>
+                                    <constraint firstItem="TGr-xZ-0py" firstAttribute="top" secondItem="Fee-Fb-0In" secondAttribute="top" constant="8" id="t1z-Tv-cHE"/>
+                                    <constraint firstItem="xFg-j3-yJP" firstAttribute="centerY" secondItem="Fee-Fb-0In" secondAttribute="centerY" id="xYj-Pf-qxn"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sPl-s3-x4B" firstAttribute="top" secondItem="2nY-ax-NAn" secondAttribute="top" id="2oK-rZ-D4F"/>
+                            <constraint firstItem="Fee-Fb-0In" firstAttribute="leading" secondItem="0KN-7d-dAv" secondAttribute="leading" id="9HH-Il-Zge"/>
+                            <constraint firstItem="qnY-h9-XVv" firstAttribute="top" secondItem="I76-Cb-eJt" secondAttribute="bottom" constant="20" id="Cfm-6Y-dnl"/>
+                            <constraint firstItem="PA6-9N-tNX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="EsE-HY-Tpm"/>
+                            <constraint firstItem="I76-Cb-eJt" firstAttribute="top" secondItem="PA6-9N-tNX" secondAttribute="bottom" constant="28" id="NgV-TU-4zs"/>
+                            <constraint firstItem="sPl-s3-x4B" firstAttribute="height" secondItem="2nY-ax-NAn" secondAttribute="height" id="RuF-Pi-x8X"/>
+                            <constraint firstItem="PA6-9N-tNX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vac-EA-vRa"/>
+                            <constraint firstItem="qnY-h9-XVv" firstAttribute="leading" secondItem="2nY-ax-NAn" secondAttribute="leading" id="XIM-CL-tzx"/>
+                            <constraint firstItem="qnY-h9-XVv" firstAttribute="width" secondItem="2nY-ax-NAn" secondAttribute="width" id="bEU-ip-FE9"/>
+                            <constraint firstItem="PA6-9N-tNX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="eDb-uc-yzY"/>
+                            <constraint firstItem="sPl-s3-x4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.45" id="giR-GM-7nP"/>
+                            <constraint firstItem="I76-Cb-eJt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.386473" id="hUr-dL-U89"/>
+                            <constraint firstItem="Fee-Fb-0In" firstAttribute="top" secondItem="sPl-s3-x4B" secondAttribute="bottom" constant="20" id="jQL-MI-eB6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PA6-9N-tNX" secondAttribute="trailing" id="rD3-qL-eJv"/>
+                            <constraint firstItem="Fee-Fb-0In" firstAttribute="width" secondItem="0KN-7d-dAv" secondAttribute="width" id="sFe-gE-CAk"/>
+                            <constraint firstItem="I76-Cb-eJt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.55" id="twv-5P-bQb"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="95.758928571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="cake" width="200" height="267"/>
+        <image name="doughnut" width="200" height="251"/>
+        <image name="icecream" width="200" height="300"/>
+        <image name="macaroon" width="200" height="300"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
