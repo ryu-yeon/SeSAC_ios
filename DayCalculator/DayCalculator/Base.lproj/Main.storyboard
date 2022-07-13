@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -16,11 +17,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="PA6-9N-tNX">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="PA6-9N-tNX">
                                 <rect key="frame" x="0.0" y="84" width="414" height="358.5"/>
+                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="k2b-YH-AIk"/>
+                                </connections>
                             </datePicker>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I76-Cb-eJt">
-                                <rect key="frame" x="34" y="470.5" width="160" height="160"/>
+                                <rect key="frame" x="34" y="486" width="160" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icecream" translatesAutoresizingMaskIntoConstraints="NO" id="2nY-ax-NAn">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -38,7 +43,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
                                     <constraint firstItem="igc-G0-hhe" firstAttribute="leading" secondItem="I76-Cb-eJt" secondAttribute="leading" constant="8" id="2RB-ig-qfJ"/>
                                     <constraint firstAttribute="trailing" secondItem="2nY-ax-NAn" secondAttribute="trailing" id="5Zd-MT-OZY"/>
@@ -52,7 +56,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPl-s3-x4B">
-                                <rect key="frame" x="220" y="470.5" width="160" height="160"/>
+                                <rect key="frame" x="220" y="486" width="160" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macaroon" translatesAutoresizingMaskIntoConstraints="NO" id="0KN-7d-dAv">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -84,7 +88,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnY-h9-XVv">
-                                <rect key="frame" x="34" y="650.5" width="160" height="160"/>
+                                <rect key="frame" x="34" y="666" width="160" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doughnut" translatesAutoresizingMaskIntoConstraints="NO" id="fNU-lZ-vmF">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -102,7 +106,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="qnY-h9-XVv" secondAttribute="height" multiplier="1:1" id="07b-MI-76F"/>
                                     <constraint firstItem="6QN-fZ-0DZ" firstAttribute="top" secondItem="qnY-h9-XVv" secondAttribute="top" constant="8" id="6u1-Nx-VlW"/>
@@ -116,7 +119,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fee-Fb-0In">
-                                <rect key="frame" x="220" y="650.5" width="160" height="160"/>
+                                <rect key="frame" x="220" y="666" width="160" height="160"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cake" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-as-aKV">
                                         <rect key="frame" x="0.0" y="0.0" width="160" height="160"/>
@@ -155,11 +158,11 @@
                             <constraint firstItem="Fee-Fb-0In" firstAttribute="leading" secondItem="0KN-7d-dAv" secondAttribute="leading" id="9HH-Il-Zge"/>
                             <constraint firstItem="qnY-h9-XVv" firstAttribute="top" secondItem="I76-Cb-eJt" secondAttribute="bottom" constant="20" id="Cfm-6Y-dnl"/>
                             <constraint firstItem="PA6-9N-tNX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="EsE-HY-Tpm"/>
-                            <constraint firstItem="I76-Cb-eJt" firstAttribute="top" secondItem="PA6-9N-tNX" secondAttribute="bottom" constant="28" id="NgV-TU-4zs"/>
                             <constraint firstItem="sPl-s3-x4B" firstAttribute="height" secondItem="2nY-ax-NAn" secondAttribute="height" id="RuF-Pi-x8X"/>
                             <constraint firstItem="PA6-9N-tNX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Vac-EA-vRa"/>
                             <constraint firstItem="qnY-h9-XVv" firstAttribute="leading" secondItem="2nY-ax-NAn" secondAttribute="leading" id="XIM-CL-tzx"/>
                             <constraint firstItem="qnY-h9-XVv" firstAttribute="width" secondItem="2nY-ax-NAn" secondAttribute="width" id="bEU-ip-FE9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qnY-h9-XVv" secondAttribute="bottom" constant="36" id="brC-it-sM6"/>
                             <constraint firstItem="PA6-9N-tNX" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="eDb-uc-yzY"/>
                             <constraint firstItem="sPl-s3-x4B" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="1.45" id="giR-GM-7nP"/>
                             <constraint firstItem="I76-Cb-eJt" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.386473" id="hUr-dL-U89"/>
@@ -169,6 +172,13 @@
                             <constraint firstItem="I76-Cb-eJt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.55" id="twv-5P-bQb"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="PA6-9N-tNX" id="h2d-rs-BwO"/>
+                        <outlet property="imageView1" destination="2nY-ax-NAn" id="zMQ-Hd-rDu"/>
+                        <outlet property="imageView2" destination="0KN-7d-dAv" id="69c-Vb-zfz"/>
+                        <outlet property="imageView3" destination="fNU-lZ-vmF" id="f2s-IB-ikE"/>
+                        <outlet property="imageView4" destination="Ro9-as-aKV" id="rHy-RU-7Oj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -182,9 +192,6 @@
         <image name="macaroon" width="200" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBrownColor">
-            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
