@@ -1,4 +1,4 @@
-![](http://ecomedia.co.kr/news/data/20201005/p1065593798716461_295_thum.png)
+![](https://cdn.startupn.kr/news/photo/202204/24981_25732_3213.jpg)
 
 # SeSAC_ios
 
