@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             datePicker.preferredDatePickerStyle = .inline
         }
         designImageView()
+        dayCalculate(date: Date())
     }
     
     func designImageView() {
@@ -42,8 +43,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func datePickerValueChanged(_ sender: UIDatePicker) {
-        
+        dayCalculate(date: sender.date)
     }
     
+    func dayCalculate(date: Date) {
+        let format = DateFormatter()
+        format.dateFormat = "yyyy년\nMM월 dd일"
+
+        d100Label.text = format.string(from: date + 86400 * 100)
+        d200Label.text = format.string(from: date + 86400 * 200)
+        d300Label.text = format.string(from: date + 86400 * 300)
+        d400Label.text = format.string(from: date + 86400 * 400)
+    }
 }
 
