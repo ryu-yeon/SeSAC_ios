@@ -12,7 +12,7 @@ AutoLayout 학습
 
 앱실행, 재생버튼 클릭시 영화포스터들이 랜덤하게 변경
 
-<img src="https://velog.velcdn.com/images/rytak108/post/3a2dcc1e-233a-42af-82b5-a8cc51b97857/image.gif width="400" height="800"/>
+<img src="https://velog.velcdn.com/images/rytak108/post/3a2dcc1e-233a-42af-82b5-a8cc51b97857/image.gif" width="400" height="800"/>
 
 
 
@@ -31,4 +31,4 @@ AutoLayout 학습
 
 id, password 필수로 기입, 추천코드는 숫자만
 
-<img src="https://velog.velcdn.com/images/rytak108/post/bd06b744-2190-472e-828b-6c1027c3a024/image.png width="400" height="800"/>
+<img src="https://velog.velcdn.com/images/rytak108/post/bd06b744-2190-472e-828b-6c1027c3a024/image.png" width="400" height="800"/>
