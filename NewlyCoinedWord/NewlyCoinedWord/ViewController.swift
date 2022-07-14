@@ -46,6 +46,7 @@ class ViewController: UIViewController {
         view.endEditing(true)
         if let result = sender.titleLabel?.text {
             resultLabel.text = newlyCoinedWord[result] ?? "아직 몰라요...ㅠㅠ"
+            searchTextField.text = sender.titleLabel?.text
         }
     }
     
