@@ -25,5 +25,4 @@ AutoLayout, StackView 연습
 
 Navigation Back Button 설정
 
-
 <img src="https://velog.velcdn.com/images/rytak108/post/6eb84835-b8ab-492c-997d-7e5f71d07b3b/image.gif" width="400" height="800"/>
