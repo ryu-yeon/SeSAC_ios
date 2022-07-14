@@ -1,4 +1,4 @@
-![](https://cdn.startupn.kr/news/photo/202204/24981_25732_3213.jpg)
+![](https://velog.velcdn.com/images/rytak108/post/31263f76-53ed-49ac-b77b-1073bad12eb6/image.jpeg)
 
 # SeSAC_ios
 
