@@ -290,6 +290,7 @@
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "감정 다이어리";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +319,7 @@
 				DEVELOPMENT_TEAM = CH36BYYATY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionDiary/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "감정 다이어리";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
