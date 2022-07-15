@@ -17,27 +17,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JYJ-Oj-8rD">
-                                <rect key="frame" x="192" y="258" width="30" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemYellowColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY MOVIE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s9N-Pw-p4y">
-                                <rect key="frame" x="141" y="164" width="132" height="34"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NFLIX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1CK-l8-FrX">
+                                <rect key="frame" x="152" y="172" width="110" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="s9N-Pw-p4y" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PWg-7Z-jj9"/>
-                            <constraint firstItem="JYJ-Oj-8rD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fX9-ey-QLx"/>
-                            <constraint firstItem="JYJ-Oj-8rD" firstAttribute="top" secondItem="s9N-Pw-p4y" secondAttribute="bottom" constant="60" id="oUt-cV-TL4"/>
-                            <constraint firstItem="s9N-Pw-p4y" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="pJc-Nt-Rpe"/>
+                            <constraint firstItem="1CK-l8-FrX" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mLK-ve-Ujr"/>
+                            <constraint firstItem="1CK-l8-FrX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="128" id="o9f-Xf-fe4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -47,11 +38,8 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemGrayColor">
-            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

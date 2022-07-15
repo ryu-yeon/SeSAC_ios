@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView3: UIImageView!
     @IBOutlet weak var imageView4: UIImageView!
 
+    @IBOutlet weak var button3: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
