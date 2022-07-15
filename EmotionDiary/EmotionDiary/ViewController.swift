@@ -19,18 +19,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var label8: UILabel!
     @IBOutlet weak var label9: UILabel!
     
+    @IBOutlet weak var resetButton: UIBarButtonItem!
     
     var count = Array(repeating: 0, count: 9)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         displayLabel()
+        designResetButton()
         
     }
 
     @IBAction func buttonClicked(_ sender: UIButton) {
         count[sender.tag] += 1
         displayLabel()
+    }
+    
+    func designResetButton() {
+        resetButton.customView?.layer.cornerRadius = 15
+        resetButton.customView?.layer.borderWidth = 2
+        resetButton.customView?.layer.borderColor = UIColor.black.cgColor
     }
     
     func displayLabel() {
@@ -43,6 +51,9 @@ class ViewController: UIViewController {
         label7.text = "당황해 \(count[6])"
         label8.text = "우울해 \(count[7])"
         label9.text = "속상해 \(count[8])"
+    }
+    @IBAction func resetButtonClicked(_ sender: UIButton) {
+        count = Array(repeating: 0, count: 9)
     }
 }
 

@@ -426,11 +426,26 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="D4M-7d-Pv8" secondAttribute="trailing" constant="36" id="cZo-3S-BgM"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="감정다이어리" id="FZD-W1-U32">
                         <barButtonItem key="leftBarButtonItem" image="list.dash" catalog="system" id="Bwl-Ot-kzG">
                             <color key="tintColor" systemColor="labelColor"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="WSZ-C3-kaA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9ZP-Aa-9yj">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="reset">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6Dw-EO-0BR"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="label1" destination="Btf-Ie-yS5" id="rl2-IH-n0t"/>
                         <outlet property="label2" destination="Y5q-oG-fpJ" id="AjM-x6-Pi9"/>
@@ -441,6 +456,7 @@
                         <outlet property="label7" destination="7X2-KE-mSf" id="rL0-54-JiF"/>
                         <outlet property="label8" destination="hTg-vC-Dyl" id="Int-XU-trl"/>
                         <outlet property="label9" destination="YuT-Jf-LwJ" id="jz0-m7-RVp"/>
+                        <outlet property="resetButton" destination="WSZ-C3-kaA" id="0me-8Y-hwP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
