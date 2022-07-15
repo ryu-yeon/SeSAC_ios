@@ -25,11 +25,20 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let save =  UserDefaults.standard.array(forKey: "count") as? [Int] {
+            count = save
+            print("완료")
+        }
         displayLabel()
         designResetButton()
         
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        UserDefaults.standard.set(count, forKey: "count")
+    }
+    
     @IBAction func buttonClicked(_ sender: UIButton) {
         count[sender.tag] += 1
         displayLabel()
@@ -54,6 +63,7 @@ class ViewController: UIViewController {
     }
     @IBAction func resetButtonClicked(_ sender: UIButton) {
         count = Array(repeating: 0, count: 9)
+        displayLabel()
     }
 }
 
