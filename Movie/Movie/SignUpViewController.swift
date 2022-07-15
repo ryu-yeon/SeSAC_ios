@@ -59,13 +59,26 @@ class SignUpViewController: UIViewController {
         id = idTextField.text ?? ""
         password = passwordTextField.text ?? ""
         if Int(codeTextField.text!) != nil && id != "" && password.count >= 6 {
-            print("가능")
+            let alert = UIAlertController(title: nil, message: "회원가입이 완료되었습니다.", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel)
+
+            alert.addAction(ok)
+            
+            present(alert, animated: true, completion: nil)
+            
         } else {
-            print("불가능")
+            let alert = UIAlertController(title: nil, message: "이메일, 비밀번호, 추천코드를 입력해주세요.(비밀번호 6자리이상)", preferredStyle: .alert)
+            let ok = UIAlertAction(title: "확인", style: .cancel)
+
+            alert.addAction(ok)
+            
+            present(alert, animated: true, completion: nil)
         }
     }
     
     @IBAction func tapGestureClicked(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
+    
+
 }
