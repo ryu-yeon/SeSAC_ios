@@ -27,8 +27,19 @@ class ViewController: UIViewController {
         if #available(iOS 14.0, *) {
             datePicker.preferredDatePickerStyle = .inline
         }
+        
+        if let saveDate = UserDefaults.standard.object(forKey: "date") as? Date {
+            datePicker.date = saveDate
+            dayCalculate(date: saveDate)
+        } else {
+            dayCalculate(date: Date())
+        }
         designImageView()
-        dayCalculate(date: Date())
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        UserDefaults.standard.set(datePicker.date, forKey: "date")
     }
     
     func designImageView() {
