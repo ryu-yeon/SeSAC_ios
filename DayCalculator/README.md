@@ -14,4 +14,4 @@ DateFormatter로 ```"yyyy년\nMM월 dd일"``` 설정
 
 viewWillDisappear시 UserDefaults에 카운트 저장
 
-<img src="https://velog.velcdn.com/images/rytak108/post/357ee074-2a50-4ee7-8777-1a639695463c/image.gif" width="200" height="400"/>
+<img src="https://velog.velcdn.com/images/rytak108/post/836b68bd-850e-4590-9e98-84b03d9ca22f/image.gif" width="200" height="400"/>
