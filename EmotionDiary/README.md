@@ -16,4 +16,4 @@ reset버튼 클릭시 카운트 배열 0으로 초기화
 
 viewWillDisappear시 UserDefaults에 카운트 저장
 
-<img src="https://velog.velcdn.com/images/rytak108/post/86cc7074-bd14-4a4b-a7bd-16ef8b6e61be/image.gif" width="200" height="400"/>
+<img src="https://velog.velcdn.com/images/rytak108/post/357ee074-2a50-4ee7-8777-1a639695463c/image.gif" width="200" height="400"/>
