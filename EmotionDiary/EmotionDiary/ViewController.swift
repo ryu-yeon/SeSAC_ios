@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
-    var count = Array(repeating: 0, count: 9)
+    var emotionCount = Array(repeating: 0, count: 9)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let save =  UserDefaults.standard.array(forKey: "count") as? [Int] {
-            count = save
+        if let save =  UserDefaults.standard.array(forKey: "emotionCount") as? [Int] {
+            emotionCount = save
             print("완료")
         }
         displayLabel()
@@ -36,11 +36,11 @@ class ViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        UserDefaults.standard.set(count, forKey: "count")
+        UserDefaults.standard.set(emotionCount, forKey: "emotionCount")
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        count[sender.tag] += 1
+        emotionCount[sender.tag] += 1
         displayLabel()
     }
     
@@ -51,18 +51,18 @@ class ViewController: UIViewController {
     }
     
     func displayLabel() {
-        label1.text = "행복해 \(count[0])"
-        label2.text = "좋아해 \(count[1])"
-        label3.text = "사랑해 \(count[2])"
-        label4.text = "분노해 \(count[3])"
-        label5.text = "밍밍해 \(count[4])"
-        label6.text = "하품해 \(count[5])"
-        label7.text = "당황해 \(count[6])"
-        label8.text = "우울해 \(count[7])"
-        label9.text = "속상해 \(count[8])"
+        label1.text = "행복해 \(emotionCount[0])"
+        label2.text = "좋아해 \(emotionCount[1])"
+        label3.text = "사랑해 \(emotionCount[2])"
+        label4.text = "분노해 \(emotionCount[3])"
+        label5.text = "밍밍해 \(emotionCount[4])"
+        label6.text = "하품해 \(emotionCount[5])"
+        label7.text = "당황해 \(emotionCount[6])"
+        label8.text = "우울해 \(emotionCount[7])"
+        label9.text = "속상해 \(emotionCount[8])"
     }
     @IBAction func resetButtonClicked(_ sender: UIButton) {
-        count = Array(repeating: 0, count: 9)
+        emotionCount = Array(repeating: 0, count: 9)
         displayLabel()
     }
 }
