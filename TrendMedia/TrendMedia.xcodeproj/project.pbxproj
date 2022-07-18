@@ -15,6 +15,9 @@
 		4283A8FA2884DDC400D96873 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4283A8F82884DDC400D96873 /* LaunchScreen.storyboard */; };
 		4283A9022884F11600D96873 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4283A9012884F11600D96873 /* Home.storyboard */; };
 		4283A9042884FE3600D96873 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A9032884FE3600D96873 /* SettingTableViewController.swift */; };
+		4283A9062885262200D96873 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4283A9052885262200D96873 /* Setting.storyboard */; };
+		4283A9082885263D00D96873 /* Case1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A9072885263D00D96873 /* Case1TableViewController.swift */; };
+		4283A90A2885265D00D96873 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A9092885265D00D96873 /* Case2TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		4283A8FB2884DDC400D96873 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4283A9012884F11600D96873 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		4283A9032884FE3600D96873 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		4283A9052885262200D96873 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		4283A9072885263D00D96873 /* Case1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1TableViewController.swift; sourceTree = "<group>"; };
+		4283A9092885265D00D96873 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,9 @@
 				4283A8F12884DDC200D96873 /* ViewController.swift */,
 				4283A8F32884DDC200D96873 /* Main.storyboard */,
 				4283A9012884F11600D96873 /* Home.storyboard */,
+				4283A9052885262200D96873 /* Setting.storyboard */,
+				4283A9072885263D00D96873 /* Case1TableViewController.swift */,
+				4283A9092885265D00D96873 /* Case2TableViewController.swift */,
 				4283A9032884FE3600D96873 /* SettingTableViewController.swift */,
 				4283A8F62884DDC400D96873 /* Assets.xcassets */,
 				4283A8F82884DDC400D96873 /* LaunchScreen.storyboard */,
@@ -133,6 +142,7 @@
 			files = (
 				4283A8FA2884DDC400D96873 /* LaunchScreen.storyboard in Resources */,
 				4283A8F72884DDC400D96873 /* Assets.xcassets in Resources */,
+				4283A9062885262200D96873 /* Setting.storyboard in Resources */,
 				4283A8F52884DDC200D96873 /* Main.storyboard in Resources */,
 				4283A9022884F11600D96873 /* Home.storyboard in Resources */,
 			);
@@ -146,6 +156,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4283A9042884FE3600D96873 /* SettingTableViewController.swift in Sources */,
+				4283A9082885263D00D96873 /* Case1TableViewController.swift in Sources */,
+				4283A90A2885265D00D96873 /* Case2TableViewController.swift in Sources */,
 				4283A8F22884DDC200D96873 /* ViewController.swift in Sources */,
 				4283A8EE2884DDC200D96873 /* AppDelegate.swift in Sources */,
 				4283A8F02884DDC200D96873 /* SceneDelegate.swift in Sources */,
