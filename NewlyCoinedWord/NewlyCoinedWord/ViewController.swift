@@ -44,9 +44,9 @@ class ViewController: UIViewController {
     
     @IBAction func hashtagButtonClicked(_ sender: UIButton) {
         view.endEditing(true)
-        if let result = sender.titleLabel?.text {
+        if let result = sender.currentTitle {
             resultLabel.text = newlyCoinedWord[result] ?? "아직 몰라요...ㅠㅠ"
-            searchTextField.text = sender.titleLabel?.text
+            searchTextField.text = sender.currentTitle
         }
     }
     
