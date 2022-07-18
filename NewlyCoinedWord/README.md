@@ -8,7 +8,7 @@ TextField, Button, ImageView,Label로 화면 구성
 
 AutoLayout 연습
 
-TextField의 텍스트를 버튼이나 return으로 newlyCoinedword의 dictionary에서 신조어를 찾아 뜻을 Label에 출력
+TextField의 텍스트를 버튼이나 return으로 swich문을 통해 신조어를 찾아 열거형 NewlyWord에서 .rawValue 뜻을 Label에 출력
 
 TapGesture, Return, Button으로 키보드 내리기
 
