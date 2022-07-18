@@ -21,13 +21,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resetButton: UIBarButtonItem!
     
-    var emotionCount = Array(repeating: 0, count: 9)
+    var emotionCountArray = Array(repeating: 0, count: 9)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if let save =  UserDefaults.standard.array(forKey: "emotionCount") as? [Int] {
-            emotionCount = save
-            print("완료")
+        if let save =  UserDefaults.standard.array(forKey: "emotionCountArray") as? [Int] {
+            emotionCountArray = save
         }
         displayLabel()
         designResetButton()
@@ -36,11 +35,11 @@ class ViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-        UserDefaults.standard.set(emotionCount, forKey: "emotionCount")
+        UserDefaults.standard.set(emotionCountArray, forKey: "emotionCountArray")
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        emotionCount[sender.tag] += 1
+        emotionCountArray[sender.tag] += 1
         displayLabel()
     }
     
@@ -51,18 +50,18 @@ class ViewController: UIViewController {
     }
     
     func displayLabel() {
-        label1.text = "행복해 \(emotionCount[0])"
-        label2.text = "좋아해 \(emotionCount[1])"
-        label3.text = "사랑해 \(emotionCount[2])"
-        label4.text = "분노해 \(emotionCount[3])"
-        label5.text = "밍밍해 \(emotionCount[4])"
-        label6.text = "하품해 \(emotionCount[5])"
-        label7.text = "당황해 \(emotionCount[6])"
-        label8.text = "우울해 \(emotionCount[7])"
-        label9.text = "속상해 \(emotionCount[8])"
+        label1.text = "행복해 \(emotionCountArray[0])"
+        label2.text = "좋아해 \(emotionCountArray[1])"
+        label3.text = "사랑해 \(emotionCountArray[2])"
+        label4.text = "분노해 \(emotionCountArray[3])"
+        label5.text = "밍밍해 \(emotionCountArray[4])"
+        label6.text = "하품해 \(emotionCountArray[5])"
+        label7.text = "당황해 \(emotionCountArray[6])"
+        label8.text = "우울해 \(emotionCountArray[7])"
+        label9.text = "속상해 \(emotionCountArray[8])"
     }
     @IBAction func resetButtonClicked(_ sender: UIButton) {
-        emotionCount = Array(repeating: 0, count: 9)
+        emotionCountArray = Array(repeating: 0, count: 9)
         displayLabel()
     }
 }
