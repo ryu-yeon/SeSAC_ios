@@ -20,13 +20,17 @@ class ViewController: UIViewController {
     @IBOutlet weak var d200Label: UILabel!
     @IBOutlet weak var d300Label: UILabel!
     @IBOutlet weak var d400Label: UILabel!
-    
+        
+    let format = DateFormatter()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if #available(iOS 14.0, *) {
             datePicker.preferredDatePickerStyle = .inline
         }
+        
+        format.dateFormat = "yyyy년\nMM월 dd일"
         
         if let saveDate = UserDefaults.standard.object(forKey: "date") as? Date {
             datePicker.date = saveDate
@@ -58,9 +62,6 @@ class ViewController: UIViewController {
     }
     
     func dayCalculate(date: Date) {
-        let format = DateFormatter()
-        format.dateFormat = "yyyy년\nMM월 dd일"
-
         d100Label.text = format.string(from: date + 86400 * 100)
         d200Label.text = format.string(from: date + 86400 * 200)
         d300Label.text = format.string(from: date + 86400 * 300)
