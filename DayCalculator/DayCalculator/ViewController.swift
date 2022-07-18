@@ -37,8 +37,8 @@ class ViewController: UIViewController {
         designImageView()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         UserDefaults.standard.set(datePicker.date, forKey: "date")
     }
     
