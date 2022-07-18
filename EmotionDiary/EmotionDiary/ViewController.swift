@@ -34,8 +34,8 @@ class ViewController: UIViewController {
         
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(true)
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
         UserDefaults.standard.set(emotionCount, forKey: "emotionCount")
     }
     
