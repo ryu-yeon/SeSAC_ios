@@ -28,9 +28,9 @@
 		4283A9062885262200D96873 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4283A9052885262200D96873 /* Setting.storyboard */; };
 		4283A9082885263D00D96873 /* Case1TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A9072885263D00D96873 /* Case1TableViewController.swift */; };
 		4283A90A2885265D00D96873 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A9092885265D00D96873 /* Case2TableViewController.swift */; };
-		428EC4E72886DC9B001C33EE /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428EC4E62886DC9B001C33EE /* Shopping.storyboard */; };
-		428EC4E92886DCB2001C33EE /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EC4E82886DCB2001C33EE /* ShoppingTableViewController.swift */; };
-		428EC4EB2886DF81001C33EE /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428EC4EA2886DF81001C33EE /* ShoppingListTableViewCell.swift */; };
+		428E7F512886F2670053CE46 /* Shopping.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428E7F502886F2670053CE46 /* Shopping.storyboard */; };
+		428E7F552886F2B30053CE46 /* ShoppingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E7F542886F2B30053CE46 /* ShoppingTableViewController.swift */; };
+		428E7F572886F2E20053CE46 /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E7F562886F2E20053CE46 /* ShoppingTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,9 +57,9 @@
 		4283A9052885262200D96873 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
 		4283A9072885263D00D96873 /* Case1TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1TableViewController.swift; sourceTree = "<group>"; };
 		4283A9092885265D00D96873 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
-		428EC4E62886DC9B001C33EE /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
-		428EC4E82886DCB2001C33EE /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
-		428EC4EA2886DF81001C33EE /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
+		428E7F502886F2670053CE46 /* Shopping.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Shopping.storyboard; sourceTree = "<group>"; };
+		428E7F542886F2B30053CE46 /* ShoppingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewController.swift; sourceTree = "<group>"; };
+		428E7F562886F2E20053CE46 /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +101,9 @@
 				4283A9052885262200D96873 /* Setting.storyboard */,
 				420F655E2886402D00DB9EE8 /* Search.storyboard */,
 				420F65602886403D00DB9EE8 /* Trend.storyboard */,
-				428EC4E62886DC9B001C33EE /* Shopping.storyboard */,
-				428EC4EA2886DF81001C33EE /* ShoppingListTableViewCell.swift */,
-				428EC4E82886DCB2001C33EE /* ShoppingTableViewController.swift */,
+				428E7F502886F2670053CE46 /* Shopping.storyboard */,
+				428E7F562886F2E20053CE46 /* ShoppingTableViewCell.swift */,
+				428E7F542886F2B30053CE46 /* ShoppingTableViewController.swift */,
 				420F656E28864D9600DB9EE8 /* BucketListTableViewCell.swift */,
 				420F65662886441100DB9EE8 /* SearchViewController.swift */,
 				420F65682886451B00DB9EE8 /* UIViewController+Extension.swift */,
@@ -185,7 +185,7 @@
 				420F65632886407700DB9EE8 /* Intro.storyboard in Resources */,
 				4283A9062885262200D96873 /* Setting.storyboard in Resources */,
 				4283A8F52884DDC200D96873 /* Main.storyboard in Resources */,
-				428EC4E72886DC9B001C33EE /* Shopping.storyboard in Resources */,
+				428E7F512886F2670053CE46 /* Shopping.storyboard in Resources */,
 				420F655F2886402D00DB9EE8 /* Search.storyboard in Resources */,
 				4283A9022884F11600D96873 /* Home.storyboard in Resources */,
 			);
@@ -198,21 +198,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428EC4EB2886DF81001C33EE /* ShoppingListTableViewCell.swift in Sources */,
 				420F6565288643F800DB9EE8 /* TrendViewController.swift in Sources */,
 				424F661E2886369D004247B7 /* MySettingTableViewController.swift in Sources */,
 				4283A9042884FE3600D96873 /* SettingTableViewController.swift in Sources */,
 				420F65672886441100DB9EE8 /* SearchViewController.swift in Sources */,
 				420F656F28864D9600DB9EE8 /* BucketListTableViewCell.swift in Sources */,
-				428EC4E92886DCB2001C33EE /* ShoppingTableViewController.swift in Sources */,
 				4283A9082885263D00D96873 /* Case1TableViewController.swift in Sources */,
 				4283A90A2885265D00D96873 /* Case2TableViewController.swift in Sources */,
 				4283A8F22884DDC200D96873 /* ViewController.swift in Sources */,
 				420F656D28864B9400DB9EE8 /* BucketListTableViewController.swift in Sources */,
 				420F656B2886479700DB9EE8 /* UITextField+Extenstion.swift in Sources */,
+				428E7F572886F2E20053CE46 /* ShoppingTableViewCell.swift in Sources */,
 				4283A8EE2884DDC200D96873 /* AppDelegate.swift in Sources */,
 				420F65692886451B00DB9EE8 /* UIViewController+Extension.swift in Sources */,
 				4283A8F02884DDC200D96873 /* SceneDelegate.swift in Sources */,
+				428E7F552886F2B30053CE46 /* ShoppingTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
