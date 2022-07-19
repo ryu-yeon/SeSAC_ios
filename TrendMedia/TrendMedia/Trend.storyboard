@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RCn-W0-hJ9">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Bucket List Table View Controller-->
+        <scene sceneID="HgI-E7-uR5">
+            <objects>
+                <tableViewController id="RCn-W0-hJ9" customClass="BucketListTableViewController" customModule="TrendMedia" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="i5z-uR-Ije">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="E2e-Jl-K4M">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="79"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eT3-2K-uSb">
+                                    <rect key="frame" x="20" y="20" width="374" height="39"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <action selector="userTextFieldReturn:" destination="RCn-W0-hJ9" eventType="editingDidEndOnExit" id="bYD-1U-wm3"/>
+                                    </connections>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="eT3-2K-uSb" firstAttribute="top" secondItem="E2e-Jl-K4M" secondAttribute="top" constant="20" id="TZS-YV-2VV"/>
+                                <constraint firstAttribute="trailing" secondItem="eT3-2K-uSb" secondAttribute="trailing" constant="20" id="Z0o-R3-pTK"/>
+                                <constraint firstItem="eT3-2K-uSb" firstAttribute="leading" secondItem="E2e-Jl-K4M" secondAttribute="leading" constant="20" id="fuH-JG-9bM"/>
+                                <constraint firstAttribute="bottom" secondItem="eT3-2K-uSb" secondAttribute="bottom" constant="20" id="tRC-lU-0zC"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BucketListTableViewCell" rowHeight="58" id="eZv-oN-PgL" customClass="BucketListTableViewCell" customModule="TrendMedia" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="123.5" width="414" height="58"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eZv-oN-PgL" id="NA3-Q6-x4G">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="58"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NaM-xL-Tce">
+                                            <rect key="frame" x="20" y="7" width="44" height="44"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="44" id="3mV-sO-2nj"/>
+                                                <constraint firstAttribute="height" constant="44" id="hJe-Xr-WAo"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        </button>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="TDG-si-xeZ">
+                                            <rect key="frame" x="80" y="7" width="314" height="44"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버킷할일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ws-oZ-P3T">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="날짜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGd-hO-PmZ">
+                                                    <rect key="frame" x="0.0" y="23" width="314" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="44" id="eYE-mg-srT"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="TDG-si-xeZ" firstAttribute="centerY" secondItem="NA3-Q6-x4G" secondAttribute="centerY" id="3Av-Le-kbj"/>
+                                        <constraint firstItem="TDG-si-xeZ" firstAttribute="leading" secondItem="NaM-xL-Tce" secondAttribute="trailing" constant="16" id="Vkp-Vh-yj6"/>
+                                        <constraint firstAttribute="trailing" secondItem="TDG-si-xeZ" secondAttribute="trailing" constant="20" id="bT2-ju-nYU"/>
+                                        <constraint firstItem="NaM-xL-Tce" firstAttribute="centerY" secondItem="NA3-Q6-x4G" secondAttribute="centerY" id="d15-TY-kPk"/>
+                                        <constraint firstItem="NaM-xL-Tce" firstAttribute="leading" secondItem="NA3-Q6-x4G" secondAttribute="leading" constant="20" id="f6K-bj-PLd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="bucketlistLabel" destination="6ws-oZ-P3T" id="gOf-be-0sk"/>
+                                    <outlet property="checkButton" destination="NaM-xL-Tce" id="eEa-qo-Kdg"/>
+                                    <outlet property="dateLabel" destination="PGd-hO-PmZ" id="uuz-rf-zWb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="RCn-W0-hJ9" id="Ccw-Uj-oQn"/>
+                            <outlet property="delegate" destination="RCn-W0-hJ9" id="WCK-9K-yUv"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="userTextField" destination="eT3-2K-uSb" id="5A8-Gt-aOO"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rkQ-Rh-ilE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="105.79710144927537" y="113.83928571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

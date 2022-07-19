@@ -15,6 +15,8 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.rowHeight = 80 //default 44
+        
     }
     
     //섹션의 개수(옵션)
@@ -52,26 +54,45 @@ class SettingTableViewController: UITableViewController {
     
     //2. 셀의 디자인과 데이터(필수)
     //ex. 카톡 이름, 프로필사진, 상태 메세지 등
+    //재사용 매커니즘
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        // * 100
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
-        if indexPath.section == 0 {
-            cell.textLabel?.text = birthdayFriends[indexPath.row]
-
-            cell.textLabel?.textColor = .systemMint
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 1 {
-            cell.textLabel?.text = "1번 인덱스 텍스트"
-            cell.textLabel?.textColor = .systemPink
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
-        } else if indexPath.section == 2 {
+        print("cellforrowat", indexPath)
+        
+        if indexPath.section == 2 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "rightDetailCell")!
+            
             cell.textLabel?.text = "2번 인덱스 텍스트"
             cell.textLabel?.textColor = .systemBlue
-            cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            cell.textLabel?.font = .boldSystemFont(ofSize: 15)
+            cell.detailTextLabel?.text = "디테일 레이블"
+            
+            //indexPath.row % 2 == 0, 1
+            
+            cell.imageView?.image = indexPath.row % 2 == 0 ? UIImage(systemName: "star") : UIImage(systemName: "star.fill")
+            cell.backgroundColor = indexPath.row % 2 == 0 ? .lightGray : .white
+            return cell
+            
+        } else {
+            
+            // * 100
+            let cell = tableView.dequeueReusableCell(withIdentifier: "settingCell")!
+            if indexPath.section == 0 {
+                cell.textLabel?.text = birthdayFriends[indexPath.row]
+                cell.textLabel?.textColor = .systemMint
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            } else if indexPath.section == 1 {
+                cell.textLabel?.text = "1번 인덱스 텍스트"
+                cell.textLabel?.textColor = .systemPink
+                cell.textLabel?.font = .boldSystemFont(ofSize: 20)
+            }
+            return cell
         }
-        return cell
-        
+    }
+    
+    //셀의 높이(옵션, 빈도 높은) (feat. tableView.rowHeight)
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
 }
