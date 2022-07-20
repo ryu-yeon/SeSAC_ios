@@ -77,10 +77,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Qr-vR-3IS">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="48"/>
+                                            <rect key="frame" x="20" y="4" width="374" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lGH-za-uRt">
-                                                    <rect key="frame" x="20" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="20" y="5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="Jq6-YF-amy"/>
                                                         <constraint firstAttribute="height" constant="30" id="miK-ym-kKj"/>
@@ -92,7 +92,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pUN-JK-JE5">
-                                                    <rect key="frame" x="70" y="4" width="234" height="40"/>
+                                                    <rect key="frame" x="70" y="0.0" width="234" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="b8P-Gy-QQc"/>
                                                     </constraints>
@@ -101,7 +101,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJm-ij-JP5">
-                                                    <rect key="frame" x="324" y="9" width="30" height="30"/>
+                                                    <rect key="frame" x="324" y="5" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="kVL-FO-d7T"/>
                                                         <constraint firstAttribute="height" constant="30" id="zQ5-vm-RxN"/>
@@ -126,8 +126,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="3Qr-vR-3IS" firstAttribute="top" secondItem="MZL-Ms-r9a" secondAttribute="top" id="GxF-1e-yOb"/>
-                                        <constraint firstAttribute="bottom" secondItem="3Qr-vR-3IS" secondAttribute="bottom" id="IIX-az-Wqy"/>
+                                        <constraint firstItem="3Qr-vR-3IS" firstAttribute="top" secondItem="MZL-Ms-r9a" secondAttribute="top" constant="4" id="GxF-1e-yOb"/>
+                                        <constraint firstAttribute="bottom" secondItem="3Qr-vR-3IS" secondAttribute="bottom" constant="4" id="IIX-az-Wqy"/>
                                         <constraint firstItem="3Qr-vR-3IS" firstAttribute="leading" secondItem="MZL-Ms-r9a" secondAttribute="leading" constant="20" id="TPu-kK-O4f"/>
                                         <constraint firstAttribute="trailing" secondItem="3Qr-vR-3IS" secondAttribute="trailing" constant="20" id="mfa-0M-Szx"/>
                                     </constraints>
