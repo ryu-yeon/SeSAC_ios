@@ -22,6 +22,7 @@
 		420F656D28864B9400DB9EE8 /* BucketListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F656C28864B9400DB9EE8 /* BucketListTableViewController.swift */; };
 		420F656F28864D9600DB9EE8 /* BucketListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420F656E28864D9600DB9EE8 /* BucketListTableViewCell.swift */; };
 		424F661E2886369D004247B7 /* MySettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424F661D2886369D004247B7 /* MySettingTableViewController.swift */; };
+		426FDAE32888E74300D3DFF8 /* TrendTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426FDAE22888E74300D3DFF8 /* TrendTableViewController.swift */; };
 		4283A8EE2884DDC200D96873 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A8ED2884DDC200D96873 /* AppDelegate.swift */; };
 		4283A8F02884DDC200D96873 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A8EF2884DDC200D96873 /* SceneDelegate.swift */; };
 		4283A8F22884DDC200D96873 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4283A8F12884DDC200D96873 /* ViewController.swift */; };
@@ -54,6 +55,7 @@
 		420F656C28864B9400DB9EE8 /* BucketListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewController.swift; sourceTree = "<group>"; };
 		420F656E28864D9600DB9EE8 /* BucketListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BucketListTableViewCell.swift; sourceTree = "<group>"; };
 		424F661D2886369D004247B7 /* MySettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySettingTableViewController.swift; sourceTree = "<group>"; };
+		426FDAE22888E74300D3DFF8 /* TrendTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendTableViewController.swift; sourceTree = "<group>"; };
 		4283A8EA2884DDC200D96873 /* TrendMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4283A8ED2884DDC200D96873 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4283A8EF2884DDC200D96873 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				428E7F5A2887032C0053CE46 /* SearchTableViewCell.swift */,
 				428E7F58288702F70053CE46 /* SearchTableViewController.swift */,
 				420F65602886403D00DB9EE8 /* Trend.storyboard */,
+				426FDAE22888E74300D3DFF8 /* TrendTableViewController.swift */,
 				4207002128879DFA00C4B84F /* RecommandCollectionViewCell.swift */,
 				4207001F28879AC800C4B84F /* RecommandCollectionViewController.swift */,
 				428E7F502886F2670053CE46 /* Shopping.storyboard */,
@@ -227,6 +230,7 @@
 			files = (
 				4207002028879AC800C4B84F /* RecommandCollectionViewController.swift in Sources */,
 				420F6565288643F800DB9EE8 /* TrendViewController.swift in Sources */,
+				426FDAE32888E74300D3DFF8 /* TrendTableViewController.swift in Sources */,
 				424F661E2886369D004247B7 /* MySettingTableViewController.swift in Sources */,
 				4207002228879DFA00C4B84F /* RecommandCollectionViewCell.swift in Sources */,
 				4207001E2887978500C4B84F /* Movie.swift in Sources */,
