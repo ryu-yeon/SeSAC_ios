@@ -29,6 +29,18 @@ class BookCollectionViewController: UICollectionViewController {
         
         collectionView.collectionViewLayout = layout
         
+        navigationItem.title = "도서"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: #selector(goToSearchView))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        
+    }
+
+    @objc func goToSearchView() {
+        
+        let sb = UIStoryboard(name: "Search", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

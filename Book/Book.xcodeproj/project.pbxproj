@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		421A40F828898D11000BD172 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421A40F728898D11000BD172 /* SearchViewController.swift */; };
+		421A40FA28898D2D000BD172 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421A40F928898D2D000BD172 /* Search.storyboard */; };
 		429DFA9C28884D8F0020D8BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DFA9B28884D8F0020D8BA /* AppDelegate.swift */; };
 		429DFA9E28884D8F0020D8BA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429DFA9D28884D8F0020D8BA /* SceneDelegate.swift */; };
 		429DFAA328884D8F0020D8BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429DFAA128884D8F0020D8BA /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		421A40F728898D11000BD172 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		421A40F928898D2D000BD172 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		429DFA9828884D8F0020D8BA /* Book.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Book.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429DFA9B28884D8F0020D8BA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		429DFA9D28884D8F0020D8BA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,11 +72,13 @@
 				429DFAA428884D900020D8BA /* Assets.xcassets */,
 				429DFA9D28884D8F0020D8BA /* SceneDelegate.swift */,
 				429DFAA128884D8F0020D8BA /* Main.storyboard */,
+				421A40F928898D2D000BD172 /* Search.storyboard */,
+				429DFAA628884D900020D8BA /* LaunchScreen.storyboard */,
 				429DFAB1288855C30020D8BA /* BookCollectionViewController.swift */,
 				429DFAAF2888553D0020D8BA /* BookCollectionViewCell.swift */,
+				421A40F728898D11000BD172 /* SearchViewController.swift */,
 				429DFAB528885A760020D8BA /* BookInfo.swift */,
 				429DFAB328885A3E0020D8BA /* Book.swift */,
-				429DFAA628884D900020D8BA /* LaunchScreen.storyboard */,
 				429DFAA928884D900020D8BA /* Info.plist */,
 			);
 			path = Book;
@@ -144,6 +150,7 @@
 			files = (
 				429DFAA828884D900020D8BA /* LaunchScreen.storyboard in Resources */,
 				429DFAA528884D900020D8BA /* Assets.xcassets in Resources */,
+				421A40FA28898D2D000BD172 /* Search.storyboard in Resources */,
 				429DFAA328884D8F0020D8BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				429DFAB628885A760020D8BA /* BookInfo.swift in Sources */,
+				421A40F828898D11000BD172 /* SearchViewController.swift in Sources */,
 				429DFAB02888553D0020D8BA /* BookCollectionViewCell.swift in Sources */,
 				429DFA9C28884D8F0020D8BA /* AppDelegate.swift in Sources */,
 				429DFA9E28884D8F0020D8BA /* SceneDelegate.swift in Sources */,
