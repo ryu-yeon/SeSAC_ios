@@ -14,8 +14,12 @@ class SearchViewController: UIViewController {
         
         
         navigationItem.title = "검색"
-        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "xmark"), style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .red
     }
     
+    @objc func closeButtonClicked() {
+        dismiss(animated: true)
+    }
     
 }

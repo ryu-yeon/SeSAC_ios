@@ -39,8 +39,11 @@ class BookCollectionViewController: UICollectionViewController {
         
         let sb = UIStoryboard(name: "Search", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let nav = UINavigationController(rootViewController: vc)
         
-        navigationController?.pushViewController(vc, animated: true)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
+
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

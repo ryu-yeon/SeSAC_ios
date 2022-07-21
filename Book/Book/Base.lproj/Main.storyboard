@@ -12,6 +12,7 @@
         <!--MY MEDIA-->
         <scene sceneID="tne-QT-ifu">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -32,7 +33,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="MY MEDIA" id="oHs-Z7-oXU"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="704" y="115"/>
         </scene>
@@ -122,24 +122,34 @@
             </objects>
             <point key="canvasLocation" x="1589.8550724637682" y="114.50892857142857"/>
         </scene>
-        <!--View Controller-->
+        <!--Book Info View Controller-->
         <scene sceneID="c6K-1m-NT1">
             <objects>
-                <viewController id="nS6-Z0-VEr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookInfoViewController" id="nS6-Z0-VEr" customClass="BookInfoViewController" customModule="Book" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xnG-bl-ooK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="상세" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ce-KH-Xdz">
+                                <rect key="frame" x="186" y="218" width="30" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="VZA-93-U1S"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eJ1-qd-837" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1523" y="830"/>
+            <point key="canvasLocation" x="1590" y="823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vGt-pW-FQw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vex-hk-WA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6qo-eo-4fz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7AG-1H-qv6">
@@ -151,7 +161,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="AQy-if-N4q"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vex-hk-WA2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-59" y="115"/>
         </scene>
