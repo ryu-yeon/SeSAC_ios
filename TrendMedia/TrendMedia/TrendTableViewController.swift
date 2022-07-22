@@ -24,6 +24,9 @@ class TrendTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Trend", bundle: nil)
         //2.
         let vc = storyboard.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
+        
+        vc.select = sender.currentTitle
+
         //3.
         self.present(vc, animated: true)
         
@@ -37,6 +40,10 @@ class TrendTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Trend", bundle: nil)
         //2.
         let vc = storyboard.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
+        
+        vc.select = sender.currentTitle
+        
+      
         //2.5
         vc.modalPresentationStyle = .fullScreen
         //3.
@@ -48,9 +55,11 @@ class TrendTableViewController: UITableViewController {
         let storyboard = UIStoryboard(name: "Trend", bundle: nil)
         //2.
         let vc = storyboard.instantiateViewController(withIdentifier: BucketListTableViewController.identifier) as! BucketListTableViewController
+        
+        vc.select = sender.currentTitle
+        
         //2.5
         let nav = UINavigationController(rootViewController: vc)
-        
         
         //2.5
         nav.modalPresentationStyle = .fullScreen

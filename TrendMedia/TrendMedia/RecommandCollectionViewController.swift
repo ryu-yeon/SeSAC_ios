@@ -19,6 +19,8 @@ class RecommandCollectionViewController: UICollectionViewController {
     
     let imageURL =  "https://bunny.jjalbot.com/2018/12/pgFq_plD5d/zzal.jpg"
    
+    //1. 값 전달 - 데이터를 받을 공간(프로퍼티 생성)
+    var movieData: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,8 @@ class RecommandCollectionViewController: UICollectionViewController {
         
         //Compositial Layout
         
+        //3. 값 전달 - 프로퍼티 값을 뷰에 표현
+        title = movieData?.title == nil ? "데이터 없음" : movieData?.title
     }
     
 
