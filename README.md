@@ -18,3 +18,4 @@
 ## Week 3
 ### 1. [TrendMedia](https://github.com/ryu-yeon/SeSAC_ios/tree/main/TrendMedia)
 ### 2. [다마고치 키우기](https://github.com/ryu-yeon/SeSAC_ios/tree/main/Tamagotchi)
+### 3. [Book](https://github.com/ryu-yeon/SeSAC_ios/tree/main/Book)
