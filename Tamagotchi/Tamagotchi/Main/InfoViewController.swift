@@ -1,0 +1,97 @@
+//
+//  InfoViewController.swift
+//  Tamagotchi
+//
+//  Created by 유연탁 on 2022/07/22.
+//
+
+import UIKit
+
+class InfoViewController: UIViewController {
+
+    static let identifier = "InfoViewController"
+    var selectTamagochi: Tamagotchi?
+    
+    @IBOutlet var infoView: UIView!
+    @IBOutlet var imageView: UIImageView!
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var lineView: UIView!
+    @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var startButton: UIButton!
+    @IBOutlet var cancelButton: UIButton!
+    
+
+    //MARK: - ViewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        guard let tamagotchi = selectTamagochi else {
+            print("selectTamagochi error")
+            return
+        }
+        setInfoViewDesign(tamagotchi)
+    }
+
+    //MARK: - 텝제스쳐 or 취소버튼 클릭 설정
+    @IBAction func goToBack(_ sender: Any) {
+        dismiss(animated: true)
+    }
+    
+    //MARK: - Start 버튼 클릭 설정
+    @IBAction func startButtonClicked(_ sender: UIButton) {
+        
+        guard let tamagotchi = selectTamagochi else {
+            print("selectTamagochi error")
+            return
+        }
+        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? "대장님"
+        
+        UserDefaults.standard.set(true, forKey: "start")
+        UserDefaults.standard.set(nickname, forKey: "nickname")
+        UserDefaults.standard.set(tamagotchi.number, forKey: "tamagotchi")
+        
+        let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+        let sceneDelegate = windowScene?.delegate as? SceneDelegate
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+        let nav = UINavigationController(rootViewController: vc)
+        sceneDelegate?.window?.rootViewController = nav
+        sceneDelegate?.window?.makeKeyAndVisible()
+    }
+    
+    //MARK: - InfoView UI 설정
+    func setInfoViewDesign(_ tamagotchi: Tamagotchi) {
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.3)
+        
+        infoView.layer.cornerRadius = 20
+        infoView.clipsToBounds = true
+        infoView.backgroundColor = UIColor(named: "backgroundColor")
+        
+        imageView.image = UIImage(named: "\(tamagotchi.number)-6")
+        
+        nameLabel.text = tamagotchi.name
+        nameLabel.setText(textFont: .boldSystemFont(ofSize: 14))
+        nameLabel.setBorderRound()
+        
+        lineView.backgroundColor = UIColor(named: "mainColor")
+                
+        infoLabel.setText(textFont: .systemFont(ofSize: 12, weight: .semibold))
+        infoLabel.numberOfLines = 0
+        infoLabel.text = tamagotchi.introduction
+        
+        setButtonDesign()
+    }
+    
+    //MARK: - 버튼 UI 설정
+    func setButtonDesign() {
+        let isStart = UserDefaults.standard.bool(forKey: "start")
+        let startButtonTitle = isStart ? "변경하기" : "시작하기"
+        
+        startButton.setButton(title: "\(startButtonTitle)", image: UIImage(), textFont: .boldSystemFont(ofSize: 14))
+        startButton.layer.addBorder([.top], color: UIColor(named: "mainColor") ?? .black, width: 0.3)
+        
+        cancelButton.setButton(title: "취소", image: UIImage(), textFont: .boldSystemFont(ofSize: 14))
+        cancelButton.backgroundColor = UIColor(named: "backgroundColor-1")
+        cancelButton.layer.addBorder([.top], color: UIColor(named: "mainColor") ?? .black, width: 0.3)
+    }
+}

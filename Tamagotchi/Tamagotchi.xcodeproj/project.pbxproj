@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		421C9F2D288EA7DA00C1781A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */; };
+		421C9F31288EACCE00C1781A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F30288EACCE00C1781A /* UIView+Extension.swift */; };
+		421C9F33288EB11800C1781A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F32288EB11800C1781A /* UILabel+Extension.swift */; };
+		421C9F35288EB13200C1781A /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F34288EB13200C1781A /* UIButton+Extension.swift */; };
+		426335C1288B0F9E003854E5 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 426335C0288B0F9E003854E5 /* IQKeyboardManagerSwift */; };
+		42B4F5A4288E8A580097E4C8 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B4F5A3288E8A580097E4C8 /* CALayer+Extension.swift */; };
+		42E280D2288BE4C900C63512 /* TalkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E280D1288BE4C900C63512 /* TalkList.swift */; };
+		42EE2D70288A756B003E72A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D6F288A756B003E72A6 /* AppDelegate.swift */; };
+		42EE2D72288A756B003E72A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D71288A756B003E72A6 /* SceneDelegate.swift */; };
+		42EE2D77288A756B003E72A6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EE2D75288A756B003E72A6 /* Main.storyboard */; };
+		42EE2D79288A756D003E72A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42EE2D78288A756D003E72A6 /* Assets.xcassets */; };
+		42EE2D7C288A756D003E72A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EE2D7A288A756D003E72A6 /* LaunchScreen.storyboard */; };
+		42EE2D84288A777C003E72A6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D83288A777C003E72A6 /* MainViewController.swift */; };
+		42EE2D88288A7954003E72A6 /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42EE2D87288A7954003E72A6 /* Setting.storyboard */; };
+		42EE2D8A288A7A0A003E72A6 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D89288A7A0A003E72A6 /* SettingTableViewController.swift */; };
+		42EE2D8E288A7D29003E72A6 /* EditNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D8D288A7D29003E72A6 /* EditNicknameViewController.swift */; };
+		42EE2D90288A80B2003E72A6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D8F288A80B2003E72A6 /* InfoViewController.swift */; };
+		42EE2D92288A813E003E72A6 /* TamagotchiCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D91288A813E003E72A6 /* TamagotchiCollectionViewController.swift */; };
+		42EE2D94288A8175003E72A6 /* TamagotchiCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D93288A8175003E72A6 /* TamagotchiCollectionViewCell.swift */; };
+		42EE2D96288A81AD003E72A6 /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D95288A81AD003E72A6 /* SettingTableViewCell.swift */; };
+		42EE2D98288A8830003E72A6 /* TamagotchiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D97288A8830003E72A6 /* TamagotchiInfo.swift */; };
+		42EE2D9A288A8855003E72A6 /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE2D99288A8855003E72A6 /* Tamagotchi.swift */; };
+		42FC0D36288C150400D96DF0 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 42FC0D35288C150400D96DF0 /* Toast */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		421C9F30288EACCE00C1781A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		421C9F32288EB11800C1781A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
+		421C9F34288EB13200C1781A /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		42B4F5A3288E8A580097E4C8 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		42E280D1288BE4C900C63512 /* TalkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkList.swift; sourceTree = "<group>"; };
+		42EE2D6C288A756B003E72A6 /* Tamagotchi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tamagotchi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		42EE2D6F288A756B003E72A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		42EE2D71288A756B003E72A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		42EE2D76288A756B003E72A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		42EE2D78288A756D003E72A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42EE2D7B288A756D003E72A6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		42EE2D7D288A756D003E72A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42EE2D83288A777C003E72A6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		42EE2D87288A7954003E72A6 /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		42EE2D89288A7A0A003E72A6 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		42EE2D8D288A7D29003E72A6 /* EditNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNicknameViewController.swift; sourceTree = "<group>"; };
+		42EE2D8F288A80B2003E72A6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		42EE2D91288A813E003E72A6 /* TamagotchiCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewController.swift; sourceTree = "<group>"; };
+		42EE2D93288A8175003E72A6 /* TamagotchiCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiCollectionViewCell.swift; sourceTree = "<group>"; };
+		42EE2D95288A81AD003E72A6 /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		42EE2D97288A8830003E72A6 /* TamagotchiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiInfo.swift; sourceTree = "<group>"; };
+		42EE2D99288A8855003E72A6 /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		42EE2D69288A756B003E72A6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42FC0D36288C150400D96DF0 /* Toast in Frameworks */,
+				426335C1288B0F9E003854E5 /* IQKeyboardManagerSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		421C9F36288EBEA900C1781A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42B4F5A3288E8A580097E4C8 /* CALayer+Extension.swift */,
+				421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */,
+				421C9F30288EACCE00C1781A /* UIView+Extension.swift */,
+				421C9F34288EB13200C1781A /* UIButton+Extension.swift */,
+				421C9F32288EB11800C1781A /* UILabel+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		426335B8288AFCB2003854E5 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				42EE2D97288A8830003E72A6 /* TamagotchiInfo.swift */,
+				42EE2D99288A8855003E72A6 /* Tamagotchi.swift */,
+				42E280D1288BE4C900C63512 /* TalkList.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		42EE2D63288A756B003E72A6 = {
+			isa = PBXGroup;
+			children = (
+				42EE2D6E288A756B003E72A6 /* Tamagotchi */,
+				42EE2D6D288A756B003E72A6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		42EE2D6D288A756B003E72A6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				42EE2D6C288A756B003E72A6 /* Tamagotchi.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		42EE2D6E288A756B003E72A6 /* Tamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				42EE2D6F288A756B003E72A6 /* AppDelegate.swift */,
+				42EE2D71288A756B003E72A6 /* SceneDelegate.swift */,
+				421C9F36288EBEA900C1781A /* Extension */,
+				426335B8288AFCB2003854E5 /* Data */,
+				42EE2D8C288A7A2C003E72A6 /* Main */,
+				42EE2D8B288A7A10003E72A6 /* Setting */,
+				42EE2D7A288A756D003E72A6 /* LaunchScreen.storyboard */,
+				42EE2D78288A756D003E72A6 /* Assets.xcassets */,
+				42EE2D7D288A756D003E72A6 /* Info.plist */,
+			);
+			path = Tamagotchi;
+			sourceTree = "<group>";
+		};
+		42EE2D8B288A7A10003E72A6 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				42EE2D87288A7954003E72A6 /* Setting.storyboard */,
+				42EE2D95288A81AD003E72A6 /* SettingTableViewCell.swift */,
+				42EE2D89288A7A0A003E72A6 /* SettingTableViewController.swift */,
+				42EE2D8D288A7D29003E72A6 /* EditNicknameViewController.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		42EE2D8C288A7A2C003E72A6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				42EE2D75288A756B003E72A6 /* Main.storyboard */,
+				42EE2D93288A8175003E72A6 /* TamagotchiCollectionViewCell.swift */,
+				42EE2D91288A813E003E72A6 /* TamagotchiCollectionViewController.swift */,
+				42EE2D8F288A80B2003E72A6 /* InfoViewController.swift */,
+				42EE2D83288A777C003E72A6 /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		42EE2D6B288A756B003E72A6 /* Tamagotchi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 42EE2D80288A756D003E72A6 /* Build configuration list for PBXNativeTarget "Tamagotchi" */;
+			buildPhases = (
+				42EE2D68288A756B003E72A6 /* Sources */,
+				42EE2D69288A756B003E72A6 /* Frameworks */,
+				42EE2D6A288A756B003E72A6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tamagotchi;
+			packageProductDependencies = (
+				426335C0288B0F9E003854E5 /* IQKeyboardManagerSwift */,
+				42FC0D35288C150400D96DF0 /* Toast */,
+			);
+			productName = Tamagotchi;
+			productReference = 42EE2D6C288A756B003E72A6 /* Tamagotchi.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		42EE2D64288A756B003E72A6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					42EE2D6B288A756B003E72A6 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 42EE2D67288A756B003E72A6 /* Build configuration list for PBXProject "Tamagotchi" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 42EE2D63288A756B003E72A6;
+			packageReferences = (
+				426335BF288B0F9E003854E5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				42FC0D34288C150400D96DF0 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+			);
+			productRefGroup = 42EE2D6D288A756B003E72A6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				42EE2D6B288A756B003E72A6 /* Tamagotchi */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		42EE2D6A288A756B003E72A6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EE2D7C288A756D003E72A6 /* LaunchScreen.storyboard in Resources */,
+				42EE2D79288A756D003E72A6 /* Assets.xcassets in Resources */,
+				42EE2D77288A756B003E72A6 /* Main.storyboard in Resources */,
+				42EE2D88288A7954003E72A6 /* Setting.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		42EE2D68288A756B003E72A6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42EE2D8A288A7A0A003E72A6 /* SettingTableViewController.swift in Sources */,
+				42EE2D94288A8175003E72A6 /* TamagotchiCollectionViewCell.swift in Sources */,
+				42EE2D92288A813E003E72A6 /* TamagotchiCollectionViewController.swift in Sources */,
+				421C9F35288EB13200C1781A /* UIButton+Extension.swift in Sources */,
+				421C9F31288EACCE00C1781A /* UIView+Extension.swift in Sources */,
+				42EE2D9A288A8855003E72A6 /* Tamagotchi.swift in Sources */,
+				421C9F2D288EA7DA00C1781A /* UIViewController+Extension.swift in Sources */,
+				42EE2D96288A81AD003E72A6 /* SettingTableViewCell.swift in Sources */,
+				42E280D2288BE4C900C63512 /* TalkList.swift in Sources */,
+				421C9F33288EB11800C1781A /* UILabel+Extension.swift in Sources */,
+				42EE2D98288A8830003E72A6 /* TamagotchiInfo.swift in Sources */,
+				42EE2D70288A756B003E72A6 /* AppDelegate.swift in Sources */,
+				42EE2D8E288A7D29003E72A6 /* EditNicknameViewController.swift in Sources */,
+				42B4F5A4288E8A580097E4C8 /* CALayer+Extension.swift in Sources */,
+				42EE2D72288A756B003E72A6 /* SceneDelegate.swift in Sources */,
+				42EE2D90288A80B2003E72A6 /* InfoViewController.swift in Sources */,
+				42EE2D84288A777C003E72A6 /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		42EE2D75288A756B003E72A6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42EE2D76288A756B003E72A6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		42EE2D7A288A756D003E72A6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				42EE2D7B288A756D003E72A6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		42EE2D7E288A756D003E72A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		42EE2D7F288A756D003E72A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		42EE2D81288A756D003E72A6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH36BYYATY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "다마고치 키우기";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryuyeon.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		42EE2D82288A756D003E72A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CH36BYYATY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Tamagotchi/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "다마고치 키우기";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryuyeon.Tamagotchi;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		42EE2D67288A756B003E72A6 /* Build configuration list for PBXProject "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EE2D7E288A756D003E72A6 /* Debug */,
+				42EE2D7F288A756D003E72A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		42EE2D80288A756D003E72A6 /* Build configuration list for PBXNativeTarget "Tamagotchi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				42EE2D81288A756D003E72A6 /* Debug */,
+				42EE2D82288A756D003E72A6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		426335BF288B0F9E003854E5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.5.0;
+			};
+		};
+		42FC0D34288C150400D96DF0 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		426335C0288B0F9E003854E5 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 426335BF288B0F9E003854E5 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		42FC0D35288C150400D96DF0 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42FC0D34288C150400D96DF0 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 42EE2D64288A756B003E72A6 /* Project object */;
+}

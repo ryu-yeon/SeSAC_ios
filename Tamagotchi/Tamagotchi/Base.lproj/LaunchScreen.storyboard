@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFV-4w-qVh">
+                                <rect key="frame" x="20" y="310.5" width="374" height="75.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loding" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRv-TK-P9D">
+                                        <rect key="frame" x="0.0" y="0.0" width="226" height="75.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="63"/>
+                                        <color key="textColor" name="mainColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2-6" translatesAutoresizingMaskIntoConstraints="NO" id="89F-OH-TP6">
+                                        <rect key="frame" x="283.5" y="34" width="41.5" height="41.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="89F-OH-TP6" secondAttribute="height" multiplier="1:1" id="y1D-9c-55z"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3-6" translatesAutoresizingMaskIntoConstraints="NO" id="TO9-PM-Elm">
+                                        <rect key="frame" x="333" y="34.5" width="41" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="TO9-PM-Elm" secondAttribute="height" multiplier="1:1" id="Rum-cq-93Y"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1-6" translatesAutoresizingMaskIntoConstraints="NO" id="zlz-09-opc">
+                                        <rect key="frame" x="234" y="34" width="41.5" height="41.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="zlz-09-opc" secondAttribute="height" multiplier="1:1" id="vtm-40-DLb"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="backgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="89F-OH-TP6" secondAttribute="bottom" id="5Sl-yn-3Zy"/>
+                                    <constraint firstItem="89F-OH-TP6" firstAttribute="width" secondItem="zlz-09-opc" secondAttribute="width" id="5Ze-Sy-goB"/>
+                                    <constraint firstAttribute="bottom" secondItem="FRv-TK-P9D" secondAttribute="bottom" id="8SA-zZ-dXp"/>
+                                    <constraint firstItem="TO9-PM-Elm" firstAttribute="width" secondItem="zlz-09-opc" secondAttribute="width" multiplier="0.987952" id="CUj-Xz-uQh"/>
+                                    <constraint firstAttribute="trailing" secondItem="TO9-PM-Elm" secondAttribute="trailing" id="IUC-3d-fzX"/>
+                                    <constraint firstItem="FRv-TK-P9D" firstAttribute="top" secondItem="SFV-4w-qVh" secondAttribute="top" id="S21-3s-vdM"/>
+                                    <constraint firstItem="89F-OH-TP6" firstAttribute="leading" secondItem="zlz-09-opc" secondAttribute="trailing" constant="8" id="Sep-CG-RsG"/>
+                                    <constraint firstItem="zlz-09-opc" firstAttribute="width" secondItem="SFV-4w-qVh" secondAttribute="width" multiplier="0.110963" id="g61-WC-Lk0"/>
+                                    <constraint firstItem="FRv-TK-P9D" firstAttribute="leading" secondItem="SFV-4w-qVh" secondAttribute="leading" id="gpz-oJ-iYr"/>
+                                    <constraint firstAttribute="bottom" secondItem="zlz-09-opc" secondAttribute="bottom" id="iT0-aO-HaX"/>
+                                    <constraint firstItem="TO9-PM-Elm" firstAttribute="leading" secondItem="89F-OH-TP6" secondAttribute="trailing" constant="8" id="l9H-NV-Rfr"/>
+                                    <constraint firstAttribute="bottom" secondItem="TO9-PM-Elm" secondAttribute="bottom" id="o5M-3i-qZr"/>
+                                    <constraint firstItem="zlz-09-opc" firstAttribute="leading" secondItem="FRv-TK-P9D" secondAttribute="trailing" constant="8" id="rRI-FD-dBU"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="SFV-4w-qVh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="M2g-MO-bxq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SFV-4w-qVh" secondAttribute="trailing" constant="20" id="S3i-BU-mZA"/>
+                            <constraint firstItem="SFV-4w-qVh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="gZs-gp-oN2"/>
+                            <constraint firstItem="SFV-4w-qVh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="mty-g4-rGU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="339" y="352"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="1-6" width="152" height="151"/>
+        <image name="2-6" width="152" height="151"/>
+        <image name="3-6" width="152" height="151"/>
+        <namedColor name="backgroundColor">
+            <color red="0.96078431372549022" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainColor">
+            <color red="0.30196078431372547" green="0.41568627450980394" blue="0.47058823529411764" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
