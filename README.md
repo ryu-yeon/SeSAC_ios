@@ -14,3 +14,7 @@
 ### 1. [감정 다이어리](https://github.com/ryu-yeon/SeSAC_ios/tree/main/EmotionDiary)
 ### 2. [기념일 계산기](https://github.com/ryu-yeon/SeSAC_ios/tree/main/DayCalculator)
 
+---
+## Week 3
+### 1. [TrendMedia](https://github.com/ryu-yeon/SeSAC_ios/tree/main/TrendMedia)
+### 2. [다마고치 키우기](https://github.com/ryu-yeon/SeSAC_ios/tree/main/Tamagotchi)
