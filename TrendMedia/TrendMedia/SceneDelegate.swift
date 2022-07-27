@@ -18,27 +18,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UserDefaults.standard.set(false, forKey: "First") // true이면 ViewController, flase이면 SearchMovieTableViewController
         
         //시작화면
-        guard let scene = (scene as? UIWindowScene) else { return }
-        
-        window = UIWindow(windowScene: scene)
-        
-        if UserDefaults.standard.bool(forKey: "First") {
-      
-            let sb = UIStoryboard(name: "Trend", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            
-            window?.rootViewController = vc
-            
-            UserDefaults.standard.set(false, forKey: "First")
-        } else {
-   
-            let sb = UIStoryboard(name: "Search", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
-            
-            window?.rootViewController = UINavigationController(rootViewController: vc)
-        }
-        window?.makeKeyAndVisible()
-        
+//        guard let scene = (scene as? UIWindowScene) else { return }
+//        
+//        window = UIWindow(windowScene: scene)
+//        
+//        if UserDefaults.standard.bool(forKey: "First") {
+//      
+//            let sb = UIStoryboard(name: "Trend", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//            
+//            window?.rootViewController = vc
+//            
+//            UserDefaults.standard.set(false, forKey: "First")
+//        } else {
+//   
+//            let sb = UIStoryboard(name: "Search", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: "SearchTableViewController") as! SearchTableViewController
+//            
+//            window?.rootViewController = UINavigationController(rootViewController: vc)
+//        }
+//        window?.makeKeyAndVisible()
+//        
         
         
         
