@@ -34,7 +34,7 @@ class WebViewController: UIViewController {
     }
     
     @IBAction func closeButtonClicked(_ sender: UIBarButtonItem) {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func goBackButtonClicked(_ sender: UIBarButtonItem) {
@@ -53,6 +53,7 @@ class WebViewController: UIViewController {
         }
         
     }
+    
     
 }
 
