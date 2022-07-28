@@ -58,6 +58,10 @@ class WebViewController: UIViewController {
 
 extension WebViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        openWebPage(url: searchBar.text!)
+        if searchBar.text!.contains("https://") {
+            openWebPage(url: searchBar.text!)
+        } else {
+            openWebPage(url: "https://\(searchBar.text!)")
+        }
     }
 }
