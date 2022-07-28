@@ -196,9 +196,29 @@
                                     <constraint firstAttribute="height" constant="44" id="R7c-dR-Mc5"/>
                                 </constraints>
                                 <items>
-                                    <barButtonItem title="새로고침" id="qua-qb-vZ7"/>
-                                    <barButtonItem width="279" style="plain" systemItem="fixedSpace" id="fZY-J3-90G"/>
-                                    <barButtonItem title="Item" id="02x-CY-YOc"/>
+                                    <barButtonItem image="xmark" catalog="system" id="qua-qb-vZ7">
+                                        <connections>
+                                            <action selector="closeButtonClicked:" destination="GF7-fc-MWp" id="VfI-3x-zY9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Q0O-jb-FeC"/>
+                                    <barButtonItem image="arrow.left" catalog="system" id="Ej4-IO-H1y">
+                                        <connections>
+                                            <action selector="goBackButtonClicked:" destination="GF7-fc-MWp" id="dPf-ml-Dvq"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="nz4-Jx-dCq"/>
+                                    <barButtonItem image="arrow.clockwise" catalog="system" id="BZc-92-ll9">
+                                        <connections>
+                                            <action selector="reloadButtonClicked:" destination="GF7-fc-MWp" id="nE4-w3-ETE"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jAg-t4-VjC"/>
+                                    <barButtonItem title="Item" image="arrow.right" catalog="system" id="02x-CY-YOc">
+                                        <connections>
+                                            <action selector="goForwardButtonClicked:" destination="GF7-fc-MWp" id="Ik3-td-BEb"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xg2-tN-4E8">
@@ -236,6 +256,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
+        <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -22,7 +22,6 @@ class WebViewController: UIViewController {
 
         searchBar.delegate = self
         openWebPage(url: destionationURL)
-        
     }
     
     func openWebPage(url: String) {
@@ -33,7 +32,28 @@ class WebViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.load(request)
     }
-
+    
+    @IBAction func closeButtonClicked(_ sender: UIBarButtonItem) {
+        
+    }
+    
+    @IBAction func goBackButtonClicked(_ sender: UIBarButtonItem) {
+        if webView.canGoBack {
+            webView.goBack()
+        }
+    }
+    
+    @IBAction func reloadButtonClicked(_ sender: UIBarButtonItem) {
+        webView.reload()
+    }
+    
+    @IBAction func goForwardButtonClicked(_ sender: UIBarButtonItem) {
+        if webView.canGoForward {
+            webView.goForward()
+        }
+        
+    }
+    
 }
 
 extension WebViewController: UISearchBarDelegate {
