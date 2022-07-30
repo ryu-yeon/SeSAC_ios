@@ -26,6 +26,9 @@ class TrenslateViewController: UIViewController {
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
         
+        userInputTextView.font = UIFont(name: "HSSantokki", size: 12)
+        
+        
     }
 
 }

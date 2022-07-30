@@ -26,7 +26,7 @@ class WebViewController: UIViewController {
     
     func openWebPage(url: String) {
         guard let url = URL(string: url) else {
-            print("Invalid URL")
+            print("invalid URL")
             return
         }
         let request = URLRequest(url: url)
@@ -41,6 +41,10 @@ class WebViewController: UIViewController {
         if webView.canGoBack {
             webView.goBack()
         }
+    }
+    
+    @IBAction func goHomeButtonClicked(_ sender: UIBarButtonItem) {
+        openWebPage(url: destionationURL)
     }
     
     @IBAction func reloadButtonClicked(_ sender: UIBarButtonItem) {

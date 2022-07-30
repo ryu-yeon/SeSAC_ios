@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mGp-e7-KHj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d2A-1s-p7b">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -237,6 +237,12 @@
                                             <action selector="goBackButtonClicked:" destination="GF7-fc-MWp" id="dPf-ml-Dvq"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jgg-7G-1zm"/>
+                                    <barButtonItem title="Item" image="house" catalog="system" id="8C8-xC-wOp">
+                                        <connections>
+                                            <action selector="goHomeButtonClicked:" destination="GF7-fc-MWp" id="6Rl-E7-3Ol"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="nz4-Jx-dCq"/>
                                     <barButtonItem image="arrow.clockwise" catalog="system" id="BZc-92-ll9">
                                         <connections>
@@ -302,11 +308,45 @@
             </objects>
             <point key="canvasLocation" x="-222" y="1005"/>
         </scene>
+        <!--Location View Controller-->
+        <scene sceneID="hY6-qQ-Fa1">
+            <objects>
+                <viewController id="KDn-Hv-x2n" customClass="LocationViewController" customModule="SeSacNetwork" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="drR-ae-0T3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xb3-vK-fhJ">
+                                <rect key="frame" x="20" y="64" width="374" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="xmr-FY-8HQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Local Notification"/>
+                                <connections>
+                                    <action selector="notificationButtonClicked:" destination="KDn-Hv-x2n" eventType="touchUpInside" id="71Z-9T-lKx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ofz-1g-VRz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xb3-vK-fhJ" firstAttribute="leading" secondItem="ofz-1g-VRz" secondAttribute="leading" constant="20" id="1TC-a8-b6U"/>
+                            <constraint firstItem="ofz-1g-VRz" firstAttribute="trailing" secondItem="Xb3-vK-fhJ" secondAttribute="trailing" constant="20" id="GkY-ob-Dbs"/>
+                            <constraint firstItem="Xb3-vK-fhJ" firstAttribute="top" secondItem="ofz-1g-VRz" secondAttribute="top" constant="20" id="daJ-aG-JQt"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t3L-BM-DAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-223" y="1750"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="arrow.right" catalog="system" width="128" height="98"/>
+        <image name="house" catalog="system" width="128" height="106"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -15,6 +15,9 @@
 		426BCA6A2890DD840064265F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426BCA682890DD840064265F /* LaunchScreen.storyboard */; };
 		426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA732890E4D60064265F /* ListTableViewCell.swift */; };
 		426BCA762890E4D60064265F /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426BCA742890E4D60064265F /* ListTableViewCell.xib */; };
+		428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428650B728935D3C004DAAC5 /* LocationViewController.swift */; };
+		428650BC289384C7004DAAC5 /* HSSantokki-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */; };
+		428650BD289384C7004DAAC5 /* HSSantokki-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */; };
 		42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E328920CD10073E98B /* ViewPresentableProtocol.swift */; };
 		42B227E828920EC80073E98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E728920EC80073E98B /* ViewController.swift */; };
 		42B227EA289223650073E98B /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E9289223650073E98B /* LottoViewController.swift */; };
@@ -33,6 +36,9 @@
 		426BCA6B2890DD840064265F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		426BCA732890E4D60064265F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		426BCA742890E4D60064265F /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		428650B728935D3C004DAAC5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.ttf"; sourceTree = "<group>"; };
+		428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.otf"; sourceTree = "<group>"; };
 		42B227E328920CD10073E98B /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		42B227E728920EC80073E98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42B227E9289223650073E98B /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
@@ -70,12 +76,14 @@
 		426BCA5C2890DD820064265F /* SeSacNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				428650B9289383EF004DAAC5 /* Resource */,
 				42B227E228920CA40073E98B /* Protocol */,
 				426BCA5D2890DD820064265F /* AppDelegate.swift */,
 				426BCA5F2890DD820064265F /* SceneDelegate.swift */,
 				42B227E728920EC80073E98B /* ViewController.swift */,
 				426BCA612890DD820064265F /* SeaerchViewController.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
+				428650B728935D3C004DAAC5 /* LocationViewController.swift */,
 				42B227ED28923A9B0073E98B /* WebViewController.swift */,
 				42B227EB2892305D0073E98B /* TrenslateViewController.swift */,
 				42B227E9289223650073E98B /* LottoViewController.swift */,
@@ -86,6 +94,15 @@
 				426BCA6B2890DD840064265F /* Info.plist */,
 			);
 			path = SeSacNetwork;
+			sourceTree = "<group>";
+		};
+		428650B9289383EF004DAAC5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */,
+				428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		42B227E228920CA40073E98B /* Protocol */ = {
@@ -158,6 +175,8 @@
 				426BCA762890E4D60064265F /* ListTableViewCell.xib in Resources */,
 				426BCA672890DD840064265F /* Assets.xcassets in Resources */,
 				426BCA652890DD820064265F /* Main.storyboard in Resources */,
+				428650BC289384C7004DAAC5 /* HSSantokki-Regular.ttf in Resources */,
+				428650BD289384C7004DAAC5 /* HSSantokki-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -173,6 +192,7 @@
 				42B227EC2892305D0073E98B /* TrenslateViewController.swift in Sources */,
 				426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */,
 				426BCA5E2890DD820064265F /* AppDelegate.swift in Sources */,
+				428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */,
 				42B227EA289223650073E98B /* LottoViewController.swift in Sources */,
 				42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */,
 				426BCA602890DD820064265F /* SceneDelegate.swift in Sources */,
