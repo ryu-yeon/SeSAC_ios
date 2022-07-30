@@ -46,13 +46,13 @@ class EditNicknameViewController: UIViewController {
     
     //MARK: - UI 설정
     func setViewDesign() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = .myBackgroundColor
         
         nicknameTextField.text = nickname
         nicknameTextField.borderStyle = .none
-        nicknameTextField.textColor = UIColor(named: "mainColor")
+        nicknameTextField.textColor = .myMainColor
         
-        lineView.backgroundColor = UIColor(named: "mainColor")
+        lineView.backgroundColor = .myMainColor
     }
     
 }

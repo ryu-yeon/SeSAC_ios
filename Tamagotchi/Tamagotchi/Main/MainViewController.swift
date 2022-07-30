@@ -152,15 +152,15 @@ class MainViewController: UIViewController {
     func setNavigationBarItem() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "person.circle"), style: .plain, target: self, action: #selector(goToSetting))
         navigationItem.backButtonTitle = " "
-        navigationController?.navigationBar.layer.addBorder([.bottom], color: UIColor(named: "mainColor") ?? .black, width: 0.3)
-        navigationController?.navigationBar.layer.addTopBorder([.top], color: UIColor(named: "backgroundColor") ?? .white, width: 50)
+        navigationController?.navigationBar.layer.addBorder([.bottom], color: UIColor.myMainColor ?? .black, width: 0.3)
+        navigationController?.navigationBar.layer.addTopBorder([.top], color: UIColor.myBackgroundColor ?? .white, width: 50)
     }
     
     //MARK: - MainView UI 설정
     func setMainViewDesign() {
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = .myBackgroundColor
         
-        talkBoxImageview.backgroundColor = UIColor(named: "backgroundColor")
+        talkBoxImageview.backgroundColor = .myBackgroundColor
         talkBoxImageview.image = UIImage(named: "bubble")
         
         tamagotchiImageView.image = level == 10 ? UIImage(named: "\(tamagotchiNumber)-9") : UIImage(named: "\(tamagotchiNumber)-\(level)")
@@ -172,7 +172,7 @@ class MainViewController: UIViewController {
         nameLabel.text = tamagotchiInfo.tamagotchi[tamagotchiNumber].name
         nameLabel.setText(textFont: .boldSystemFont(ofSize: 15))
         nameLabel.setBorderRound()
-        nameLabel.backgroundColor = UIColor(named: "backgroundColor-1")
+        nameLabel.backgroundColor = .myBackgroundColor2
         
         infoLabel.text = "LV\(level) · 밥알 \(food)개 · 물방울 \(water)개"
         infoLabel.setText(textFont: .boldSystemFont(ofSize: 14))
@@ -193,7 +193,7 @@ class MainViewController: UIViewController {
         waterButton.setBorderRound()
         waterButton.setButton(title: " 물먹기", image: UIImage(systemName: "drop.circle")!, textFont: .boldSystemFont(ofSize: 12))
         
-        lineView1.backgroundColor = UIColor(named: "mainColor")
-        lineView2.backgroundColor = UIColor(named: "mainColor")
+        lineView1.backgroundColor = .myMainColor
+        lineView2.backgroundColor = .myMainColor
     }
 }

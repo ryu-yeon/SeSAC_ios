@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4202F3D32895A89C0011B532 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3D22895A89C0011B532 /* UIColor+Extension.swift */; };
 		421C9F2D288EA7DA00C1781A /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */; };
 		421C9F31288EACCE00C1781A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F30288EACCE00C1781A /* UIView+Extension.swift */; };
 		421C9F33288EB11800C1781A /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421C9F32288EB11800C1781A /* UILabel+Extension.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4202F3D22895A89C0011B532 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		421C9F30288EACCE00C1781A /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		421C9F32288EB11800C1781A /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				42B4F5A3288E8A580097E4C8 /* CALayer+Extension.swift */,
 				421C9F2C288EA7DA00C1781A /* UIViewController+Extension.swift */,
 				421C9F30288EACCE00C1781A /* UIView+Extension.swift */,
+				4202F3D22895A89C0011B532 /* UIColor+Extension.swift */,
 				421C9F34288EB13200C1781A /* UIButton+Extension.swift */,
 				421C9F32288EB11800C1781A /* UILabel+Extension.swift */,
 			);
@@ -231,6 +234,7 @@
 				42EE2D8A288A7A0A003E72A6 /* SettingTableViewController.swift in Sources */,
 				42EE2D94288A8175003E72A6 /* TamagotchiCollectionViewCell.swift in Sources */,
 				42EE2D92288A813E003E72A6 /* TamagotchiCollectionViewController.swift in Sources */,
+				4202F3D32895A89C0011B532 /* UIColor+Extension.swift in Sources */,
 				421C9F35288EB13200C1781A /* UIButton+Extension.swift in Sources */,
 				421C9F31288EACCE00C1781A /* UIView+Extension.swift in Sources */,
 				42EE2D9A288A8855003E72A6 /* Tamagotchi.swift in Sources */,

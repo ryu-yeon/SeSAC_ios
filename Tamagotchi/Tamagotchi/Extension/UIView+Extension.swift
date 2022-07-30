@@ -10,7 +10,7 @@ import UIKit
 extension UIView {
     func setBorderRound() {
         layer.borderWidth = 1.5
-        layer.borderColor = UIColor(named: "mainColor")?.cgColor
+        layer.borderColor = UIColor.myMainColor?.cgColor
         layer.cornerRadius = 10
         clipsToBounds = true
     }

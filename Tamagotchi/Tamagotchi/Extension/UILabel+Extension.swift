@@ -9,8 +9,8 @@ import UIKit
 
 extension UILabel {
     func setText(textFont: UIFont) {
-        backgroundColor = UIColor(named: "backgroundColor")
-        textColor = UIColor(named: "mainColor")
+        backgroundColor = .myBackgroundColor
+        textColor = .myMainColor
         textAlignment = .center
         font = textFont
     }

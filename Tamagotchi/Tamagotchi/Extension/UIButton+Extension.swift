@@ -12,7 +12,7 @@ extension UIButton {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
         titleLabel?.font = textFont
-        backgroundColor = UIColor(named: "backgroundColor")
-        tintColor = UIColor(named: "mainColor")
+        backgroundColor = .myBackgroundColor
+        tintColor = .myMainColor
     }
 }

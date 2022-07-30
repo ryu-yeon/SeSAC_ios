@@ -65,7 +65,7 @@ class InfoViewController: UIViewController {
         
         infoView.layer.cornerRadius = 20
         infoView.clipsToBounds = true
-        infoView.backgroundColor = UIColor(named: "backgroundColor")
+        infoView.backgroundColor = .myBackgroundColor
         
         imageView.image = UIImage(named: "\(tamagotchi.number)-6")
         
@@ -73,7 +73,7 @@ class InfoViewController: UIViewController {
         nameLabel.setText(textFont: .boldSystemFont(ofSize: 14))
         nameLabel.setBorderRound()
         
-        lineView.backgroundColor = UIColor(named: "mainColor")
+        lineView.backgroundColor = .myMainColor
                 
         infoLabel.setText(textFont: .systemFont(ofSize: 12, weight: .semibold))
         infoLabel.numberOfLines = 0
@@ -88,10 +88,10 @@ class InfoViewController: UIViewController {
         let startButtonTitle = isStart ? "변경하기" : "시작하기"
         
         startButton.setButton(title: "\(startButtonTitle)", image: UIImage(), textFont: .boldSystemFont(ofSize: 14))
-        startButton.layer.addBorder([.top], color: UIColor(named: "mainColor") ?? .black, width: 0.3)
+        startButton.layer.addBorder([.top], color: UIColor.myMainColor ?? .black, width: 0.3)
         
         cancelButton.setButton(title: "취소", image: UIImage(), textFont: .boldSystemFont(ofSize: 14))
-        cancelButton.backgroundColor = UIColor(named: "backgroundColor-1")
-        cancelButton.layer.addBorder([.top], color: UIColor(named: "mainColor") ?? .black, width: 0.3)
+        cancelButton.backgroundColor = .myBackgroundColor2
+        cancelButton.layer.addBorder([.top], color: UIColor.myMainColor ?? .black, width: 0.3)
     }
 }

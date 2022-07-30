@@ -16,7 +16,7 @@ class SettingTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "backgroundColor")
+        view.backgroundColor = .myBackgroundColor
         
         nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
         setNavigationBar(title: "설정")
@@ -40,7 +40,7 @@ class SettingTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as! SettingTableViewCell
         
         cell.separatorInset = .zero
-        cell.backgroundColor = UIColor(named: "backgroundColor")
+        cell.backgroundColor = .myBackgroundColor
         cell.setDesign(row: indexPath.row, nickname: nickname ?? "대장님")
  
         return cell

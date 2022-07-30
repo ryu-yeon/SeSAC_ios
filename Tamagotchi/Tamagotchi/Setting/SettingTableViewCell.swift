@@ -21,20 +21,20 @@ class SettingTableViewCell: UITableViewCell {
     //MARK: - 테이블 뷰 셀 UI 설정
     func setDesign(row: Int, nickname: String) {
         settingImageView.image = UIImage(systemName: settingListImage[row])
-        settingImageView.tintColor = UIColor(named: "mainColor")
+        settingImageView.tintColor = .myMainColor
         
         settingLabel.text = settingList[row]
         settingLabel.font = .boldSystemFont(ofSize: 15)
-        settingLabel.textColor = UIColor(named: "textColor")
+        settingLabel.textColor = .myTextColor
         
         rightArrowImageView.image = UIImage(systemName: "chevron.forward")
-        rightArrowImageView.tintColor = UIColor(named: "mainColor")
+        rightArrowImageView.tintColor = .myMainColor
         
         if row == 0 {
             valueLabel.text = nickname
             valueLabel.font = .systemFont(ofSize: 13)
             valueLabel.textAlignment = .right
-            valueLabel.textColor = UIColor(named: "mainColor")
+            valueLabel.textColor = .myMainColor
         } else {
             valueLabel.text = ""
         }

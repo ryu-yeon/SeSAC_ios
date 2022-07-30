@@ -20,7 +20,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView.backgroundColor = UIColor(named: "backgroundColor")
+        collectionView.backgroundColor = .myBackgroundColor
         setNavigationBar(title: "다마고치 선택하기")
         setCollectionViewLayout()
     }

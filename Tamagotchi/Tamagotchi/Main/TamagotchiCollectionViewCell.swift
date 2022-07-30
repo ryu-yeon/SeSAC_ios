@@ -17,7 +17,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
     
     //MARK: - 컬렉션 뷰 셀 UI 설정
     func setDesign(item: Int, tamagotchiData: TamagotchiInfo, tamagotchiCount: Int) {
-        nameView.backgroundColor = UIColor(named: "backgroundColor")
+        nameView.backgroundColor = .myBackgroundColor
         
         nameLabel.setText(textFont: .boldSystemFont(ofSize: 14))
         nameLabel.setBorderRound()
