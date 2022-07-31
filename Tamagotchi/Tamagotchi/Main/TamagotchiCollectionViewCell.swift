@@ -29,7 +29,7 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
             
         } else {
             imageView.image = UIImage(named: "noImage")
-            nameLabel.text = "준비중이에요"
+            nameLabel.text =  " 열심히 준비중!!! "
         }
     }
     
