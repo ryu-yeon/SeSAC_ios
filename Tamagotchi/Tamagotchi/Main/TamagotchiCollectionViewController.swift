@@ -14,7 +14,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
     static let identifier = "TamagotchiCollectionViewController"
  
     let tamagotchiData = TamagotchiInfo()
-    let tamagotchiCount = TamagotchiInfo().tamagotchi.count - 1
+    lazy var tamagotchiCount = tamagotchiData.tamagotchi.count - 1
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
