@@ -43,6 +43,8 @@ class MainViewController: UIViewController {
             food = data[1]
             water = data[2]
         }
+        foodButton.tag = 0
+        waterButton.tag = 1
         setNavigationBar(title: "\(nickname ?? "대장님")의 다마고치")
         setNavigationBarItem()
         setMainViewDesign()
@@ -69,37 +71,57 @@ class MainViewController: UIViewController {
    
     //MARK: - Food & Water 버튼 클릭 설정
     @IBAction func buttonClicked(_ sender: UIButton) {
-        if sender.currentTitle == "foodButton" {
-            let input = Int(foodTextField.text ?? "") ?? 1
-            
-            foodCount += input
-            if input > 99 {
-                self.view.makeToast("밥알은 99개까지 먹을 수 있습니다!", duration: 1, position: .center)
+        if sender.tag == 0 {
+            if (foodTextField.text ?? "").isEmpty {
+                foodCount += 1
+                food += 1
             } else {
-                food += input
-                updateUI()
-                if foodCount > 99 {
-                    talkLabel.text = talkList.stopFood.randomElement()
-                } else {
-                    talkLabel.text = talkList.food.randomElement()
+                guard let input = Int(foodTextField.text ?? "") else {
+                    self.view.makeToast("숫자를 입력해주세요!", duration: 1, position: .center)
+                    foodTextField.text = ""
+                    view.endEditing(true)
+                    return
                 }
+                if input < 100 && input > 0 {
+                    food += input
+                    foodCount += input
+                }
+                else {
+                    self.view.makeToast("밥알은 99개까지 먹을 수 있습니다!", duration: 1, position: .center)
+                }
+            }
+            updateUI()
+            if foodCount > 100 {
+                talkLabel.text = talkList.stopFood.randomElement()
+            } else {
+                talkLabel.text = talkList.food.randomElement()
             }
             foodTextField.text = ""
         }
         else {
-            let input = Int(waterTextField.text ?? "") ?? 1
-            
-            waterCount += input
-            if input > 49 {
-                self.view.makeToast("물방울은 49개까지 먹을 수 있습니다!", duration: 1, position: .center)
+            if (waterTextField.text ?? "").isEmpty {
+                waterCount += 1
+                water += 1
             } else {
-                water += input
-                updateUI()
-                if waterCount > 49 {
-                    talkLabel.text = talkList.stopWater.randomElement()
-                } else {
-                    talkLabel.text = talkList.water.randomElement()
+                guard let input = Int(waterTextField.text ?? "") else {
+                    self.view.makeToast("숫자를 입력해주세요!", duration: 1, position: .center)
+                    waterTextField.text = ""
+                    view.endEditing(true)
+                    return
                 }
+                if input < 50 && input > 0 {
+                    water += input
+                    waterCount += input
+                }
+                else {
+                    self.view.makeToast("물방울은 49개까지 먹을 수 있습니다!", duration: 1, position: .center)
+                }
+            }
+            updateUI()
+            if waterCount > 50 {
+                talkLabel.text = talkList.stopWater.randomElement()
+            } else {
+                talkLabel.text = talkList.water.randomElement()
             }
             waterTextField.text = ""
         }
