@@ -50,7 +50,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="waterButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y91-Cr-kmx"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Two-XG-HxK"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gC3-7V-le1">
@@ -97,7 +97,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <action selector="foodButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xsC-1t-la0"/>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uon-fM-An4"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -66,44 +66,43 @@ class MainViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    //MARK: - Food 버튼 클릭 설정
-    @IBAction func foodButtonClicked(_ sender: UIButton) {
-        let input = Int(foodTextField.text ?? "") ?? 1
-        
-        foodCount += input
-        if input > 99 {
-            self.view.makeToast("밥알은 99개까지 먹을 수 있습니다!", duration: 1, position: .center)
-        } else {
-            food += input
-            updateUI()
-            if foodCount > 99 {
-                talkLabel.text = talkList.stopFood.randomElement()
+   
+    //MARK: - Food & Water 버튼 클릭 설정
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        if sender.currentTitle == "foodButton" {
+            let input = Int(foodTextField.text ?? "") ?? 1
+            
+            foodCount += input
+            if input > 99 {
+                self.view.makeToast("밥알은 99개까지 먹을 수 있습니다!", duration: 1, position: .center)
             } else {
-                talkLabel.text = talkList.food.randomElement()
+                food += input
+                updateUI()
+                if foodCount > 99 {
+                    talkLabel.text = talkList.stopFood.randomElement()
+                } else {
+                    talkLabel.text = talkList.food.randomElement()
+                }
             }
+            foodTextField.text = ""
         }
-        foodTextField.text = ""
-        view.endEditing(true)
-    }
-    
-    //MARK: - Water 버튼 클릭 설정
-    @IBAction func waterButtonClicked(_ sender: UIButton) {
-        let input = Int(waterTextField.text ?? "") ?? 1
-        
-        waterCount += input
-        if input > 49 {
-            self.view.makeToast("물방울은 49개까지 먹을 수 있습니다!", duration: 1, position: .center)
-        } else {
-            water += input
-            updateUI()
-            if waterCount > 49 {
-                talkLabel.text = talkList.stopWater.randomElement()
+        else {
+            let input = Int(waterTextField.text ?? "") ?? 1
+            
+            waterCount += input
+            if input > 49 {
+                self.view.makeToast("물방울은 49개까지 먹을 수 있습니다!", duration: 1, position: .center)
             } else {
-                talkLabel.text = talkList.water.randomElement()
+                water += input
+                updateUI()
+                if waterCount > 49 {
+                    talkLabel.text = talkList.stopWater.randomElement()
+                } else {
+                    talkLabel.text = talkList.water.randomElement()
+                }
             }
+            waterTextField.text = ""
         }
-        waterTextField.text = ""
         view.endEditing(true)
     }
     
