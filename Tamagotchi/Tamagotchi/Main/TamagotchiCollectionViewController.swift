@@ -14,7 +14,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
     static let identifier = "TamagotchiCollectionViewController"
  
     let tamagotchiData = TamagotchiInfo()
-    lazy var tamagotchiCount = tamagotchiData.tamagotchi.count - 1
+    lazy var tamagotchiCount = tamagotchiData.tamagotchi.count
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
            
             let sb = UIStoryboard(name: "Main", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: InfoViewController.identifier) as! InfoViewController
-            vc.selectTamagochi = tamagotchiData.tamagotchi[indexPath.item + 1]
+            vc.selectTamagochi = tamagotchiData.tamagotchi[indexPath.item]
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: true)
             

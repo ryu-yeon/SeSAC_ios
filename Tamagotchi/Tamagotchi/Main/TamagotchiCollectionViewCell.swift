@@ -24,12 +24,12 @@ class TamagotchiCollectionViewCell: UICollectionViewCell {
         nameLabel.textAlignment = .center
         
         if item < tamagotchiCount {
-            imageView.image = UIImage(named: "\(tamagotchiData.tamagotchi[item + 1].number)-6")
-            nameLabel.text = tamagotchiData.tamagotchi[item + 1].name
+            imageView.image = UIImage(named: "\(tamagotchiData.tamagotchi[item].number)-6")
+            nameLabel.text = tamagotchiData.tamagotchi[item].name
             
         } else {
             imageView.image = UIImage(named: "noImage")
-            nameLabel.text = tamagotchiData.tamagotchi[0].name
+            nameLabel.text = "준비중이에요"
         }
     }
     
