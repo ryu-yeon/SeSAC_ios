@@ -124,23 +124,23 @@ class MainViewController: UIViewController {
     func levelCalculate() -> Int {
         let exp: Double = (Double(food) / 5) + (Double(water) / 2)
         switch exp {
-        case 0...20:
+        case 0...19:
             return 1
-        case 20...30:
+        case 20...29:
             return 2
-        case 30...40:
+        case 30...39:
             return 3
-        case 40...50:
+        case 40...49:
             return 4
-        case 50...60:
+        case 50...59:
             return 5
-        case 60...70:
+        case 60...69:
             return 6
-        case 70...80:
+        case 70...79:
             return 7
-        case 80...90:
+        case 80...89:
             return 8
-        case 90...100:
+        case 90...99:
             return 9
         default:
             return 10
