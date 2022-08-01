@@ -8,7 +8,9 @@
 import UIKit
 
 class LocationViewController: UIViewController {
-
+    
+//    static var reuseIdentifier: String = String(describing: LocationViewController.self) //"LocationViewController"
+    
     //Notifiacation 1.
     let notificationCenter = UNUserNotificationCenter.current()
     

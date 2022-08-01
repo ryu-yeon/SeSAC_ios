@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4202F3D72897527D0011B532 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3D62897527D0011B532 /* ReusableViewProtocol.swift */; };
+		4202F3DA289757960011B532 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3D9289757960011B532 /* Constant.swift */; };
+		4202F3DC289760180011B532 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3DB289760180011B532 /* UserDefaultsHelper.swift */; };
+		4202F3DF28977CD00011B532 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3DE28977CD00011B532 /* Alamofire */; };
+		4202F3E228977CEE0011B532 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3E128977CEE0011B532 /* SwiftyJSON */; };
 		426BCA5E2890DD820064265F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5D2890DD820064265F /* AppDelegate.swift */; };
 		426BCA602890DD820064265F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5F2890DD820064265F /* SceneDelegate.swift */; };
 		426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA612890DD820064265F /* SeaerchViewController.swift */; };
@@ -26,6 +31,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4202F3D62897527D0011B532 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		4202F3D9289757960011B532 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		4202F3DB289760180011B532 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		426BCA5A2890DD820064265F /* SeSacNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426BCA5D2890DD820064265F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426BCA5F2890DD820064265F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,12 +59,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202F3E228977CEE0011B532 /* SwiftyJSON in Frameworks */,
+				4202F3DF28977CD00011B532 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4202F3D82897577E0011B532 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				4202F3D9289757960011B532 /* Constant.swift */,
+				4202F3DB289760180011B532 /* UserDefaultsHelper.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		426BCA512890DD820064265F = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +95,7 @@
 		426BCA5C2890DD820064265F /* SeSacNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				4202F3D82897577E0011B532 /* Constant */,
 				428650B9289383EF004DAAC5 /* Resource */,
 				42B227E228920CA40073E98B /* Protocol */,
 				426BCA5D2890DD820064265F /* AppDelegate.swift */,
@@ -109,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				42B227E328920CD10073E98B /* ViewPresentableProtocol.swift */,
+				4202F3D62897527D0011B532 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -129,6 +150,10 @@
 			dependencies = (
 			);
 			name = SeSacNetwork;
+			packageProductDependencies = (
+				4202F3DE28977CD00011B532 /* Alamofire */,
+				4202F3E128977CEE0011B532 /* SwiftyJSON */,
+			);
 			productName = SeSacNetwork;
 			productReference = 426BCA5A2890DD820064265F /* SeSacNetwork.app */;
 			productType = "com.apple.product-type.application";
@@ -157,6 +182,10 @@
 				Base,
 			);
 			mainGroup = 426BCA512890DD820064265F;
+			packageReferences = (
+				4202F3DD28977CD00011B532 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+			);
 			productRefGroup = 426BCA5B2890DD820064265F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -188,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B227E828920EC80073E98B /* ViewController.swift in Sources */,
+				4202F3DC289760180011B532 /* UserDefaultsHelper.swift in Sources */,
 				42B227EE28923A9B0073E98B /* WebViewController.swift in Sources */,
 				42B227EC2892305D0073E98B /* TrenslateViewController.swift in Sources */,
 				426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */,
@@ -196,7 +226,9 @@
 				42B227EA289223650073E98B /* LottoViewController.swift in Sources */,
 				42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */,
 				426BCA602890DD820064265F /* SceneDelegate.swift in Sources */,
+				4202F3D72897527D0011B532 /* ReusableViewProtocol.swift in Sources */,
 				426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */,
+				4202F3DA289757960011B532 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +448,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4202F3DD28977CD00011B532 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4202F3DE28977CD00011B532 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4202F3DD28977CD00011B532 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4202F3E128977CEE0011B532 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 426BCA522890DD820064265F /* Project object */;
 }

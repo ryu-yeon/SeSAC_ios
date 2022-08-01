@@ -39,7 +39,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         searchTableView.dataSource = self
         //테이블뷰가 사용할 테이블뷰 셀(XIB) 등록
         //XIB: xml interface builder <= NIBB
-        searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.identifier)
+        searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
     }
     
     func configureView() {
@@ -59,7 +59,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.identifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = .clear
         cell.titleLabel.font = .boldSystemFont(ofSize: 22)

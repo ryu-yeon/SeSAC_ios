@@ -9,6 +9,9 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
+   
+//    static var reuseIdentifier: String = String(describing: WebViewController.self)
+//    // WebViewController.self 메타 타입 => "WebViewController"
 
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var webView: WKWebView!

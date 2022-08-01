@@ -14,6 +14,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backBarButtonItem?.title = "Back"
+        
+        UserDefaultsHelper.standard.nickname = "고래밥"
+        title = UserDefaultsHelper.standard.nickname
+        
+        UserDefaultsHelper.standard.age = 80
+        print(UserDefaultsHelper.standard.age)
     }
     
     @IBAction func webViewButonClicked(_ sender: UIButton) {

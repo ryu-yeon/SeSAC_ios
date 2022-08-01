@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+
 class LottoViewController: UIViewController {
 
 
@@ -26,6 +29,32 @@ class LottoViewController: UIViewController {
 
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
+        
+        requestLotto(1025)
+    }
+    
+    func requestLotto(_ number: Int) {
+        
+        //AF: 200~299 status code
+        let url = "https://www.dhlottery.co.kr/common.do?method=getLottoNumber&drwNo=\(number)"
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let bonus = json["bnusNo"].intValue
+                print(bonus)
+                
+                let date = json["drwNoDate"].stringValue
+                print(date)
+                
+                self.numberTextField.text = date
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 
 }
@@ -42,6 +71,7 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         numberTextField.text = "\(numberList[row])회차"
+        requestLotto(numberList[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
