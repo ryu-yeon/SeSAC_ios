@@ -12,6 +12,9 @@
 		4202F3DC289760180011B532 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3DB289760180011B532 /* UserDefaultsHelper.swift */; };
 		4202F3DF28977CD00011B532 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3DE28977CD00011B532 /* Alamofire */; };
 		4202F3E228977CEE0011B532 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3E128977CEE0011B532 /* SwiftyJSON */; };
+		4202F3E42897D51A0011B532 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3E32897D5190011B532 /* BeerViewController.swift */; };
+		4202F3E62897D8040011B532 /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3E52897D8040011B532 /* Beer.swift */; };
+		4202F3E92897E08F0011B532 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3E82897E08F0011B532 /* Kingfisher */; };
 		426BCA5E2890DD820064265F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5D2890DD820064265F /* AppDelegate.swift */; };
 		426BCA602890DD820064265F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5F2890DD820064265F /* SceneDelegate.swift */; };
 		426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA612890DD820064265F /* SeaerchViewController.swift */; };
@@ -34,6 +37,8 @@
 		4202F3D62897527D0011B532 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		4202F3D9289757960011B532 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		4202F3DB289760180011B532 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		4202F3E32897D5190011B532 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
+		4202F3E52897D8040011B532 /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 		426BCA5A2890DD820064265F /* SeSacNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426BCA5D2890DD820064265F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426BCA5F2890DD820064265F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4202F3E92897E08F0011B532 /* Kingfisher in Frameworks */,
 				4202F3E228977CEE0011B532 /* SwiftyJSON in Frameworks */,
 				4202F3DF28977CD00011B532 /* Alamofire in Frameworks */,
 			);
@@ -103,6 +109,8 @@
 				42B227E728920EC80073E98B /* ViewController.swift */,
 				426BCA612890DD820064265F /* SeaerchViewController.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
+				4202F3E52897D8040011B532 /* Beer.swift */,
+				4202F3E32897D5190011B532 /* BeerViewController.swift */,
 				428650B728935D3C004DAAC5 /* LocationViewController.swift */,
 				42B227ED28923A9B0073E98B /* WebViewController.swift */,
 				42B227EB2892305D0073E98B /* TrenslateViewController.swift */,
@@ -153,6 +161,7 @@
 			packageProductDependencies = (
 				4202F3DE28977CD00011B532 /* Alamofire */,
 				4202F3E128977CEE0011B532 /* SwiftyJSON */,
+				4202F3E82897E08F0011B532 /* Kingfisher */,
 			);
 			productName = SeSacNetwork;
 			productReference = 426BCA5A2890DD820064265F /* SeSacNetwork.app */;
@@ -185,6 +194,7 @@
 			packageReferences = (
 				4202F3DD28977CD00011B532 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				4202F3E72897E08F0011B532 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 426BCA5B2890DD820064265F /* Products */;
 			projectDirPath = "";
@@ -218,10 +228,12 @@
 			files = (
 				42B227E828920EC80073E98B /* ViewController.swift in Sources */,
 				4202F3DC289760180011B532 /* UserDefaultsHelper.swift in Sources */,
+				4202F3E42897D51A0011B532 /* BeerViewController.swift in Sources */,
 				42B227EE28923A9B0073E98B /* WebViewController.swift in Sources */,
 				42B227EC2892305D0073E98B /* TrenslateViewController.swift in Sources */,
 				426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */,
 				426BCA5E2890DD820064265F /* AppDelegate.swift in Sources */,
+				4202F3E62897D8040011B532 /* Beer.swift in Sources */,
 				428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */,
 				42B227EA289223650073E98B /* LottoViewController.swift in Sources */,
 				42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */,
@@ -466,6 +478,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		4202F3E72897E08F0011B532 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -478,6 +498,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		4202F3E82897E08F0011B532 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4202F3E72897E08F0011B532 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
