@@ -42,11 +42,11 @@ class InfoViewController: UIViewController {
             print("selectTamagochi error")
             return
         }
-        let nickname = UserDefaults.standard.string(forKey: "nickname") ?? "대장님"
+        let nickname = UserDefaultsHelper.standard.nickname
         
-        UserDefaults.standard.set(true, forKey: "start")
-        UserDefaults.standard.set(nickname, forKey: "nickname")
-        UserDefaults.standard.set(tamagotchi.number, forKey: "tamagotchi")
+        UserDefaultsHelper.standard.start = true
+        UserDefaultsHelper.standard.nickname = nickname
+        UserDefaultsHelper.standard.tamagotchiNumber = tamagotchi.number
         
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
@@ -83,7 +83,7 @@ class InfoViewController: UIViewController {
     
     //MARK: - 버튼 UI 설정
     func setButtonDesign() {
-        let isStart = UserDefaults.standard.bool(forKey: "start")
+        let isStart = UserDefaultsHelper.standard.start
         let startButtonTitle = isStart ? "변경하기" : "시작하기"
         
         startButton.setButton(title: "\(startButtonTitle)", image: UIImage(), textFont: .boldSystemFont(ofSize: 14))

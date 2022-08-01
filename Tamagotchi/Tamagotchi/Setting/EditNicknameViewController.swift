@@ -18,7 +18,7 @@ class EditNicknameViewController: UIViewController {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        nickname = UserDefaults.standard.string(forKey: "nickname")
+        nickname = UserDefaultsHelper.standard.nickname
         
         setNavigationBar(title: "\(nickname ?? "대장님") 이름 정하기")
         setNavigationBarItem()
@@ -30,7 +30,7 @@ class EditNicknameViewController: UIViewController {
         nickname = nicknameTextField.text
         
         if (2...6).contains(nickname?.count ?? 0) {
-            UserDefaults.standard.set(nickname, forKey: "nickname")
+            UserDefaultsHelper.standard.nickname = nickname ?? ""
             navigationController?.popViewController(animated: true)
         } else {
             self.view.makeToast("2글자 이상 6글자 이하까지 가능합니다.", duration: 1, position: .center)

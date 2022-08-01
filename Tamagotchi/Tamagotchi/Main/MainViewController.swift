@@ -13,7 +13,7 @@ class MainViewController: UIViewController {
 
     let talkList = TalkList()
     let tamagotchiInfo = TamagotchiInfo()
-    let tamagotchiNumber = UserDefaults.standard.integer(forKey: "tamagotchi")
+    let tamagotchiNumber = UserDefaultsHelper.standard.tamagotchiNumber
     var nickname: String?
     var level = 1
     var food = 0
@@ -55,7 +55,7 @@ class MainViewController: UIViewController {
         
         foodCount = 0
         waterCount = 0
-        nickname = UserDefaults.standard.string(forKey: "nickname")
+        nickname = UserDefaultsHelper.standard.nickname
         navigationItem.title = "\(nickname ?? "대장님")의 다마고치"
         talkLabel.text = talkList.normal.randomElement()
     }
@@ -138,7 +138,7 @@ class MainViewController: UIViewController {
         
         tamagotchiImageView.image = level == 10 ? UIImage(named: "\(tamagotchiNumber)-9") : UIImage(named: "\(tamagotchiNumber)-\(level)")
         infoLabel.text = "LV\(level) · 밥알 \(food)개 · 물방울 \(water)개"
-        UserDefaults.standard.set([level, food, water], forKey: "data")
+        UserDefaultsHelper.standard.data = [level, food, water]
     }
     
     //MARK: - Level 계산 설정

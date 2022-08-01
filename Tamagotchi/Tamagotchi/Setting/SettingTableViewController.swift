@@ -17,14 +17,14 @@ class SettingTableViewController: UITableViewController {
         
         view.backgroundColor = .myBackgroundColor
         
-        nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        nickname = UserDefaultsHelper.standard.nickname
         setNavigationBar(title: "설정")
     }
     
     //MARK: - ViewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        nickname = UserDefaults.standard.string(forKey: "nickname") ?? ""
+        nickname = UserDefaultsHelper.standard.nickname
         tableView.reloadData()
     }
     
@@ -67,10 +67,10 @@ class SettingTableViewController: UITableViewController {
     func resetAlert() {
         let alert = UIAlertController(title: "데이터 초기화", message: "정말 다시 처음부터 시작하실 건가요?", preferredStyle: .alert)
         let ok = UIAlertAction(title: "웅", style: .destructive) { alert in
-            UserDefaults.standard.set(false, forKey: "start")
-            UserDefaults.standard.set("대장님", forKey: "nickname")
-            UserDefaults.standard.set(0, forKey: "tamagotchi")
-            UserDefaults.standard.set([1,0,0], forKey: "data")
+            UserDefaultsHelper.standard.start = false
+            UserDefaultsHelper.standard.nickname = "대장님"
+            UserDefaultsHelper.standard.tamagotchiNumber = 0
+            UserDefaultsHelper.standard.data = [1, 0, 0]
             
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
