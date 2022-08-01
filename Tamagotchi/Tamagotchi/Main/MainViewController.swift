@@ -62,7 +62,7 @@ class MainViewController: UIViewController {
 
     //MARK: - 세팅버튼 클릭 설정
     @objc func goToSetting(){
-        let sb = UIStoryboard(name: "Setting", bundle: nil)
+        let sb = UIStoryboard(name: StoryboardName.setting, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.reusableIenditifier) as! SettingTableViewController
         
         navigationController?.pushViewController(vc, animated: true)

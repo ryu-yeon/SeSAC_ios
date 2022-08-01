@@ -51,7 +51,7 @@ class InfoViewController: UIViewController {
         let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let sb = UIStoryboard(name: StoryboardName.main, bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: MainViewController.reusableIenditifier) as! MainViewController
         let nav = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.rootViewController = nav

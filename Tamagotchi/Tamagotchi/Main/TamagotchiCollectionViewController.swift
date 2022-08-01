@@ -42,7 +42,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
         
         if indexPath.item < tamagotchiCount {
            
-            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let sb = UIStoryboard(name: StoryboardName.main, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: InfoViewController.reusableIenditifier) as! InfoViewController
             vc.selectTamagochi = tamagotchiData.tamagotchi[indexPath.item]
             vc.modalPresentationStyle = .overCurrentContext

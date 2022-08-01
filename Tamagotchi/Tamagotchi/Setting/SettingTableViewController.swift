@@ -49,12 +49,12 @@ class SettingTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         if indexPath.row == 0 {
-            let sb = UIStoryboard(name: "Setting", bundle: nil)
+            let sb = UIStoryboard(name: StoryboardName.setting, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: EditNicknameViewController.reusableIenditifier) as! EditNicknameViewController
             navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
-            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let sb = UIStoryboard(name: StoryboardName.main, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.reusableIenditifier) as! TamagotchiCollectionViewController
             navigationController?.pushViewController(vc, animated: true)
     
@@ -75,7 +75,7 @@ class SettingTableViewController: UITableViewController {
             let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             
-            let sb = UIStoryboard(name: "Main", bundle: nil)
+            let sb = UIStoryboard(name: StoryboardName.main, bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.reusableIenditifier) as! TamagotchiCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             sceneDelegate?.window?.rootViewController = nav
