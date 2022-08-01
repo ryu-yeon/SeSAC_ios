@@ -9,7 +9,6 @@ import UIKit
 
 class SettingTableViewController: UITableViewController {
     
-    static let identifier = "SettingTableViewController"
     var nickname: String?
     
     //MARK: - ViewDidLoad
@@ -37,7 +36,7 @@ class SettingTableViewController: UITableViewController {
     //MARK: - 테이블 뷰 셀 설정
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.rowHeight = 50
-        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.identifier, for: indexPath) as! SettingTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SettingTableViewCell.reusableIenditifier, for: indexPath) as! SettingTableViewCell
         
         cell.separatorInset = .zero
         cell.backgroundColor = .myBackgroundColor
@@ -51,12 +50,12 @@ class SettingTableViewController: UITableViewController {
         
         if indexPath.row == 0 {
             let sb = UIStoryboard(name: "Setting", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: EditNicknameViewController.identifier) as! EditNicknameViewController
+            let vc = sb.instantiateViewController(withIdentifier: EditNicknameViewController.reusableIenditifier) as! EditNicknameViewController
             navigationController?.pushViewController(vc, animated: true)
             
         } else if indexPath.row == 1 {
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.identifier) as! TamagotchiCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.reusableIenditifier) as! TamagotchiCollectionViewController
             navigationController?.pushViewController(vc, animated: true)
     
         } else {
@@ -77,7 +76,7 @@ class SettingTableViewController: UITableViewController {
             let sceneDelegate = windowScene?.delegate as? SceneDelegate
             
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.identifier) as! TamagotchiCollectionViewController
+            let vc = sb.instantiateViewController(withIdentifier: TamagotchiCollectionViewController.reusableIenditifier) as! TamagotchiCollectionViewController
             let nav = UINavigationController(rootViewController: vc)
             sceneDelegate?.window?.rootViewController = nav
             sceneDelegate?.window?.makeKeyAndVisible()

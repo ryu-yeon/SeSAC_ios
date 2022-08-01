@@ -10,9 +10,7 @@ import Toast
 
 
 class TamagotchiCollectionViewController: UICollectionViewController {
-    
-    static let identifier = "TamagotchiCollectionViewController"
- 
+
     let tamagotchiData = TamagotchiInfo()
     lazy var tamagotchiCount = tamagotchiData.tamagotchi.count
     
@@ -32,7 +30,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
     
     //MARK: - 컬렉션 뷰 셀 설정
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.identifier, for: indexPath) as! TamagotchiCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TamagotchiCollectionViewCell.reusableIenditifier, for: indexPath) as! TamagotchiCollectionViewCell
 
         cell.setDesign(item: indexPath.item, tamagotchiData: tamagotchiData, tamagotchiCount: tamagotchiCount)
         
@@ -45,7 +43,7 @@ class TamagotchiCollectionViewController: UICollectionViewController {
         if indexPath.item < tamagotchiCount {
            
             let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: InfoViewController.identifier) as! InfoViewController
+            let vc = sb.instantiateViewController(withIdentifier: InfoViewController.reusableIenditifier) as! InfoViewController
             vc.selectTamagochi = tamagotchiData.tamagotchi[indexPath.item]
             vc.modalPresentationStyle = .overCurrentContext
             present(vc, animated: true)

@@ -9,8 +9,6 @@ import UIKit
 import Toast
 
 class EditNicknameViewController: UIViewController {
-
-    static let identifier = "EditNicknameViewController"
     
     var nickname: String?
     
@@ -54,5 +52,4 @@ class EditNicknameViewController: UIViewController {
         
         lineView.backgroundColor = .myMainColor
     }
-    
 }

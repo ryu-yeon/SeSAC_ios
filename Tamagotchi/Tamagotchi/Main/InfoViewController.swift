@@ -9,7 +9,6 @@ import UIKit
 
 class InfoViewController: UIViewController {
 
-    static let identifier = "InfoViewController"
     var selectTamagochi: Tamagotchi?
     
     @IBOutlet var infoView: UIView!
@@ -53,7 +52,7 @@ class InfoViewController: UIViewController {
         let sceneDelegate = windowScene?.delegate as? SceneDelegate
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.reusableIenditifier) as! MainViewController
         let nav = UINavigationController(rootViewController: vc)
         sceneDelegate?.window?.rootViewController = nav
         sceneDelegate?.window?.makeKeyAndVisible()

@@ -9,8 +9,6 @@ import UIKit
 
 class TamagotchiCollectionViewCell: UICollectionViewCell {
     
-    static let identifier = "TamagotchiCollectionViewCell"
-    
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var nameView: UIView!

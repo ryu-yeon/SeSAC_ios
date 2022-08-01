@@ -11,7 +11,6 @@ import Toast
 
 class MainViewController: UIViewController {
 
-    static let identifier = "MainViewController"
     let talkList = TalkList()
     let tamagotchiInfo = TamagotchiInfo()
     let tamagotchiNumber = UserDefaults.standard.integer(forKey: "tamagotchi")
@@ -64,7 +63,7 @@ class MainViewController: UIViewController {
     //MARK: - 세팅버튼 클릭 설정
     @objc func goToSetting(){
         let sb = UIStoryboard(name: "Setting", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.identifier) as! SettingTableViewController
+        let vc = sb.instantiateViewController(withIdentifier: SettingTableViewController.reusableIenditifier) as! SettingTableViewController
         
         navigationController?.pushViewController(vc, animated: true)
     }

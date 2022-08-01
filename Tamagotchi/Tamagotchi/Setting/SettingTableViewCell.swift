@@ -9,7 +9,6 @@ import UIKit
 
 class SettingTableViewCell: UITableViewCell {
 
-    static let identifier = "SettingTableViewCell"
     let settingListImage: [String] = ["pencil", "moon.fill", "arrow.clockwise"]
     let settingList: [String] = ["내 이름 설정하기", "다마고치 변경하기", "데이터 초기화"]
     
