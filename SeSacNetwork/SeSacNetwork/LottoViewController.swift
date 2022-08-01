@@ -13,6 +13,9 @@ import SwiftyJSON
 class LottoViewController: UIViewController {
 
 
+    @IBOutlet var lottoList: [UILabel]!
+    @IBOutlet weak var lottoBonus: UILabel!
+    
     @IBOutlet var numberTextField: UITextField!
 //    @IBOutlet var lottoPickerView: UIPickerView!
     
@@ -26,10 +29,12 @@ class LottoViewController: UIViewController {
         
         numberTextField.tintColor = .clear
         numberTextField.inputView = lottoPickerView
-
+        
+        lottoBonus.textColor = .blue
+        
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
-        
+        numberTextField.text = "1025회차"
         requestLotto(1025)
     }
     
@@ -42,21 +47,20 @@ class LottoViewController: UIViewController {
             case .success(let value):
                 let json = JSON(value)
                 print("JSON: \(json)")
+
+                var number: Int = 1
                 
-                let bonus = json["bnusNo"].intValue
-                print(bonus)
-                
-                let date = json["drwNoDate"].stringValue
-                print(date)
-                
-                self.numberTextField.text = date
+                for i in self.lottoList {
+                    i.text = json["drwtNo\(number)"].stringValue
+                    number += 1
+                }
+                self.lottoBonus.text = json["bnusNo"].stringValue
                 
             case .failure(let error):
                 print(error)
             }
         }
     }
-
 }
 
 extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
