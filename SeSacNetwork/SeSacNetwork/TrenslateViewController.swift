@@ -7,6 +7,10 @@
 
 import UIKit
 
+import Alamofire
+import SwiftyJSON
+import SwiftUI
+
 //UIButton, UITextField > Action
 //UITextView, UISearchBar, UIPickerView > X
 //UIControl
@@ -15,6 +19,7 @@ import UIKit
 class TrenslateViewController: UIViewController {
 
     @IBOutlet var userInputTextView: UITextView!
+    @IBOutlet weak var resultTextView: UITextView!
     
     let textViewPlaceholderText = "번역하고 싶은 문장을 작성해보세요."
     
@@ -26,8 +31,48 @@ class TrenslateViewController: UIViewController {
         userInputTextView.text = textViewPlaceholderText
         userInputTextView.textColor = .lightGray
         
-        userInputTextView.font = UIFont(name: "HSSantokki", size: 12)
+        userInputTextView.font = UIFont(name: "HSSantokki", size: 20)
         
+        
+    }
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        requestTranslate(text: userInputTextView.text)
+        view.endEditing(true)
+    }
+    
+    @IBAction func tapgesture(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
+    func requestTranslate(text: String) {
+        
+        let url = EndPoint.translateURL
+        
+        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
+        
+        let parameters: Parameters = ["source": "ko", "target": "en", "text": text]
+        
+        AF.request(url, method: .post, parameters: parameters, headers: header).validate(statusCode: 200...500).responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                
+                let statusCode = response.response?.statusCode ?? 500
+                
+                print(statusCode)
+                if statusCode == 200 {
+                    self.resultTextView.text = json["message"]["result"]["translatedText"].stringValue
+                } else {
+                    self.userInputTextView.text = json["errorMessage"].stringValue
+                }
+
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
         
     }
 
@@ -61,4 +106,5 @@ extension TrenslateViewController: UITextViewDelegate {
             userInputTextView.textColor = .lightGray
         }
     }
+
 }

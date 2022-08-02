@@ -7,6 +7,10 @@
 
 import UIKit
 
+
+import Alamofire
+import SwiftyJSON
+
 /*
  Swift Protocol
  - Delegate
@@ -16,6 +20,14 @@ import UIKit
  2. 테이블뷰 아웃렛 연결
  3. 1 + 2
  */
+
+/*
+ 
+ 각 hso value -> list -> 테이블뷰 갱신
+ 서버의 응답이 몇개인지 모를 경우에는?
+ 
+ */
+
 
 
 class SearchViewController: UIViewController, ViewPresentableProtocol, UITableViewDelegate, UITableViewDataSource {
@@ -27,8 +39,11 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     static var identifier: String = "SearchViewController"
     
   
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var searchTableView: UITableView!
 
+    //BoxOffice 배열
+    var list: [BoxOfficeModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +55,9 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         //테이블뷰가 사용할 테이블뷰 셀(XIB) 등록
         //XIB: xml interface builder <= NIBB
         searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
+        
+        searchBar.delegate = self
+        requestBoxOffice(text: "20220801")
     }
     
     func configureView() {
@@ -52,9 +70,42 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     }
     
+    func requestBoxOffice(text: String) {
+        
+        self.list.removeAll()
+
+        let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
+        AF.request(url, method: .get).validate().responseJSON { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                print("JSON: \(json)")
+                                
+                for movie in json["boxOfficeResult"]["dailyBoxOfficeList"].arrayValue {
+                    
+                    let movieNm = movie["movieNm"].stringValue
+                    let openDt = movie["openDt"].stringValue
+                    let audiAcc = movie["audiAcc"].stringValue
+
+                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc)
+                    
+                    self.list.append(data)
+                    
+                }
+            
+                
+                self.searchTableView.reloadData()
+                print(self.list)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,10 +114,16 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         
         cell.backgroundColor = .clear
         cell.titleLabel.font = .boldSystemFont(ofSize: 22)
-        cell.titleLabel.text = "ㅎㅇㅎㅇ"
+        cell.titleLabel.text = "\(list[indexPath.row].movieTitle) : \(list[indexPath.row].totalCount)"
         
         return cell
     }
 
 }
 
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        requestBoxOffice(text: searchBar.text!) //옵셔널 바인딩, 8글자, 숫자, 날짜로 변경 시 유효한 값인지 등
+    }
+}
