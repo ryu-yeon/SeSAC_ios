@@ -15,6 +15,9 @@
 		4202F3E42897D51A0011B532 /* BeerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4202F3E32897D5190011B532 /* BeerViewController.swift */; };
 		4202F3E92897E08F0011B532 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4202F3E82897E08F0011B532 /* Kingfisher */; };
 		42148C002898BD1A00F24842 /* BoxOfficeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */; };
+		42257D79289985DF009FE844 /* BeerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42257D78289985DE009FE844 /* BeerCollectionViewController.swift */; };
+		42257D7B2899866B009FE844 /* BeerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */; };
+		42257D7D28998673009FE844 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42257D7C28998673009FE844 /* BeerModel.swift */; };
 		426BCA5E2890DD820064265F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5D2890DD820064265F /* AppDelegate.swift */; };
 		426BCA602890DD820064265F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA5F2890DD820064265F /* SceneDelegate.swift */; };
 		426BCA622890DD820064265F /* SeaerchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA612890DD820064265F /* SeaerchViewController.swift */; };
@@ -39,6 +42,9 @@
 		4202F3DB289760180011B532 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
 		4202F3E32897D5190011B532 /* BeerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerViewController.swift; sourceTree = "<group>"; };
 		42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxOfficeModel.swift; sourceTree = "<group>"; };
+		42257D78289985DE009FE844 /* BeerCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewController.swift; sourceTree = "<group>"; };
+		42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCollectionViewCell.swift; sourceTree = "<group>"; };
+		42257D7C28998673009FE844 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		426BCA5A2890DD820064265F /* SeSacNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		426BCA5D2890DD820064265F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		426BCA5F2890DD820064265F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 				42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
 				4202F3E32897D5190011B532 /* BeerViewController.swift */,
+				42257D78289985DE009FE844 /* BeerCollectionViewController.swift */,
+				42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */,
+				42257D7C28998673009FE844 /* BeerModel.swift */,
 				428650B728935D3C004DAAC5 /* LocationViewController.swift */,
 				42B227ED28923A9B0073E98B /* WebViewController.swift */,
 				42B227EB2892305D0073E98B /* TrenslateViewController.swift */,
@@ -237,9 +246,12 @@
 				428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */,
 				42B227EA289223650073E98B /* LottoViewController.swift in Sources */,
 				42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */,
+				42257D7D28998673009FE844 /* BeerModel.swift in Sources */,
 				426BCA602890DD820064265F /* SceneDelegate.swift in Sources */,
 				4202F3D72897527D0011B532 /* ReusableViewProtocol.swift in Sources */,
 				426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */,
+				42257D79289985DF009FE844 /* BeerCollectionViewController.swift in Sources */,
+				42257D7B2899866B009FE844 /* BeerCollectionViewCell.swift in Sources */,
 				4202F3DA289757960011B532 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
