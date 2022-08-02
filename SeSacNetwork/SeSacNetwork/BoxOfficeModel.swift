@@ -12,5 +12,7 @@ struct BoxOfficeModel {
     let movieTitle: String
     let releaseDate: String
     let totalCount: String
+    let rank: String
+    let rankInten: String
     
 }

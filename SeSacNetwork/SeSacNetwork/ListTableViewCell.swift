@@ -11,5 +11,6 @@ class ListTableViewCell: UITableViewCell {
 
     
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet weak var rankLabel: UILabel!
     
 }

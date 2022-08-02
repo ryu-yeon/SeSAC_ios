@@ -38,7 +38,9 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     static var identifier: String = "SearchViewController"
     
-  
+    let yesterday = Date() - 24 * 60 * 60
+    let format = DateFormatter()
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet var searchTableView: UITableView!
 
@@ -47,8 +49,13 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
 
+        format.dateFormat = "yyyyMMdd"
+        
+        let date = format.string(from: yesterday)
+
+        
+        
         //연결고리 작업: 테이블뷰가 해야 할 역할 > 뷰 컨드롤러에게 요청
         searchTableView.delegate = self
         searchTableView.dataSource = self
@@ -57,7 +64,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         searchBar.delegate = self
-        requestBoxOffice(text: "20220801")
+        requestBoxOffice(text: date)
     }
     
     func configureView() {
@@ -86,8 +93,10 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
                     let movieNm = movie["movieNm"].stringValue
                     let openDt = movie["openDt"].stringValue
                     let audiAcc = movie["audiAcc"].stringValue
-
-                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc)
+                    let rank = movie["rnum"].stringValue
+                    let rankInten = movie["rankInten"].stringValue
+                    
+                    let data = BoxOfficeModel(movieTitle: movieNm, releaseDate: openDt, totalCount: audiAcc, rank: rank, rankInten: rankInten)
                     
                     self.list.append(data)
                     
@@ -105,19 +114,32 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return list.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        format.dateFormat = "yyyy.MM.dd"
+        let date = format.string(from: yesterday)
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
         cell.backgroundColor = .clear
-        cell.titleLabel.font = .boldSystemFont(ofSize: 22)
-        cell.titleLabel.text = "\(list[indexPath.row].movieTitle) : \(list[indexPath.row].totalCount)"
         
+        if indexPath.row == list.count {
+            cell.titleLabel.text = " 출처 : 영화진흥위원회 영화관 관람객 통합전산망 \n \(date) 업데이트"
+            cell.titleLabel.numberOfLines = 0
+            cell.titleLabel.font = .systemFont(ofSize: 12)
+            cell.rankLabel.text = ""
+        } else {
+            cell.titleLabel.font = .boldSystemFont(ofSize: 22)
+            cell.titleLabel.textAlignment = .left
+            cell.titleLabel.text = "\(list[indexPath.row].rank).   \(list[indexPath.row].movieTitle)"
+            cell.rankLabel.text = list[indexPath.row].rankInten
+        }
         return cell
     }
+    
 
 }
 
