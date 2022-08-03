@@ -30,6 +30,7 @@
 		428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428650B728935D3C004DAAC5 /* LocationViewController.swift */; };
 		428650BC289384C7004DAAC5 /* HSSantokki-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */; };
 		428650BD289384C7004DAAC5 /* HSSantokki-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */; };
+		42B05D55289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B05D54289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift */; };
 		42B227E428920CD10073E98B /* ViewPresentableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E328920CD10073E98B /* ViewPresentableProtocol.swift */; };
 		42B227E828920EC80073E98B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E728920EC80073E98B /* ViewController.swift */; };
 		42B227EA289223650073E98B /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E9289223650073E98B /* LottoViewController.swift */; };
@@ -60,6 +61,7 @@
 		428650B728935D3C004DAAC5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.ttf"; sourceTree = "<group>"; };
 		428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.otf"; sourceTree = "<group>"; };
+		42B05D54289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		42B227E328920CD10073E98B /* ViewPresentableProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPresentableProtocol.swift; sourceTree = "<group>"; };
 		42B227E728920EC80073E98B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42B227E9289223650073E98B /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
 				427C1855289A093F0020AEBD /* ImageSearchViewController.swift */,
+				42B05D54289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift */,
 				4202F3E32897D5190011B532 /* BeerViewController.swift */,
 				42257D78289985DE009FE844 /* BeerCollectionViewController.swift */,
 				42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */,
@@ -256,6 +259,7 @@
 				42257D79289985DF009FE844 /* BeerCollectionViewController.swift in Sources */,
 				42257D7B2899866B009FE844 /* BeerCollectionViewCell.swift in Sources */,
 				427C1856289A093F0020AEBD /* ImageSearchViewController.swift in Sources */,
+				42B05D55289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift in Sources */,
 				4202F3DA289757960011B532 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

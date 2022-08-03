@@ -447,23 +447,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tAP-1z-Yhw">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="tAP-1z-Yhw">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="PUw-Fc-FbM"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0P-5M-APM">
-                                <rect key="frame" x="87" y="173" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="VI1-jC-0hg">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="K75-az-roS">
+                                    <size key="itemSize" width="231" height="214"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ImageSearchCollectionViewCell" reuseIdentifier="ImageSearchCollectionViewCell" id="tKw-KN-fki" customClass="ImageSearchCollectionViewCell" customModule="SeSacNetwork" customModuleProvider="target">
+                                        <rect key="frame" x="91.5" y="0.0" width="231" height="214"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="C3s-Ei-1JE">
+                                            <rect key="frame" x="0.0" y="0.0" width="231" height="214"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2YP-0y-FOf">
+                                                    <rect key="frame" x="0.0" y="0.0" width="231" height="214"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2YP-0y-FOf" secondAttribute="bottom" id="45V-uL-M8u"/>
+                                                <constraint firstItem="2YP-0y-FOf" firstAttribute="leading" secondItem="C3s-Ei-1JE" secondAttribute="leading" id="ccn-lC-k9w"/>
+                                                <constraint firstAttribute="trailing" secondItem="2YP-0y-FOf" secondAttribute="trailing" id="dWj-Bx-BDw"/>
+                                                <constraint firstItem="2YP-0y-FOf" firstAttribute="top" secondItem="C3s-Ei-1JE" secondAttribute="top" id="s4P-PL-lNQ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="231" height="214"/>
+                                        <connections>
+                                            <outlet property="imageView" destination="2YP-0y-FOf" id="7d6-6N-ViA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BrO-uS-e0G"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="top" secondItem="tAP-1z-Yhw" secondAttribute="bottom" id="Eh7-Oa-dm7"/>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="bottom" secondItem="BrO-uS-e0G" secondAttribute="bottom" id="GuP-Cd-bdL"/>
+                            <constraint firstItem="tAP-1z-Yhw" firstAttribute="leading" secondItem="BrO-uS-e0G" secondAttribute="leading" id="LMn-sE-AQF"/>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="leading" secondItem="BrO-uS-e0G" secondAttribute="leading" id="Rk0-uE-EC5"/>
+                            <constraint firstItem="tAP-1z-Yhw" firstAttribute="trailing" secondItem="BrO-uS-e0G" secondAttribute="trailing" id="SBK-fp-bJi"/>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="trailing" secondItem="BrO-uS-e0G" secondAttribute="trailing" id="Uly-Sv-Pct"/>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="centerX" secondItem="iXV-HQ-kLJ" secondAttribute="centerX" id="Yu6-L7-AMJ"/>
+                            <constraint firstItem="VI1-jC-0hg" firstAttribute="top" secondItem="tAP-1z-Yhw" secondAttribute="bottom" id="eOz-fm-cBb"/>
+                            <constraint firstItem="tAP-1z-Yhw" firstAttribute="top" secondItem="BrO-uS-e0G" secondAttribute="top" id="jwF-BW-wne"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="VI1-jC-0hg" id="64g-2u-Kad"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar0-s5-ppD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="2526"/>
+            <point key="canvasLocation" x="1734.7826086956522" y="2525.8928571428569"/>
         </scene>
         <!--Beer View Controller-->
         <scene sceneID="8bG-TY-CwQ">
