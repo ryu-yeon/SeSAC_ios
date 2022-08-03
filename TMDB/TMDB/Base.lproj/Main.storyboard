@@ -136,11 +136,11 @@
                                         <size key="customSize" width="362" height="369"/>
                                         <connections>
                                             <outlet property="dateLabel" destination="cc4-0v-Y9K" id="MaP-Mf-uq0"/>
+                                            <outlet property="genreLabel" destination="Jzw-DF-5Uq" id="P4z-bz-pat"/>
                                             <outlet property="imageView" destination="1fQ-hI-5Vs" id="GG9-uO-aeB"/>
                                             <outlet property="mediaView" destination="tc2-dM-wnY" id="Atd-Jd-g9w"/>
                                             <outlet property="overviewLabel" destination="Yut-hm-MIn" id="y75-bB-3JM"/>
                                             <outlet property="titleLabel" destination="oKi-8I-1cg" id="lvl-57-8gD"/>
-                                            <outlet property="typeLabel" destination="Jzw-DF-5Uq" id="rc5-ZG-vq2"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

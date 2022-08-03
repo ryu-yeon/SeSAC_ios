@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var typeLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
