@@ -19,6 +19,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "MOVIE"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
+        
         requestTMDB()
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -67,8 +72,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         cell.imageView.kf.setImage(with: url)
         cell.titleLabel.text = list[indexPath.item].title
+        cell.titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         cell.overviewLabel.text = list[indexPath.item].overview
+        cell.overviewLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        cell.overviewLabel.textColor = .gray
         cell.dateLabel.text = list[indexPath.item].releaseDate
+        cell.dateLabel.font = .systemFont(ofSize: 12, weight: .semibold)
+        cell.dateLabel.textColor = .gray
         
         let genreList = list[indexPath.item].genre
 
@@ -78,6 +88,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             text += " "
         }
         cell.genreLabel.text = text
+        cell.genreLabel.font = UIFont(name: "HSSantokki", size: 20)
+        
+        cell.mediaView.layer.cornerRadius = 20
+        cell.mediaView.layer.shadowColor = UIColor.gray.cgColor
+        cell.mediaView.layer.shadowOpacity = 1
+        cell.mediaView.layer.shadowRadius = 10
         
         return cell
     }
@@ -118,6 +134,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
             return "#Adventure"
         case 53:
             return "#Thriller"
+        case 10751:
+            return "#Family"
+        case 878:
+            return "#Science Fiction"
+        case 10749:
+            return "#Romance"
         default:
             return ""
   
