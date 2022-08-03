@@ -14,6 +14,7 @@ import SwiftyJSON
 class ImageSearchViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     var list: [String] = []
     
@@ -23,15 +24,17 @@ class ImageSearchViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        fetchImage()
+        searchBar.delegate = self
+        
+//        fetchImage(searchText: searchBar.text ?? "")
         collectionViewLayout()
     }
     
     //fetchImage, requestImage, callREquestImage, getImage...
-    func fetchImage() {
+    func fetchImage(searchText: String) {
         
         
-        let text = "과자".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let text = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = EndPoint.imageSearchURL+"query=\(text)&display=30&start=1&sort=sim"
         
         let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
@@ -85,4 +88,12 @@ extension ImageSearchViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     
+}
+
+extension ImageSearchViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+        list.removeAll()
+        fetchImage(searchText: searchBar.text ?? "")
+    }
 }

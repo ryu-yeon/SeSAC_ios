@@ -506,6 +506,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="VI1-jC-0hg" id="64g-2u-Kad"/>
+                        <outlet property="searchBar" destination="tAP-1z-Yhw" id="dEK-Cr-A1J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ar0-s5-ppD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
