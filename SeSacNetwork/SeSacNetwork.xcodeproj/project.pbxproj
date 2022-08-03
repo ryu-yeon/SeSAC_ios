@@ -26,6 +26,7 @@
 		426BCA6A2890DD840064265F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 426BCA682890DD840064265F /* LaunchScreen.storyboard */; };
 		426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426BCA732890E4D60064265F /* ListTableViewCell.swift */; };
 		426BCA762890E4D60064265F /* ListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426BCA742890E4D60064265F /* ListTableViewCell.xib */; };
+		427C1856289A093F0020AEBD /* ImageSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C1855289A093F0020AEBD /* ImageSearchViewController.swift */; };
 		428650B828935D3C004DAAC5 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428650B728935D3C004DAAC5 /* LocationViewController.swift */; };
 		428650BC289384C7004DAAC5 /* HSSantokki-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */; };
 		428650BD289384C7004DAAC5 /* HSSantokki-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */; };
@@ -55,6 +56,7 @@
 		426BCA6B2890DD840064265F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		426BCA732890E4D60064265F /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 		426BCA742890E4D60064265F /* ListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListTableViewCell.xib; sourceTree = "<group>"; };
+		427C1855289A093F0020AEBD /* ImageSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchViewController.swift; sourceTree = "<group>"; };
 		428650B728935D3C004DAAC5 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 		428650BA289384C7004DAAC5 /* HSSantokki-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.ttf"; sourceTree = "<group>"; };
 		428650BB289384C7004DAAC5 /* HSSantokki-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.otf"; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 				426BCA612890DD820064265F /* SeaerchViewController.swift */,
 				42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
+				427C1855289A093F0020AEBD /* ImageSearchViewController.swift */,
 				4202F3E32897D5190011B532 /* BeerViewController.swift */,
 				42257D78289985DE009FE844 /* BeerCollectionViewController.swift */,
 				42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */,
@@ -252,6 +255,7 @@
 				426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */,
 				42257D79289985DF009FE844 /* BeerCollectionViewController.swift in Sources */,
 				42257D7B2899866B009FE844 /* BeerCollectionViewCell.swift in Sources */,
+				427C1856289A093F0020AEBD /* ImageSearchViewController.swift in Sources */,
 				4202F3DA289757960011B532 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

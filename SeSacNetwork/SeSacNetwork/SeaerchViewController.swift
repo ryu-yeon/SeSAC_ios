@@ -38,7 +38,9 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     
     static var identifier: String = "SearchViewController"
     
-    let yesterday = Date() - 24 * 60 * 60
+//    let yesterday = Date() - 24 * 60 * 60
+//    let yesterday = Date(timeIntervalSinceNow: -24 * 60 * 60)
+    let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
     let format = DateFormatter()
     
     @IBOutlet weak var searchBar: UISearchBar!
@@ -52,7 +54,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
 
         format.dateFormat = "yyyyMMdd"
         
-        let date = format.string(from: yesterday)
+        let date = format.string(from: yesterday!)
 
         
         
@@ -64,6 +66,12 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         searchTableView.register(UINib(nibName: "ListTableViewCell", bundle: nil), forCellReuseIdentifier: ListTableViewCell.reuseIdentifier)
         
         searchBar.delegate = self
+        
+        //네트워크 통신: 서버 점검 등에 대한 예외 처리
+        //네트워크가 느린 환경 테스트
+        // 실기기 테스트 시 Condition 조절 가능!
+        // 시뮬레이터에서도 가능! (추가 설치)
+        
         requestBoxOffice(text: date)
     }
     
@@ -120,7 +128,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         format.dateFormat = "yyyy.MM.dd"
-        let date = format.string(from: yesterday)
+        let date = format.string(from: yesterday!)
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.reuseIdentifier, for: indexPath) as? ListTableViewCell else { return UITableViewCell() }
         
