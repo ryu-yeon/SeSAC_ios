@@ -14,8 +14,6 @@ struct MediaModel {
     let overview: String
     let releaseDate: String
     let genre: [JSON]
+//    let cast: [String]
 }
 
-//struct Genre {
-//    let code: [JSON: String] = [16: "Animation", 80: "Crime", 18: "Drama", 28: "Action", 35: "Comedy", 9648: "Mystery"]
-//}

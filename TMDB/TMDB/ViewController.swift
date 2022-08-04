@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
    
     var list: [MediaModel] = []
+    var movieList: [Int] = []
+    var castList: [[String]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,20 +26,20 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
         
-        requestTMDB()
+        requestTrending()
         collectionView.dataSource = self
         collectionView.delegate = self
         setColletionViewLayout()
+        
     }
 
-    func requestTMDB() {
-        let url = EndPoint.URL + "/movie/day?api_key=" + APIKey.TMDB
-        AF.request(url, method: .get).validate().responseJSON { response in
+    func requestTrending() {
+        let url = EndPoint.TrendURL + "/movie/day?api_key=" + APIKey.TMDB
+        AF.request(url, method: .get).validate().responseData { [self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
 //                print("JSON: \(json)")
-                
                 for media in json["results"].arrayValue {
                     let title = media["title"].stringValue
                     let imageURL = media["backdrop_path"].stringValue
@@ -45,18 +47,43 @@ class ViewController: UIViewController {
                     let releaseDate = media["release_date"].stringValue
                     let genre = media["genre_ids"].arrayValue
                     
+                    self.movieList.append(media["id"].intValue)
+//                    requestMovie(movieId: media["id"].intValue)
                     let data = MediaModel(title: title, imageURL: imageURL, overview: overview, releaseDate: releaseDate, genre: genre)
                     self.list.append(data)
                 }
+                for movie in movieList {
+                    self.requestMovie(movieId: movie)
+                }
+                print(castList)
+                collectionView.reloadData()
                 
-                self.collectionView.reloadData()
-
             case .failure(let error):
                 print(error)
             }
         }
     }
+    
+    func requestMovie(movieId: Int) {
+        let url = EndPoint.MovieURL + "/\(movieId)/credits?api_key=" + APIKey.TMDB + "&language=en-US"
+        AF.request(url, method: .get).validate().responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
 
+                var casts: [String] = []
+                
+                for person in json["cast"].arrayValue {
+                    casts.append(person["name"].stringValue)
+                }
+                self.castList.append(casts)
+
+            case .failure(let error):
+                print(error)
+            }
+        }
+
+    }
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -73,7 +100,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.imageView.kf.setImage(with: url)
         cell.titleLabel.text = list[indexPath.item].title
         cell.titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
-        cell.overviewLabel.text = list[indexPath.item].overview
+        
+//        var casts = ""
+//
+//        for cast in castList[indexPath.item] {
+//            casts += "\(cast), "
+//        }
+//        print(castList[indexPath.item])
+
+//        cell.overviewLabel.text = casts
         cell.overviewLabel.font = .systemFont(ofSize: 12, weight: .regular)
         cell.overviewLabel.textColor = .gray
         cell.dateLabel.text = list[indexPath.item].releaseDate
