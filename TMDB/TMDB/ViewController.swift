@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     var movieList: [Int] = []
     var castList: [[String]] = []
     
+    var startPage = 1
+    var totalCount = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,15 +29,16 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
         
-        requestTrending()
+        requestTrending(page: startPage)
         collectionView.dataSource = self
         collectionView.delegate = self
+        collectionView.prefetchDataSource = self
         setColletionViewLayout()
         
     }
 
-    func requestTrending() {
-        let url = EndPoint.TrendURL + "/movie/day?api_key=" + APIKey.TMDB
+    func requestTrending(page: Int) {
+        let url = EndPoint.TrendURL + "/movie/day?api_key=" + APIKey.TMDB + "&page=\(page)"
         AF.request(url, method: .get).validate().responseData { [self] response in
             switch response.result {
             case .success(let value):
@@ -55,6 +59,7 @@ class ViewController: UIViewController {
                 for movie in movieList {
                     self.requestMovie(movieId: movie)
                 }
+                self.totalCount = json["total_pages"].intValue
                 print(castList)
                 collectionView.reloadData()
                 
@@ -188,4 +193,22 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
   
         }
     }
+}
+
+extension ViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        
+        for indexPath in indexPaths {
+            if list.count - 1 == indexPath.item && startPage < totalCount{
+                startPage += 1
+                print(startPage)
+                requestTrending(page: startPage)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
+        print("====취소:\(indexPaths)")
+    }
+    
 }
