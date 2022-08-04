@@ -133,6 +133,14 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
+       
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     func setColletionViewLayout() {
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8

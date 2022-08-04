@@ -22,6 +22,7 @@
 		42D768F5289AD99A004F7FD8 /* MediaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D768F4289AD99A004F7FD8 /* MediaModel.swift */; };
 		42D768F8289ADBC9004F7FD8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42D768F7289ADBC9004F7FD8 /* Kingfisher */; };
 		42D76901289AEDD6004F7FD8 /* HSSantokki-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D768FF289AEDD6004F7FD8 /* HSSantokki-Regular.ttf */; };
+		42FA3A6D289C8CC6007E8C19 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		42D768F2289AD87C004F7FD8 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		42D768F4289AD99A004F7FD8 /* MediaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaModel.swift; sourceTree = "<group>"; };
 		42D768FF289AEDD6004F7FD8 /* HSSantokki-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.ttf"; sourceTree = "<group>"; };
+		42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				42D768F4289AD99A004F7FD8 /* MediaModel.swift */,
 				427C18452899F6BD0020AEBD /* Main.storyboard */,
 				427C18432899F6BD0020AEBD /* ViewController.swift */,
+				42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */,
 				42D768EA289AAD27004F7FD8 /* CollectionViewCell.swift */,
 				427C18482899F6BE0020AEBD /* Assets.xcassets */,
 				427C184A2899F6BE0020AEBD /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 				42D768EB289AAD27004F7FD8 /* CollectionViewCell.swift in Sources */,
 				42D768E9289AACA8004F7FD8 /* Constant.swift in Sources */,
 				42D768F5289AD99A004F7FD8 /* MediaModel.swift in Sources */,
+				42FA3A6D289C8CC6007E8C19 /* MovieViewController.swift in Sources */,
 				42D768F3289AD87C004F7FD8 /* ReusableViewProtocol.swift in Sources */,
 				427C18422899F6BD0020AEBD /* SceneDelegate.swift in Sources */,
 				42D768E7289AAC51004F7FD8 /* APIKey.swift in Sources */,

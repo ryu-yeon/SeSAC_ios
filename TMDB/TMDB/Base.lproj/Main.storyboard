@@ -166,6 +166,21 @@
             </objects>
             <point key="canvasLocation" x="708.69565217391312" y="162.72321428571428"/>
         </scene>
+        <!--Movie View Controller-->
+        <scene sceneID="wOV-K4-Hj0">
+            <objects>
+                <viewController storyboardIdentifier="MovieViewController" id="GTp-Ie-yMH" customClass="MovieViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1wT-80-Qrh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DWG-w0-rqO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="br3-Mw-FIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1619" y="163"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="odm-Hu-26f">
             <objects>
