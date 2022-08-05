@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrendingViewController.swift
 //  TMDB
 //
 //  Created by 유연탁 on 2022/08/03.
@@ -11,7 +11,7 @@ import Alamofire
 import Kingfisher
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class TrendingViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
    
@@ -97,7 +97,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return list.count
     }
@@ -178,7 +178,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension ViewController: UICollectionViewDataSourcePrefetching {
+extension TrendingViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         
         for indexPath in indexPaths {
