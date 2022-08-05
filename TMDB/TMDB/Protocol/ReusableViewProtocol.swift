@@ -11,13 +11,19 @@ protocol ReusableViewProtocol {
     static var reusableidentifier: String { get }
 }
 
-extension ViewController: ReusableViewProtocol {
+extension UIViewController: ReusableViewProtocol {
     static var reusableidentifier: String {
         return String(describing: self)
     }
 }
 
-extension CollectionViewCell: ReusableViewProtocol {
+extension UICollectionViewCell: ReusableViewProtocol {
+    static var reusableidentifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UITableViewCell: ReusableViewProtocol {
     static var reusableidentifier: String {
         return String(describing: self)
     }
