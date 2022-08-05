@@ -15,9 +15,8 @@ class TrendingViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
    
-    var list: [MediaModel] = []
-    var movieList: [Int] = []
-    var castList: [[String]] = []
+    var list: [MovieModel] = []
+    var castList: [CastModel] = []
     
     var startPage = 1
     var totalCount = 0
@@ -53,14 +52,17 @@ class TrendingViewController: UIViewController {
                     let overview = media["overview"].stringValue
                     let releaseDate = media["release_date"].stringValue
                     let genre = media["genre_ids"].arrayValue.map {$0.intValue}
+                    let id = media["id"].intValue
+                    let posterURL = media["poster_path"].stringValue
 
-                    self.movieList.append(media["id"].intValue)
-                    let data = MediaModel(title: title, imageURL: imageURL, overview: overview, releaseDate: releaseDate, genre: genre)
+//                    self.movieList.append(id)
+                    
+                    let data = MovieModel(id: id, posterURL: posterURL, title: title, imageURL: imageURL, overview: overview, releaseDate: releaseDate, genre: genre)
                     self.list.append(data)
                 }
                 
                 for number in (20 * (startPage - 1))..<(20 * startPage) {
-                    self.requestMovie(movieId: movieList[number])
+                    self.requestMovie(movieId: list[number].id)
                 }
                 self.totalCount = json["total_pages"].intValue
 
@@ -78,17 +80,20 @@ class TrendingViewController: UIViewController {
                 let json = JSON(value)
 
                 var casts: [String] = []
-                
-
+                var characters: [String] = []
                 for person in json["cast"].arrayValue {
                     casts.append(person["name"].stringValue)
+                    characters.append(person["character"].stringValue)
                 }
                 
-                self.castList.append(casts)
+                let data = CastModel(casts: casts, characters: characters)
+                self.castList.append(data)
                 
-                if self.castList.count == self.movieList.count {
+                if self.castList.count == self.list.count {
                     collectionView.reloadData()
                 }
+                
+                
             case .failure(let error):
                 print(error)
             }
@@ -114,9 +119,9 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         
         var casts = ""
         
-        for cast in castList[indexPath.item] {
+        for cast in castList[indexPath.item].casts {
             casts += "\(cast)"
-            if cast == castList[indexPath.item].last {
+            if cast == castList[indexPath.item].casts.last {
                 break
             }
             casts += ", "
@@ -157,7 +162,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         let vc = sb.instantiateViewController(withIdentifier: MovieViewController.reusableidentifier) as! MovieViewController
        
         vc.movie = list[indexPath.item]
-        vc.movieId = movieList[indexPath.item]
+        vc.castList = castList[indexPath.item]
         navigationController?.pushViewController(vc, animated: true)
     }
     

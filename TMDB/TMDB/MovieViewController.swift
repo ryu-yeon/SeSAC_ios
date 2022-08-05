@@ -13,8 +13,8 @@ import SwiftyJSON
 
 class MovieViewController: UIViewController {
 
-    var movie: MediaModel?
-    var movieId: Int?
+    var movie: MovieModel?
+    var castList: CastModel?
     
     @IBOutlet weak var movieImageView: UIImageView!
     @IBOutlet weak var overViewLabel: UILabel!

@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct CastModel {
+    let casts: [String]
+    let characters: [String]
+}
