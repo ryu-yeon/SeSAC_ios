@@ -27,6 +27,7 @@ class TrendingViewController: UIViewController {
         navigationItem.title = "MOVIE"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
+        navigationItem.backButtonTitle = " "
         
         requestTrending(page: startPage)
         
@@ -81,12 +82,15 @@ class TrendingViewController: UIViewController {
 
                 var casts: [String] = []
                 var characters: [String] = []
+                var imageURL: [String] = []
+                
                 for person in json["cast"].arrayValue {
                     casts.append(person["name"].stringValue)
                     characters.append(person["character"].stringValue)
+                    imageURL.append(person["profile_path"].stringValue)
                 }
                 
-                let data = CastModel(casts: casts, characters: characters)
+                let data = CastModel(casts: casts, characters: characters, imageURL: imageURL)
                 self.castList.append(data)
                 
                 if self.castList.count == self.list.count {

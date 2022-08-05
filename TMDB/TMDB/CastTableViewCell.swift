@@ -9,8 +9,9 @@ import UIKit
 
 class CastTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var castImageView: UIView!
-    @IBOutlet weak var castNameLabel: UILabel!
-    @IBOutlet weak var castNicknameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var characterLabel: UILabel!
+    
     
 }
