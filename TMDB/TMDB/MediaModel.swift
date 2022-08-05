@@ -13,7 +13,7 @@ struct MediaModel {
     let imageURL: String
     let overview: String
     let releaseDate: String
-    let genre: [JSON]
+    let genre: [Int]
 //    let cast: [String]
 }
 

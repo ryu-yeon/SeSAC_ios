@@ -30,12 +30,15 @@ class ViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
         
         requestTrending(page: startPage)
+        
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reusableidentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.prefetchDataSource = self
         setColletionViewLayout()
         
     }
+    
 
     func requestTrending(page: Int) {
         let url = EndPoint.TrendURL + "/movie/day?api_key=" + APIKey.TMDB + "&page=\(page)"
@@ -49,20 +52,18 @@ class ViewController: UIViewController {
                     let imageURL = media["backdrop_path"].stringValue
                     let overview = media["overview"].stringValue
                     let releaseDate = media["release_date"].stringValue
-                    let genre = media["genre_ids"].arrayValue
-                    
+                    let genre = media["genre_ids"].arrayValue.map {$0.intValue}
+
                     self.movieList.append(media["id"].intValue)
-//                    requestMovie(movieId: media["id"].intValue)
                     let data = MediaModel(title: title, imageURL: imageURL, overview: overview, releaseDate: releaseDate, genre: genre)
                     self.list.append(data)
                 }
-                for movie in movieList {
-                    self.requestMovie(movieId: movie)
+                
+                for number in (20 * (startPage - 1))..<(20 * startPage) {
+                    self.requestMovie(movieId: movieList[number])
                 }
                 self.totalCount = json["total_pages"].intValue
-                print(castList)
-                collectionView.reloadData()
-                
+
             case .failure(let error):
                 print(error)
             }
@@ -71,18 +72,23 @@ class ViewController: UIViewController {
     
     func requestMovie(movieId: Int) {
         let url = EndPoint.MovieURL + "/\(movieId)/credits?api_key=" + APIKey.TMDB + "&language=en-US"
-        AF.request(url, method: .get).validate().responseData { response in
+        AF.request(url, method: .get).validate().responseData { [self] response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
 
                 var casts: [String] = []
                 
+
                 for person in json["cast"].arrayValue {
                     casts.append(person["name"].stringValue)
                 }
+                
                 self.castList.append(casts)
-
+                
+                if self.castList.count == self.movieList.count {
+                    collectionView.reloadData()
+                }
             case .failure(let error):
                 print(error)
             }
@@ -98,7 +104,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.reusableidentifier, for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reusableidentifier, for: indexPath) as! MovieCollectionViewCell
         
         let url = URL(string: EndPoint.imageBaseURL + list[indexPath.item].imageURL)
         
@@ -106,16 +112,19 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.titleLabel.text = list[indexPath.item].title
         cell.titleLabel.font = .systemFont(ofSize: 16, weight: .bold)
         
-//        var casts = ""
-//
-//        for cast in castList[indexPath.item] {
-//            casts += "\(cast), "
-//        }
-//        print(castList[indexPath.item])
-
-//        cell.overviewLabel.text = casts
-        cell.overviewLabel.font = .systemFont(ofSize: 12, weight: .regular)
-        cell.overviewLabel.textColor = .gray
+        var casts = ""
+        
+        for cast in castList[indexPath.item] {
+            casts += "\(cast)"
+            if cast == castList[indexPath.item].last {
+                break
+            }
+            casts += ", "
+        }
+        
+        cell.castLabel.text = casts
+        cell.castLabel.font = .systemFont(ofSize: 12, weight: .regular)
+        cell.castLabel.textColor = .gray
         cell.dateLabel.text = list[indexPath.item].releaseDate
         cell.dateLabel.font = .systemFont(ofSize: 12, weight: .semibold)
         cell.dateLabel.textColor = .gray
@@ -124,9 +133,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
         var text = ""
         for genre in genreList {
-            text += checkGenre(genre)
+            text += "#\(Genre.genre[genre] ?? "")"
+            if genre == genreList.last {
+                break
+            }
             text += " "
         }
+        
         cell.genreLabel.text = text
         cell.genreLabel.font = UIFont(name: "HSSantokki", size: 20)
         
@@ -141,8 +154,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "MovieViewController") as! MovieViewController
+        let vc = sb.instantiateViewController(withIdentifier: MovieViewController.reusableidentifier) as! MovieViewController
        
+        vc.movie = list[indexPath.item]
+        vc.movieId = movieList[indexPath.item]
         navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -161,38 +176,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         collectionView.collectionViewLayout = layout
     }
     
-    func checkGenre(_ genre: JSON) -> String {
-        
-        switch genre {
-        case 16:
-            return "#Animation"
-        case 80:
-            return "#Crime"
-        case 18:
-            return "#Drama"
-        case 28:
-            return "#Action"
-        case 35:
-            return "#Comedy"
-        case 9648:
-            return "#Mystery"
-        case 14:
-            return "#Fantasy"
-        case 12:
-            return "#Adventure"
-        case 53:
-            return "#Thriller"
-        case 10751:
-            return "#Family"
-        case 878:
-            return "#Science Fiction"
-        case 10749:
-            return "#Romance"
-        default:
-            return ""
-  
-        }
-    }
 }
 
 extension ViewController: UICollectionViewDataSourcePrefetching {
@@ -201,7 +184,7 @@ extension ViewController: UICollectionViewDataSourcePrefetching {
         for indexPath in indexPaths {
             if list.count - 1 == indexPath.item && startPage < totalCount{
                 startPage += 1
-                print(startPage)
+
                 requestTrending(page: startPage)
             }
         }
