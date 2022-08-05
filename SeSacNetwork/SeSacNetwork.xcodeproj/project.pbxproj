@@ -36,6 +36,7 @@
 		42B227EA289223650073E98B /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E9289223650073E98B /* LottoViewController.swift */; };
 		42B227EC2892305D0073E98B /* TrenslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227EB2892305D0073E98B /* TrenslateViewController.swift */; };
 		42B227EE28923A9B0073E98B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227ED28923A9B0073E98B /* WebViewController.swift */; };
+		42D8A6CE289B4FBE003342E2 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42D8A6CD289B4FBE003342E2 /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42D8A6CE289B4FBE003342E2 /* JGProgressHUD in Frameworks */,
 				4202F3E92897E08F0011B532 /* Kingfisher in Frameworks */,
 				4202F3E228977CEE0011B532 /* SwiftyJSON in Frameworks */,
 				4202F3DF28977CD00011B532 /* Alamofire in Frameworks */,
@@ -177,6 +179,7 @@
 				4202F3DE28977CD00011B532 /* Alamofire */,
 				4202F3E128977CEE0011B532 /* SwiftyJSON */,
 				4202F3E82897E08F0011B532 /* Kingfisher */,
+				42D8A6CD289B4FBE003342E2 /* JGProgressHUD */,
 			);
 			productName = SeSacNetwork;
 			productReference = 426BCA5A2890DD820064265F /* SeSacNetwork.app */;
@@ -210,6 +213,7 @@
 				4202F3DD28977CD00011B532 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4202F3E028977CEE0011B532 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				4202F3E72897E08F0011B532 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				42D8A6CC289B4FBE003342E2 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 426BCA5B2890DD820064265F /* Products */;
 			projectDirPath = "";
@@ -506,6 +510,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		42D8A6CC289B4FBE003342E2 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -523,6 +535,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4202F3E72897E08F0011B532 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		42D8A6CD289B4FBE003342E2 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42D8A6CC289B4FBE003342E2 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

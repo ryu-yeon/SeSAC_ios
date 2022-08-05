@@ -36,7 +36,7 @@ class BeerViewController: UIViewController {
     func requestBeer() {
         
         let url = "https://api.punkapi.com/v2/beers/random"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)

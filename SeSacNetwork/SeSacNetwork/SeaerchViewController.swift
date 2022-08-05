@@ -7,8 +7,8 @@
 
 import UIKit
 
-
 import Alamofire
+import JGProgressHUD
 import SwiftyJSON
 
 /*
@@ -48,6 +48,7 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
 
     //BoxOffice 배열
     var list: [BoxOfficeModel] = []
+    let hud = JGProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,6 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
         //네트워크가 느린 환경 테스트
         // 실기기 테스트 시 Condition 조절 가능!
         // 시뮬레이터에서도 가능! (추가 설치)
-        
         requestBoxOffice(text: date)
     }
     
@@ -86,11 +86,14 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
     }
     
     func requestBoxOffice(text: String) {
+
+        hud.textLabel.text = "Loading"
+        hud.show(in: view)
         
         self.list.removeAll()
 
         let url = "\(EndPoint.boxOfficeURL)?key=\(APIKey.BOXOFFICE)&targetDt=\(text)"
-        AF.request(url, method: .get).validate().responseJSON { response in
+        AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -110,12 +113,14 @@ class SearchViewController: UIViewController, ViewPresentableProtocol, UITableVi
                     
                 }
             
-                
                 self.searchTableView.reloadData()
+                self.hud.dismiss()
                 print(self.list)
                 
             case .failure(let error):
                 print(error)
+                
+                //시물레이터 실패 테스트 > 맥
             }
         }
     }

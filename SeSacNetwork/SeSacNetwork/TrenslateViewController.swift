@@ -53,7 +53,7 @@ class TrenslateViewController: UIViewController {
         
         let parameters: Parameters = ["source": "ko", "target": "en", "text": text]
         
-        AF.request(url, method: .post, parameters: parameters, headers: header).validate(statusCode: 200...500).responseJSON { response in
+        AF.request(url, method: .post, parameters: parameters, headers: header).validate(statusCode: 200...500).responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
