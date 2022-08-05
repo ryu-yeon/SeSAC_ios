@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 
 struct MediaModel {
     let title: String
@@ -14,6 +13,6 @@ struct MediaModel {
     let overview: String
     let releaseDate: String
     let genre: [Int]
-//    let cast: [String]
+
 }
 
