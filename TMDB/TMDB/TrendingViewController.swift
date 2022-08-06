@@ -177,9 +177,8 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         let layout = UICollectionViewFlowLayout()
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width - spacing * 2
-        let height = UIScreen.main.bounds.height - spacing * 2
         
-        layout.itemSize = CGSize(width: width, height: height / 2.2)
+        layout.itemSize = CGSize(width: width, height: width)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumInteritemSpacing = spacing
         layout.minimumLineSpacing = spacing
