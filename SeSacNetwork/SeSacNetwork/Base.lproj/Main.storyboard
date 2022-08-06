@@ -348,6 +348,31 @@
                                     <action selector="notificationButtonClicked:" destination="KDn-Hv-x2n" eventType="touchUpInside" id="71Z-9T-lKx"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mnS-DC-cV9">
+                                <rect key="frame" x="87" y="157" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ow1-4W-wft">
+                                <rect key="frame" x="68" y="263" width="278" height="236"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kOd-NG-Kez">
+                                <rect key="frame" x="228" y="157" width="131" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xof-q6-ATI">
+                                <rect key="frame" x="140" y="578" width="135" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="downloadImage:" destination="KDn-Hv-x2n" eventType="touchUpInside" id="ViH-SI-4OS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ofz-1g-VRz"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -357,10 +382,13 @@
                             <constraint firstItem="Xb3-vK-fhJ" firstAttribute="top" secondItem="ofz-1g-VRz" secondAttribute="top" constant="20" id="daJ-aG-JQt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="Ow1-4W-wft" id="dDT-Qh-fgW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t3L-BM-DAU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223" y="1750"/>
+            <point key="canvasLocation" x="-223.18840579710147" y="1749.7767857142856"/>
         </scene>
         <!--Beer-->
         <scene sceneID="BhG-5S-TXT">

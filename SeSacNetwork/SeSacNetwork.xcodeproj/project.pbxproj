@@ -36,6 +36,7 @@
 		42B227EA289223650073E98B /* LottoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227E9289223650073E98B /* LottoViewController.swift */; };
 		42B227EC2892305D0073E98B /* TrenslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227EB2892305D0073E98B /* TrenslateViewController.swift */; };
 		42B227EE28923A9B0073E98B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227ED28923A9B0073E98B /* WebViewController.swift */; };
+		42B33691289CB3F60078A5BF /* ImageSearchAPIMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */; };
 		42D8A6CE289B4FBE003342E2 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42D8A6CD289B4FBE003342E2 /* JGProgressHUD */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		42B227E9289223650073E98B /* LottoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoViewController.swift; sourceTree = "<group>"; };
 		42B227EB2892305D0073E98B /* TrenslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenslateViewController.swift; sourceTree = "<group>"; };
 		42B227ED28923A9B0073E98B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIMager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,17 +115,16 @@
 		426BCA5C2890DD820064265F /* SeSacNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				42B3368F289CB3D30078A5BF /* APIManager */,
+				42B33692289CB40C0078A5BF /* ImageSearch */,
 				4202F3D82897577E0011B532 /* Constant */,
 				428650B9289383EF004DAAC5 /* Resource */,
 				42B227E228920CA40073E98B /* Protocol */,
 				426BCA5D2890DD820064265F /* AppDelegate.swift */,
 				426BCA5F2890DD820064265F /* SceneDelegate.swift */,
 				42B227E728920EC80073E98B /* ViewController.swift */,
-				426BCA612890DD820064265F /* SeaerchViewController.swift */,
 				42148BFF2898BD1A00F24842 /* BoxOfficeModel.swift */,
 				426BCA632890DD820064265F /* Main.storyboard */,
-				427C1855289A093F0020AEBD /* ImageSearchViewController.swift */,
-				42B05D54289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift */,
 				4202F3E32897D5190011B532 /* BeerViewController.swift */,
 				42257D78289985DE009FE844 /* BeerCollectionViewController.swift */,
 				42257D7A2899866B009FE844 /* BeerCollectionViewCell.swift */,
@@ -132,6 +133,7 @@
 				42B227ED28923A9B0073E98B /* WebViewController.swift */,
 				42B227EB2892305D0073E98B /* TrenslateViewController.swift */,
 				42B227E9289223650073E98B /* LottoViewController.swift */,
+				426BCA612890DD820064265F /* SeaerchViewController.swift */,
 				426BCA732890E4D60064265F /* ListTableViewCell.swift */,
 				426BCA742890E4D60064265F /* ListTableViewCell.xib */,
 				426BCA662890DD840064265F /* Assets.xcassets */,
@@ -157,6 +159,23 @@
 				4202F3D62897527D0011B532 /* ReusableViewProtocol.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		42B3368F289CB3D30078A5BF /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		42B33692289CB40C0078A5BF /* ImageSearch */ = {
+			isa = PBXGroup;
+			children = (
+				427C1855289A093F0020AEBD /* ImageSearchViewController.swift */,
+				42B05D54289AA4F5005CAC8D /* ImageSearchCollectionViewCell.swift */,
+			);
+			path = ImageSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +279,7 @@
 				426BCA602890DD820064265F /* SceneDelegate.swift in Sources */,
 				4202F3D72897527D0011B532 /* ReusableViewProtocol.swift in Sources */,
 				426BCA752890E4D60064265F /* ListTableViewCell.swift in Sources */,
+				42B33691289CB3F60078A5BF /* ImageSearchAPIMager.swift in Sources */,
 				42257D79289985DF009FE844 /* BeerCollectionViewController.swift in Sources */,
 				42257D7B2899866B009FE844 /* BeerCollectionViewCell.swift in Sources */,
 				427C1856289A093F0020AEBD /* ImageSearchViewController.swift in Sources */,

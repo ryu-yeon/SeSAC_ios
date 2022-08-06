@@ -7,9 +7,9 @@
 
 import UIKit
 
-import Alamofire
+//import Alamofire
 import Kingfisher
-import SwiftyJSON
+//import SwiftyJSON
 
 class ImageSearchViewController: UIViewController {
 
@@ -30,37 +30,19 @@ class ImageSearchViewController: UIViewController {
         
         searchBar.delegate = self
         
-//        fetchImage(searchText: searchBar.text ?? "")
         collectionViewLayout()
     }
     
     //fetchImage, requestImage, callREquestImage, getImage...
-    func fetchImage(searchText: String) {
-        
-        
-        let text = searchText.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = EndPoint.imageSearchURL+"query=\(text)&display=30&start=\(startPage)&sort=sim"
-        
-        let header: HTTPHeaders = ["X-Naver-Client-Id": APIKey.NAVER_ID, "X-Naver-Client-Secret": APIKey.NAVER_SECRET]
-        
-        AF.request(url, method: .get, headers: header).validate().responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                print("JSON: \(json)")
-                
-                
-                self.totalCount = json["total"].intValue
-                for image in json["items"].arrayValue {
-                    
-                    self.list.append(image["link"].stringValue)
-                }
-                
+    func fetchImage(query: String) {
+        ImageSearchAPIManager.shared.fetchImageData(query: query, startPage: startPage) { totalCount, list in
+            self.totalCount = totalCount
+            self.list.append(contentsOf: list)
+            DispatchQueue.main.async {
                 self.collectionView.reloadData()
-            case .failure(let error):
-                print(error)
             }
         }
+       
     }
 }
 
@@ -113,7 +95,7 @@ extension ImageSearchViewController: UISearchBarDelegate {
         
         list.removeAll()
         startPage = 1
-        fetchImage(searchText: searchBar.text ?? "")
+        fetchImage(query: searchBar.text ?? "")
     }
     
     //취소버튼 눌렀을때 실행
@@ -140,7 +122,7 @@ extension ImageSearchViewController: UICollectionViewDataSourcePrefetching {
         for indexPath in indexPaths {
             if list.count - 1 == indexPath.item && list.count < totalCount{
                 startPage += 30
-                fetchImage(searchText: searchBar.text ?? "")
+                fetchImage(query: searchBar.text ?? "")
             }
         }
         print("===\(indexPaths)===")
