@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ComponentProductCellDelegate {
+    func selectedInfoBtn(index: Int)
+}
+
 class MovieCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -16,5 +20,13 @@ class MovieCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var castLabel: UILabel!
     @IBOutlet weak var mediaView: UIView!
+
+    var index: Int?
+    var delegate: ComponentProductCellDelegate?
+    
+    @IBAction func movieButtonClicked(_ sender: UIButton) {
+        self.delegate?.selectedInfoBtn(index: index ?? 0)
+    }
     
 }
+

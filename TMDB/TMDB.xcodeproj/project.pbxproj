@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4203272F289DE5B9005524E0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203272E289DE5B9005524E0 /* WebViewController.swift */; };
 		427C18402899F6BD0020AEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C183F2899F6BD0020AEBD /* AppDelegate.swift */; };
 		427C18422899F6BD0020AEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C18412899F6BD0020AEBD /* SceneDelegate.swift */; };
 		427C18442899F6BD0020AEBD /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C18432899F6BD0020AEBD /* TrendingViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4203272E289DE5B9005524E0 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		427C183C2899F6BD0020AEBD /* TMDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		427C183F2899F6BD0020AEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		427C18412899F6BD0020AEBD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				42B33695289CC9C00078A5BF /* CastTableViewCell.xib */,
 				42B33693289CC9040078A5BF /* CastTableViewCell.swift */,
 				427C18432899F6BD0020AEBD /* TrendingViewController.swift */,
+				4203272E289DE5B9005524E0 /* WebViewController.swift */,
 				42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */,
 				42D768EA289AAD27004F7FD8 /* MovieCollectionViewCell.swift */,
 				427C18482899F6BE0020AEBD /* Assets.xcassets */,
@@ -236,6 +239,7 @@
 				42B33694289CC9040078A5BF /* CastTableViewCell.swift in Sources */,
 				42D768F3289AD87C004F7FD8 /* ReusableViewProtocol.swift in Sources */,
 				427C18422899F6BD0020AEBD /* SceneDelegate.swift in Sources */,
+				4203272F289DE5B9005524E0 /* WebViewController.swift in Sources */,
 				42D768E7289AAC51004F7FD8 /* APIKey.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

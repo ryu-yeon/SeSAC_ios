@@ -121,6 +121,7 @@
                             <constraint firstItem="y57-gu-wu5" firstAttribute="top" secondItem="DWG-w0-rqO" secondAttribute="top" id="8li-AX-mVZ"/>
                             <constraint firstItem="qCA-zD-53Z" firstAttribute="leading" secondItem="DWG-w0-rqO" secondAttribute="leading" constant="20" id="A7V-0A-HWv"/>
                             <constraint firstItem="08I-ar-fLD" firstAttribute="leading" secondItem="TSy-7R-ugl" secondAttribute="leading" id="BeE-ev-TVg"/>
+                            <constraint firstItem="DWG-w0-rqO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="05A-2X-X1o" secondAttribute="trailing" constant="20" id="DBd-f0-t5U"/>
                             <constraint firstItem="DWG-w0-rqO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="qCA-zD-53Z" secondAttribute="trailing" constant="20" id="HNQ-wr-hh2"/>
                             <constraint firstItem="Ju0-zA-Vfi" firstAttribute="trailing" secondItem="TSy-7R-ugl" secondAttribute="trailing" id="HeS-bt-m7Q"/>
                             <constraint firstItem="23R-zU-uTT" firstAttribute="top" secondItem="08I-ar-fLD" secondAttribute="bottom" constant="8" id="Nfn-Nc-V0e"/>
@@ -140,6 +141,7 @@
                             <constraint firstItem="Ju0-zA-Vfi" firstAttribute="top" secondItem="TSy-7R-ugl" secondAttribute="bottom" constant="8" id="tgC-v9-WI3"/>
                             <constraint firstItem="08I-ar-fLD" firstAttribute="top" secondItem="05A-2X-X1o" secondAttribute="bottom" constant="4" id="veh-wc-QJJ"/>
                             <constraint firstItem="qCA-zD-53Z" firstAttribute="top" secondItem="y57-gu-wu5" secondAttribute="top" constant="20" id="wAj-vZ-bhn"/>
+                            <constraint firstItem="DWG-w0-rqO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gv0-Uv-dG1" secondAttribute="trailing" constant="20" id="x65-js-pEL"/>
                             <constraint firstItem="rNN-u3-bor" firstAttribute="top" secondItem="qCA-zD-53Z" secondAttribute="bottom" constant="8" id="xYz-wT-eC1"/>
                         </constraints>
                     </view>
@@ -154,6 +156,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="br3-Mw-FIg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1618.840579710145" y="162.72321428571428"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="ahE-SN-0l9">
+            <objects>
+                <viewController storyboardIdentifier="WebViewController" id="KHI-HD-x3V" customClass="WebViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="L3S-EF-Gz6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjf-fT-snD">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eqf-m8-did"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eqf-m8-did" firstAttribute="trailing" secondItem="fjf-fT-snD" secondAttribute="trailing" id="6um-O1-Wu1"/>
+                            <constraint firstItem="fjf-fT-snD" firstAttribute="top" secondItem="eqf-m8-did" secondAttribute="top" id="FV2-Kh-MXh"/>
+                            <constraint firstItem="eqf-m8-did" firstAttribute="bottom" secondItem="fjf-fT-snD" secondAttribute="bottom" id="kHU-DA-v6K"/>
+                            <constraint firstItem="fjf-fT-snD" firstAttribute="leading" secondItem="L3S-EF-Gz6" secondAttribute="leading" id="rDZ-0z-xBp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="fjf-fT-snD" id="cug-DI-r8t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Zl-0Q-HXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="849"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="odm-Hu-26f">

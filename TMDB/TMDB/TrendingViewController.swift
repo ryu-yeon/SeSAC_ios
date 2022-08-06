@@ -157,6 +157,9 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         cell.mediaView.layer.shadowOpacity = 1
         cell.mediaView.layer.shadowRadius = 10
         
+        cell.index = indexPath.item
+        cell.delegate = self
+        
         return cell
     }
     
@@ -204,3 +207,15 @@ extension TrendingViewController: UICollectionViewDataSourcePrefetching {
     }
     
 }
+
+extension TrendingViewController: ComponentProductCellDelegate {
+    func selectedInfoBtn(index: Int) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: WebViewController.reusableidentifier) as! WebViewController
+        vc.movieTitle = list[index].title
+        vc.movieId = list[index].id
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+}
+
