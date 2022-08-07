@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4203272F289DE5B9005524E0 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203272E289DE5B9005524E0 /* WebViewController.swift */; };
+		42032732289F5849005524E0 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42032731289F5849005524E0 /* JGProgressHUD */; };
 		427C18402899F6BD0020AEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C183F2899F6BD0020AEBD /* AppDelegate.swift */; };
 		427C18422899F6BD0020AEBD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C18412899F6BD0020AEBD /* SceneDelegate.swift */; };
 		427C18442899F6BD0020AEBD /* TrendingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427C18432899F6BD0020AEBD /* TrendingViewController.swift */; };
@@ -60,6 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42032732289F5849005524E0 /* JGProgressHUD in Frameworks */,
 				42D768F8289ADBC9004F7FD8 /* Kingfisher in Frameworks */,
 				42D768EE289AADFF004F7FD8 /* SwiftyJSON in Frameworks */,
 				42D768F1289AAE08004F7FD8 /* Alamofire in Frameworks */,
@@ -89,8 +91,8 @@
 			isa = PBXGroup;
 			children = (
 				427C183F2899F6BD0020AEBD /* AppDelegate.swift */,
-				42B3369B289CFE070078A5BF /* APIManager */,
 				427C18412899F6BD0020AEBD /* SceneDelegate.swift */,
+				42B3369B289CFE070078A5BF /* APIManager */,
 				42D768FD289AEDD6004F7FD8 /* Resource */,
 				42D76902289AEDF0004F7FD8 /* Protocol */,
 				42D76903289AEDFB004F7FD8 /* Constant */,
@@ -164,6 +166,7 @@
 				42D768ED289AADFF004F7FD8 /* SwiftyJSON */,
 				42D768F0289AAE08004F7FD8 /* Alamofire */,
 				42D768F7289ADBC9004F7FD8 /* Kingfisher */,
+				42032731289F5849005524E0 /* JGProgressHUD */,
 			);
 			productName = TMDB;
 			productReference = 427C183C2899F6BD0020AEBD /* TMDB.app */;
@@ -197,6 +200,7 @@
 				42D768EC289AADFF004F7FD8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				42D768EF289AAE08004F7FD8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				42D768F6289ADBC9004F7FD8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				42032730289F5849005524E0 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 427C183D2899F6BD0020AEBD /* Products */;
 			projectDirPath = "";
@@ -460,6 +464,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		42032730289F5849005524E0 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		42D768EC289AADFF004F7FD8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
@@ -487,6 +499,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		42032731289F5849005524E0 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42032730289F5849005524E0 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
 		42D768ED289AADFF004F7FD8 /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42D768EC289AADFF004F7FD8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;

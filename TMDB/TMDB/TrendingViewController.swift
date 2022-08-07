@@ -7,12 +7,15 @@
 
 import UIKit
 
+import JGProgressHUD
 import Kingfisher
 
 class TrendingViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
    
+    let hud = JGProgressHUD()
+    
     var list: [MovieModel] = []
     var castList: [CastModel] = []
     
@@ -34,21 +37,22 @@ class TrendingViewController: UIViewController {
         collectionView.delegate = self
         collectionView.prefetchDataSource = self
         setColletionViewLayout()
-        
     }
 
     func requestTrending(startPage: Int) {
         
+        hud.show(in: self.view)
         TMDBAPIMagnager.shared.requestTrendingData(startPage: startPage) { list, totalCount in
             self.list.append(contentsOf: list)
             self.totalCount = totalCount
-            for number in 20 * (self.startPage - 1)..<20 * self.startPage {
+            for number in 0..<list.count {
                 TMDBAPIMagnager.shared.requestMovieData(movieId: list[number].id) { castList in
                     self.castList.append(contentsOf: castList)
                     
                     DispatchQueue.main.async {
                         if self.castList.count == self.list.count {
                             self.collectionView.reloadData()
+                            self.hud.dismiss(animated: true)
                         }
                     }
                 }
@@ -150,9 +154,6 @@ extension TrendingViewController: UICollectionViewDataSourcePrefetching {
                 requestTrending(startPage: startPage)
             }
         }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cancelPrefetchingForItemsAt indexPaths: [IndexPath]) {
     }
 }
 
