@@ -38,6 +38,7 @@
 		42B227EE28923A9B0073E98B /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B227ED28923A9B0073E98B /* WebViewController.swift */; };
 		42B33691289CB3F60078A5BF /* ImageSearchAPIMager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */; };
 		42D8A6CE289B4FBE003342E2 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42D8A6CD289B4FBE003342E2 /* JGProgressHUD */; };
+		42E7A993289FBCAF00207A9C /* LottoAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E7A992289FBCAF00207A9C /* LottoAPIManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		42B227EB2892305D0073E98B /* TrenslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrenslateViewController.swift; sourceTree = "<group>"; };
 		42B227ED28923A9B0073E98B /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSearchAPIMager.swift; sourceTree = "<group>"; };
+		42E7A992289FBCAF00207A9C /* LottoAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottoAPIManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				42B33690289CB3F60078A5BF /* ImageSearchAPIMager.swift */,
+				42E7A992289FBCAF00207A9C /* LottoAPIManager.swift */,
 			);
 			path = APIManager;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B227E828920EC80073E98B /* ViewController.swift in Sources */,
+				42E7A993289FBCAF00207A9C /* LottoAPIManager.swift in Sources */,
 				4202F3DC289760180011B532 /* UserDefaultsHelper.swift in Sources */,
 				4202F3E42897D51A0011B532 /* BeerViewController.swift in Sources */,
 				42148C002898BD1A00F24842 /* BoxOfficeModel.swift in Sources */,

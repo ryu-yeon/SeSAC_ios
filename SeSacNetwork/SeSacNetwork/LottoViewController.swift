@@ -7,9 +7,6 @@
 
 import UIKit
 
-import Alamofire
-import SwiftyJSON
-
 class LottoViewController: UIViewController {
 
     @IBOutlet var lottoList: [UILabel]!
@@ -23,17 +20,17 @@ class LottoViewController: UIViewController {
     let format = DateFormatter()
     
     var round = 0
-    var numberList: [Int] = []
+    var roundList: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         
-        let first = format.date(from: "2002-12-07 20:35:00")!
+        let firstRound = format.date(from: "2002-12-07 20:35:00")!
         
-        round = Int(first.timeIntervalSinceNow / 86400 / 7 * -1) + 1
-        numberList = (0...round).reversed()
+        round = Int(firstRound.timeIntervalSinceNow / 86400 / 7 * -1) + 1
+        roundList = (0...round).reversed()
         
         numberTextField.tintColor = .clear
         numberTextField.inputView = lottoPickerView
@@ -47,26 +44,17 @@ class LottoViewController: UIViewController {
         requestLotto(round)
     }
     
-    func requestLotto(_ number: Int) {
+    func requestLotto(_ round: Int) {
         
-        //AF: 200~299 status code
-        let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
-        AF.request(url, method: .get).validate().responseData { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-
-                var number: Int = 1
-                
-                for i in self.lottoList {
-                    i.text = json["drwtNo\(number)"].stringValue
-                    number += 1
-                }
-                self.lottoBonus.text = json["bnusNo"].stringValue
-                
-            case .failure(let error):
-                print(error)
+        LottoAPIManager.shared.requestLottoData(round: round) { winningNumbers, bonusNumber in
+            
+            var number = 0
+            
+            for i in self.lottoList {
+                i.text = winningNumbers[number]
+                number += 1
             }
+            self.lottoBonus.text = bonusNumber
         }
     }
 }
@@ -78,16 +66,16 @@ extension LottoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return numberList.count
+        return roundList.count
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        numberTextField.text = "\(numberList[row])회차"
-        requestLotto(numberList[row])
+        numberTextField.text = "\(roundList[row])회차"
+        requestLotto(roundList[row])
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return "\(numberList[row])회"
+        return "\(roundList[row])회"
     }
     
 }
