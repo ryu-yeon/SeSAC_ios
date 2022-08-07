@@ -12,7 +12,6 @@ import SwiftyJSON
 
 class LottoViewController: UIViewController {
 
-
     @IBOutlet var lottoList: [UILabel]!
     @IBOutlet weak var lottoBonus: UILabel!
     
@@ -21,11 +20,20 @@ class LottoViewController: UIViewController {
     
     var lottoPickerView = UIPickerView()
     //코드로 뷰를 만드는 기능이 훨씬 더 많이 남아있습니다!
+    let format = DateFormatter()
     
-    let numberList: [Int] = (1...1025).reversed()
+    var round = 0
+    var numberList: [Int] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        let first = format.date(from: "2002-12-07 20:35:00")!
+        
+        round = Int(first.timeIntervalSinceNow / 86400 / 7 * -1) + 1
+        numberList = (0...round).reversed()
         
         numberTextField.tintColor = .clear
         numberTextField.inputView = lottoPickerView
@@ -35,19 +43,18 @@ class LottoViewController: UIViewController {
         
         lottoPickerView.delegate = self
         lottoPickerView.dataSource = self
-        numberTextField.text = "1025회차"
-        requestLotto(1025)
+        numberTextField.text = "\(round)회차"
+        requestLotto(round)
     }
     
     func requestLotto(_ number: Int) {
         
         //AF: 200~299 status code
-        let url = "\(EndPoint.lottoURL)&drwNo=1025"
+        let url = "\(EndPoint.lottoURL)&drwNo=\(number)"
         AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
-                print("JSON: \(json)")
 
                 var number: Int = 1
                 
