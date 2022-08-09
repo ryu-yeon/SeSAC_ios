@@ -8,12 +8,17 @@
 import UIKit
 
 import Kingfisher
+import MapKit
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
 
-    var movieList: [MovieModel] = []
+    var movieList: [String] = []
+    var tvList: [String] = []
+    var personList: [String] = []
+    var allList: [String] = []
+    
     let titleList: [String] = ["Movie Trending", "TV Trending", "Person Trending", "All Treding"]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +28,24 @@ class MainViewController: UIViewController {
         listTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: MainTableViewCell.reusableidentifier)
         
         view.backgroundColor = .black
-//        listTableView.backgroundColor = .black
         requestData()
     }
     
     func requestData() {
-        TMDBAPIMagnager.shared.requestTrendingData(startPage: 1) { movieList, totalcount in
-            self.movieList.append(contentsOf: movieList)
+        TMDBAPIMagnager.shared.requestPosterData(mediaType: "movie") { list in
+            self.movieList.append(contentsOf: list)
+            self.listTableView.reloadData()
+        }
+        TMDBAPIMagnager.shared.requestPosterData(mediaType: "tv") { list in
+            self.tvList.append(contentsOf: list)
+            self.listTableView.reloadData()
+        }
+        TMDBAPIMagnager.shared.requestPosterData(mediaType: "person") { list in
+            self.personList.append(contentsOf: list)
+            self.listTableView.reloadData()
+        }
+        TMDBAPIMagnager.shared.requestPosterData(mediaType: "all") { list in
+            self.allList.append(contentsOf: list)
             self.listTableView.reloadData()
         }
     }
@@ -55,6 +71,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
         cell.contentCollectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ContentCollectionViewCell.reusableidentifier)
+        
         cell.contentCollectionView.reloadData()
         
         return cell
@@ -71,23 +88,33 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        
+        switch collectionView.tag {
+        case 0: return movieList.count
+        case 1: return movieList.count
+        case 2: return movieList.count
+        default: return movieList.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.reusableidentifier, for: indexPath) as! ContentCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.reusableidentifier, for: indexPath) as? ContentCollectionViewCell else {return UICollectionViewCell()}
         
-        if collectionView.tag == 0 {
-            let url = URL(string: "https://www.themoviedb.org/t/p/w1280/cXUqtadGsIcZDWUTrfnbDjAy8eN.jpg")
-            cell.cardView.posterImageView.kf.setImage(with: url)
-        } else if collectionView.tag == 1 {
-            let url = URL(string: "https://www.themoviedb.org/t/p/w1280/stMXKaZYy5bhZII72F9yMl4AYxJ.jpg")
-            cell.cardView.posterImageView.kf.setImage(with: url)
-        } else {
-            let url = URL(string: "https://www.themoviedb.org/t/p/w1280/mpOQpOKdo2XJnTqRzo1lTmDNsc1.jpg")
-            cell.cardView.posterImageView.kf.setImage(with: url)
+        var url = URL(string: "")
+        
+        switch collectionView.tag {
+        case 0: url = URL(string: EndPoint.posterBaseURL + movieList[indexPath.item])
+        case 1: url = URL(string: EndPoint.posterBaseURL + tvList[indexPath.item])
+        case 2:  url = URL(string: EndPoint.posterBaseURL + personList[indexPath.item])
+        default: url = URL(string: EndPoint.posterBaseURL + allList[indexPath.item])
         }
+
+        cell.cardView.posterImageView.kf.setImage(with: url)
+        
+        cell.cardView.likeButton.tintColor = .systemPink
+        
+        
         return cell
     }
     

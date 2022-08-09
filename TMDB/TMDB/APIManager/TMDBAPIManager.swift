@@ -18,6 +18,7 @@ class TMDBAPIMagnager {
     
     typealias completionHandler = ([MovieModel], Int) -> Void
     typealias completionHandler2 = ([CastModel]) -> Void
+    typealias completionHandler3 = ([String]) -> Void
     
     func requestTrendingData(startPage: Int, completionHandler: @escaping completionHandler) {
         let url = EndPoint.TrendURL + "/movie/day?api_key=" + APIKey.TMDB + "&page=\(startPage)"
@@ -76,6 +77,36 @@ class TMDBAPIMagnager {
                 castList.append(data)
                                
                 compeltionHandeler2(castList)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func requestPosterData(mediaType: String, completionHandler3: @escaping completionHandler3) {
+        let url = EndPoint.TrendURL + "/\(mediaType)/day?api_key=" + APIKey.TMDB
+        AF.request(url, method: .get).validate().responseData { response in
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
+                
+                var list: [String] = []
+                
+                if mediaType == "person" {
+                    for media in json["results"].arrayValue {
+                        let posterURL = media["known_for"][0]["poster_path"].stringValue
+                        list.append(posterURL)
+                    }
+                } else {
+                    for media in json["results"].arrayValue {
+                        
+                        let posterURL = media["poster_path"].stringValue
+                        list.append(posterURL)
+                    }
+                }
+                
+                completionHandler3(list)
                 
             case .failure(let error):
                 print(error)
