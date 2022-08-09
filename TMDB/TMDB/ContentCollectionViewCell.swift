@@ -13,7 +13,7 @@ class ContentCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        cardView.backgroundColor = .black
     }
 
 }

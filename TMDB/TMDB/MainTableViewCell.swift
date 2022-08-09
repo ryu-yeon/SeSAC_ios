@@ -14,7 +14,8 @@ class MainTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        contentView.backgroundColor = .black
+        contentCollectionView.backgroundColor = .black
         contentCollectionView.collectionViewLayout = collectionViewLayout()
     }
     
