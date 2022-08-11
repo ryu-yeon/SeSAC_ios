@@ -36,6 +36,7 @@
 		42D768F5289AD99A004F7FD8 /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D768F4289AD99A004F7FD8 /* MovieModel.swift */; };
 		42D768F8289ADBC9004F7FD8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42D768F7289ADBC9004F7FD8 /* Kingfisher */; };
 		42D76901289AEDD6004F7FD8 /* HSSantokki-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42D768FF289AEDD6004F7FD8 /* HSSantokki-Regular.ttf */; };
+		42DFD17F28A504DB00EE07D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFD17E28A504DB00EE07D0 /* MapViewController.swift */; };
 		42FA3A6D289C8CC6007E8C19 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +68,7 @@
 		42D768F2289AD87C004F7FD8 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
 		42D768F4289AD99A004F7FD8 /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		42D768FF289AEDD6004F7FD8 /* HSSantokki-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HSSantokki-Regular.ttf"; sourceTree = "<group>"; };
+		42DFD17E28A504DB00EE07D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 				42B33695289CC9C00078A5BF /* CastTableViewCell.xib */,
 				42B33693289CC9040078A5BF /* CastTableViewCell.swift */,
 				427C18432899F6BD0020AEBD /* TrendingViewController.swift */,
+				42DFD17E28A504DB00EE07D0 /* MapViewController.swift */,
 				4203272E289DE5B9005524E0 /* WebViewController.swift */,
 				42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */,
 				42D768EA289AAD27004F7FD8 /* MovieCollectionViewCell.swift */,
@@ -277,6 +280,7 @@
 				42B33694289CC9040078A5BF /* CastTableViewCell.swift in Sources */,
 				42D768F3289AD87C004F7FD8 /* ReusableViewProtocol.swift in Sources */,
 				428BD76D28A2593800D8CF19 /* ContentCollectionViewCell.swift in Sources */,
+				42DFD17F28A504DB00EE07D0 /* MapViewController.swift in Sources */,
 				427C18422899F6BD0020AEBD /* SceneDelegate.swift in Sources */,
 				4203272F289DE5B9005524E0 /* WebViewController.swift in Sources */,
 				428BD77428A25A4F00D8CF19 /* CardView.swift in Sources */,

@@ -27,7 +27,7 @@ class TrendingViewController: UIViewController {
         
         navigationItem.title = "MOVIE"
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "magnifyingglass"), style: .plain, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "location.magnifyingglass"), style: .plain, target: self, action: #selector(goToMap))
         navigationItem.backButtonTitle = " "
         
         requestTrending(startPage: startPage)
@@ -59,6 +59,15 @@ class TrendingViewController: UIViewController {
             }
         }
     }
+    
+    @objc func goToMap() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: MapViewController.reusableidentifier) as! MapViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
 }
 
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {

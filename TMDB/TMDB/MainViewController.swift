@@ -59,7 +59,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = listTableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reusableidentifier, for: indexPath) as! MainTableViewCell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reusableidentifier, for: indexPath) as! MainTableViewCell 
         
         cell.titleLabel.backgroundColor = .black
         cell.titleLabel.text = titleList[indexPath.section]
@@ -113,8 +113,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         cell.cardView.posterImageView.kf.setImage(with: url)
         
         cell.cardView.likeButton.tintColor = .systemPink
-        
-        
         return cell
     }
     

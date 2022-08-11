@@ -13,7 +13,17 @@ class ContentCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        cardView.backgroundColor = .black
+        cardView.backgroundColor = .clear
+        cardView.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpOutside)
+    }
+    
+    @objc func likeButtonClicked() {
+        print("클릭")
+        if cardView.likeButton.currentImage == UIImage(systemName: "heart") {
+            cardView.likeButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        } else  {
+            cardView.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+        }
     }
 
 }
