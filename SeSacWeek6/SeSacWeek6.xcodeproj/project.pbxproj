@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42220FD728A3307A00EC206C /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42220FD628A3307A00EC206C /* ReusableViewProtocol.swift */; };
+		42220FD928A343DB00EC206C /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42220FD828A343DB00EC206C /* TMDBAPIManager.swift */; };
 		4235BEE828A0AC0300520361 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE728A0AC0300520361 /* ClosureViewController.swift */; };
 		4235BEEA28A0B77B00520361 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE928A0B77B00520361 /* TableViewCell.swift */; };
 		42DE74FB28A1E031000D63C1 /* SeSacButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE74FA28A1E031000D63C1 /* SeSacButton.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42220FD628A3307A00EC206C /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		42220FD828A343DB00EC206C /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		4235BEE728A0AC0300520361 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		4235BEE928A0B77B00520361 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		42DE74FA28A1E031000D63C1 /* SeSacButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacButton.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42220FD528A3305A00EC206C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				42220FD628A3307A00EC206C /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		42DE74F928A1DFE2000D63C1 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +112,7 @@
 		42E7A9A128A0900300207A9C /* SeSacWeek6 */ = {
 			isa = PBXGroup;
 			children = (
+				42220FD528A3305A00EC206C /* Protocol */,
 				42E7A9A228A0900300207A9C /* AppDelegate.swift */,
 				42E7A9A428A0900300207A9C /* SceneDelegate.swift */,
 				42E7A9C128A0948900207A9C /* Network */,
@@ -124,6 +137,7 @@
 				42E7A9C228A094A000207A9C /* EndPoint.swift */,
 				42E7A9C428A0951100207A9C /* URL+Extension.swift */,
 				42E7A9C628A0A78D00207A9C /* KakaoAPIManager.swift */,
+				42220FD828A343DB00EC206C /* TMDBAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -222,6 +236,8 @@
 				42E7A9A528A0900300207A9C /* SceneDelegate.swift in Sources */,
 				42E7A9C728A0A78D00207A9C /* KakaoAPIManager.swift in Sources */,
 				42DE750728A1FC2D000D63C1 /* MainTableViewCell.swift in Sources */,
+				42220FD928A343DB00EC206C /* TMDBAPIManager.swift in Sources */,
+				42220FD728A3307A00EC206C /* ReusableViewProtocol.swift in Sources */,
 				42E7A9C328A094A000207A9C /* EndPoint.swift in Sources */,
 				42DE74FF28A1E633000D63C1 /* CardView.swift in Sources */,
 				42E7A9C528A0951100207A9C /* URL+Extension.swift in Sources */,
