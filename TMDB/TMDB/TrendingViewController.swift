@@ -26,7 +26,7 @@ class TrendingViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "MOVIE"
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: nil)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "list.bullet"), style: .plain, target: self, action: #selector(goToMain))
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "location.magnifyingglass"), style: .plain, target: self, action: #selector(goToMap))
         navigationItem.backButtonTitle = " "
         
@@ -66,6 +66,13 @@ class TrendingViewController: UIViewController {
         
         navigationController?.pushViewController(vc, animated: true)
         
+    }
+    
+    @objc func goToMain() {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.reusableidentifier) as! MainViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

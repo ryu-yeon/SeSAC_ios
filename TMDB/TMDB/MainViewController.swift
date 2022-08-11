@@ -106,7 +106,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         switch collectionView.tag {
         case 0: url = URL(string: EndPoint.posterBaseURL + movieList[indexPath.item])
         case 1: url = URL(string: EndPoint.posterBaseURL + tvList[indexPath.item])
-        case 2:  url = URL(string: EndPoint.posterBaseURL + personList[indexPath.item])
+        case 2: url = URL(string: EndPoint.posterBaseURL + personList[indexPath.item])
         default: url = URL(string: EndPoint.posterBaseURL + allList[indexPath.item])
         }
 

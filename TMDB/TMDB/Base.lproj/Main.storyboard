@@ -198,8 +198,19 @@
                     <view key="view" contentMode="scaleToFill" id="uoz-TJ-f4N">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nBa-IZ-CGX">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JpO-Q5-qET"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="nBa-IZ-CGX" firstAttribute="top" secondItem="JpO-Q5-qET" secondAttribute="top" id="Kjt-Fs-vTG"/>
+                            <constraint firstItem="JpO-Q5-qET" firstAttribute="bottom" secondItem="nBa-IZ-CGX" secondAttribute="bottom" id="Tkn-JP-tkN"/>
+                            <constraint firstItem="nBa-IZ-CGX" firstAttribute="leading" secondItem="JpO-Q5-qET" secondAttribute="leading" id="g9P-sc-oXn"/>
+                            <constraint firstItem="JpO-Q5-qET" firstAttribute="trailing" secondItem="nBa-IZ-CGX" secondAttribute="trailing" id="mYw-FO-k3r"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAq-PF-AN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,7 +238,7 @@
         <!--Main View Controller-->
         <scene sceneID="fIy-Eb-PT9">
             <objects>
-                <viewController id="fHt-zL-SpG" customClass="MainViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="fHt-zL-SpG" customClass="MainViewController" customModule="TMDB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zRF-TC-cKb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
