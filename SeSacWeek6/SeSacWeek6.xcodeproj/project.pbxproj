@@ -11,6 +11,7 @@
 		42220FD928A343DB00EC206C /* TMDBAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42220FD828A343DB00EC206C /* TMDBAPIManager.swift */; };
 		4235BEE828A0AC0300520361 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE728A0AC0300520361 /* ClosureViewController.swift */; };
 		4235BEEA28A0B77B00520361 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE928A0B77B00520361 /* TableViewCell.swift */; };
+		4238608228A4939A0066FE26 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238608128A4939A0066FE26 /* MapViewController.swift */; };
 		42DE74FB28A1E031000D63C1 /* SeSacButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE74FA28A1E031000D63C1 /* SeSacButton.swift */; };
 		42DE74FD28A1E5FF000D63C1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DE74FC28A1E5FF000D63C1 /* CardView.xib */; };
 		42DE74FF28A1E633000D63C1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE74FE28A1E633000D63C1 /* CardView.swift */; };
@@ -38,6 +39,7 @@
 		42220FD828A343DB00EC206C /* TMDBAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBAPIManager.swift; sourceTree = "<group>"; };
 		4235BEE728A0AC0300520361 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		4235BEE928A0B77B00520361 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		4238608128A4939A0066FE26 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		42DE74FA28A1E031000D63C1 /* SeSacButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacButton.swift; sourceTree = "<group>"; };
 		42DE74FC28A1E5FF000D63C1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		42DE74FE28A1E633000D63C1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				42DE74F928A1DFE2000D63C1 /* View */,
 				42DE750628A1FC2C000D63C1 /* MainTableViewCell.swift */,
 				42E7A9A828A0900300207A9C /* Main.storyboard */,
+				4238608128A4939A0066FE26 /* MapViewController.swift */,
 				42DE750428A1F630000D63C1 /* MainViewController.swift */,
 				4235BEE728A0AC0300520361 /* ClosureViewController.swift */,
 				42E7A9AB28A0900500207A9C /* Assets.xcassets */,
@@ -241,6 +244,7 @@
 				42E7A9C328A094A000207A9C /* EndPoint.swift in Sources */,
 				42DE74FF28A1E633000D63C1 /* CardView.swift in Sources */,
 				42E7A9C528A0951100207A9C /* URL+Extension.swift in Sources */,
+				4238608228A4939A0066FE26 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
