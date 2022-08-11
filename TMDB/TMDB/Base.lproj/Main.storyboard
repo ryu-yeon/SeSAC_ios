@@ -202,6 +202,16 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="nBa-IZ-CGX">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxd-10-BIw">
+                                <rect key="frame" x="347" y="797" width="47" height="45"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="location.circle.fill" catalog="system">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationButtonClicked:" destination="01w-47-B7A" eventType="touchUpInside" id="5jx-Jw-tsy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JpO-Q5-qET"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -210,12 +220,17 @@
                             <constraint firstItem="JpO-Q5-qET" firstAttribute="bottom" secondItem="nBa-IZ-CGX" secondAttribute="bottom" id="Tkn-JP-tkN"/>
                             <constraint firstItem="nBa-IZ-CGX" firstAttribute="leading" secondItem="JpO-Q5-qET" secondAttribute="leading" id="g9P-sc-oXn"/>
                             <constraint firstItem="JpO-Q5-qET" firstAttribute="trailing" secondItem="nBa-IZ-CGX" secondAttribute="trailing" id="mYw-FO-k3r"/>
+                            <constraint firstItem="JpO-Q5-qET" firstAttribute="trailing" secondItem="xxd-10-BIw" secondAttribute="trailing" constant="20" id="tN2-mX-6BP"/>
+                            <constraint firstItem="JpO-Q5-qET" firstAttribute="bottom" secondItem="xxd-10-BIw" secondAttribute="bottom" constant="20" id="uJv-BL-UX7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="nBa-IZ-CGX" id="3c8-xO-40h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wAq-PF-AN6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1619" y="-599"/>
+            <point key="canvasLocation" x="1618.840579710145" y="-599.33035714285711"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="odm-Hu-26f">
@@ -267,6 +282,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
