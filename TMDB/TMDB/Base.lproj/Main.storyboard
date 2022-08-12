@@ -203,10 +203,13 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxd-10-BIw">
-                                <rect key="frame" x="347" y="797" width="47" height="45"/>
+                                <rect key="frame" x="350" y="800" width="44" height="42"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="location.circle.fill" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="40"/>
+                                <state key="normal" image="scope" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="32"/>
                                 </state>
                                 <connections>
                                     <action selector="locationButtonClicked:" destination="01w-47-B7A" eventType="touchUpInside" id="5jx-Jw-tsy"/>
@@ -282,7 +285,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="location.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="scope" catalog="system" width="128" height="122"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
