@@ -127,7 +127,6 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
         cell.mediaView.layer.shadowColor = UIColor.gray.cgColor
         cell.mediaView.layer.shadowOpacity = 1
         cell.mediaView.layer.shadowRadius = 10
-        
         cell.index = indexPath.item
         cell.delegate = self
         

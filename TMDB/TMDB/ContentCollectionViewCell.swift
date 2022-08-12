@@ -14,8 +14,14 @@ class ContentCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         cardView.backgroundColor = .clear
-        cardView.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpOutside)
+        cardView.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        cardView.likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
+    }
+    
     
     @objc func likeButtonClicked() {
         print("클릭")

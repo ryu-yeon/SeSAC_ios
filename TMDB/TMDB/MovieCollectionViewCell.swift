@@ -25,7 +25,9 @@ class MovieCollectionViewCell: UICollectionViewCell {
     var delegate: ComponentProductCellDelegate?
     
     @IBAction func movieButtonClicked(_ sender: UIButton) {
-        self.delegate?.selectedInfoBtn(index: index ?? 0)
+//        self.delegate?.selectedInfoBtn(index: index ?? 0)
+        // 트랜딩 뷰 컨트롤러에 인덱스
+        delegate?.selectedInfoBtn(index: index ?? 0)
     }
     
 }

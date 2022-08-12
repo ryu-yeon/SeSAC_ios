@@ -21,4 +21,6 @@ class CardView: UIView {
         view.backgroundColor = .clear
         self.addSubview(view)
     }
+
+    
 }
