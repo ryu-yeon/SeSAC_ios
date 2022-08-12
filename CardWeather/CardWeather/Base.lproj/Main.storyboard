@@ -16,42 +16,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ku-JfV">
-                                <rect key="frame" x="34" y="87" width="116" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTT-Ku-JfV">
+                                <rect key="frame" x="20" y="84" width="194" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="6BZ-ws-gby"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-hn-N9Z">
-                                <rect key="frame" x="34" y="146" width="116" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLn-hn-N9Z">
+                                <rect key="frame" x="20" y="144" width="41.5" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tze-AN-f7I"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-Q2-MmD">
-                                <rect key="frame" x="191" y="87" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wPF-Q2-MmD">
+                                <rect key="frame" x="234" y="84" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="vld-0X-zmW"/>
+                                    <constraint firstAttribute="width" constant="44" id="yix-ar-EtW"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-YQ-jLr">
-                                <rect key="frame" x="266" y="87" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ja-Eo-2jN">
+                                <rect key="frame" x="354" y="84" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="BU8-xx-65D"/>
+                                    <constraint firstAttribute="width" constant="44" id="WO8-RQ-SW9"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ja-Eo-2jN">
-                                <rect key="frame" x="341" y="87" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejA-YQ-jLr">
+                                <rect key="frame" x="294" y="84" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gJE-1Z-ItZ"/>
+                                    <constraint firstAttribute="width" constant="44" id="tP6-gV-z11"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CTT-Ku-JfV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="1bc-0J-1vt"/>
+                            <constraint firstItem="KLn-hn-N9Z" firstAttribute="top" secondItem="CTT-Ku-JfV" secondAttribute="bottom" constant="16" id="8fL-a7-fmE"/>
+                            <constraint firstItem="CTT-Ku-JfV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="9yv-MD-92t"/>
+                            <constraint firstItem="wPF-Q2-MmD" firstAttribute="leading" secondItem="CTT-Ku-JfV" secondAttribute="trailing" constant="20" id="GaG-Lp-UGg"/>
+                            <constraint firstItem="wPF-Q2-MmD" firstAttribute="top" secondItem="CTT-Ku-JfV" secondAttribute="top" id="HXP-ea-5EY"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="KLn-hn-N9Z" secondAttribute="trailing" constant="16" id="Hg0-sX-Oc2"/>
+                            <constraint firstItem="ejA-YQ-jLr" firstAttribute="leading" secondItem="wPF-Q2-MmD" secondAttribute="trailing" constant="16" id="NWa-V2-lMw"/>
+                            <constraint firstItem="ejA-YQ-jLr" firstAttribute="top" secondItem="wPF-Q2-MmD" secondAttribute="top" id="PRG-7z-wi7"/>
+                            <constraint firstItem="7Ja-Eo-2jN" firstAttribute="leading" secondItem="ejA-YQ-jLr" secondAttribute="trailing" constant="16" id="PcV-eG-VpV"/>
+                            <constraint firstItem="7Ja-Eo-2jN" firstAttribute="top" secondItem="wPF-Q2-MmD" secondAttribute="top" id="d3Y-Sa-SHE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7Ja-Eo-2jN" secondAttribute="trailing" constant="16" id="jEw-8I-Bee"/>
+                            <constraint firstItem="KLn-hn-N9Z" firstAttribute="leading" secondItem="CTT-Ku-JfV" secondAttribute="leading" id="p4a-Ua-KT2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dateLabel" destination="CTT-Ku-JfV" id="eN5-ra-aPZ"/>
+                        <outlet property="locationLabel" destination="KLn-hn-N9Z" id="Xgh-be-b6L"/>
+                        <outlet property="plusButton" destination="ejA-YQ-jLr" id="FS9-v6-tQG"/>
+                        <outlet property="settingButton" destination="7Ja-Eo-2jN" id="yoL-h4-g4d"/>
+                        <outlet property="shareButton" destination="wPF-Q2-MmD" id="Zgn-pk-QSe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

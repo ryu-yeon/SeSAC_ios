@@ -14,4 +14,5 @@ struct Weather {
     let description: String
     let id: Int
     let main: String
+    let name: String
 }
