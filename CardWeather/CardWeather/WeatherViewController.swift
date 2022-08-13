@@ -24,6 +24,8 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var greetingLabel: UILabel!
     
+    @IBOutlet var chatView: [UIView]!
+    
     let format = DateFormatter()
     let locationManger = CLLocationManager()
     var weather: Weather?
@@ -53,6 +55,7 @@ class WeatherViewController: UIViewController {
         
         settingButton.setImage(UIImage(systemName: "list.dash"), for: .normal)
         settingButton.tintColor = .white
+        
         updateUI()
         
     }
@@ -69,8 +72,17 @@ class WeatherViewController: UIViewController {
         windLabel.text = "  \(weather?.wind ?? 0)m/s의 바람이 불어요.  "
         windLabel.backgroundColor = .white
         
+        weatherImageView.image = UIImage(systemName: "cloud.rain")
+        weatherImageView.tintColor = .black
+        
         greetingLabel.text = "  좋은하루 되세요^^  "
         greetingLabel.backgroundColor = .white
+        
+        for view in chatView {
+            view.layer.cornerRadius = 5
+            view.clipsToBounds = true
+        }
+        
     }
     
 }
