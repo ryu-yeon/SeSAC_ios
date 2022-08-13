@@ -33,8 +33,10 @@ class WeatherAPIManager {
                 let temp_Max = json["main"]["temp_max"].doubleValue
                 let temp_Min = json["main"]["temp_min"].doubleValue
                 let name = json["name"].stringValue
+                let wind = json["wind"]["speed"].doubleValue
+                let humidity = json["main"]["humidity"].doubleValue
                 
-                let weatherData = Weather(temp: temp, temp_Max: temp_Max, temp_Min: temp_Min, description: description, id: id, main: main, name: name)
+                let weatherData = Weather(temp: temp, temp_Max: temp_Max, temp_Min: temp_Min, description: description, id: id, main: main, name: name, wind: wind, humidity: humidity)
                 
                 completionHandler(weatherData)
                 
