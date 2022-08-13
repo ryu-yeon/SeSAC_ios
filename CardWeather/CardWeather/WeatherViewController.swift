@@ -8,6 +8,8 @@
 import CoreLocation
 import UIKit
 
+import Kingfisher
+
 class WeatherViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
@@ -28,6 +30,7 @@ class WeatherViewController: UIViewController {
     
     let format = DateFormatter()
     let locationManger = CLLocationManager()
+    
     var weather: Weather?
     
     override func viewDidLoad() {
@@ -46,7 +49,6 @@ class WeatherViewController: UIViewController {
         locationLabel.font = .systemFont(ofSize: 56, weight: .bold)
         locationLabel.textColor = .white
         
-        
         shareButton.setImage(UIImage(systemName: "square.and.arrow.up"), for: .normal)
         shareButton.tintColor = .white
         
@@ -56,26 +58,10 @@ class WeatherViewController: UIViewController {
         settingButton.setImage(UIImage(systemName: "list.dash"), for: .normal)
         settingButton.tintColor = .white
         
-        updateUI()
-        
-    }
-    
-    func updateUI() {
-        locationLabel.text = weather?.name
-        
-        temperatureLabel.text = "  지금은 \(weather?.temp ?? 0)°C에요.  "
         temperatureLabel.backgroundColor = .white
-        
-        humidityLabel.text = "  \(weather?.humidity ?? 0)%만큼 습해요.  "
         humidityLabel.backgroundColor = .white
-        
-        windLabel.text = "  \(weather?.wind ?? 0)m/s의 바람이 불어요.  "
-        windLabel.backgroundColor = .white
-        
-        weatherImageView.image = UIImage(systemName: "cloud.rain")
         weatherImageView.tintColor = .black
-        
-        greetingLabel.text = "  좋은하루 되세요^^  "
+        windLabel.backgroundColor = .white
         greetingLabel.backgroundColor = .white
         
         for view in chatView {
@@ -83,8 +69,45 @@ class WeatherViewController: UIViewController {
             view.clipsToBounds = true
         }
         
+        updateUI()
     }
     
+    func updateUI() {
+        locationLabel.text = weather?.location
+        temperatureLabel.text = "  지금은 \(weather?.temp ?? 0)°C에요.  "
+        humidityLabel.text = "  \(weather?.humidity ?? 0)%만큼 습해요.  "
+        windLabel.text = "  \(weather?.wind ?? 0)m/s의 바람이 불어요.  "
+        
+        let url = URL(string: EndPoint.iconBaseURL + (weather?.icon ?? "") + "@2x.png")
+        weatherImageView.kf.setImage(with: url)
+    
+        greetingLabel.text = setGreeting(id: weather?.id ?? 0)
+    }
+    
+    func setGreeting(id: Int) -> String {
+        switch id {
+        case 200...232:
+            return "  천둥번개 조심하세요!!!  "
+        case 300...321:
+            return "  우산 꼭 챙기세요!  "
+        case 500...504:
+            return "  비가 와요  "
+        case 511:
+            return "  진눈깨비?  "
+        case 520...531:
+            return "  비가 엄청 많이 와요ㅠㅠ  "
+        case 600...622:
+            return "  눈 오는 중  "
+        case 700...781:
+            return "  안개  "
+        case 800:
+            return "  맑은 날씨  "
+        case 801...804:
+            return "  구름이 조금 있어요.  "
+        default:
+            return "  좋은하루 되세요^^  "
+        }
+    }
 }
 
 extension WeatherViewController {
@@ -147,6 +170,7 @@ extension WeatherViewController: CLLocationManagerDelegate {
                 self.updateUI()
             }
         }
+        locationManger.stopUpdatingLocation()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {

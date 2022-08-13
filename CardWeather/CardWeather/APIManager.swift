@@ -26,17 +26,18 @@ class WeatherAPIManager {
                 let json = JSON(value)
 //                print("JSON: \(json)")
                 
-                let id = json["weather"]["id"].intValue
-                let main = json["weather"]["main"].stringValue
-                let description = json["weather"]["description"].stringValue
+                let id = json["weather"][0]["id"].intValue
+                let main = json["weather"][0]["main"].stringValue
+                let description = json["weather"][0]["description"].stringValue
                 let temp = json["main"]["temp"].doubleValue
                 let temp_Max = json["main"]["temp_max"].doubleValue
                 let temp_Min = json["main"]["temp_min"].doubleValue
-                let name = json["name"].stringValue
+                let location = json["name"].stringValue
                 let wind = json["wind"]["speed"].doubleValue
-                let humidity = json["main"]["humidity"].doubleValue
+                let humidity = json["main"]["humidity"].intValue
+                let icon = json["weather"][0]["icon"].stringValue
                 
-                let weatherData = Weather(temp: temp, temp_Max: temp_Max, temp_Min: temp_Min, description: description, id: id, main: main, name: name, wind: wind, humidity: humidity)
+                let weatherData = Weather(temp: temp, temp_Max: temp_Max, temp_Min: temp_Min, description: description, id: id, main: main, location: location, wind: wind, humidity: humidity, icon: icon)
                 
                 completionHandler(weatherData)
                 

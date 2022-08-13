@@ -9,4 +9,5 @@ import Foundation
 
 struct EndPoint {
     static let openweatherURL = "https://api.openweathermap.org/data/2.5/weather?&units=metric"
+    static let iconBaseURL = "https://openweathermap.org/img/wn/"
 }

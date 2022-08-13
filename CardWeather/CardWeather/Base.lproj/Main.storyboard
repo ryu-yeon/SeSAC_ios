@@ -129,10 +129,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-Vv-Aia">
-                                <rect key="frame" x="20" y="372" width="207" height="100"/>
+                                <rect key="frame" x="20" y="372" width="207" height="120"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jiT-x0-tKs">
-                                        <rect key="frame" x="20.5" y="10" width="166" height="80"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jiT-x0-tKs">
+                                        <rect key="frame" x="20.5" y="12" width="166" height="96"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -140,12 +140,12 @@
                                     <constraint firstItem="jiT-x0-tKs" firstAttribute="centerX" secondItem="LC6-Vv-Aia" secondAttribute="centerX" id="49M-x3-gdc"/>
                                     <constraint firstItem="jiT-x0-tKs" firstAttribute="width" secondItem="LC6-Vv-Aia" secondAttribute="width" multiplier="0.8" id="Fk0-fd-eQM"/>
                                     <constraint firstItem="jiT-x0-tKs" firstAttribute="height" secondItem="LC6-Vv-Aia" secondAttribute="height" multiplier="0.8" id="SSg-6l-2xw"/>
-                                    <constraint firstAttribute="height" constant="100" id="d2f-Mj-Frp"/>
+                                    <constraint firstAttribute="height" constant="120" id="d2f-Mj-Frp"/>
                                     <constraint firstItem="jiT-x0-tKs" firstAttribute="centerY" secondItem="LC6-Vv-Aia" secondAttribute="centerY" id="jff-Uk-IM5"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xet-xX-dml">
-                                <rect key="frame" x="20" y="488" width="41.5" height="40"/>
+                                <rect key="frame" x="20" y="508" width="41.5" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWA-Og-3wv">
                                         <rect key="frame" x="0.0" y="0.0" width="41.5" height="40"/>
