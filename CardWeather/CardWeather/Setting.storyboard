@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Setting View Controller-->
+        <scene sceneID="wi6-Fi-oDs">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="Q33-KB-J9D" customClass="SettingViewController" customModule="CardWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iE1-wO-ehK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="2DT-aw-BTK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NOo-8H-1jm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2DT-aw-BTK" firstAttribute="bottom" secondItem="NOo-8H-1jm" secondAttribute="bottom" id="61e-VB-Cw9"/>
+                            <constraint firstItem="2DT-aw-BTK" firstAttribute="leading" secondItem="NOo-8H-1jm" secondAttribute="leading" id="9oi-2s-gSu"/>
+                            <constraint firstItem="2DT-aw-BTK" firstAttribute="trailing" secondItem="NOo-8H-1jm" secondAttribute="trailing" id="a6s-7p-QGb"/>
+                            <constraint firstItem="2DT-aw-BTK" firstAttribute="top" secondItem="NOo-8H-1jm" secondAttribute="top" id="jhM-h9-RbC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cnA-3b-Z5k"/>
+                    <connections>
+                        <outlet property="settingTableView" destination="2DT-aw-BTK" id="VWu-Q0-Y5J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93a-UM-9Ov" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="682.60869565217399" y="151.33928571428569"/>
+        </scene>
+        <!--Pop Up View Controller-->
+        <scene sceneID="Jxo-zj-b5E">
+            <objects>
+                <viewController storyboardIdentifier="PopUpViewController" id="UMM-f8-ZtH" customClass="PopUpViewController" customModule="CardWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eoe-Bg-Eik">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83A-ka-CXU">
+                                <rect key="frame" x="0.0" y="593" width="414" height="269"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="온도를 설정해주세요" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gra-GD-yJr">
+                                        <rect key="frame" x="28" y="32" width="200" height="35.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3aF-sj-RSE">
+                                        <rect key="frame" x="350" y="32" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="n08-TS-YoQ"/>
+                                            <constraint firstAttribute="width" constant="36" id="xia-9g-SFV"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="bold"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="dismiss:" destination="UMM-f8-ZtH" eventType="touchUpInside" id="AUJ-Pj-mC6"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDU-EJ-RXz">
+                                        <rect key="frame" x="60" y="185.5" width="134" height="38"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="°F (화씨온도)">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zsN-ij-8Y4">
+                                        <rect key="frame" x="60" y="107.5" width="137" height="38"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="°C (썹씨온도)">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="fXT-6Y-pla">
+                                        <rect key="frame" x="323.5" y="111.5" width="50.5" height="27"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fXT-6Y-pla" secondAttribute="height" multiplier="5:3" id="Sa5-UZ-nkF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="uqf-oE-oYd">
+                                        <rect key="frame" x="323.5" y="189.5" width="50.5" height="27"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="3aF-sj-RSE" firstAttribute="top" secondItem="gra-GD-yJr" secondAttribute="top" id="16e-si-ekH"/>
+                                    <constraint firstItem="jDU-EJ-RXz" firstAttribute="top" secondItem="zsN-ij-8Y4" secondAttribute="bottom" constant="40" id="1JJ-tX-B63"/>
+                                    <constraint firstItem="uqf-oE-oYd" firstAttribute="top" secondItem="jDU-EJ-RXz" secondAttribute="top" constant="2" id="3v0-oT-M23"/>
+                                    <constraint firstItem="gra-GD-yJr" firstAttribute="leading" secondItem="83A-ka-CXU" secondAttribute="leading" constant="28" id="6dS-Ab-uS0"/>
+                                    <constraint firstItem="jDU-EJ-RXz" firstAttribute="leading" secondItem="zsN-ij-8Y4" secondAttribute="leading" id="6fB-Dk-klr"/>
+                                    <constraint firstItem="zsN-ij-8Y4" firstAttribute="top" secondItem="gra-GD-yJr" secondAttribute="bottom" constant="40" id="8yQ-vK-024"/>
+                                    <constraint firstItem="zsN-ij-8Y4" firstAttribute="leading" secondItem="83A-ka-CXU" secondAttribute="leading" constant="60" id="E90-oY-qKO"/>
+                                    <constraint firstItem="fXT-6Y-pla" firstAttribute="top" secondItem="zsN-ij-8Y4" secondAttribute="top" constant="2" id="EMa-Bg-tBM"/>
+                                    <constraint firstAttribute="bottom" secondItem="uqf-oE-oYd" secondAttribute="bottom" constant="51" id="EZX-5Y-Etc"/>
+                                    <constraint firstItem="gra-GD-yJr" firstAttribute="top" secondItem="83A-ka-CXU" secondAttribute="top" constant="32" id="GFV-gk-Dzn"/>
+                                    <constraint firstItem="uqf-oE-oYd" firstAttribute="leading" secondItem="fXT-6Y-pla" secondAttribute="leading" id="PJ3-PK-byF"/>
+                                    <constraint firstAttribute="trailing" secondItem="fXT-6Y-pla" secondAttribute="trailing" constant="40" id="V0m-ew-8KP"/>
+                                    <constraint firstItem="uqf-oE-oYd" firstAttribute="trailing" secondItem="fXT-6Y-pla" secondAttribute="trailing" id="WRK-8I-ltA"/>
+                                    <constraint firstItem="3aF-sj-RSE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gra-GD-yJr" secondAttribute="trailing" constant="16" id="ZlM-vx-M5t"/>
+                                    <constraint firstItem="fXT-6Y-pla" firstAttribute="height" secondItem="zsN-ij-8Y4" secondAttribute="height" multiplier="0.8" id="esB-qb-L5o"/>
+                                    <constraint firstAttribute="trailing" secondItem="3aF-sj-RSE" secondAttribute="trailing" constant="28" id="f03-mD-qYj"/>
+                                    <constraint firstItem="uqf-oE-oYd" firstAttribute="height" secondItem="fXT-6Y-pla" secondAttribute="height" id="siG-p8-Snc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Qyv-Xt-zL4"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.10319225993377483" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Qyv-Xt-zL4" firstAttribute="trailing" secondItem="83A-ka-CXU" secondAttribute="trailing" id="6UD-55-MGb"/>
+                            <constraint firstItem="83A-ka-CXU" firstAttribute="height" secondItem="eoe-Bg-Eik" secondAttribute="height" multiplier="0.3" id="bD3-Zb-xSu"/>
+                            <constraint firstItem="83A-ka-CXU" firstAttribute="bottom" secondItem="Qyv-Xt-zL4" secondAttribute="bottom" id="fVs-Bd-gUW"/>
+                            <constraint firstItem="83A-ka-CXU" firstAttribute="leading" secondItem="Qyv-Xt-zL4" secondAttribute="leading" id="ode-7g-eUE"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TIH-bg-g2q" appends="YES" id="Jx9-WU-Ed7"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="settingView" destination="83A-ka-CXU" id="IaY-Ye-gvv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o22-n2-LFN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TIH-bg-g2q">
+                    <connections>
+                        <action selector="dismiss:" destination="UMM-f8-ZtH" id="sI1-7F-5CF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1531.8840579710145" y="150.66964285714286"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GTX-fb-5XT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urk-N5-fTt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nth-Jy-STz">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q33-KB-J9D" kind="relationship" relationship="rootViewController" id="heO-5h-88D"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q7o-nS-HJA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-96" y="151"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -38,6 +38,7 @@ class WeatherViewController: UIViewController {
 
         locationManger.delegate = self
         
+        navigationItem.backButtonTitle = " "
         view.backgroundColor = .systemMint
         
         format.dateFormat = "M. d(EEEEE) h:mm a"
@@ -107,6 +108,14 @@ class WeatherViewController: UIViewController {
         default:
             return "  좋은하루 되세요^^  "
         }
+    }
+    
+    @IBAction func settingButtonClicked(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Setting", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: SettingViewController.reusableidentifier) as! SettingViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true)
     }
 }
 
