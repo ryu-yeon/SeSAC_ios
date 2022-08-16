@@ -15,13 +15,13 @@ class TrendingViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
    
-    let hud = JGProgressHUD()
+    private let hud = JGProgressHUD()
     
-    var list: [MovieModel] = []
-    var castList: [CastModel] = []
+    private var list: [MovieModel] = []
+    private var castList: [CastModel] = []
     
-    var startPage = 1
-    var totalCount = 0
+    private var startPage = 1
+    private var totalCount = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class TrendingViewController: UIViewController {
         setColletionViewLayout()
     }
 
-    func requestTrending(startPage: Int) {
+    private func requestTrending(startPage: Int) {
         
         hud.show(in: self.view)
         TMDBAPIMagnager.shared.requestTrendingData(startPage: startPage) { list, totalCount in

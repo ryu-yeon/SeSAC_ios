@@ -9,15 +9,14 @@ import CoreLocation
 import UIKit
 import MapKit
 
-
 class MapViewController: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    let theaterList = TheaterList()
+    private let theaterList = TheaterList()
     
-    let locationManager = CLLocationManager()
-    var center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
+    private let locationManager = CLLocationManager()
+    private var center = CLLocationCoordinate2D(latitude: 37.517829, longitude: 126.886270)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +72,7 @@ class MapViewController: UIViewController {
 
     }
     
-    func showTheater(type: String) {
+    private func showTheater(type: String) {
 
         for i in 0..<theaterList.mapAnnotations.count {
             if theaterList.mapAnnotations[i].type == type {

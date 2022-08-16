@@ -14,12 +14,13 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var listTableView: UITableView!
 
-    var movieList: [String] = []
-    var tvList: [String] = []
-    var personList: [String] = []
-    var allList: [String] = []
+    private var movieList: [String] = []
+    private var tvList: [String] = []
+    private var personList: [String] = []
+    private var allList: [String] = []
     
-    let titleList: [String] = ["Movie Trending", "TV Trending", "Person Trending", "All Treding"]
+    private let titleList: [String] = ["Movie Trending", "TV Trending", "Person Trending", "All Treding"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,7 +32,7 @@ class MainViewController: UIViewController {
         requestData()
     }
     
-    func requestData() {
+    private func requestData() {
         TMDBAPIMagnager.shared.requestPosterData(mediaType: "movie") { list in
             self.movieList.append(contentsOf: list)
             self.listTableView.reloadData()

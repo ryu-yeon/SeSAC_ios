@@ -27,7 +27,7 @@ class WebViewController: UIViewController {
         
     }
 
-    func openWebPage(urlStr: String) {
+    private func openWebPage(urlStr: String) {
         guard let url = URL(string: urlStr) else {
             print("Invalid URL")
             return
@@ -36,7 +36,7 @@ class WebViewController: UIViewController {
         webView.load(request)
     }
     
-    func requestURL() {
+    private func requestURL() {
         let url = EndPoint.MovieURL + "/\(movieId ?? 0)/videos?api_key=" + APIKey.TMDB + "&language=en-US"
         AF.request(url, method: .get).validate().responseData { response in
             switch response.result {
