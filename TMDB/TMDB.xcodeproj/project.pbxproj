@@ -39,6 +39,11 @@
 		42DFD17F28A504DB00EE07D0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFD17E28A504DB00EE07D0 /* MapViewController.swift */; };
 		42DFD18128A57C9800EE07D0 /* TheaterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFD18028A57C9800EE07D0 /* TheaterModel.swift */; };
 		42DFD18328A57CC500EE07D0 /* TheaterList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DFD18228A57CC500EE07D0 /* TheaterList.swift */; };
+		42F0C72128ABE43300DA1FCB /* WalkThrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42F0C72028ABE43300DA1FCB /* WalkThrough.storyboard */; };
+		42F0C72428ABE45F00DA1FCB /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C72328ABE45F00DA1FCB /* FirstViewController.swift */; };
+		42F0C72628ABE46900DA1FCB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C72528ABE46900DA1FCB /* SecondViewController.swift */; };
+		42F0C72828ABE47100DA1FCB /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C72728ABE47100DA1FCB /* ThirdViewController.swift */; };
+		42F0C72A28ABE4CA00DA1FCB /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C72928ABE4CA00DA1FCB /* PageViewController.swift */; };
 		42FA3A6D289C8CC6007E8C19 /* MovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +78,11 @@
 		42DFD17E28A504DB00EE07D0 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		42DFD18028A57C9800EE07D0 /* TheaterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterModel.swift; sourceTree = "<group>"; };
 		42DFD18228A57CC500EE07D0 /* TheaterList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheaterList.swift; sourceTree = "<group>"; };
+		42F0C72028ABE43300DA1FCB /* WalkThrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WalkThrough.storyboard; sourceTree = "<group>"; };
+		42F0C72328ABE45F00DA1FCB /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		42F0C72528ABE46900DA1FCB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		42F0C72728ABE47100DA1FCB /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		42F0C72928ABE4CA00DA1FCB /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		42FA3A6C289C8CC6007E8C19 /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +143,7 @@
 				428BD76C28A2593800D8CF19 /* ContentCollectionViewCell.xib */,
 				428BD77128A2597300D8CF19 /* CardView.xib */,
 				428BD77328A25A4F00D8CF19 /* CardView.swift */,
+				42F0C72228ABE43800DA1FCB /* WalkThrough */,
 				427C18482899F6BE0020AEBD /* Assets.xcassets */,
 				427C184A2899F6BE0020AEBD /* LaunchScreen.storyboard */,
 				427C184D2899F6BE0020AEBD /* Info.plist */,
@@ -182,6 +193,18 @@
 				42D768E6289AAC51004F7FD8 /* APIKey.swift */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		42F0C72228ABE43800DA1FCB /* WalkThrough */ = {
+			isa = PBXGroup;
+			children = (
+				42F0C72028ABE43300DA1FCB /* WalkThrough.storyboard */,
+				42F0C72928ABE4CA00DA1FCB /* PageViewController.swift */,
+				42F0C72328ABE45F00DA1FCB /* FirstViewController.swift */,
+				42F0C72528ABE46900DA1FCB /* SecondViewController.swift */,
+				42F0C72728ABE47100DA1FCB /* ThirdViewController.swift */,
+			);
+			path = WalkThrough;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +286,7 @@
 				427C18472899F6BD0020AEBD /* Main.storyboard in Resources */,
 				42D76901289AEDD6004F7FD8 /* HSSantokki-Regular.ttf in Resources */,
 				428BD77228A2597400D8CF19 /* CardView.xib in Resources */,
+				42F0C72128ABE43300DA1FCB /* WalkThrough.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,12 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F0C72628ABE46900DA1FCB /* SecondViewController.swift in Sources */,
 				427C18442899F6BD0020AEBD /* TrendingViewController.swift in Sources */,
 				42DFD18328A57CC500EE07D0 /* TheaterList.swift in Sources */,
 				427C18402899F6BD0020AEBD /* AppDelegate.swift in Sources */,
 				42B3369D289D05D70078A5BF /* CastModel.swift in Sources */,
 				42D768EB289AAD27004F7FD8 /* MovieCollectionViewCell.swift in Sources */,
 				428BD76928A256DF00D8CF19 /* MainTableViewCell.swift in Sources */,
+				42F0C72428ABE45F00DA1FCB /* FirstViewController.swift in Sources */,
 				42D768E9289AACA8004F7FD8 /* Constant.swift in Sources */,
 				42B3369A289CFE020078A5BF /* TMDBAPIManager.swift in Sources */,
 				42D768F5289AD99A004F7FD8 /* MovieModel.swift in Sources */,
@@ -286,6 +312,7 @@
 				428BD76628A2563700D8CF19 /* MainViewController.swift in Sources */,
 				42FA3A6D289C8CC6007E8C19 /* MovieViewController.swift in Sources */,
 				42B33694289CC9040078A5BF /* CastTableViewCell.swift in Sources */,
+				42F0C72A28ABE4CA00DA1FCB /* PageViewController.swift in Sources */,
 				42D768F3289AD87C004F7FD8 /* ReusableViewProtocol.swift in Sources */,
 				428BD76D28A2593800D8CF19 /* ContentCollectionViewCell.swift in Sources */,
 				42DFD17F28A504DB00EE07D0 /* MapViewController.swift in Sources */,
@@ -293,6 +320,7 @@
 				4203272F289DE5B9005524E0 /* WebViewController.swift in Sources */,
 				428BD77428A25A4F00D8CF19 /* CardView.swift in Sources */,
 				42D768E7289AAC51004F7FD8 /* APIKey.swift in Sources */,
+				42F0C72828ABE47100DA1FCB /* ThirdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
