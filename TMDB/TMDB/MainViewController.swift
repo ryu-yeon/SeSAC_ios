@@ -25,7 +25,7 @@ class MainViewController: UIViewController {
 
         listTableView.delegate = self
         listTableView.dataSource = self
-        listTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: MainTableViewCell.reusableidentifier)
+        listTableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: MainTableViewCell.reusableIdentifier)
         
         view.backgroundColor = .black
         requestData()
@@ -59,7 +59,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reusableidentifier, for: indexPath) as! MainTableViewCell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: MainTableViewCell.reusableIdentifier, for: indexPath) as! MainTableViewCell 
         
         cell.titleLabel.backgroundColor = .black
         cell.titleLabel.text = titleList[indexPath.section]
@@ -70,7 +70,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentCollectionView.tag = indexPath.section
         cell.contentCollectionView.delegate = self
         cell.contentCollectionView.dataSource = self
-        cell.contentCollectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ContentCollectionViewCell.reusableidentifier)
+        cell.contentCollectionView.register(UINib(nibName: "ContentCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: ContentCollectionViewCell.reusableIdentifier)
         
         cell.contentCollectionView.reloadData()
         
@@ -99,7 +99,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.reusableidentifier, for: indexPath) as? ContentCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ContentCollectionViewCell.reusableIdentifier, for: indexPath) as? ContentCollectionViewCell else {return UICollectionViewCell()}
         
         var url = URL(string: "")
         

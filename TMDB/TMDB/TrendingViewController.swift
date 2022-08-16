@@ -9,6 +9,7 @@ import UIKit
 
 import JGProgressHUD
 import Kingfisher
+import TMDBFramwork
 
 class TrendingViewController: UIViewController {
 
@@ -32,7 +33,7 @@ class TrendingViewController: UIViewController {
         
         requestTrending(startPage: startPage)
         
-        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reusableidentifier)
+        collectionView.register(UINib(nibName: "MovieCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: MovieCollectionViewCell.reusableIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.prefetchDataSource = self
@@ -62,19 +63,17 @@ class TrendingViewController: UIViewController {
     
     @objc func goToMap() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MapViewController.reusableidentifier) as! MapViewController
+        let vc = sb.instantiateViewController(withIdentifier: MapViewController.reusableIdentifier) as! MapViewController
         
         navigationController?.pushViewController(vc, animated: true)
-        
     }
     
     @objc func goToMain() {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.reusableidentifier) as! MainViewController
+        let vc = sb.instantiateViewController(withIdentifier: MainViewController.reusableIdentifier) as! MainViewController
         
         navigationController?.pushViewController(vc, animated: true)
     }
-    
 }
 
 extension TrendingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -84,7 +83,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reusableidentifier, for: indexPath) as! MovieCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MovieCollectionViewCell.reusableIdentifier, for: indexPath) as! MovieCollectionViewCell
         
         let url = URL(string: EndPoint.imageBaseURL + list[indexPath.item].imageURL)
         
@@ -136,7 +135,7 @@ extension TrendingViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MovieViewController.reusableidentifier) as! MovieViewController
+        let vc = sb.instantiateViewController(withIdentifier: MovieViewController.reusableIdentifier) as! MovieViewController
        
         vc.movie = list[indexPath.item]
         vc.castList = castList[indexPath.item]
@@ -175,10 +174,9 @@ extension TrendingViewController: UICollectionViewDataSourcePrefetching {
 extension TrendingViewController: ComponentProductCellDelegate {
     func selectedInfoBtn(index: Int) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: WebViewController.reusableidentifier) as! WebViewController
+        let vc = sb.instantiateViewController(withIdentifier: WebViewController.reusableIdentifier) as! WebViewController
         vc.movieTitle = list[index].title
         vc.movieId = list[index].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }
-

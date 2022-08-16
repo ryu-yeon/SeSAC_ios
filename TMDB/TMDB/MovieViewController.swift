@@ -34,14 +34,13 @@ class MovieViewController: UIViewController {
         nameLabel.textColor = .white
         nameLabel.font = .systemFont(ofSize: 24, weight: .bold)
         
-        
         let posterURL = URL(string: EndPoint.posterBaseURL + (movie?.posterURL ?? ""))
         posterImageView.kf.setImage(with: posterURL)
         overviewTextView.text = movie?.overview
         overviewTextView.isEditable = false
         overviewTextView.font = .systemFont(ofSize: 14)
         
-        castTableView.register(UINib(nibName: "CastTableViewCell", bundle: nil), forCellReuseIdentifier: CastTableViewCell.reusableidentifier)
+        castTableView.register(UINib(nibName: "CastTableViewCell", bundle: nil), forCellReuseIdentifier: CastTableViewCell.reusableIdentifier)
         
         castTableView.delegate = self
         castTableView.dataSource = self
@@ -55,9 +54,8 @@ extension MovieViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = castTableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reusableidentifier, for: indexPath) as! CastTableViewCell
+        let cell = castTableView.dequeueReusableCell(withIdentifier: CastTableViewCell.reusableIdentifier, for: indexPath) as! CastTableViewCell
         
-
         let url = URL(string: EndPoint.profileBaseURL + (castList?.imageURL[indexPath.row] ?? ""))
         cell.profileImageView.kf.setImage(with: url)
         cell.profileImageView.layer.cornerRadius = 8
