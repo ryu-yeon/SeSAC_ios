@@ -12,6 +12,8 @@
 		4235BEE828A0AC0300520361 /* ClosureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE728A0AC0300520361 /* ClosureViewController.swift */; };
 		4235BEEA28A0B77B00520361 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4235BEE928A0B77B00520361 /* TableViewCell.swift */; };
 		4238608228A4939A0066FE26 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4238608128A4939A0066FE26 /* MapViewController.swift */; };
+		428F391228A5D6DF00B5BDD8 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 428F391128A5D6DF00B5BDD8 /* YPImagePicker */; };
+		428F391428A5DD2100B5BDD8 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428F391328A5DD2100B5BDD8 /* CameraViewController.swift */; };
 		42DE74FB28A1E031000D63C1 /* SeSacButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE74FA28A1E031000D63C1 /* SeSacButton.swift */; };
 		42DE74FD28A1E5FF000D63C1 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42DE74FC28A1E5FF000D63C1 /* CardView.xib */; };
 		42DE74FF28A1E633000D63C1 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42DE74FE28A1E633000D63C1 /* CardView.swift */; };
@@ -40,6 +42,7 @@
 		4235BEE728A0AC0300520361 /* ClosureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosureViewController.swift; sourceTree = "<group>"; };
 		4235BEE928A0B77B00520361 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4238608128A4939A0066FE26 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		428F391328A5DD2100B5BDD8 /* CameraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
 		42DE74FA28A1E031000D63C1 /* SeSacButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSacButton.swift; sourceTree = "<group>"; };
 		42DE74FC28A1E5FF000D63C1 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		42DE74FE28A1E633000D63C1 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 				42E7A9BE28A0902F00207A9C /* SwiftyJSON in Frameworks */,
 				42E7A9B828A0901700207A9C /* Kingfisher in Frameworks */,
 				42E7A9BB28A0902300207A9C /* Alamofire in Frameworks */,
+				428F391228A5D6DF00B5BDD8 /* YPImagePicker in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,7 @@
 				42DE74F928A1DFE2000D63C1 /* View */,
 				42DE750628A1FC2C000D63C1 /* MainTableViewCell.swift */,
 				42E7A9A828A0900300207A9C /* Main.storyboard */,
+				428F391328A5DD2100B5BDD8 /* CameraViewController.swift */,
 				4238608128A4939A0066FE26 /* MapViewController.swift */,
 				42DE750428A1F630000D63C1 /* MainViewController.swift */,
 				4235BEE728A0AC0300520361 /* ClosureViewController.swift */,
@@ -165,6 +170,7 @@
 				42E7A9B728A0901700207A9C /* Kingfisher */,
 				42E7A9BA28A0902300207A9C /* Alamofire */,
 				42E7A9BD28A0902F00207A9C /* SwiftyJSON */,
+				428F391128A5D6DF00B5BDD8 /* YPImagePicker */,
 			);
 			productName = SeSacWeek6;
 			productReference = 42E7A99F28A0900300207A9C /* SeSacWeek6.app */;
@@ -198,6 +204,7 @@
 				42E7A9B628A0901700207A9C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				42E7A9B928A0902300207A9C /* XCRemoteSwiftPackageReference "Alamofire" */,
 				42E7A9BC28A0902F00207A9C /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				428F391028A5D6DF00B5BDD8 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 42E7A9A028A0900300207A9C /* Products */;
 			projectDirPath = "";
@@ -245,6 +252,7 @@
 				42DE74FF28A1E633000D63C1 /* CardView.swift in Sources */,
 				42E7A9C528A0951100207A9C /* URL+Extension.swift in Sources */,
 				4238608228A4939A0066FE26 /* MapViewController.swift in Sources */,
+				428F391428A5DD2100B5BDD8 /* CameraViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +472,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		428F391028A5D6DF00B5BDD8 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		42E7A9B628A0901700207A9C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -491,6 +507,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		428F391128A5D6DF00B5BDD8 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 428F391028A5D6DF00B5BDD8 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
+		};
 		42E7A9B728A0901700207A9C /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42E7A9B628A0901700207A9C /* XCRemoteSwiftPackageReference "Kingfisher" */;

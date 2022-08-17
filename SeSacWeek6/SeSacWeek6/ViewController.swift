@@ -26,10 +26,10 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var blogList: [String] = []
-    var cafeList: [String] = []
+    private var blogList: [String] = []
+    private var cafeList: [String] = []
     
-    var isExpanded = false // false 2줄, true 0으로!
+    private var isExpanded = false // false 2줄, true 0으로!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
     }
     
-    func searchBlog(searchText: String) {
+    private func searchBlog(searchText: String) {
         KakaoAPIManager.shared.callRequest(type: EndPoint.blog, searchText: searchText) { json in
             
             for item in json["documents"].arrayValue {
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func searchCafe(searchText: String) {
+    private func searchCafe(searchText: String) {
         KakaoAPIManager.shared.callRequest(type: EndPoint.cafe, searchText: searchText) { json in
             
             for item in json["documents"].arrayValue {

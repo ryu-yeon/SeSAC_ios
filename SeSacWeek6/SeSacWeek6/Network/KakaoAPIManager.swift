@@ -10,13 +10,38 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
+struct User {
+    fileprivate let name = "고래밥" //같은 스위프트 파일에서 다른 클래스, 구조체 사용 가능. 다른 스위프트 파일은 X
+    private let age = 11 //같은 스위프트 파일 내에서 같은 타입
+}
+
+extension User {
+    
+    func example() {
+        print(self.name, self.age)
+    }
+    
+}
+
+struct Person {
+    
+    func example() {
+        let user = User()
+        user.name
+//        user.age // X
+    }
+}
+
+
+
 class KakaoAPIManager {
     
     static let shared = KakaoAPIManager()
     
     private init() {}
     
-    let headers: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakao)"]
+    private let headers: HTTPHeaders = ["Authorization": "KakaoAK \(APIKey.kakao)"]
     
     func callRequest(type: EndPoint, searchText: String, completionHandler: @escaping (JSON) -> ())  {
         
