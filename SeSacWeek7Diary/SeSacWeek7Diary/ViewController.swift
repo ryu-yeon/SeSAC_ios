@@ -7,46 +7,43 @@
 
 import UIKit
 import SeSacUIFramwork
+import SnapKit
 
 class ViewController: UIViewController {
 
-    var name = "고래밥"
-    var age = 22
+
+    let nameButton: UIButton = {
+       let view = UIButton()
+        view.setTitle("닉네임", for: .normal)
+        view.backgroundColor = .black
+        return view
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        configure()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    func configure() {
+        view.addSubview(nameButton)
         
-        let vc = Codesnap2ViewController()
-        vc.modalPresentationStyle = .overFullScreen
-        present(vc, animated: true)
-        
-        
-        
-        
-        testOpen()
-
-        
-        OpenWebView.presentWebViewController(self, url: "https://www.naver.com", transitionStyle: .present)
-        
-    }
-    
-    @IBAction func alertButtonClicked(_ sender: UIButton) {
-        showSesacAlert(title: "얼럿 타이틀", message: "얼럿 메시지", buttonTitle: "확인") { _ in
-            self.view.backgroundColor = .green
+        nameButton.snp.makeConstraints { make in
+            make.width.height.equalTo(200)
+            make.center.equalTo(view)
         }
+        nameButton.addTarget(self, action: #selector(nameButtonClicked), for: .touchUpInside)
     }
     
-    @IBAction func activityButtonClicked(_ sender: UIButton) {
-        let image = UIImage(systemName: "star.fill")!
-        let url = "https://www.apple.com"
-        let text = "WWDC22 What's NEW!!!"
-        sesacShowActivityViewController(shareImage: image, shareURL: url, shareText: text)
-    }
     
+    @objc func nameButtonClicked() {
+        
+        let vc = ProfileViewController()
+        
+        vc.saveButtonActionHandeler = {
+            self.nameButton.setTitle(vc.nameTextField.text, for: .normal)
+        }
+        
+        present(vc, animated: true)
+    }
 }
-

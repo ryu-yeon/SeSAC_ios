@@ -11,6 +11,8 @@
 		4250776B28AC81B200E77480 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4250776A28AC81B200E77480 /* SnapKit */; };
 		4250776D28AC822A00E77480 /* CodeSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250776C28AC822A00E77480 /* CodeSnapViewController.swift */; };
 		4250776F28AC8C1400E77480 /* Codesnap2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250776E28AC8C1300E77480 /* Codesnap2ViewController.swift */; };
+		42EC157428ADDF84004104D2 /* UIViewContoller + Extensgion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */; };
+		42EC158028ADE65B004104D2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC157F28ADE65B004104D2 /* ProfileViewController.swift */; };
 		42F0C6F528ABC98F00DA1FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */; };
 		42F0C6F728ABC98F00DA1FCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C6F628ABC98F00DA1FCB /* SceneDelegate.swift */; };
 		42F0C6F928ABC98F00DA1FCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C6F828ABC98F00DA1FCB /* ViewController.swift */; };
@@ -61,6 +63,8 @@
 		4250776728AC71D400E77480 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		4250776C28AC822A00E77480 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
 		4250776E28AC8C1300E77480 /* Codesnap2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codesnap2ViewController.swift; sourceTree = "<group>"; };
+		42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller + Extensgion.swift"; sourceTree = "<group>"; };
+		42EC157F28ADE65B004104D2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		42F0C6F128ABC98F00DA1FCB /* SeSacWeek7Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacWeek7Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42F0C6F628ABC98F00DA1FCB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,10 +127,12 @@
 			children = (
 				42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */,
 				42F0C6F628ABC98F00DA1FCB /* SceneDelegate.swift */,
+				42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */,
 				4250776428AC71BB00E77480 /* CodeBase */,
 				42F0C6FA28ABC98F00DA1FCB /* Main.storyboard */,
 				42F0C76128ABE81900DA1FCB /* WalkThrough */,
 				42F0C6F828ABC98F00DA1FCB /* ViewController.swift */,
+				42EC157F28ADE65B004104D2 /* ProfileViewController.swift */,
 				42F0C6FD28ABC99000DA1FCB /* Assets.xcassets */,
 				42F0C6FF28ABC99000DA1FCB /* LaunchScreen.storyboard */,
 				42F0C70228ABC99000DA1FCB /* Info.plist */,
@@ -270,8 +276,10 @@
 				42F0C76928ABE81900DA1FCB /* WalkThroughViewController.swift in Sources */,
 				4250776F28AC8C1400E77480 /* Codesnap2ViewController.swift in Sources */,
 				4250776D28AC822A00E77480 /* CodeSnapViewController.swift in Sources */,
+				42EC158028ADE65B004104D2 /* ProfileViewController.swift in Sources */,
 				42F0C76B28ABE81900DA1FCB /* FirstViewController.swift in Sources */,
 				4250776828AC71D400E77480 /* CodeViewController.swift in Sources */,
+				42EC157428ADDF84004104D2 /* UIViewContoller + Extensgion.swift in Sources */,
 				42F0C6F528ABC98F00DA1FCB /* AppDelegate.swift in Sources */,
 				42F0C6F728ABC98F00DA1FCB /* SceneDelegate.swift in Sources */,
 			);
