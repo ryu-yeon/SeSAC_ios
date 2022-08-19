@@ -11,7 +11,12 @@
 		4250776B28AC81B200E77480 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4250776A28AC81B200E77480 /* SnapKit */; };
 		4250776D28AC822A00E77480 /* CodeSnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250776C28AC822A00E77480 /* CodeSnapViewController.swift */; };
 		4250776F28AC8C1400E77480 /* Codesnap2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4250776E28AC8C1300E77480 /* Codesnap2ViewController.swift */; };
-		42EC157428ADDF84004104D2 /* UIViewContoller + Extensgion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */; };
+		428E141828AF1282002598E6 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E141728AF1282002598E6 /* BaseViewController.swift */; };
+		428E141B28AF1442002598E6 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E141A28AF1442002598E6 /* WriteViewController.swift */; };
+		428E141D28AF169E002598E6 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E141C28AF169E002598E6 /* BaseView.swift */; };
+		428E141F28AF1799002598E6 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E141E28AF1799002598E6 /* WriteView.swift */; };
+		428E142228AF2D09002598E6 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E142128AF2D09002598E6 /* BlackRadiusTextField.swift */; };
+		42EC157428ADDF84004104D2 /* UIViewContoller + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC157328ADDF84004104D2 /* UIViewContoller + Extension.swift */; };
 		42EC158028ADE65B004104D2 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EC157F28ADE65B004104D2 /* ProfileViewController.swift */; };
 		42F0C6F528ABC98F00DA1FCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */; };
 		42F0C6F728ABC98F00DA1FCB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0C6F628ABC98F00DA1FCB /* SceneDelegate.swift */; };
@@ -63,7 +68,12 @@
 		4250776728AC71D400E77480 /* CodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewController.swift; sourceTree = "<group>"; };
 		4250776C28AC822A00E77480 /* CodeSnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSnapViewController.swift; sourceTree = "<group>"; };
 		4250776E28AC8C1300E77480 /* Codesnap2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Codesnap2ViewController.swift; sourceTree = "<group>"; };
-		42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller + Extensgion.swift"; sourceTree = "<group>"; };
+		428E141728AF1282002598E6 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		428E141A28AF1442002598E6 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		428E141C28AF169E002598E6 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		428E141E28AF1799002598E6 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		428E142128AF2D09002598E6 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
+		42EC157328ADDF84004104D2 /* UIViewContoller + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewContoller + Extension.swift"; sourceTree = "<group>"; };
 		42EC157F28ADE65B004104D2 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		42F0C6F128ABC98F00DA1FCB /* SeSacWeek7Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSacWeek7Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +114,41 @@
 			path = CodeBase;
 			sourceTree = "<group>";
 		};
+		428E141328AF1250002598E6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42EC157328ADDF84004104D2 /* UIViewContoller + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		428E141628AF126B002598E6 /* Utillty */ = {
+			isa = PBXGroup;
+			children = (
+				428E141728AF1282002598E6 /* BaseViewController.swift */,
+				428E141C28AF169E002598E6 /* BaseView.swift */,
+				428E142028AF2CDF002598E6 /* CustomView */,
+			);
+			path = Utillty;
+			sourceTree = "<group>";
+		};
+		428E141928AF141C002598E6 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				428E141A28AF1442002598E6 /* WriteViewController.swift */,
+				428E141E28AF1799002598E6 /* WriteView.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		428E142028AF2CDF002598E6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				428E142128AF2D09002598E6 /* BlackRadiusTextField.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		42F0C6E828ABC98F00DA1FCB = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +172,9 @@
 			children = (
 				42F0C6F428ABC98F00DA1FCB /* AppDelegate.swift */,
 				42F0C6F628ABC98F00DA1FCB /* SceneDelegate.swift */,
-				42EC157328ADDF84004104D2 /* UIViewContoller + Extensgion.swift */,
+				428E141928AF141C002598E6 /* Diary */,
+				428E141628AF126B002598E6 /* Utillty */,
+				428E141328AF1250002598E6 /* Extension */,
 				4250776428AC71BB00E77480 /* CodeBase */,
 				42F0C6FA28ABC98F00DA1FCB /* Main.storyboard */,
 				42F0C76128ABE81900DA1FCB /* WalkThrough */,
@@ -270,16 +317,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				428E141F28AF1799002598E6 /* WriteView.swift in Sources */,
+				428E141828AF1282002598E6 /* BaseViewController.swift in Sources */,
+				428E142228AF2D09002598E6 /* BlackRadiusTextField.swift in Sources */,
 				42F0C76D28ABE81900DA1FCB /* SecondViewController.swift in Sources */,
 				42F0C6F928ABC98F00DA1FCB /* ViewController.swift in Sources */,
 				42F0C76A28ABE81900DA1FCB /* ThirdViewController.swift in Sources */,
 				42F0C76928ABE81900DA1FCB /* WalkThroughViewController.swift in Sources */,
 				4250776F28AC8C1400E77480 /* Codesnap2ViewController.swift in Sources */,
+				428E141B28AF1442002598E6 /* WriteViewController.swift in Sources */,
 				4250776D28AC822A00E77480 /* CodeSnapViewController.swift in Sources */,
 				42EC158028ADE65B004104D2 /* ProfileViewController.swift in Sources */,
 				42F0C76B28ABE81900DA1FCB /* FirstViewController.swift in Sources */,
 				4250776828AC71D400E77480 /* CodeViewController.swift in Sources */,
-				42EC157428ADDF84004104D2 /* UIViewContoller + Extensgion.swift in Sources */,
+				42EC157428ADDF84004104D2 /* UIViewContoller + Extension.swift in Sources */,
+				428E141D28AF169E002598E6 /* BaseView.swift in Sources */,
 				42F0C6F528ABC98F00DA1FCB /* AppDelegate.swift in Sources */,
 				42F0C6F728ABC98F00DA1FCB /* SceneDelegate.swift in Sources */,
 			);

@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController {
         return view
     }()
     
-    var saveButtonActionHandeler: (() -> ())? //함수 자체
+    var saveButtonActionHandeler: ((String) -> ())? //함수 자체
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,16 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .yellow
         configure()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(saveButtonNotificationObserver(notification: )), name: NSNotification.Name("TEST"), object: nil)
         
     }
 
+    @objc func saveButtonNotificationObserver(notification: NSNotification) {
+        if let name = notification.userInfo?["name"] as? String {
+            print(name)
+            self.nameTextField.text = name
+        }
+    }
 
     func configure() {
         [saveButton, nameTextField].forEach {
@@ -58,8 +65,13 @@ class ProfileViewController: UIViewController {
     
     @objc func saveButtonClicked() {
         
-        // 값 전달 기능 실행 => 클로저 구문 활용
-        saveButtonActionHandeler?()
+        
+        //2.Notification
+        NotificationCenter.default.post(name: NSNotification.Name("saveButtonNotification"), object: nil, userInfo: ["name": nameTextField.text!, "value": 123456])
+        
+        
+        //1. 클로저 값 전달 기능 실행 => 클로저 구문 활용
+//        saveButtonActionHandeler?(nameTextField.text!)
         // 화면 Dismiss
         dismiss(animated: true)
     }
