@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let vc = SecondViewController()
+        let vc = NflixViewController()
         vc.modalPresentationStyle = .overFullScreen
         present(vc, animated: true)
     }

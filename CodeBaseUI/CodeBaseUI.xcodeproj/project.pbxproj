@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424465C328B081BB00CDC83A /* NflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424465C228B081BB00CDC83A /* NflixViewController.swift */; };
+		424465C528B0820B00CDC83A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424465C428B0820B00CDC83A /* BaseViewController.swift */; };
+		424465C728B0828B00CDC83A /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424465C628B0828B00CDC83A /* BaseView.swift */; };
+		424465CB28B0835600CDC83A /* NflixView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424465CA28B0835600CDC83A /* NflixView.swift */; };
 		42FDCC8828ACD21E005F8DFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FDCC8728ACD21E005F8DFB /* AppDelegate.swift */; };
 		42FDCC8A28ACD21E005F8DFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FDCC8928ACD21E005F8DFB /* SceneDelegate.swift */; };
 		42FDCC8C28ACD21E005F8DFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FDCC8B28ACD21E005F8DFB /* ViewController.swift */; };
@@ -19,6 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424465C228B081BB00CDC83A /* NflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NflixViewController.swift; sourceTree = "<group>"; };
+		424465C428B0820B00CDC83A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		424465C628B0828B00CDC83A /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		424465CA28B0835600CDC83A /* NflixView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NflixView.swift; sourceTree = "<group>"; };
 		42FDCC8428ACD21E005F8DFB /* CodeBaseUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeBaseUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FDCC8728ACD21E005F8DFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FDCC8928ACD21E005F8DFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424465C928B0830D00CDC83A /* Utillity */ = {
+			isa = PBXGroup;
+			children = (
+				424465C628B0828B00CDC83A /* BaseView.swift */,
+				424465C428B0820B00CDC83A /* BaseViewController.swift */,
+			);
+			path = Utillity;
+			sourceTree = "<group>";
+		};
 		42FDCC7B28ACD21E005F8DFB = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +84,9 @@
 				42FDCC8B28ACD21E005F8DFB /* ViewController.swift */,
 				42FDCC9B28ACD236005F8DFB /* FirstViewController.swift */,
 				42FDCCA128ACEB78005F8DFB /* SecondViewController.swift */,
+				424465C228B081BB00CDC83A /* NflixViewController.swift */,
+				424465CA28B0835600CDC83A /* NflixView.swift */,
+				424465C928B0830D00CDC83A /* Utillity */,
 				42FDCC8D28ACD21E005F8DFB /* Main.storyboard */,
 				42FDCC9028ACD21F005F8DFB /* Assets.xcassets */,
 				42FDCC9228ACD21F005F8DFB /* LaunchScreen.storyboard */,
@@ -153,10 +173,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				42FDCC8C28ACD21E005F8DFB /* ViewController.swift in Sources */,
+				424465CB28B0835600CDC83A /* NflixView.swift in Sources */,
 				42FDCC8828ACD21E005F8DFB /* AppDelegate.swift in Sources */,
+				424465C328B081BB00CDC83A /* NflixViewController.swift in Sources */,
 				42FDCC8A28ACD21E005F8DFB /* SceneDelegate.swift in Sources */,
 				42FDCCA228ACEB78005F8DFB /* SecondViewController.swift in Sources */,
+				424465C528B0820B00CDC83A /* BaseViewController.swift in Sources */,
 				42FDCC9C28ACD236005F8DFB /* FirstViewController.swift in Sources */,
+				424465C728B0828B00CDC83A /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
