@@ -13,7 +13,7 @@ class NflixView: BaseView {
     
     var posterImageView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "movie1")
+        view.image = UIImage(named: "movie2")
         view.contentMode = .scaleAspectFill
         return view
     }()
@@ -72,7 +72,6 @@ class NflixView: BaseView {
         view.image = UIImage(named: "movie2")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.cornerRadius = 60
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.gray.cgColor
         return view
@@ -83,7 +82,6 @@ class NflixView: BaseView {
         view.image = UIImage(named: "movie2")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.cornerRadius = 60
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.gray.cgColor
         return view
@@ -94,7 +92,6 @@ class NflixView: BaseView {
         view.image = UIImage(named: "movie2")
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
-        view.layer.cornerRadius = 60
         view.layer.borderWidth = 2
         view.layer.borderColor = UIColor.gray.cgColor
         return view
@@ -111,9 +108,9 @@ class NflixView: BaseView {
     override func setConstraints() {
         
         posterImageView.snp.makeConstraints { make in
-            make.topMargin.equalTo(20)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(8)
             make.trailing.leading.equalTo(0)
-            make.height.equalTo(self.safeAreaLayoutGuide).multipliedBy(0.75)
+            make.height.equalTo(self).multipliedBy(0.7)
         }
         
         nLabel.snp.makeConstraints { make in
@@ -146,32 +143,33 @@ class NflixView: BaseView {
         playButton.snp.makeConstraints { make in
             make.bottom.equalTo(posterImageView.snp.bottom).inset(16)
             make.centerX.equalTo(self.posterImageView)
-            make.width.equalTo(120)
-            make.height.equalTo(80)
+            make.width.equalTo(100)
+            make.height.equalTo(36)
         }
         
         thumnailLabel.snp.makeConstraints { make in
-            make.top.equalTo(posterImageView.snp.bottom).offset(20)
+            make.bottom.equalTo(thunailMovieImageView1.snp.top).offset(-16)
+            make.top.equalTo(posterImageView.snp.bottom).offset(8)
             make.leading.equalTo(20)
-            make.height.equalTo(20)
+//            make.height.equalTo(20)
         }
         
         thunailMovieImageView1.snp.makeConstraints { make in
             make.leading.equalTo(thumnailLabel.snp.leading)
-            make.top.equalTo(thumnailLabel.snp.bottom).offset(16)
-            make.height.width.equalTo(120)
+            make.bottom.equalTo(self).offset(-20)
+            make.height.width.equalTo((UIScreen.main.bounds.width - 16 * 4) / 3)
         }
         
         thunailMovieImageView2.snp.makeConstraints { make in
             make.centerX.equalTo(self)
-            make.top.equalTo(thumnailLabel.snp.bottom).offset(16)
-            make.height.width.equalTo(120)
+            make.bottom.equalTo(thunailMovieImageView1.snp.bottom)
+            make.height.width.equalTo(thunailMovieImageView1.snp.width)
         }
         
         thunailMovieImageView3.snp.makeConstraints { make in
             make.trailing.equalTo(-20)
-            make.top.equalTo(thumnailLabel.snp.bottom).offset(16)
-            make.height.width.equalTo(120)
+            make.bottom.equalTo(thunailMovieImageView1.snp.bottom)
+            make.height.width.equalTo(thunailMovieImageView1.snp.width)
         }
     }
 }

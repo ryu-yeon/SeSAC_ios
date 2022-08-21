@@ -16,23 +16,30 @@ class NflixViewController: BaseViewController {
         
     }
     
+    override func viewWillLayoutSubviews() {
+        self.mainView.thunailMovieImageView1.layer.cornerRadius = self.mainView.thunailMovieImageView1.frame.size.width / 2
+        self.mainView.thunailMovieImageView2.layer.cornerRadius = self.mainView.thunailMovieImageView2.frame.size.width / 2
+        self.mainView.thunailMovieImageView3.layer.cornerRadius = self.mainView.thunailMovieImageView3.frame.size.width / 2
+    }
+    
     override func loadView() {
         self.view = mainView
-        var number = (1...20).map{$0}.shuffled()
-        mainView.thunailMovieImageView1.image = UIImage(named: "moive\(number.removeFirst())")
-        mainView.thunailMovieImageView2.image = UIImage(named: "movie\(number.removeFirst())")
-        mainView.thunailMovieImageView3.image = UIImage(named: "movie\(number.removeFirst())")
-        mainView.posterImageView.image = UIImage(named: "movie\(number.removeFirst())")
+//        var number = (1...20).map{$0}.shuffled()
+//        mainView.thunailMovieImageView1.image = UIImage(named: "moive\(number.removeFirst())")
+//        mainView.thunailMovieImageView2.image = UIImage(named: "movie\(number.removeFirst())")
+//        mainView.thunailMovieImageView3.image = UIImage(named: "movie\(number.removeFirst())")
+//        mainView.posterImageView.image = UIImage(named: "movie\(number.removeFirst())")
+//                
     }
     
     override func configure() {
-        mainView.playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
+//        mainView.playButton.addTarget(self, action: #selector(playButtonClicked), for: .touchUpInside)
     }
 
-    @objc func playButtonClicked() {
-        var number = (1...20).map{$0}.shuffled()
-        mainView.thunailMovieImageView1.image = UIImage(named: "moive\(number.removeLast())")
-        mainView.thunailMovieImageView2.image = UIImage(named: "movie\(number.removeLast())")
-        mainView.thunailMovieImageView3.image = UIImage(named: "movie\(number.removeFirst())")
-    }
+//    @objc func playButtonClicked() {
+//        var number = (1...20).map{$0}.shuffled()
+//        mainView.thunailMovieImageView1.image = UIImage(named: "moive\(number.removeLast())")
+//        mainView.thunailMovieImageView2.image = UIImage(named: "movie\(number.removeLast())")
+//        mainView.thunailMovieImageView3.image = UIImage(named: "movie\(number.removeFirst())")
+//    }
 }
