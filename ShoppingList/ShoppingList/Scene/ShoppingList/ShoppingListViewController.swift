@@ -7,17 +7,22 @@
 
 import UIKit
 
+import RealmSwift
+
 class ShoppingListViewController: BaseViewController {
     
     let mainView = ShoppingListView()
     
-    var shoppingList: [String] = ["1", "2"]
+    let localRealm = try! Realm()
+    
+    var tasks: Results<ShoppingList>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Shopping List"
         
+        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: ShoppingListTableViewCell.reuableIdentifier)
@@ -33,8 +38,12 @@ class ShoppingListViewController: BaseViewController {
     }
     
     @objc func addButtonClicked() {
+        
         if let shoppingItem = mainView.userTextField.text, mainView.userTextField.text != "" {
-            shoppingList.append(shoppingItem)
+            let task = ShoppingList(shoppingItem: shoppingItem, checkItem: false, favoriteItem: false, registerDate: Date())
+            try! localRealm.write {
+                localRealm.add(task)
+            }
         }
         mainView.userTextField.text = ""
         mainView.tableView.reloadData()
@@ -45,14 +54,21 @@ class ShoppingListViewController: BaseViewController {
 
 extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return shoppingList.count
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingListTableViewCell.reuableIdentifier, for: indexPath) as! ShoppingListTableViewCell
         
-        cell.shoppingListLabel.text = shoppingList[indexPath.row]
+        cell.shoppingListLabel.text = tasks[indexPath.row].shoppingItem
+        
+        let checkButtonImage = tasks[indexPath.row].checkItem ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
+        cell.checkButton.setImage(checkButtonImage, for: .normal)
+        
+        let favoriteButtonImage = tasks[indexPath.row].favoriteItem ? UIImage(systemName: "star.fill") :  UIImage(systemName: "star")
+        
+        cell.favoriteButton.setImage(favoriteButtonImage, for: .normal)
         
         return cell
     }

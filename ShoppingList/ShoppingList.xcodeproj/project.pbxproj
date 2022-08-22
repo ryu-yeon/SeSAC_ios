@@ -23,6 +23,7 @@
 		4297355E28B38913003744B9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4297355D28B38913003744B9 /* SnapKit */; };
 		4297356028B38D5F003744B9 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297355F28B38D5F003744B9 /* ShoppingListTableViewCell.swift */; };
 		4297356628B38F9C003744B9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356528B38F9C003744B9 /* BaseTableViewCell.swift */; };
+		4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356828B3D4EE003744B9 /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		4297355328B387BA003744B9 /* ShoppingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListView.swift; sourceTree = "<group>"; };
 		4297355F28B38D5F003744B9 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		4297356528B38F9C003744B9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4297356828B3D4EE003744B9 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,7 @@
 		4297353328B38526003744B9 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				4297356728B3D4D1003744B9 /* Realm */,
 				4297355128B38776003744B9 /* Scene */,
 				4297354E28B385E3003744B9 /* Utillity */,
 				4297353A28B38526003744B9 /* Main.storyboard */,
@@ -116,6 +119,14 @@
 				4297355F28B38D5F003744B9 /* ShoppingListTableViewCell.swift */,
 			);
 			path = ShoppingList;
+			sourceTree = "<group>";
+		};
+		4297356728B3D4D1003744B9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				4297356828B3D4EE003744B9 /* RealmModel.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 				4297355428B387BA003744B9 /* ShoppingListView.swift in Sources */,
 				4297353928B38526003744B9 /* ViewController.swift in Sources */,
 				4297353528B38526003744B9 /* AppDelegate.swift in Sources */,
+				4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */,
 				4297356028B38D5F003744B9 /* ShoppingListTableViewCell.swift in Sources */,
 				4297354B28B3858E003744B9 /* ShoppingListViewController.swift in Sources */,
 				4297353728B38526003744B9 /* SceneDelegate.swift in Sources */,

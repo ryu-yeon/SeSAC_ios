@@ -7,10 +7,10 @@
 
 import UIKit
 
+import RealmSwift
 import SnapKit
 
 class ShoppingListTableViewCell: BaseTableViewCell {
-    
     
     let checkButton: UIButton = {
         let view = UIButton()
@@ -42,6 +42,17 @@ class ShoppingListTableViewCell: BaseTableViewCell {
         [checkButton, shoppingListLabel, favoriteButton].forEach {
             self.addSubview($0)
         }
+        checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
+        
+        favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func checkButtonClicked() {
+        
+    }
+    
+    @objc func favoriteButtonClicked() {
+        
     }
     
     override func setConstraints() {
