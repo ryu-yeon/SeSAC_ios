@@ -15,7 +15,11 @@ class ShoppingListViewController: BaseViewController {
     
     let localRealm = try! Realm()
     
-    var tasks: Results<ShoppingList>!
+    var tasks: Results<ShoppingList>! {
+        didSet {
+            mainView.tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +53,11 @@ class ShoppingListViewController: BaseViewController {
         mainView.tableView.reloadData()
         view.endEditing(true)
     }
+    
+    func fetchRealm() {
+        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
+    }
 }
-
 
 extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -68,9 +75,48 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
         
         let favoriteButtonImage = tasks[indexPath.row].favoriteItem ? UIImage(systemName: "star.fill") :  UIImage(systemName: "star")
         
+        
         cell.favoriteButton.setImage(favoriteButtonImage, for: .normal)
+
+        cell.favoriteButton.tag = indexPath.row
+        cell.checkButton.tag = indexPath.row
+        
+        cell.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
+        
+        cell.favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func checkButtonClicked(_ sender: UIButton) {
+        try! self.localRealm.write {
+            self.tasks[sender.tag].checkItem = !self.tasks[sender.tag].checkItem
+        }
+        self.fetchRealm()
+    }
+    
+    @objc func favoriteButtonClicked(_ sender: UIButton) {
+        try! self.localRealm.write {
+            self.tasks[sender.tag].favoriteItem = !self.tasks[sender.tag].favoriteItem
+        }
+        self.fetchRealm()
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let remove = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+            
+            try! self.localRealm.write {
+                self.localRealm.delete(self.tasks[indexPath.row])
+                self.fetchRealm()
+            }
+            
+        }
+        remove.image = UIImage(systemName: "trash")
+        remove.backgroundColor = .red
+        
+        
+        return UISwipeActionsConfiguration(actions: [remove])
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

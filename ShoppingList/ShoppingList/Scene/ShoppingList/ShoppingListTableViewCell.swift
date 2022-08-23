@@ -42,17 +42,10 @@ class ShoppingListTableViewCell: BaseTableViewCell {
         [checkButton, shoppingListLabel, favoriteButton].forEach {
             self.addSubview($0)
         }
-        checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
         
-        favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
-    }
-    
-    @objc func checkButtonClicked() {
-        
-    }
-    
-    @objc func favoriteButtonClicked() {
-        
+        [checkButton, favoriteButton].forEach {
+            contentView.addSubview($0)
+        }
     }
     
     override func setConstraints() {
