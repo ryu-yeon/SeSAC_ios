@@ -24,6 +24,8 @@
 		4297356028B38D5F003744B9 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297355F28B38D5F003744B9 /* ShoppingListTableViewCell.swift */; };
 		4297356628B38F9C003744B9 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356528B38F9C003744B9 /* BaseTableViewCell.swift */; };
 		4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356828B3D4EE003744B9 /* RealmModel.swift */; };
+		4297356F28B54235003744B9 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356E28B54235003744B9 /* ItemView.swift */; };
+		4297357128B54241003744B9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297357028B54241003744B9 /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		4297355F28B38D5F003744B9 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
 		4297356528B38F9C003744B9 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		4297356828B3D4EE003744B9 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		4297356E28B54235003744B9 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		4297357028B54241003744B9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,7 @@
 		4297355128B38776003744B9 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				4297356D28B54222003744B9 /* Item */,
 				4297355228B38780003744B9 /* ShoppingList */,
 			);
 			path = Scene;
@@ -127,6 +132,15 @@
 				4297356828B3D4EE003744B9 /* RealmModel.swift */,
 			);
 			path = Realm;
+			sourceTree = "<group>";
+		};
+		4297356D28B54222003744B9 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				4297356E28B54235003744B9 /* ItemView.swift */,
+				4297357028B54241003744B9 /* ItemViewController.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,10 +226,12 @@
 				4297355428B387BA003744B9 /* ShoppingListView.swift in Sources */,
 				4297353928B38526003744B9 /* ViewController.swift in Sources */,
 				4297353528B38526003744B9 /* AppDelegate.swift in Sources */,
+				4297357128B54241003744B9 /* ItemViewController.swift in Sources */,
 				4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */,
 				4297356028B38D5F003744B9 /* ShoppingListTableViewCell.swift in Sources */,
 				4297354B28B3858E003744B9 /* ShoppingListViewController.swift in Sources */,
 				4297353728B38526003744B9 /* SceneDelegate.swift in Sources */,
+				4297356F28B54235003744B9 /* ItemView.swift in Sources */,
 				4297355028B38610003744B9 /* ReusableViewProtocol.swift in Sources */,
 				4297354928B3853F003744B9 /* BaseView.swift in Sources */,
 				4297356628B38F9C003744B9 /* BaseTableViewCell.swift in Sources */,

@@ -128,14 +128,14 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
         try! self.localRealm.write {
             self.tasks[sender.tag].checkItem = !self.tasks[sender.tag].checkItem
         }
-        self.fetchRealm()
+        mainView.tableView.reloadData()
     }
     
     @objc func favoriteButtonClicked(_ sender: UIButton) {
         try! self.localRealm.write {
             self.tasks[sender.tag].favoriteItem = !self.tasks[sender.tag].favoriteItem
         }
-        self.fetchRealm()
+        mainView.tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
@@ -144,7 +144,7 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
             
             try! self.localRealm.write {
                 self.localRealm.delete(self.tasks[indexPath.row])
-                self.fetchRealm()
+                self.mainView.tableView.reloadData()
             }
             
         }
@@ -153,6 +153,13 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
         
         
         return UISwipeActionsConfiguration(actions: [remove])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ItemViewController()
+        vc.item = self.tasks[indexPath.row].shoppingItem
+        vc.date = self.tasks[indexPath.row].registerDate
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
