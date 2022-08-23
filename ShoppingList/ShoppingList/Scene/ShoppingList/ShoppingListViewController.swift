@@ -26,6 +26,10 @@ class ShoppingListViewController: BaseViewController {
         
         navigationItem.title = "Shopping List"
         
+        let sortButton = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
+
+        navigationItem.leftBarButtonItems = [sortButton]
+        
         tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -57,6 +61,38 @@ class ShoppingListViewController: BaseViewController {
     func fetchRealm() {
         tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
     }
+    
+    @objc func sortButtonClicked() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let checkSort = UIAlertAction(title: "할일순", style: .default) { alert in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "checkItem", ascending: true)
+        }
+        
+        let dateSort = UIAlertAction(title: "등록순", style: .default) { alert in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: true)
+        }
+        
+        let favoriteSort = UIAlertAction(title: "즐겨찾기순", style: .default) { alert in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favoriteItem", ascending: false)
+        }
+        
+        let titleSort = UIAlertAction(title: "제목순", style: .default) { alert in
+            self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingItem", ascending: true)
+            
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(dateSort)
+        alert.addAction(titleSort)
+        alert.addAction(checkSort)
+        alert.addAction(favoriteSort)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
+    }
+    
 }
 
 extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource {
