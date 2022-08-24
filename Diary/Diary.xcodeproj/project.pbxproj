@@ -9,9 +9,21 @@
 /* Begin PBXBuildFile section */
 		422F236628B22F9D00226BC8 /* ImageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F236528B22F9D00226BC8 /* ImageSelectView.swift */; };
 		422F236828B22FAF00226BC8 /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422F236728B22FAF00226BC8 /* ImageSelectViewController.swift */; };
+		42314F3528B685E700E7DC7E /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314F3428B685E700E7DC7E /* SettingView.swift */; };
+		42314F3728B685F200E7DC7E /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314F3628B685F200E7DC7E /* SettingViewController.swift */; };
+		42314F3928B6884400E7DC7E /* SettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314F3828B6884400E7DC7E /* SettingTableViewCell.swift */; };
+		42314F3C28B68AEB00E7DC7E /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42314F3B28B68AEB00E7DC7E /* FileManager+Extension.swift */; };
+		4293315A28B6459F0070AD52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315928B6459F0070AD52 /* HomeView.swift */; };
+		4293315C28B645AA0070AD52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315B28B645AA0070AD52 /* HomeViewController.swift */; };
+		4293315E28B646290070AD52 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315D28B646290070AD52 /* ReusableViewProtocol.swift */; };
+		4293316228B648460070AD52 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293316128B648460070AD52 /* BaseTableViewCell.swift */; };
+		4293316428B648A50070AD52 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293316328B648A50070AD52 /* HomeTableViewCell.swift */; };
+		4293316728B64CEE0070AD52 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293316628B64CEE0070AD52 /* RealmModel.swift */; };
+		4293316A28B64D150070AD52 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4293316928B64D150070AD52 /* Realm */; };
+		4293316C28B64D150070AD52 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4293316B28B64D150070AD52 /* RealmSwift */; };
 		4297351028B2D3E8003744B9 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297350F28B2D3E8003744B9 /* ImageCollectionViewCell.swift */; };
 		4297351228B2D49B003744B9 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297351128B2D49B003744B9 /* BaseCollectionViewCell.swift */; };
-		4297351528B2DA6F003744B9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297351428B2DA6F003744B9 /* APIManager.swift */; };
+		4297351528B2DA6F003744B9 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297351428B2DA6F003744B9 /* UnsplashAPIManager.swift */; };
 		4297351728B2DA77003744B9 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297351628B2DA77003744B9 /* APIKey.swift */; };
 		4297351928B2DA83003744B9 /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297351828B2DA83003744B9 /* Contents.swift */; };
 		42B7872B28B22659002D1749 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7872A28B22659002D1749 /* AppDelegate.swift */; };
@@ -22,8 +34,8 @@
 		42B7873728B2265B002D1749 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B7873528B2265B002D1749 /* LaunchScreen.storyboard */; };
 		42B7873F28B22673002D1749 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7873E28B22673002D1749 /* BaseViewController.swift */; };
 		42B7874128B226C0002D1749 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7874028B226C0002D1749 /* BaseView.swift */; };
-		42B7874328B22727002D1749 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7874228B22727002D1749 /* DiaryViewController.swift */; };
-		42B7874528B22763002D1749 /* DiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7874428B22763002D1749 /* DiaryView.swift */; };
+		42B7874328B22727002D1749 /* WriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7874228B22727002D1749 /* WriteViewController.swift */; };
+		42B7874528B22763002D1749 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B7874428B22763002D1749 /* WriteView.swift */; };
 		42B7874828B227FA002D1749 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7874728B227FA002D1749 /* SnapKit */; };
 		42B7874B28B22804002D1749 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7874A28B22804002D1749 /* Alamofire */; };
 		42B7874E28B2280F002D1749 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7874D28B2280F002D1749 /* Kingfisher */; };
@@ -33,9 +45,19 @@
 /* Begin PBXFileReference section */
 		422F236528B22F9D00226BC8 /* ImageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectView.swift; sourceTree = "<group>"; };
 		422F236728B22FAF00226BC8 /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		42314F3428B685E700E7DC7E /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		42314F3628B685F200E7DC7E /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		42314F3828B6884400E7DC7E /* SettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewCell.swift; sourceTree = "<group>"; };
+		42314F3B28B68AEB00E7DC7E /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
+		4293315928B6459F0070AD52 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4293315B28B645AA0070AD52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4293315D28B646290070AD52 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
+		4293316128B648460070AD52 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		4293316328B648A50070AD52 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		4293316628B64CEE0070AD52 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4297350F28B2D3E8003744B9 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		4297351128B2D49B003744B9 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
-		4297351428B2DA6F003744B9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4297351428B2DA6F003744B9 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		4297351628B2DA77003744B9 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		4297351828B2DA83003744B9 /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 		42B7872728B22659002D1749 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,8 +70,8 @@
 		42B7873828B2265B002D1749 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42B7873E28B22673002D1749 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		42B7874028B226C0002D1749 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		42B7874228B22727002D1749 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
-		42B7874428B22763002D1749 /* DiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryView.swift; sourceTree = "<group>"; };
+		42B7874228B22727002D1749 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
+		42B7874428B22763002D1749 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,16 +79,101 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4293316C28B64D150070AD52 /* RealmSwift in Frameworks */,
 				42B7874E28B2280F002D1749 /* Kingfisher in Frameworks */,
 				42B7874828B227FA002D1749 /* SnapKit in Frameworks */,
 				42B7875128B22818002D1749 /* SwiftyJSON in Frameworks */,
 				42B7874B28B22804002D1749 /* Alamofire in Frameworks */,
+				4293316A28B64D150070AD52 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42314F3328B685DC00E7DC7E /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				42314F3428B685E700E7DC7E /* SettingView.swift */,
+				42314F3628B685F200E7DC7E /* SettingViewController.swift */,
+				42314F3828B6884400E7DC7E /* SettingTableViewCell.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		42314F3A28B68AD200E7DC7E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42314F3B28B68AEB00E7DC7E /* FileManager+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4293315428B6450C0070AD52 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+				42B7874228B22727002D1749 /* WriteViewController.swift */,
+				42B7874428B22763002D1749 /* WriteView.swift */,
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		4293315528B645130070AD52 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				42314F3328B685DC00E7DC7E /* Setting */,
+				4293315828B645940070AD52 /* Home */,
+				4293315428B6450C0070AD52 /* Write */,
+				4293315728B6456F0070AD52 /* ImageSelect */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		4293315728B6456F0070AD52 /* ImageSelect */ = {
+			isa = PBXGroup;
+			children = (
+				422F236728B22FAF00226BC8 /* ImageSelectViewController.swift */,
+				422F236528B22F9D00226BC8 /* ImageSelectView.swift */,
+				4297350F28B2D3E8003744B9 /* ImageCollectionViewCell.swift */,
+			);
+			path = ImageSelect;
+			sourceTree = "<group>";
+		};
+		4293315828B645940070AD52 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4293315928B6459F0070AD52 /* HomeView.swift */,
+				4293315B28B645AA0070AD52 /* HomeViewController.swift */,
+				4293316328B648A50070AD52 /* HomeTableViewCell.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		4293315F28B647990070AD52 /* Contants */ = {
+			isa = PBXGroup;
+			children = (
+				4297351828B2DA83003744B9 /* Contents.swift */,
+				4297351628B2DA77003744B9 /* APIKey.swift */,
+			);
+			path = Contants;
+			sourceTree = "<group>";
+		};
+		4293316028B648000070AD52 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				4297351428B2DA6F003744B9 /* UnsplashAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		4293316528B64CD90070AD52 /* RealmModel */ = {
+			isa = PBXGroup;
+			children = (
+				4293316628B64CEE0070AD52 /* RealmModel.swift */,
+			);
+			path = RealmModel;
+			sourceTree = "<group>";
+		};
 		42B7871E28B22659002D1749 = {
 			isa = PBXGroup;
 			children = (
@@ -89,15 +196,12 @@
 				42B7872A28B22659002D1749 /* AppDelegate.swift */,
 				42B7872C28B22659002D1749 /* SceneDelegate.swift */,
 				42B7872E28B22659002D1749 /* ViewController.swift */,
-				4297351428B2DA6F003744B9 /* APIManager.swift */,
-				4297351628B2DA77003744B9 /* APIKey.swift */,
-				4297351828B2DA83003744B9 /* Contents.swift */,
+				4293316028B648000070AD52 /* APIManager */,
+				4293315F28B647990070AD52 /* Contants */,
+				4293316528B64CD90070AD52 /* RealmModel */,
 				42B7875228B22820002D1749 /* Utillity */,
-				42B7874228B22727002D1749 /* DiaryViewController.swift */,
-				42B7874428B22763002D1749 /* DiaryView.swift */,
-				422F236728B22FAF00226BC8 /* ImageSelectViewController.swift */,
-				422F236528B22F9D00226BC8 /* ImageSelectView.swift */,
-				4297350F28B2D3E8003744B9 /* ImageCollectionViewCell.swift */,
+				4293315528B645130070AD52 /* Scene */,
+				42314F3A28B68AD200E7DC7E /* Extension */,
 				42B7873028B22659002D1749 /* Main.storyboard */,
 				42B7873328B2265B002D1749 /* Assets.xcassets */,
 				42B7873528B2265B002D1749 /* LaunchScreen.storyboard */,
@@ -112,6 +216,8 @@
 				42B7873E28B22673002D1749 /* BaseViewController.swift */,
 				42B7874028B226C0002D1749 /* BaseView.swift */,
 				4297351128B2D49B003744B9 /* BaseCollectionViewCell.swift */,
+				4293316128B648460070AD52 /* BaseTableViewCell.swift */,
+				4293315D28B646290070AD52 /* ReusableViewProtocol.swift */,
 			);
 			path = Utillity;
 			sourceTree = "<group>";
@@ -137,6 +243,8 @@
 				42B7874A28B22804002D1749 /* Alamofire */,
 				42B7874D28B2280F002D1749 /* Kingfisher */,
 				42B7875028B22818002D1749 /* SwiftyJSON */,
+				4293316928B64D150070AD52 /* Realm */,
+				4293316B28B64D150070AD52 /* RealmSwift */,
 			);
 			productName = Diary;
 			productReference = 42B7872728B22659002D1749 /* Diary.app */;
@@ -171,6 +279,7 @@
 				42B7874928B22804002D1749 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				42B7874C28B2280F002D1749 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				42B7874F28B22818002D1749 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				4293316828B64D140070AD52 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 42B7872828B22659002D1749 /* Products */;
 			projectDirPath = "";
@@ -199,16 +308,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4297351528B2DA6F003744B9 /* APIManager.swift in Sources */,
+				4293315E28B646290070AD52 /* ReusableViewProtocol.swift in Sources */,
+				42314F3728B685F200E7DC7E /* SettingViewController.swift in Sources */,
+				4297351528B2DA6F003744B9 /* UnsplashAPIManager.swift in Sources */,
 				42B7872F28B22659002D1749 /* ViewController.swift in Sources */,
+				42314F3528B685E700E7DC7E /* SettingView.swift in Sources */,
+				42314F3928B6884400E7DC7E /* SettingTableViewCell.swift in Sources */,
 				42B7873F28B22673002D1749 /* BaseViewController.swift in Sources */,
+				4293316228B648460070AD52 /* BaseTableViewCell.swift in Sources */,
+				4293315A28B6459F0070AD52 /* HomeView.swift in Sources */,
+				4293316428B648A50070AD52 /* HomeTableViewCell.swift in Sources */,
 				42B7874128B226C0002D1749 /* BaseView.swift in Sources */,
-				42B7874528B22763002D1749 /* DiaryView.swift in Sources */,
+				42B7874528B22763002D1749 /* WriteView.swift in Sources */,
 				4297351228B2D49B003744B9 /* BaseCollectionViewCell.swift in Sources */,
 				42B7872B28B22659002D1749 /* AppDelegate.swift in Sources */,
-				42B7874328B22727002D1749 /* DiaryViewController.swift in Sources */,
+				42B7874328B22727002D1749 /* WriteViewController.swift in Sources */,
 				4297351028B2D3E8003744B9 /* ImageCollectionViewCell.swift in Sources */,
+				4293316728B64CEE0070AD52 /* RealmModel.swift in Sources */,
+				42314F3C28B68AEB00E7DC7E /* FileManager+Extension.swift in Sources */,
 				4297351928B2DA83003744B9 /* Contents.swift in Sources */,
+				4293315C28B645AA0070AD52 /* HomeViewController.swift in Sources */,
 				422F236828B22FAF00226BC8 /* ImageSelectViewController.swift in Sources */,
 				422F236628B22F9D00226BC8 /* ImageSelectView.swift in Sources */,
 				4297351728B2DA77003744B9 /* APIKey.swift in Sources */,
@@ -432,6 +551,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4293316828B64D140070AD52 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		42B7874628B227FA002D1749 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -467,6 +594,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4293316928B64D150070AD52 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4293316828B64D140070AD52 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		4293316B28B64D150070AD52 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4293316828B64D140070AD52 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
 		42B7874728B227FA002D1749 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 42B7874628B227FA002D1749 /* XCRemoteSwiftPackageReference "SnapKit" */;

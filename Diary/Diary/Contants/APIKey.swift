@@ -8,6 +8,5 @@
 import Foundation
 
 enum APIKey {
-    static let naverId = "1NbmAsJwdmGxOVE4nruK"
-    static let naverPw = "_5u3jvJQf9"
+    static let unsplashId = "qBzVus-rst6TL9M2iMzYIwMeM39hN3Xg6NG2N2OVAZE"
 }

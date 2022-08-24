@@ -14,9 +14,13 @@ class ImageSelectViewController: BaseViewController {
     let mainView = ImageSelectView()
     
     var imageList: [String] = []
-    var num: Int?
+    var thumnailList: [String] = []
     
-    var selectedImageURL: String?
+    var selectIndexPath: IndexPath?
+    
+    var selectImage: UIImage?
+    var delegate: SelectImageDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -39,7 +43,10 @@ class ImageSelectViewController: BaseViewController {
     
     @objc func selectButtonClicked() {
         
-        dismiss(animated: true)
+        guard let selectImage = selectImage else { return }
+        
+        delegate?.sendImageData(image: selectImage)
+        navigationController?.popViewController(animated: true)
     }
 }
 
@@ -49,33 +56,35 @@ extension ImageSelectViewController: UICollectionViewDelegate, UICollectionViewD
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as! ImageCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
         
-        let url = URL(string: imageList[indexPath.item])
+        let url = URL(string: thumnailList[indexPath.item])
         cell.imageView.kf.setImage(with: url)
+
+        cell.layer.borderWidth = selectIndexPath == indexPath ? 4 : 0
+        cell.layer.borderColor = selectIndexPath == indexPath ? UIColor.red.cgColor : nil
         
-        if let selectCell = num {
-            if indexPath.item == selectCell {
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.blue.cgColor
-            }
-        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         view.endEditing(true)
-        num = indexPath.item
-        selectedImageURL = imageList[indexPath.item]
+        selectIndexPath = indexPath
+        
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else { return }
+        
+        selectImage = cell.imageView.image
+        
         collectionView.reloadData()
     }
 }
 
 extension ImageSelectViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        APIManager.shared.requestImage(searchBar.text ?? "") { imageList in
+        UnsplashAPIManager.shared.requestImage(searchBar.text ?? "") { imageList, thumnailList in
             self.imageList.append(contentsOf: imageList)
-            
+            self.thumnailList.append(contentsOf: thumnailList)
             DispatchQueue.main.async {
                 self.mainView.collectionView.reloadData()
             }

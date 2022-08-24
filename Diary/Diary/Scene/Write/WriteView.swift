@@ -1,5 +1,5 @@
 //
-//  DiaryView.swift
+//  WriteView.swift
 //  Diary
 //
 //  Created by 유연탁 on 2022/08/21.
@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class DiaryView: BaseView {
+class WriteView: BaseView {
     
     let userImageView: UIImageView = {
         let view = UIImageView()
@@ -19,14 +19,12 @@ class DiaryView: BaseView {
     
     let addImageButton: UIButton = {
         let view = UIButton()
-        view.setImage(UIImage(systemName: "plus"), for: .normal)
-        view.contentVerticalAlignment = .fill
-        view.contentHorizontalAlignment = .fill
+        view.setImage(UIImage(systemName: "photo"), for: .normal)
         view.clipsToBounds = true
-        view.layer.borderColor = UIColor.gray.cgColor
-        view.layer.borderWidth = 1
-        view.tintColor = .black
-        view.backgroundColor = .white
+//        view.layer.borderColor = UIColor.gray.cgColor
+//        view.layer.borderWidth = 1
+        view.tintColor = .white
+        view.backgroundColor = .red
         return view
     }()
     
@@ -42,7 +40,7 @@ class DiaryView: BaseView {
         let view = UITextField()
         view.textAlignment = .center
         view.borderStyle = .line
-        view.placeholder = "제목을 입력해주세요."
+        view.placeholder = "입력해주세요."
         return view
     }()
     
