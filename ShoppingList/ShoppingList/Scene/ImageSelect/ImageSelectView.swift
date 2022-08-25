@@ -50,5 +50,4 @@ class ImageSelectView: BaseView {
             make.leading.trailing.bottom.equalTo(0)
         }
     }
-    
 }

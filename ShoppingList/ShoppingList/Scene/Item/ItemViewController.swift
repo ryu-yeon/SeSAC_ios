@@ -9,39 +9,95 @@ import UIKit
 
 import RealmSwift
 
+protocol SelectImageDelegate {
+    func sendImageData(image: UIImage)
+}
+
 class ItemViewController: BaseViewController {
     
     let mainView = ItemView()
     
-    var item = ""
-    var date = Date()
+    let localRealm = try! Realm()
     
-    var task: ShoppingList?
+    var task: ShoppingList!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    override func viewWillLayoutSubviews() {
+        self.mainView.addImageButton.layer.cornerRadius = mainView.addImageButton.bounds.height / 2
+    }
+    
     override func loadView() {
         self.view = mainView
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        try! localRealm.write {
+            task.detailText = mainView.detailTextView.text
+        }
+    }
+    
     override func configure() {
+        
         mainView.itemLable.text = task?.shoppingItem
         
         let format = DateFormatter()
         
         format.dateFormat = "yyyy.MM.dd hh:mm"
         
-        mainView.dateLabel.text = format.string(from: task!.registerDate)
+        mainView.dateLabel.text = format.string(from: task.registerDate)
+        
+        mainView.detailTextView.text = task.detailText
+        
+        setCheckImage()
+        setFavoriteImage()
         
         mainView.addImageButton.addTarget(self, action: #selector(addImageButtonClicked), for: .touchUpInside)
         
+        mainView.checkButton.addTarget(self, action: #selector(checkButtonClicked), for: .touchUpInside)
+        mainView.favoriteButton.addTarget(self, action: #selector(favoriteButtonClicked), for: .touchUpInside)
     }
     
     @objc func addImageButtonClicked() {
         let vc = ImageSelectViewController()
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func checkButtonClicked() {
+        try! localRealm.write {
+            task.checkItem = !task.checkItem
+        }
+        setCheckImage()
+    }
+    
+    @objc func favoriteButtonClicked() {
+        
+        try! localRealm.write {
+            task.favoriteItem = !task.favoriteItem
+        }
+        setFavoriteImage()
+    }
+    
+    func setCheckImage() {
+        let checkImage = task.checkItem ? UIImage(systemName: "checkmark.square.fill") : UIImage(systemName: "checkmark.square")
+        mainView.checkButton.setImage(checkImage, for: .normal)
+    }
+    
+    func setFavoriteImage() {
+        let favoriteImage = task.favoriteItem ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        
+        mainView.favoriteButton.setImage(favoriteImage, for: .normal)
+    }
+}
+
+extension ItemViewController: SelectImageDelegate {
+    func sendImageData(image: UIImage) {
+        mainView.itemImageView.image = image
     }
 }

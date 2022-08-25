@@ -48,7 +48,7 @@ class ShoppingListViewController: BaseViewController {
     @objc func addButtonClicked() {
         
         if let shoppingItem = mainView.userTextField.text, mainView.userTextField.text != "" {
-            let task = ShoppingList(shoppingItem: shoppingItem, checkItem: false, favoriteItem: false, registerDate: Date())
+            let task = ShoppingList(shoppingItem: shoppingItem, checkItem: false, favoriteItem: false, registerDate: Date(), detailText: nil)
             try! localRealm.write {
                 localRealm.add(task)
             }

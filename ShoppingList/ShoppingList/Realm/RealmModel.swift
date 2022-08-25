@@ -14,14 +14,16 @@ class ShoppingList: Object {
     @Persisted var checkItem: Bool
     @Persisted var favoriteItem: Bool
     @Persisted var registerDate = Date()
+    @Persisted var detailText: String?
     
     @Persisted(primaryKey: true) var ObjectId: ObjectId
     
-    convenience init(shoppingItem: String, checkItem: Bool, favoriteItem: Bool, registerDate: Date) {
+    convenience init(shoppingItem: String, checkItem: Bool, favoriteItem: Bool, registerDate: Date, detailText: String?) {
         self.init()
         self.shoppingItem = shoppingItem
         self.checkItem = false
         self.favoriteItem = false
         self.registerDate = Date()
+        self.detailText = detailText
     }
 }
