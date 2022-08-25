@@ -38,13 +38,13 @@ class SettingView: BaseView {
         
         backupButton.snp.makeConstraints { make in
             make.top.leading.equalTo(self.safeAreaLayoutGuide).offset(20)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(60)
         }
         
         restoreButton.snp.makeConstraints { make in
             make.top.equalTo(backupButton.snp.bottom).offset(20)
             make.leading.equalTo(20)
-            make.width.height.equalTo(40)
+            make.width.height.equalTo(60)
         }
     }
 }

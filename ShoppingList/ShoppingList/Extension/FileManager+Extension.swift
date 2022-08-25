@@ -47,4 +47,9 @@ extension BaseViewController {
             print(error)
         }
     }
+    
+    func documentDirectoryPath() -> URL? {
+        guard let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil}
+        return documentDirectory
+    }
 }

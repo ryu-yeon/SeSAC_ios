@@ -39,6 +39,7 @@
 		42F0808D28B77A8F007E6D9F /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0808C28B77A8F007E6D9F /* FileManager+Extension.swift */; };
 		42F0809028B793A9007E6D9F /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0808F28B793A9007E6D9F /* SettingView.swift */; };
 		42F0809228B793B1007E6D9F /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0809128B793B1007E6D9F /* SettingViewController.swift */; };
+		42F0809528B7D42F007E6D9F /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0809428B7D42F007E6D9F /* Zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F0809528B7D42F007E6D9F /* Zip in Frameworks */,
 				42F0808A28B761B1007E6D9F /* SwiftyJSON in Frameworks */,
 				42F0808728B7619F007E6D9F /* Alamofire in Frameworks */,
 				42F0808428B7613B007E6D9F /* Kingfisher in Frameworks */,
@@ -242,6 +244,7 @@
 				42F0808328B7613B007E6D9F /* Kingfisher */,
 				42F0808628B7619F007E6D9F /* Alamofire */,
 				42F0808928B761B1007E6D9F /* SwiftyJSON */,
+				42F0809428B7D42F007E6D9F /* Zip */,
 			);
 			productName = ShoppingList;
 			productReference = 4297353128B38526003744B9 /* ShoppingList.app */;
@@ -277,6 +280,7 @@
 				42F0808228B7613A007E6D9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				42F0808528B7619F007E6D9F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				42F0808828B761B1007E6D9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				42F0809328B7D42E007E6D9F /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = 4297353228B38526003744B9 /* Products */;
 			projectDirPath = "";
@@ -587,6 +591,14 @@
 				kind = branch;
 			};
 		};
+		42F0809328B7D42E007E6D9F /* XCRemoteSwiftPackageReference "Zip" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Zip.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -619,6 +631,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42F0808828B761B1007E6D9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		42F0809428B7D42F007E6D9F /* Zip */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42F0809328B7D42E007E6D9F /* XCRemoteSwiftPackageReference "Zip" */;
+			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
