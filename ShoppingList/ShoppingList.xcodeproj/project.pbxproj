@@ -26,6 +26,16 @@
 		4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356828B3D4EE003744B9 /* RealmModel.swift */; };
 		4297356F28B54235003744B9 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297356E28B54235003744B9 /* ItemView.swift */; };
 		4297357128B54241003744B9 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4297357028B54241003744B9 /* ItemViewController.swift */; };
+		42F0807128B74EDE007E6D9F /* ImageSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807028B74EDE007E6D9F /* ImageSelectView.swift */; };
+		42F0807328B74EE7007E6D9F /* ImageSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807228B74EE7007E6D9F /* ImageSelectViewController.swift */; };
+		42F0807728B75D03007E6D9F /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807628B75D03007E6D9F /* BaseCollectionViewCell.swift */; };
+		42F0807928B75D7E007E6D9F /* ImageSelectColletionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807828B75D7E007E6D9F /* ImageSelectColletionViewCell.swift */; };
+		42F0807C28B76033007E6D9F /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807B28B76033007E6D9F /* UnsplashAPIManager.swift */; };
+		42F0807F28B760E1007E6D9F /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0807E28B760E1007E6D9F /* APIKey.swift */; };
+		42F0808128B760EB007E6D9F /* Contents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0808028B760EB007E6D9F /* Contents.swift */; };
+		42F0808428B7613B007E6D9F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808328B7613B007E6D9F /* Kingfisher */; };
+		42F0808728B7619F007E6D9F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808628B7619F007E6D9F /* Alamofire */; };
+		42F0808A28B761B1007E6D9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808928B761B1007E6D9F /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +57,13 @@
 		4297356828B3D4EE003744B9 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		4297356E28B54235003744B9 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		4297357028B54241003744B9 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		42F0807028B74EDE007E6D9F /* ImageSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectView.swift; sourceTree = "<group>"; };
+		42F0807228B74EE7007E6D9F /* ImageSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectViewController.swift; sourceTree = "<group>"; };
+		42F0807628B75D03007E6D9F /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		42F0807828B75D7E007E6D9F /* ImageSelectColletionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectColletionViewCell.swift; sourceTree = "<group>"; };
+		42F0807B28B76033007E6D9F /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
+		42F0807E28B760E1007E6D9F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		42F0808028B760EB007E6D9F /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +71,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F0808A28B761B1007E6D9F /* SwiftyJSON in Frameworks */,
+				42F0808728B7619F007E6D9F /* Alamofire in Frameworks */,
+				42F0808428B7613B007E6D9F /* Kingfisher in Frameworks */,
 				4297355E28B38913003744B9 /* SnapKit in Frameworks */,
 				4297355B28B38906003744B9 /* RealmSwift in Frameworks */,
 				4297355928B38906003744B9 /* Realm in Frameworks */,
@@ -82,6 +102,8 @@
 		4297353328B38526003744B9 /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
+				42F0807D28B76097007E6D9F /* Contents */,
+				42F0807A28B76021007E6D9F /* APIManager */,
 				4297356728B3D4D1003744B9 /* Realm */,
 				4297355128B38776003744B9 /* Scene */,
 				4297354E28B385E3003744B9 /* Utillity */,
@@ -102,6 +124,7 @@
 				4297354828B3853F003744B9 /* BaseView.swift */,
 				4297354C28B385A6003744B9 /* BaseViewController.swift */,
 				4297356528B38F9C003744B9 /* BaseTableViewCell.swift */,
+				42F0807628B75D03007E6D9F /* BaseCollectionViewCell.swift */,
 				4297354F28B38610003744B9 /* ReusableViewProtocol.swift */,
 			);
 			path = Utillity;
@@ -110,6 +133,7 @@
 		4297355128B38776003744B9 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				42F0806F28B74EB7007E6D9F /* ImageSelect */,
 				4297356D28B54222003744B9 /* Item */,
 				4297355228B38780003744B9 /* ShoppingList */,
 			);
@@ -143,6 +167,33 @@
 			path = Item;
 			sourceTree = "<group>";
 		};
+		42F0806F28B74EB7007E6D9F /* ImageSelect */ = {
+			isa = PBXGroup;
+			children = (
+				42F0807028B74EDE007E6D9F /* ImageSelectView.swift */,
+				42F0807228B74EE7007E6D9F /* ImageSelectViewController.swift */,
+				42F0807828B75D7E007E6D9F /* ImageSelectColletionViewCell.swift */,
+			);
+			path = ImageSelect;
+			sourceTree = "<group>";
+		};
+		42F0807A28B76021007E6D9F /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				42F0807B28B76033007E6D9F /* UnsplashAPIManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		42F0807D28B76097007E6D9F /* Contents */ = {
+			isa = PBXGroup;
+			children = (
+				42F0807E28B760E1007E6D9F /* APIKey.swift */,
+				42F0808028B760EB007E6D9F /* Contents.swift */,
+			);
+			path = Contents;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +214,9 @@
 				4297355828B38906003744B9 /* Realm */,
 				4297355A28B38906003744B9 /* RealmSwift */,
 				4297355D28B38913003744B9 /* SnapKit */,
+				42F0808328B7613B007E6D9F /* Kingfisher */,
+				42F0808628B7619F007E6D9F /* Alamofire */,
+				42F0808928B761B1007E6D9F /* SwiftyJSON */,
 			);
 			productName = ShoppingList;
 			productReference = 4297353128B38526003744B9 /* ShoppingList.app */;
@@ -195,6 +249,9 @@
 			packageReferences = (
 				4297355728B38906003744B9 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				4297355C28B38913003744B9 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				42F0808228B7613A007E6D9F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				42F0808528B7619F007E6D9F /* XCRemoteSwiftPackageReference "Alamofire" */,
+				42F0808828B761B1007E6D9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 4297353228B38526003744B9 /* Products */;
 			projectDirPath = "";
@@ -223,11 +280,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42F0807128B74EDE007E6D9F /* ImageSelectView.swift in Sources */,
+				42F0807F28B760E1007E6D9F /* APIKey.swift in Sources */,
 				4297355428B387BA003744B9 /* ShoppingListView.swift in Sources */,
 				4297353928B38526003744B9 /* ViewController.swift in Sources */,
+				42F0807328B74EE7007E6D9F /* ImageSelectViewController.swift in Sources */,
 				4297353528B38526003744B9 /* AppDelegate.swift in Sources */,
+				42F0807928B75D7E007E6D9F /* ImageSelectColletionViewCell.swift in Sources */,
 				4297357128B54241003744B9 /* ItemViewController.swift in Sources */,
+				42F0807728B75D03007E6D9F /* BaseCollectionViewCell.swift in Sources */,
+				42F0807C28B76033007E6D9F /* UnsplashAPIManager.swift in Sources */,
 				4297356928B3D4EE003744B9 /* RealmModel.swift in Sources */,
+				42F0808128B760EB007E6D9F /* Contents.swift in Sources */,
 				4297356028B38D5F003744B9 /* ShoppingListTableViewCell.swift in Sources */,
 				4297354B28B3858E003744B9 /* ShoppingListViewController.swift in Sources */,
 				4297353728B38526003744B9 /* SceneDelegate.swift in Sources */,
@@ -471,6 +535,30 @@
 				kind = branch;
 			};
 		};
+		42F0808228B7613A007E6D9F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		42F0808528B7619F007E6D9F /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		42F0808828B761B1007E6D9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -488,6 +576,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4297355C28B38913003744B9 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		42F0808328B7613B007E6D9F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42F0808228B7613A007E6D9F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		42F0808628B7619F007E6D9F /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42F0808528B7619F007E6D9F /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		42F0808928B761B1007E6D9F /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42F0808828B761B1007E6D9F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

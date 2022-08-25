@@ -7,12 +7,16 @@
 
 import UIKit
 
+import RealmSwift
+
 class ItemViewController: BaseViewController {
     
-    let itemView = ItemView()
+    let mainView = ItemView()
     
     var item = ""
     var date = Date()
+    
+    var task: ShoppingList?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,17 +24,24 @@ class ItemViewController: BaseViewController {
     }
     
     override func loadView() {
-        self.view = itemView
+        self.view = mainView
     }
     
     override func configure() {
-        itemView.itemLable.text = item
+        mainView.itemLable.text = task?.shoppingItem
         
         let format = DateFormatter()
         
         format.dateFormat = "yyyy.MM.dd hh:mm"
         
-        itemView.dateLabel.text = format.string(from: date)
+        mainView.dateLabel.text = format.string(from: task!.registerDate)
         
+        mainView.addImageButton.addTarget(self, action: #selector(addImageButtonClicked), for: .touchUpInside)
+        
+    }
+    
+    @objc func addImageButtonClicked() {
+        let vc = ImageSelectViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

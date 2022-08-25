@@ -157,8 +157,8 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ItemViewController()
-        vc.item = self.tasks[indexPath.row].shoppingItem
-        vc.date = self.tasks[indexPath.row].registerDate
+        
+        vc.task = self.tasks[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
     
