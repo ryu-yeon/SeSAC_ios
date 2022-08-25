@@ -36,6 +36,7 @@
 		42F0808428B7613B007E6D9F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808328B7613B007E6D9F /* Kingfisher */; };
 		42F0808728B7619F007E6D9F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808628B7619F007E6D9F /* Alamofire */; };
 		42F0808A28B761B1007E6D9F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0808928B761B1007E6D9F /* SwiftyJSON */; };
+		42F0808D28B77A8F007E6D9F /* FileManager+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0808C28B77A8F007E6D9F /* FileManager+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		42F0807B28B76033007E6D9F /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		42F0807E28B760E1007E6D9F /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		42F0808028B760EB007E6D9F /* Contents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contents.swift; sourceTree = "<group>"; };
+		42F0808C28B77A8F007E6D9F /* FileManager+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FileManager+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				4297356728B3D4D1003744B9 /* Realm */,
 				4297355128B38776003744B9 /* Scene */,
 				4297354E28B385E3003744B9 /* Utillity */,
+				42F0808B28B77A78007E6D9F /* Extension */,
 				4297353A28B38526003744B9 /* Main.storyboard */,
 				4297353428B38526003744B9 /* AppDelegate.swift */,
 				4297353628B38526003744B9 /* SceneDelegate.swift */,
@@ -192,6 +195,14 @@
 				42F0808028B760EB007E6D9F /* Contents.swift */,
 			);
 			path = Contents;
+			sourceTree = "<group>";
+		};
+		42F0808B28B77A78007E6D9F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				42F0808C28B77A8F007E6D9F /* FileManager+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -285,6 +296,7 @@
 				4297355428B387BA003744B9 /* ShoppingListView.swift in Sources */,
 				4297353928B38526003744B9 /* ViewController.swift in Sources */,
 				42F0807328B74EE7007E6D9F /* ImageSelectViewController.swift in Sources */,
+				42F0808D28B77A8F007E6D9F /* FileManager+Extension.swift in Sources */,
 				4297353528B38526003744B9 /* AppDelegate.swift in Sources */,
 				42F0807928B75D7E007E6D9F /* ImageSelectColletionViewCell.swift in Sources */,
 				4297357128B54241003744B9 /* ItemViewController.swift in Sources */,

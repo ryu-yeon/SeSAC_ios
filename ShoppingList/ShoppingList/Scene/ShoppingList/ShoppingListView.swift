@@ -28,17 +28,23 @@ class ShoppingListView: BaseView {
         return view
     }()
     
+    let sortLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 16)
+        view.textColor = .black
+        return view
+    }()
+    
     let tableView: UITableView = {
         let view = UITableView()
         view.separatorStyle = .singleLine
         view.separatorInset.left = 0
-//        view.backgroundColor = .lightGray
         return view
     }()
 
     override func configureUI() {
         self.backgroundColor = .white
-        [userTextField, addButton, tableView].forEach {
+        [userTextField, addButton, sortLabel,tableView].forEach {
             self.addSubview($0)
         }
     }
@@ -59,8 +65,15 @@ class ShoppingListView: BaseView {
             make.height.equalTo(userTextField.snp.height)
         }
         
+        sortLabel.snp.makeConstraints { make in
+            make.top.equalTo(userTextField.snp.bottom).offset(16)
+            make.leading.equalTo(24)
+            make.trailing.equalTo(-20)
+            make.height.equalTo(20)
+        }
+        
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(userTextField.snp.bottom).offset(48)
+            make.top.equalTo(sortLabel.snp.bottom).offset(16)
             make.leading.equalTo(userTextField.snp.leading)
             make.trailing.equalTo(addButton.snp.trailing)
             make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)

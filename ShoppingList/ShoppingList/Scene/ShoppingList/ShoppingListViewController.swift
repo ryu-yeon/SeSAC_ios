@@ -31,6 +31,9 @@ class ShoppingListViewController: BaseViewController {
         navigationItem.leftBarButtonItems = [sortButton]
         
         tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
+        
+        mainView.sortLabel.text = "등록순"
+        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(ShoppingListTableViewCell.self, forCellReuseIdentifier: ShoppingListTableViewCell.reuableIdentifier)
@@ -41,13 +44,18 @@ class ShoppingListViewController: BaseViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainView.tableView.reloadData()
+    }
+    
     override func configure() {
         mainView.addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
     }
     
     @objc func addButtonClicked() {
         
-        if let shoppingItem = mainView.userTextField.text, mainView.userTextField.text != "" {
+        if let shoppingItem = mainView.userTextField.text, shoppingItem != "" {
             let task = ShoppingList(shoppingItem: shoppingItem, checkItem: false, favoriteItem: false, registerDate: Date(), detailText: nil)
             try! localRealm.write {
                 localRealm.add(task)
@@ -58,27 +66,27 @@ class ShoppingListViewController: BaseViewController {
         view.endEditing(true)
     }
     
-    func fetchRealm() {
-        tasks = localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: false)
-    }
-    
     @objc func sortButtonClicked() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let checkSort = UIAlertAction(title: "할일순", style: .default) { alert in
             self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "checkItem", ascending: true)
+            self.mainView.sortLabel.text = "할일순"
         }
         
         let dateSort = UIAlertAction(title: "등록순", style: .default) { alert in
             self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "registerDate", ascending: true)
+            self.mainView.sortLabel.text = "등록순"
         }
         
         let favoriteSort = UIAlertAction(title: "즐겨찾기순", style: .default) { alert in
             self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "favoriteItem", ascending: false)
+            self.mainView.sortLabel.text = "즐겨찾기순"
         }
         
         let titleSort = UIAlertAction(title: "제목순", style: .default) { alert in
             self.tasks = self.localRealm.objects(ShoppingList.self).sorted(byKeyPath: "shoppingItem", ascending: true)
+            self.mainView.sortLabel.text = "제목순"
             
         }
         
@@ -144,6 +152,7 @@ extension ShoppingListViewController: UITableViewDelegate, UITableViewDataSource
             
             try! self.localRealm.write {
                 self.localRealm.delete(self.tasks[indexPath.row])
+                self.removeImageFromDocument(fileName: "\(self.tasks[indexPath.row]).jpg")
                 self.mainView.tableView.reloadData()
             }
             

@@ -40,11 +40,16 @@ class ItemViewController: BaseViewController {
         try! localRealm.write {
             task.detailText = mainView.detailTextView.text
         }
+        if let image = mainView.itemImageView.image {
+        saveImageToDocument(fileName: "\(task.ObjectId).jpg", image: image)
+        }
     }
     
     override func configure() {
         
         mainView.itemLable.text = task?.shoppingItem
+        
+        mainView.itemImageView.image = loadImageFromDocument(fileName: "\(task.ObjectId).jpg")
         
         let format = DateFormatter()
         
