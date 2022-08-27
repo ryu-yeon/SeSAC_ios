@@ -7,16 +7,20 @@
 
 import UIKit
 
+import FSCalendar
 import RealmSwift
-import CoreMIDI
 
 class HomeViewController: BaseViewController {
     
     let mainView = HomeView()
     
-    let localRealm = try! Realm()
+    let repository = UserDiaryRepository()
     
-    let format = DateFormatter()
+    let formatter: DateFormatter = {
+        let format = DateFormatter()
+        format.dateFormat = "yyMMdd"
+        return format
+    }()
     
     var tasks: Results<UserDiary>! {
         didSet {
@@ -48,11 +52,14 @@ class HomeViewController: BaseViewController {
         navigationItem.leftBarButtonItems = [sortButton, filterButton, settingButton]
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "plus"), style: .plain, target: self, action: #selector(plusButtonClicked))
         
+        mainView.calendar.delegate = self
+        mainView.calendar.dataSource = self
+        
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reusableIdentifier)
         
-        format.dateFormat = "yyyy.MM.dd hh:mm"
+//        format.dateFormat = "yyyy.MM.dd hh:mm"
     }
     
     @objc func plusButtonClicked() {
@@ -63,11 +70,11 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func sortButtonClicked() {
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "registerDate", ascending: true)
+        tasks = repository.fetchSort("registerDate")
     }
     
     @objc func filterButtonClicked() {
-//        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle CONTAINS[c] '일기'")
+        tasks = repository.fetchFilter()
     }
     
     @objc func settingButtonClicked() {
@@ -76,7 +83,7 @@ class HomeViewController: BaseViewController {
     }
     
     func fetchRealm() {
-        tasks = localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: true)
+        tasks = repository.fetch()
     }
 }
 
@@ -90,36 +97,34 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableViewCell.reusableIdentifier, for: indexPath) as? HomeTableViewCell else { return UITableViewCell() }
 
         cell.titleLabel.text = tasks[indexPath.row].diaryTitle
-        cell.dateLabel.text = self.format.string(from: tasks[indexPath.row].diaryDate)
+        cell.dateLabel.text = self.formatter.string(from: tasks[indexPath.row].diaryDate)
         cell.diaryImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         
         return cell
     }
     
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        true
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let item = tasks?[indexPath.row]
-            try! localRealm.write({
-                localRealm.delete(item!)
-                removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
-            })
-        }
-        fetchRealm()
-    }
+//    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
+//
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            let item = tasks?[indexPath.row]
+//            try! repository.localRealm.write({
+//                repository.localRealm.delete(item!)
+//                removeImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
+//            })
+//        }
+//        fetchRealm()
+//    }
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
             
-            try! self.localRealm.write {
-                self.tasks[indexPath.row].favorite = !self.tasks[indexPath.row].favorite
-                
-                self.fetchRealm()
-            }
+            self.repository.updateFavorite(task: self.tasks[indexPath.row])
+            self.fetchRealm()
+
         }
         
         let image = tasks[indexPath.row].favorite ? "star.fill" : "star"
@@ -130,12 +135,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let remove = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
+        let remove = UIContextualAction(style: .normal, title: nil) { [self] action, view, completionHandler in
             
-            try! self.localRealm.write {
-                self.localRealm.delete(self.tasks[indexPath.row])
-                self.fetchRealm()
-            }
+            let task = self.tasks[indexPath.row]
+            
+            self.repository.deleteTask(task: task)
+            self.fetchRealm()
         }
         
         remove.backgroundColor = .red
@@ -146,5 +151,34 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
+    }
+}
+
+extension HomeViewController: FSCalendarDelegate, FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        return repository.fetchDate(date: date).count
+    }
+    
+//    func calendar(_ calendar: FSCalendar, titleFor date: Date) -> String? {
+//        return "새싹"
+//    }
+//
+//    func calendar(_ calendar: FSCalendar, imageFor date: Date) -> UIImage? {
+//        return UIImage(systemName: "star.fill")
+//    }
+    
+//    func calendar(_ calendar: FSCalendar, cellFor date: Date, at position: FSCalendarMonthPosition) -> FSCalendarCell {
+//        <#code#>
+//    }
+
+    //date: yyyyMMdd hh:mm:ss => dateformatter
+    func calendar(_ calendar: FSCalendar, subtitleFor date: Date) -> String? {
+
+        return formatter.string(from: date) == "220907" ? "오프라인 모임" : nil
+    }
+
+    // 100 -> 25일 3 -> 3 = >
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        tasks = repository.fetchDate(date: date)
     }
 }

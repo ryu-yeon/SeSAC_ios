@@ -18,7 +18,7 @@ class SettingView: BaseView {
         return view
     }()
     
-    let loadButton: UIButton = {
+    let restoreButton: UIButton = {
         let view = UIButton()
         view.setTitle("복구", for: .normal)
         view.backgroundColor = .lightGray
@@ -32,7 +32,7 @@ class SettingView: BaseView {
     
     override func configureUI() {
         self.backgroundColor = .white
-        [backupButton, loadButton, tableView].forEach {
+        [backupButton, restoreButton, tableView].forEach {
             self.addSubview($0)
         }
     }
@@ -44,14 +44,14 @@ class SettingView: BaseView {
             make.width.height.equalTo(80)
         }
         
-        loadButton.snp.makeConstraints { make in
+        restoreButton.snp.makeConstraints { make in
             make.top.equalTo(backupButton.snp.bottom).offset(40)
             make.leading.equalTo(20)
             make.width.height.equalTo(80)
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(loadButton.snp.bottom).offset(40)
+            make.top.equalTo(restoreButton.snp.bottom).offset(40)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
             make.bottom.equalTo(self.safeAreaLayoutGuide)
