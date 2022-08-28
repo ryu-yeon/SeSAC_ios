@@ -7,19 +7,24 @@
 
 import UIKit
 
+import JGProgressHUD
 import Kingfisher
 
 class ImageSelectViewController: BaseViewController {
     
     let mainView = ImageSelectView()
+    let hud = JGProgressHUD()
     
     var imageList: [String] = []
-    var thumnailList: [String] = []
     
     var selectIndexPath: IndexPath?
     
     var selectImage: UIImage?
     var delegate: SelectImageDelegate?
+        
+    var searchText: String = ""
+    var startPage = 1
+    var totalPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +43,7 @@ class ImageSelectViewController: BaseViewController {
         mainView.collectionView.dataSource = self
         
         mainView.searchBar.delegate = self
+        mainView.collectionView.prefetchDataSource = self
         
     }
     
@@ -47,6 +53,18 @@ class ImageSelectViewController: BaseViewController {
         
         delegate?.sendImageData(image: selectImage)
         navigationController?.popViewController(animated: true)
+    }
+    
+    func requestImage(text: String, startPage: Int, totalPage: Int) {
+        hud.show(in: self.view)
+        UnsplashAPIManager.shared.requestImage(text: text, page: startPage) { imageList, totalPage in
+            self.imageList.append(contentsOf: imageList)
+            self.totalPage = totalPage
+            DispatchQueue.main.async {
+                self.mainView.collectionView.reloadData()
+                self.hud.dismiss(animated: true)
+            }
+        }
     }
 }
 
@@ -58,7 +76,7 @@ extension ImageSelectViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionViewCell", for: indexPath) as? ImageCollectionViewCell else { return UICollectionViewCell() }
         
-        let url = URL(string: thumnailList[indexPath.item])
+        let url = URL(string: imageList[indexPath.item])
         cell.imageView.kf.setImage(with: url)
 
         cell.layer.borderWidth = selectIndexPath == indexPath ? 4 : 0
@@ -78,16 +96,30 @@ extension ImageSelectViewController: UICollectionViewDelegate, UICollectionViewD
         
         collectionView.reloadData()
     }
+    
 }
+
+extension ImageSelectViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+            if imageList.count - 1 == indexPath.item && startPage < totalPage {
+                startPage += 1
+                requestImage(text: self.searchText, startPage: startPage, totalPage: self.totalPage)
+            }
+        }
+    }
+    
+}
+
 
 extension ImageSelectViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        UnsplashAPIManager.shared.requestImage(searchBar.text ?? "") { imageList, thumnailList in
-            self.imageList.append(contentsOf: imageList)
-            self.thumnailList.append(contentsOf: thumnailList)
-            DispatchQueue.main.async {
-                self.mainView.collectionView.reloadData()
-            }
+        self.imageList.removeAll()
+        self.searchText = searchBar.text ?? ""
+        self.requestImage(text: searchText, startPage: startPage, totalPage: self.totalPage)
+        if imageList.count < 15 {
+            self.startPage += 1
+            self.requestImage(text: searchText, startPage: startPage, totalPage: self.totalPage)
         }
         view.endEditing(true)
     }

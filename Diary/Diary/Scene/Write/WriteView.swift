@@ -21,8 +21,6 @@ class WriteView: BaseView {
         let view = UIButton()
         view.setImage(UIImage(systemName: "photo"), for: .normal)
         view.clipsToBounds = true
-//        view.layer.borderColor = UIColor.gray.cgColor
-//        view.layer.borderWidth = 1
         view.tintColor = .white
         view.backgroundColor = .red
         return view
@@ -36,11 +34,11 @@ class WriteView: BaseView {
         return view
     }()
     
-    let userTextField: UITextField = {
+    let subTitleTextField: UITextField = {
         let view = UITextField()
         view.textAlignment = .center
         view.borderStyle = .line
-        view.placeholder = "입력해주세요."
+        view.placeholder = "부제목을 입력해주세요."
         return view
     }()
     
@@ -54,7 +52,7 @@ class WriteView: BaseView {
     
     override func configureUI() {
         self.backgroundColor = .white
-        [userImageView, addImageButton, titleTextField, userTextField, userTextView].forEach {
+        [userImageView, addImageButton, titleTextField, subTitleTextField, userTextView].forEach {
             self.addSubview($0)
         }
     }
@@ -80,7 +78,7 @@ class WriteView: BaseView {
             make.height.equalTo(self).multipliedBy(0.05)
         }
         
-        userTextField.snp.makeConstraints { make in
+        subTitleTextField.snp.makeConstraints { make in
             make.top.equalTo(titleTextField.snp.bottom).offset(20)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
@@ -88,7 +86,7 @@ class WriteView: BaseView {
         }
         
         userTextView.snp.makeConstraints { make in
-            make.top.equalTo(userTextField.snp.bottom).offset(20)
+            make.top.equalTo(subTitleTextField.snp.bottom).offset(20)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
             make.bottom.equalTo(self.safeAreaLayoutGuide).offset(-20)

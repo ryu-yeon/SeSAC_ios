@@ -7,6 +7,8 @@
 
 import UIKit
 
+import FSCalendar
+
 class CalendarViewController: BaseViewController {
     
     let mainView = CalendarView()
@@ -20,7 +22,15 @@ class CalendarViewController: BaseViewController {
     }
     
     override func configure() {
-        
+        navigationItem.title = "Calendar"
+        mainView.calendar.delegate = self
+        mainView.calendar.dataSource = self
     }
+}
+
+extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
+//    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+//        return 2
+//    }
     
 }

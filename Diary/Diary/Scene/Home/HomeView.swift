@@ -12,38 +12,38 @@ import FSCalendar
 
 class HomeView: BaseView {
     
+    let userSearchBar: UISearchBar = {
+        let view = UISearchBar()
+        return view
+    }()
+    
     let tableView: UITableView = {
         let view = UITableView()
         
         return view
     }()
     
-    let calendar: FSCalendar = {
-        let view = FSCalendar()
-        view.backgroundColor = .white
-        return view
-    }()
-    
     override func configureUI() {
         self.backgroundColor = .white
-        [tableView, calendar].forEach {
+        [userSearchBar, tableView].forEach {
             self.addSubview($0)
         }
     }
     
     override func setConstraints() {
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(calendar.snp.bottom).offset(20)
-            make.leading.equalTo(self).offset(20)
-            make.trailing.equalTo(self).offset(-20)
-            make.bottom.equalTo(self.safeAreaLayoutGuide)
-        }
         
-        calendar.snp.makeConstraints { make in
+        userSearchBar.snp.makeConstraints { make in
             make.top.equalTo(self.safeAreaLayoutGuide)
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
-            make.height.equalTo(self).multipliedBy(0.3)
+            make.height.equalTo(30)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(userSearchBar.snp.bottom).offset(8)
+            make.leading.equalTo(self).offset(20)
+            make.trailing.equalTo(self).offset(-20)
+            make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
 }

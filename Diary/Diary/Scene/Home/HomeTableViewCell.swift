@@ -13,7 +13,13 @@ class HomeTableViewCell: BaseTableViewCell {
     
     let titleLabel: UILabel = {
         let view = UILabel()
-        view.font = .boldSystemFont(ofSize: 15)
+        view.font = .boldSystemFont(ofSize: 18)
+        return view
+    }()
+    
+    let subTitleLabel: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: 13)
         return view
     }()
     
@@ -25,26 +31,27 @@ class HomeTableViewCell: BaseTableViewCell {
     
     let dateLabel: UILabel = {
         let view = UILabel()
-        view.font = .systemFont(ofSize: 13)
+        view.font = .systemFont(ofSize: 12)
         return view
     }()
     
     let contentLabel: UILabel = {
         let view = UILabel()
-        view.font = .systemFont(ofSize: 13)
+        view.numberOfLines = 0
+        view.font = .systemFont(ofSize: 10)
         return view
     }()
     
     override func configureUI() {
         self.backgroundColor = .white
-        [diaryImageView, titleLabel, dateLabel, contentLabel].forEach {
+        [diaryImageView, titleLabel, subTitleLabel, dateLabel, contentLabel].forEach {
             self.addSubview($0)
         }
     }
     
     override func setConstraints() {
         titleLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(16)
             make.leading.equalTo(diaryImageView.snp.trailing).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(20)
@@ -56,8 +63,15 @@ class HomeTableViewCell: BaseTableViewCell {
             make.width.equalTo(self).multipliedBy(0.25)
         }
         
-        dateLabel.snp.makeConstraints { make in
+        subTitleLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom)
+            make.leading.equalTo(diaryImageView.snp.trailing).offset(20)
+            make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
+            make.height.equalTo(20)
+        }
+        
+        dateLabel.snp.makeConstraints { make in
+            make.top.equalTo(subTitleLabel.snp.bottom)
             make.leading.equalTo(diaryImageView.snp.trailing).offset(20)
             make.trailing.equalTo(self.safeAreaLayoutGuide).offset(-20)
             make.height.equalTo(20)

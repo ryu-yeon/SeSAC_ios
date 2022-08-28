@@ -14,22 +14,24 @@ import RealmSwift
 
 class UserDiary: Object {
     @Persisted var diaryTitle: String
+    @Persisted var subTitle: String?
     @Persisted var diaryContent: String?
     @Persisted var diaryDate = Date()
     @Persisted var registerDate = Date()
     @Persisted var favorite: Bool
-    @Persisted var photo: String?
+//    @Persisted var photo: String?
 
     //PK(필수): Int, UUID, ObjectId
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(diaryTitle: String, diaryContenet: String?, diaryDate: Date, registerDate: Date, favorite: Bool, photo: String?) {
+    convenience init(diaryTitle: String, subTitle: String?, diaryContenet: String?, diaryDate: Date, registerDate: Date, favorite: Bool) {
         self.init()
         self.diaryTitle = diaryTitle
+        self.subTitle = subTitle
         self.diaryContent = diaryContenet
         self.diaryDate = diaryDate
         self.registerDate = registerDate
         self.favorite = false
-        self.photo = photo
+//        self.photo = photo
     }
 }

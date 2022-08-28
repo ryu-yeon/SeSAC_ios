@@ -14,6 +14,7 @@ class CalendarView: BaseView {
     
     let calendar: FSCalendar = {
         let view = FSCalendar()
+        view.backgroundColor = .white
         return view
     }()
     
@@ -31,9 +32,9 @@ class CalendarView: BaseView {
     
     override func setConstraints() {
         calendar.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide)
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
             make.leading.equalTo(20)
-            make.leading.equalTo(-20)
+            make.trailing.equalTo(-20)
             make.height.equalTo(self).multipliedBy(0.3)
         }
     }

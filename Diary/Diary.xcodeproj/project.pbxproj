@@ -19,6 +19,7 @@
 		424DE38028BA105B004F37FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE37F28BA105B004F37FE /* TabBarController.swift */; };
 		424DE38328BA114C004F37FE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE38228BA114C004F37FE /* CalendarView.swift */; };
 		424DE38528BA115B004F37FE /* CaledarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE38428BA115B004F37FE /* CaledarViewController.swift */; };
+		424DE38928BBAE89004F37FE /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 424DE38828BBAE89004F37FE /* JGProgressHUD */; };
 		4293315A28B6459F0070AD52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315928B6459F0070AD52 /* HomeView.swift */; };
 		4293315C28B645AA0070AD52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315B28B645AA0070AD52 /* HomeViewController.swift */; };
 		4293315E28B646290070AD52 /* ReusableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315D28B646290070AD52 /* ReusableViewProtocol.swift */; };
@@ -98,6 +99,7 @@
 				42B7875128B22818002D1749 /* SwiftyJSON in Frameworks */,
 				42F0809A28B861AB007E6D9F /* FSCalendar in Frameworks */,
 				42B7874B28B22804002D1749 /* Alamofire in Frameworks */,
+				424DE38928BBAE89004F37FE /* JGProgressHUD in Frameworks */,
 				4293316A28B64D150070AD52 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,6 +276,7 @@
 				42314F3E28B7016000E7DC7E /* Zip */,
 				42314F4328B7096400E7DC7E /* Kingfisher */,
 				42F0809928B861AB007E6D9F /* FSCalendar */,
+				424DE38828BBAE89004F37FE /* JGProgressHUD */,
 			);
 			productName = Diary;
 			productReference = 42B7872728B22659002D1749 /* Diary.app */;
@@ -311,6 +314,7 @@
 				42314F3D28B7016000E7DC7E /* XCRemoteSwiftPackageReference "Zip" */,
 				42314F4228B7096400E7DC7E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				42F0809828B861AB007E6D9F /* XCRemoteSwiftPackageReference "FSCalendar" */,
+				424DE38728BBAE89004F37FE /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
 			);
 			productRefGroup = 42B7872828B22659002D1749 /* Products */;
 			projectDirPath = "";
@@ -603,6 +607,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		424DE38728BBAE89004F37FE /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4293316828B64D140070AD52 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -655,6 +667,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 42314F4228B7096400E7DC7E /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		424DE38828BBAE89004F37FE /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 424DE38728BBAE89004F37FE /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
 		};
 		4293316928B64D150070AD52 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
