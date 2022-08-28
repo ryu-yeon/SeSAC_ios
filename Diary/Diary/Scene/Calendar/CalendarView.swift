@@ -18,14 +18,14 @@ class CalendarView: BaseView {
         return view
     }()
     
-//    let tableView: UITableView = {
-//        let view = UITableView()
-//        return view
-//    }()
+    let tableView: UITableView = {
+        let view = UITableView()
+        return view
+    }()
     
     override func configureUI() {
         self.backgroundColor = .white
-        [calendar].forEach {
+        [calendar, tableView].forEach {
             self.addSubview($0)
         }
     }
@@ -36,6 +36,12 @@ class CalendarView: BaseView {
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
             make.height.equalTo(self).multipliedBy(0.3)
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(calendar.snp.bottom).offset(20)
+            make.leading.equalTo(20)
+            make.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
 }

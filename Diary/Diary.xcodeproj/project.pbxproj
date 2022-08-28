@@ -18,7 +18,7 @@
 		42314F4428B7096400E7DC7E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42314F4328B7096400E7DC7E /* Kingfisher */; };
 		424DE38028BA105B004F37FE /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE37F28BA105B004F37FE /* TabBarController.swift */; };
 		424DE38328BA114C004F37FE /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE38228BA114C004F37FE /* CalendarView.swift */; };
-		424DE38528BA115B004F37FE /* CaledarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE38428BA115B004F37FE /* CaledarViewController.swift */; };
+		424DE38528BA115B004F37FE /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424DE38428BA115B004F37FE /* CalendarViewController.swift */; };
 		424DE38928BBAE89004F37FE /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 424DE38828BBAE89004F37FE /* JGProgressHUD */; };
 		4293315A28B6459F0070AD52 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315928B6459F0070AD52 /* HomeView.swift */; };
 		4293315C28B645AA0070AD52 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4293315B28B645AA0070AD52 /* HomeViewController.swift */; };
@@ -46,6 +46,7 @@
 		42B7874828B227FA002D1749 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7874728B227FA002D1749 /* SnapKit */; };
 		42B7874B28B22804002D1749 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7874A28B22804002D1749 /* Alamofire */; };
 		42B7875128B22818002D1749 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 42B7875028B22818002D1749 /* SwiftyJSON */; };
+		42D5FC7528BBFA8F0071CCBF /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42D5FC7428BBFA8F0071CCBF /* CalendarTableViewCell.swift */; };
 		42F0809728B855E9007E6D9F /* UserDiaryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F0809628B855E9007E6D9F /* UserDiaryRepository.swift */; };
 		42F0809A28B861AB007E6D9F /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 42F0809928B861AB007E6D9F /* FSCalendar */; };
 /* End PBXBuildFile section */
@@ -60,7 +61,7 @@
 		42314F4028B704C600E7DC7E /* Alert+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alert+Extension.swift"; sourceTree = "<group>"; };
 		424DE37F28BA105B004F37FE /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		424DE38228BA114C004F37FE /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
-		424DE38428BA115B004F37FE /* CaledarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaledarViewController.swift; sourceTree = "<group>"; };
+		424DE38428BA115B004F37FE /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4293315928B6459F0070AD52 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4293315B28B645AA0070AD52 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		4293315D28B646290070AD52 /* ReusableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableViewProtocol.swift; sourceTree = "<group>"; };
@@ -84,6 +85,7 @@
 		42B7874028B226C0002D1749 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		42B7874228B22727002D1749 /* WriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
 		42B7874428B22763002D1749 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
+		42D5FC7428BBFA8F0071CCBF /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		42F0809628B855E9007E6D9F /* UserDiaryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDiaryRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,7 +132,8 @@
 			isa = PBXGroup;
 			children = (
 				424DE38228BA114C004F37FE /* CalendarView.swift */,
-				424DE38428BA115B004F37FE /* CaledarViewController.swift */,
+				424DE38428BA115B004F37FE /* CalendarViewController.swift */,
+				42D5FC7428BBFA8F0071CCBF /* CalendarTableViewCell.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -345,7 +348,7 @@
 			files = (
 				4293315E28B646290070AD52 /* ReusableViewProtocol.swift in Sources */,
 				42314F4128B704C600E7DC7E /* Alert+Extension.swift in Sources */,
-				424DE38528BA115B004F37FE /* CaledarViewController.swift in Sources */,
+				424DE38528BA115B004F37FE /* CalendarViewController.swift in Sources */,
 				42314F3728B685F200E7DC7E /* SettingViewController.swift in Sources */,
 				424DE38028BA105B004F37FE /* TabBarController.swift in Sources */,
 				4297351528B2DA6F003744B9 /* UnsplashAPIManager.swift in Sources */,
@@ -366,6 +369,7 @@
 				4293316728B64CEE0070AD52 /* RealmModel.swift in Sources */,
 				42314F3C28B68AEB00E7DC7E /* FileManager+Extension.swift in Sources */,
 				4297351928B2DA83003744B9 /* Contents.swift in Sources */,
+				42D5FC7528BBFA8F0071CCBF /* CalendarTableViewCell.swift in Sources */,
 				424DE38328BA114C004F37FE /* CalendarView.swift in Sources */,
 				4293315C28B645AA0070AD52 /* HomeViewController.swift in Sources */,
 				422F236828B22FAF00226BC8 /* ImageSelectViewController.swift in Sources */,

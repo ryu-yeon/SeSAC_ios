@@ -53,7 +53,7 @@ class HomeViewController: BaseViewController {
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
         mainView.tableView.register(HomeTableViewCell.self, forCellReuseIdentifier: HomeTableViewCell.reusableIdentifier)
-
+        mainView.userSearchBar.delegate = self
     }
     
     @objc func plusButtonClicked() {
@@ -64,7 +64,24 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func sortButtonClicked() {
-        tasks = repository.fetchSort("registerDate")
+        sortAlert()
+        
+    }
+    
+    func sortAlert() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let titleSort = UIAlertAction(title: "제목순", style: .default) { alert in
+            self.tasks = self.repository.fetchSort("diaryTitle")
+        }
+        let dateSort = UIAlertAction(title: "등록순", style: .default) { alert in
+            self.tasks = self.repository.fetchSort("registerDate")
+        }
+        let cancle = UIAlertAction(title: "취소", style: .cancel)
+        
+        [titleSort, dateSort, cancle].forEach {
+            alert.addAction($0)
+        }
+        present(alert, animated: true)
     }
 
     
@@ -96,7 +113,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let favorite = UIContextualAction(style: .normal, title: nil) { action, view, completionHandler in
             
             self.repository.updateFavorite(task: self.tasks[indexPath.row])
-            self.fetchRealm()
+            tableView.reloadData()
 
         }
         
@@ -113,7 +130,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let task = self.tasks[indexPath.row]
             
             self.repository.deleteTask(task: task)
-            self.fetchRealm()
+            tableView.reloadData()
         }
         
         remove.backgroundColor = .red
@@ -125,12 +142,25 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
+    }
 }
 
 extension HomeViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        self.tasks = self.repository.fetchFilter(text: searchBar.text ?? "")
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == "" {
+            self.tasks = self.repository.fetch()
+        }
+        else {
+            self.tasks = self.repository.fetchFilter(text: searchBar.text ?? "")
+        }
         self.mainView.tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         view.endEditing(true)
     }
+
 }

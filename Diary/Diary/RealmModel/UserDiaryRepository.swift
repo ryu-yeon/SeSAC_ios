@@ -33,7 +33,7 @@ class UserDiaryRepository: UserDiaryRepositoryType {
     
     
     func fetch() -> Results<UserDiary> {
-        return localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle", ascending: true)
+        return localRealm.objects(UserDiary.self).sorted(byKeyPath: "registerDate", ascending: true)
     }
     
     func fetchSort(_ sort: String) -> Results<UserDiary> {
@@ -41,7 +41,10 @@ class UserDiaryRepository: UserDiaryRepositoryType {
     }
     
     func fetchFilter(text: String) -> Results<UserDiary> {
-        return localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle").filter("diaryTitle = '\(text)'")
+//        return localRealm.objects(UserDiary.self).sorted(byKeyPath: "diaryTitle").filter("diaryTitle = '\(text)'")
+        
+        return localRealm.objects(UserDiary.self).filter("diaryTitle CONTAINS[c] '\(text)'")
+        
     }
     
     func updateFavorite(task: UserDiary) {

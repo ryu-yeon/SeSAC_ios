@@ -45,7 +45,12 @@ class WriteViewController: BaseViewController {
     
     @objc func saveButtonClicked() {
         
-        let task = UserDiary(diaryTitle: mainView.titleTextField.text!, subTitle: mainView.subTitleTextField.text, diaryContenet: mainView.userTextView.text, diaryDate: Date(), registerDate: Date(), favorite: false)
+        var title = mainView.titleTextField.text ?? ""
+        if mainView.titleTextField.text == "" {
+            title = "무제 #\(Date())"
+        }
+        
+        let task = UserDiary(diaryTitle: title, subTitle: mainView.subTitleTextField.text, diaryContenet: mainView.userTextView.text, diaryDate: Date(), registerDate: Date(), favorite: false)
         
         do {
             try! localRealm.write {

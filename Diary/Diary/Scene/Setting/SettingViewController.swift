@@ -96,15 +96,13 @@ class SettingViewController: BaseViewController {
         let alert = UIAlertController(title: "\(text)", message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default) { alert in
             
-            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
-            let sceneDelegate = windowScene?.delegate as? SceneDelegate
-            let vc = HomeViewController()
-            let nav = UINavigationController(rootViewController: vc)
-
-            sceneDelegate?.window?.rootViewController = nav
-            sceneDelegate?.window?.makeKeyAndVisible()
-            
-        
+//            let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene
+//            let sceneDelegate = windowScene?.delegate as? SceneDelegate
+//
+//            let vc = HomeViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            sceneDelegate?.window?.rootViewController = nav
+//            sceneDelegate?.window?.makeKeyAndVisible()
         }
         
         alert.addAction(ok)
