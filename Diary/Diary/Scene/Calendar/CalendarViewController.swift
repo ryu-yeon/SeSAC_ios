@@ -16,7 +16,7 @@ class CalendarViewController: BaseViewController {
     
     let repository = UserDiaryRepository()
     
-    var tasks: Results<UserDiary>?
+    var tasks: Results<UserDiary>!
     
     let formatter: DateFormatter = {
         let format = DateFormatter()
@@ -30,7 +30,9 @@ class CalendarViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        mainView.calendar.reloadData()
+        
+        let today: Date = formatter.date(from: formatter.string(from: Date())) ?? Date()
+        tasks = repository.fetchDate(date: today)
     }
     
     override func viewDidLoad() {
@@ -61,7 +63,7 @@ extension CalendarViewController: FSCalendarDelegate, FSCalendarDataSource {
 
 extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks?.count ?? 0
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -69,10 +71,10 @@ extension CalendarViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.reusableIdentifier, for: indexPath) as? CalendarTableViewCell else { return UITableViewCell() }
 
         
-        cell.titleLabel.text = tasks?[indexPath.row].diaryTitle
-        cell.subTitleLabel.text = tasks?[indexPath.row].subTitle
-        cell.contentLabel.text = tasks?[indexPath.row].diaryContent
-        cell.diaryImageView.image = loadImageFromDocument(fileName: "\(tasks?[indexPath.row].objectId).jpg")
+        cell.titleLabel.text = tasks[indexPath.row].diaryTitle
+        cell.subTitleLabel.text = tasks[indexPath.row].subTitle
+        cell.contentLabel.text = tasks[indexPath.row].diaryContent
+        cell.diaryImageView.image = loadImageFromDocument(fileName: "\(tasks[indexPath.row].objectId).jpg")
         
         return cell
     }
