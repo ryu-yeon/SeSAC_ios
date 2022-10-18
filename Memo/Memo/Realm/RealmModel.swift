@@ -25,3 +25,8 @@ class Memo: Object {
         self.isFixed = false
     }
 }
+
+class Folder: Object {
+    @Persisted var title: String
+    
+}
