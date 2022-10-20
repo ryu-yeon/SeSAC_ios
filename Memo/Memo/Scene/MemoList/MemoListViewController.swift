@@ -44,13 +44,6 @@ class MemoListViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if !UserDefaultHelper.standard.start {
-            UserDefaultHelper.standard.start = true
-            let vc = PopUpViewController()
-            vc.modalPresentationStyle = .overFullScreen
-            present(vc, animated: true)
-        }
         
         setToolbarButton()
     }
@@ -110,32 +103,19 @@ class MemoListViewController: BaseViewController {
     }
     
     private func setToolbarButton() {
-
-        if #available(iOS 14.0, *) {
-            let view = UIView()
-            view.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            let writeButton = UIButton()
-            writeButton.frame = CGRect(x: 0, y: -5, width: 30, height: 30)
-            writeButton.setImage(UIImage.writeImage, for: .normal)
-            writeButton.contentVerticalAlignment = .fill
-            writeButton.contentHorizontalAlignment = .fill
-            
-            view.addSubview(writeButton)
-            writeButton.addTarget(self, action: #selector(writeButtonClicked), for: .touchUpInside)
-            mainView.toolBar.items = [UIBarButtonItem.flexibleSpace(),  UIBarButtonItem(customView: view)]
-        } else {
-            let view = UIView()
-            view.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 30)
-            let writeButton = UIButton()
-            writeButton.frame = CGRect(x: UIScreen.main.bounds.width - 60, y: -5, width: 30, height: 30)
-            writeButton.setImage(UIImage.writeImage, for: .normal)
-            writeButton.contentVerticalAlignment = .fill
-            writeButton.contentHorizontalAlignment = .fill
-            
-            view.addSubview(writeButton)
-            writeButton.addTarget(self, action: #selector(writeButtonClicked), for: .touchUpInside)
-            mainView.toolBar.items = [UIBarButtonItem(customView: view)]
-        }
+        
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        let writeButton = UIButton()
+        writeButton.frame = CGRect(x: 0, y: -5, width: 30, height: 30)
+        writeButton.setImage(UIImage.writeImage, for: .normal)
+        writeButton.contentVerticalAlignment = .fill
+        writeButton.contentHorizontalAlignment = .fill
+        
+        view.addSubview(writeButton)
+        writeButton.addTarget(self, action: #selector(writeButtonClicked), for: .touchUpInside)
+        mainView.toolBar.items = [UIBarButtonItem.flexibleSpace(),  UIBarButtonItem(customView: view)]
+        
     }
     
     private func setSearchController() {

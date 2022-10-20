@@ -28,5 +28,12 @@ class Memo: Object {
 
 class Folder: Object {
     @Persisted var title: String
+    @Persisted var memo: List<Memo>
     
+    @Persisted(primaryKey:  true) var objcectId: ObjectId
+    
+    convenience init(title: String) {
+        self.init()
+        self.title = title
+    }
 }

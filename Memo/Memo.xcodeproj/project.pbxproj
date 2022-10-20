@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42C95A6729013E8600524175 /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6629013E8600524175 /* FolderListView.swift */; };
+		42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6929013E9600524175 /* FolderListViewController.swift */; };
+		42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6B2901453A00524175 /* CreateFolderView.swift */; };
+		42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6E2901455200524175 /* CreateFolderViewController.swift */; };
 		8835AEB228FE8EAB002DF77D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835AEB128FE8EAB002DF77D /* AppDelegate.swift */; };
 		8835AEE328FE8F91002DF77D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8835AEE228FE8F91002DF77D /* Realm */; };
 		8835AEE528FE8F91002DF77D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8835AEE428FE8F91002DF77D /* RealmSwift */; };
@@ -37,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42C95A6629013E8600524175 /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
+		42C95A6929013E9600524175 /* FolderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewController.swift; sourceTree = "<group>"; };
+		42C95A6B2901453A00524175 /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
+		42C95A6E2901455200524175 /* CreateFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewController.swift; sourceTree = "<group>"; };
 		8835AEAE28FE8EAB002DF77D /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8835AEB128FE8EAB002DF77D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8835AF0328FE9107002DF77D /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +87,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42C95A6829013E8900524175 /* FolderList */ = {
+			isa = PBXGroup;
+			children = (
+				42C95A6629013E8600524175 /* FolderListView.swift */,
+				42C95A6929013E9600524175 /* FolderListViewController.swift */,
+			);
+			path = FolderList;
+			sourceTree = "<group>";
+		};
+		42C95A6D2901454500524175 /* CreateFolder */ = {
+			isa = PBXGroup;
+			children = (
+				42C95A6B2901453A00524175 /* CreateFolderView.swift */,
+				42C95A6E2901455200524175 /* CreateFolderViewController.swift */,
+			);
+			path = CreateFolder;
+			sourceTree = "<group>";
+		};
 		8835AEA528FE8EAB002DF77D = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +134,7 @@
 				8835AF1E28FE9121002DF77D /* Realm */,
 				8835AF1328FE9116002DF77D /* Utility */,
 				8835AF0128FE9107002DF77D /* Scene */,
+				42C95A6D2901454500524175 /* CreateFolder */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -118,6 +145,7 @@
 				8835AF0228FE9107002DF77D /* Write */,
 				8835AF0528FE9107002DF77D /* PopUp */,
 				8835AF0828FE9107002DF77D /* MemoList */,
+				42C95A6829013E8900524175 /* FolderList */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -279,6 +307,8 @@
 				8835AF1B28FE9116002DF77D /* BaseTableViewCell.swift in Sources */,
 				8835AF2128FE9121002DF77D /* RealmModel.swift in Sources */,
 				8835AF0D28FE9107002DF77D /* WriteView.swift in Sources */,
+				42C95A6729013E8600524175 /* FolderListView.swift in Sources */,
+				42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */,
 				8835AF1928FE9116002DF77D /* UserDefaultHelper.swift in Sources */,
 				8835AF1228FE9107002DF77D /* MemoListView.swift in Sources */,
 				8835AF1A28FE9116002DF77D /* BaseViewController.swift in Sources */,
@@ -290,7 +320,9 @@
 				8835AF2B28FE9177002DF77D /* SceneDelegate.swift in Sources */,
 				8835AF1D28FE9116002DF77D /* BaseView.swift in Sources */,
 				8835AF0E28FE9107002DF77D /* PopUpViewController.swift in Sources */,
+				42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */,
 				8835AF0C28FE9107002DF77D /* WriteViewController.swift in Sources */,
+				42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */,
 				8835AF2728FE9126002DF77D /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,6 +478,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -474,6 +507,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
