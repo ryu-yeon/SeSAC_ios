@@ -17,10 +17,22 @@
 		4295D6D228F4ED6E0038512C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 4295D6D128F4ED6E0038512C /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		4295D6D428F4ED6E0038512C /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 4295D6D328F4ED6E0038512C /* FirebaseCrashlytics */; };
 		4295D6D628F4ED6E0038512C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 4295D6D528F4ED6E0038512C /* FirebaseMessaging */; };
+		881F840D28FE4EEC007DC01B /* SampleCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F840C28FE4EEC007DC01B /* SampleCollectionViewController.swift */; };
 		8878F75328F7942E0038D11E /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8878F75228F7942E0038D11E /* Realm */; };
 		8878F75528F7942E0038D11E /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8878F75428F7942E0038D11E /* RealmSwift */; };
 		8878F75728F799E10038D11E /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878F75628F799E10038D11E /* Todo.swift */; };
 		8878F75928F79BD00038D11E /* MigrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8878F75828F79BD00038D11E /* MigrationViewController.swift */; };
+		88B4599B2900ED9000292DC8 /* DiffableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4599A2900ED9000292DC8 /* DiffableViewModel.swift */; };
+		88B4599D2900EDEA00292DC8 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4599C2900EDEA00292DC8 /* APIService.swift */; };
+		88B4599F2900EE3F00292DC8 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B4599E2900EE3F00292DC8 /* APIKey.swift */; };
+		88B459A12900EFA000292DC8 /* SearchPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88B459A02900EF9F00292DC8 /* SearchPhoto.swift */; };
+		88B459A42900F11C00292DC8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 88B459A32900F11C00292DC8 /* Alamofire */; };
+		88B459A72900F13C00292DC8 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 88B459A62900F13C00292DC8 /* Kingfisher */; };
+		88C155622900260F00C580C3 /* DiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C155612900260F00C580C3 /* DiffableCollectionViewController.swift */; };
+		88C155642900D78900C580C3 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C155632900D78900C580C3 /* News.swift */; };
+		88C155672900D7FB00C580C3 /* CObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C155662900D7FB00C580C3 /* CObservable.swift */; };
+		88C155692900D81C00C580C3 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C155682900D81C00C580C3 /* NewsViewController.swift */; };
+		88C1556B2900D83900C580C3 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C1556A2900D83900C580C3 /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +46,18 @@
 		4217F48328ED157D00ADA98A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4217F48928ED1D2800ADA98A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4295D6D728F4F23C0038512C /* FireBaseExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FireBaseExample.entitlements; sourceTree = "<group>"; };
+		881F840C28FE4EEC007DC01B /* SampleCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewController.swift; sourceTree = "<group>"; };
 		8878F75628F799E10038D11E /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		8878F75828F79BD00038D11E /* MigrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MigrationViewController.swift; sourceTree = "<group>"; };
+		88B4599A2900ED9000292DC8 /* DiffableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableViewModel.swift; sourceTree = "<group>"; };
+		88B4599C2900EDEA00292DC8 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		88B4599E2900EE3F00292DC8 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		88B459A02900EF9F00292DC8 /* SearchPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPhoto.swift; sourceTree = "<group>"; };
+		88C155612900260F00C580C3 /* DiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewController.swift; sourceTree = "<group>"; };
+		88C155632900D78900C580C3 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		88C155662900D7FB00C580C3 /* CObservable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CObservable.swift; sourceTree = "<group>"; };
+		88C155682900D81C00C580C3 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		88C1556A2900D83900C580C3 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,7 +67,9 @@
 			files = (
 				4295D6D628F4ED6E0038512C /* FirebaseMessaging in Frameworks */,
 				4295D6D228F4ED6E0038512C /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				88B459A72900F13C00292DC8 /* Kingfisher in Frameworks */,
 				8878F75328F7942E0038D11E /* Realm in Frameworks */,
+				88B459A42900F11C00292DC8 /* Alamofire in Frameworks */,
 				8878F75528F7942E0038D11E /* RealmSwift in Frameworks */,
 				4295D6D428F4ED6E0038512C /* FirebaseCrashlytics in Frameworks */,
 			);
@@ -79,13 +103,31 @@
 				4217F47928ED157C00ADA98A /* ViewController.swift */,
 				4217F47B28ED157C00ADA98A /* Main.storyboard */,
 				8878F75628F799E10038D11E /* Todo.swift */,
+				881F840C28FE4EEC007DC01B /* SampleCollectionViewController.swift */,
 				8878F75828F79BD00038D11E /* MigrationViewController.swift */,
+				88C155652900D79000C580C3 /* MVVMSample */,
 				4217F47E28ED157D00ADA98A /* Assets.xcassets */,
 				4217F48028ED157D00ADA98A /* LaunchScreen.storyboard */,
 				4217F48328ED157D00ADA98A /* Info.plist */,
 				4217F48928ED1D2800ADA98A /* GoogleService-Info.plist */,
+				88C155612900260F00C580C3 /* DiffableCollectionViewController.swift */,
+				88B4599A2900ED9000292DC8 /* DiffableViewModel.swift */,
+				88B4599C2900EDEA00292DC8 /* APIService.swift */,
+				88B4599E2900EE3F00292DC8 /* APIKey.swift */,
+				88B459A02900EF9F00292DC8 /* SearchPhoto.swift */,
 			);
 			path = FireBaseExample;
+			sourceTree = "<group>";
+		};
+		88C155652900D79000C580C3 /* MVVMSample */ = {
+			isa = PBXGroup;
+			children = (
+				88C155632900D78900C580C3 /* News.swift */,
+				88C155662900D7FB00C580C3 /* CObservable.swift */,
+				88C155682900D81C00C580C3 /* NewsViewController.swift */,
+				88C1556A2900D83900C580C3 /* NewsViewModel.swift */,
+			);
+			path = MVVMSample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -111,6 +153,8 @@
 				4295D6D528F4ED6E0038512C /* FirebaseMessaging */,
 				8878F75228F7942E0038D11E /* Realm */,
 				8878F75428F7942E0038D11E /* RealmSwift */,
+				88B459A32900F11C00292DC8 /* Alamofire */,
+				88B459A62900F13C00292DC8 /* Kingfisher */,
 			);
 			productName = FireBaseExample;
 			productReference = 4217F47228ED157C00ADA98A /* FireBaseExample.app */;
@@ -143,6 +187,8 @@
 			packageReferences = (
 				4295D6D028F4ED6E0038512C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				8878F75128F7942E0038D11E /* XCRemoteSwiftPackageReference "realm-swift" */,
+				88B459A22900F11C00292DC8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				88B459A52900F13C00292DC8 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 4217F47328ED157C00ADA98A /* Products */;
 			projectDirPath = "";
@@ -194,10 +240,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C155672900D7FB00C580C3 /* CObservable.swift in Sources */,
+				88C155622900260F00C580C3 /* DiffableCollectionViewController.swift in Sources */,
 				4217F47A28ED157C00ADA98A /* ViewController.swift in Sources */,
+				88C155692900D81C00C580C3 /* NewsViewController.swift in Sources */,
+				88C155642900D78900C580C3 /* News.swift in Sources */,
 				8878F75728F799E10038D11E /* Todo.swift in Sources */,
+				88C1556B2900D83900C580C3 /* NewsViewModel.swift in Sources */,
+				88B4599B2900ED9000292DC8 /* DiffableViewModel.swift in Sources */,
+				88B4599F2900EE3F00292DC8 /* APIKey.swift in Sources */,
 				8878F75928F79BD00038D11E /* MigrationViewController.swift in Sources */,
+				88B459A12900EFA000292DC8 /* SearchPhoto.swift in Sources */,
+				88B4599D2900EDEA00292DC8 /* APIService.swift in Sources */,
 				4217F47628ED157C00ADA98A /* AppDelegate.swift in Sources */,
+				881F840D28FE4EEC007DC01B /* SampleCollectionViewController.swift in Sources */,
 				4217F47828ED157C00ADA98A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,6 +493,22 @@
 				kind = branch;
 			};
 		};
+		88B459A22900F11C00292DC8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		88B459A52900F13C00292DC8 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -464,6 +536,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8878F75128F7942E0038D11E /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		88B459A32900F11C00292DC8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88B459A22900F11C00292DC8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		88B459A62900F13C00292DC8 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88B459A52900F13C00292DC8 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

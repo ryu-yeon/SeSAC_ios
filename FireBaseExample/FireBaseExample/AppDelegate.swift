@@ -20,7 +20,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UIViewController.swizzleMethod()
         
-        aboutRealmMigration()
+//        aboutRealmMigration()
+        
+        let config = Realm.Configuration(schemaVersion: 3) { migration, oldSchemaVersion in
+            
+            if oldSchemaVersion < 1 { //DetailTodo, List 추가
+                
+            }
+            if oldSchemaVersion < 2 { //EmbeddedObject 추가
+                
+            }
+            if oldSchemaVersion < 3 { //DetailTodo에 deadline 추가
+                
+            }
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         FirebaseApp.configure()
         
         //메세지 대리자 설정
