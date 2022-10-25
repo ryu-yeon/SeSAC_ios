@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		88E180AC29077A3100DD33A5 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E180AB29077A3100DD33A5 /* SubjectViewController.swift */; };
+		88E180AE290788FA00DD33A5 /* SubjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E180AD290788FA00DD33A5 /* SubjectViewModel.swift */; };
 		88FED10C290622A600FE2A5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED10B290622A600FE2A5F /* AppDelegate.swift */; };
 		88FED10E290622A600FE2A5F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED10D290622A600FE2A5F /* SceneDelegate.swift */; };
 		88FED110290622A600FE2A5F /* RxCocoaExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88FED10F290622A600FE2A5F /* RxCocoaExampleViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		88E180AB29077A3100DD33A5 /* SubjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
+		88E180AD290788FA00DD33A5 /* SubjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectViewModel.swift; sourceTree = "<group>"; };
 		88FED108290622A600FE2A5F /* RxSwiftTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88FED10B290622A600FE2A5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88FED10D290622A600FE2A5F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,8 @@
 				88FED10D290622A600FE2A5F /* SceneDelegate.swift */,
 				88FED10F290622A600FE2A5F /* RxCocoaExampleViewController.swift */,
 				88FED111290622A600FE2A5F /* Main.storyboard */,
+				88E180AB29077A3100DD33A5 /* SubjectViewController.swift */,
+				88E180AD290788FA00DD33A5 /* SubjectViewModel.swift */,
 				88FED114290622A700FE2A5F /* Assets.xcassets */,
 				88FED116290622A700FE2A5F /* LaunchScreen.storyboard */,
 				88FED119290622A700FE2A5F /* Info.plist */,
@@ -270,6 +276,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				88FED110290622A600FE2A5F /* RxCocoaExampleViewController.swift in Sources */,
+				88E180AE290788FA00DD33A5 /* SubjectViewModel.swift in Sources */,
+				88E180AC29077A3100DD33A5 /* SubjectViewController.swift in Sources */,
 				88FED10C290622A600FE2A5F /* AppDelegate.swift in Sources */,
 				88FED10E290622A600FE2A5F /* SceneDelegate.swift in Sources */,
 			);
