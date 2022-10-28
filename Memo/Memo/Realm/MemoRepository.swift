@@ -19,7 +19,7 @@ protocol MemoRepositoryType {
     func updateTask(task: Memo?, title: String, content: String?)
 }
 
-class MemoRepository: MemoRepositoryType {
+class MemoRepository {
     
     let localRealm = try! Realm()
     
@@ -41,40 +41,40 @@ class MemoRepository: MemoRepositoryType {
                 task.isFixed = !task.isFixed
             }
         } catch {
-            print("실패", #function)
+            print("실패🔴🔴🔴", #function)
         }
     }
 
-    func deleteTask(task: Memo) {
+    func deleteMemo(memo: Memo) {
         do {
             try localRealm.write {
-                localRealm.delete(task)
+                localRealm.delete(memo)
             }
         } catch {
-            print("실패", #function)
+            print("실패🔴🔴🔴", #function)
         }
     }
     
-    func saveTask(title: String, content: String?) {
+    func saveMemo(folder: Folder, title: String, content: String?) {
         do {
             try localRealm.write {
-                let task = Memo(title: title, content: content, registerDate: Date(), isFixed: false)
-                localRealm.add(task)
+                let memo = Memo(title: title, content: content, registerDate: Date(), isFixed: false)
+                folder.memo.append(memo)
             }
         } catch {
-            print("실패", #function)
+            print("실패🔴🔴🔴", #function)
         }
     }
     
-    func updateTask(task: Memo?, title: String, content: String?) {
+    func updateMemo(memo: Memo?, title: String, content: String?) {
         do {
             try localRealm.write {
-                task?.title = title
-                task?.content = content
-                task?.registerDate = Date()
+                memo?.title = title
+                memo?.content = content
+                memo?.registerDate = Date()
             }
         } catch {
-            print("실패", #function)
+            print("실패🔴🔴🔴", #function)
         }
     }
 }

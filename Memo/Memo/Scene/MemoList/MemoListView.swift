@@ -10,8 +10,12 @@ import UIKit
 import SnapKit
 
 class MemoListView: BaseView {
+    
     let tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .insetGrouped)
+        view.separatorStyle = .singleLine
+        view.rowHeight = 80
+        view.register(MemoListTableViewCell.self, forCellReuseIdentifier: MemoListTableViewCell.reusableIdentifier)
         view.backgroundColor = .backgroundColor
         return view
     }()
@@ -40,8 +44,8 @@ class MemoListView: BaseView {
         toolBar.snp.makeConstraints { make in
             make.top.equalTo(tableView.snp.bottom)
             make.leading.trailing.equalTo(self)
-            make.bottom.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.08)
+            make.bottom.equalTo(self).offset(-20)
+            make.height.equalTo(self).multipliedBy(0.06)
         }
     }
 }

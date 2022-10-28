@@ -33,9 +33,9 @@ class MemoListTableViewCell: BaseTableViewCell {
     }()
     
     override func configureUI() {
-        self.backgroundColor = .viewBackgroundColor
+        contentView.backgroundColor = .viewBackgroundColor
         [titleLabel, dateLabel, contentLabel].forEach {
-            self.addSubview($0)
+            contentView.addSubview($0)
         }
     }
     

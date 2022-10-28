@@ -7,21 +7,14 @@
 
 import UIKit
 
-import RealmSwift
+import RxCocoa
+import RxSwift
 
 class WriteViewController: BaseViewController {
     
     private let mainView = WriteView()
-    
-    private let repository = MemoRepository()
-    
-    var task: Memo?
-    
-    private var titleText = ""
-    
-    private var contentText: String?
-    
-    private var contentArray: [String] = []
+    let viewModel = WriteViewModel()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         self.view = mainView
@@ -29,35 +22,33 @@ class WriteViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationController?.navigationBar.prefersLargeTitles = false
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        updateMemo()
-        
-        if contentArray.count > 0 {
-            
-            if let task = task {
-                repository.updateTask(task: task, title: titleText, content: contentText)
-            } else {
-                repository.saveTask(title: titleText, content: contentText)
-            }
-        }
-    }
-    
-    override func configure() {
-
-        if let task = task {
-            mainView.userTextView.text = task.title + "\n" + (task.content ?? "")
-        } else {
-            mainView.userTextView.text = ""
-        }
-        mainView.userTextView.becomeFirstResponder()
+        bind()
         
         let sharedButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(sharedButtonClicked))
         let saveButton = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
         navigationItem.rightBarButtonItems = [saveButton, sharedButton]
+        mainView.userTextView.becomeFirstResponder()
+
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        viewModel.writeMemo(memoText: mainView.userTextView.text)
+    }
+    
+    private func bind() {
+        viewModel.list
+            .bind { value in
+                if value.content != nil {
+                    self.mainView.userTextView.text = value.title + "\n" + value.content!
+                } else {
+                    self.mainView.userTextView.text = value.title
+                }
+            }
+            .disposed(by: disposeBag)
+        
+        viewModel.fetch()
     }
     
     @objc func saveButtonClicked() {
@@ -70,23 +61,5 @@ class WriteViewController: BaseViewController {
         
         let vc = UIActivityViewController(activityItems: [sharedText], applicationActivities: [])
         present(vc, animated: true)
-    }
-    
-    private func updateMemo() {
-        guard let memoText = mainView.userTextView.text else { return }
-        
-        contentArray = memoText.split(separator: "\n").map{String($0)}
-        
-        if contentArray.count > 1 {
-            titleText = contentArray[0]
-            let startIndex = memoText.index(memoText.startIndex, offsetBy: titleText.count + 1)
-            contentText = String(memoText[startIndex...])
-        } else if contentArray.count == 0 {
-            if let task = task {
-                repository.deleteTask(task: task)
-            }
-        } else {
-            titleText = contentArray[0]
-        }
     }
 }

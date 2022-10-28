@@ -11,6 +11,8 @@
 		42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6929013E9600524175 /* FolderListViewController.swift */; };
 		42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6B2901453A00524175 /* CreateFolderView.swift */; };
 		42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6E2901455200524175 /* CreateFolderViewController.swift */; };
+		8804A705290B1C15001520FD /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8804A704290B1C15001520FD /* WriteViewModel.swift */; };
+		882C1119290B8B6A00D2DE16 /* FolderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C1118290B8B6A00D2DE16 /* FolderRepository.swift */; };
 		8835AEB228FE8EAB002DF77D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835AEB128FE8EAB002DF77D /* AppDelegate.swift */; };
 		8835AEE328FE8F91002DF77D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8835AEE228FE8F91002DF77D /* Realm */; };
 		8835AEE528FE8F91002DF77D /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8835AEE428FE8F91002DF77D /* RealmSwift */; };
@@ -35,9 +37,13 @@
 		8835AF2B28FE9177002DF77D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835AF2A28FE9177002DF77D /* SceneDelegate.swift */; };
 		8835AF3328FE91AF002DF77D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835AF2F28FE91AF002DF77D /* LaunchScreen.storyboard */; };
 		8835AF3428FE91AF002DF77D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8835AF3128FE91AF002DF77D /* Main.storyboard */; };
-		8835AF3628FE91C2002DF77D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835AF3528FE91C2002DF77D /* ViewController.swift */; };
 		88C1555D28FE92B800C580C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88C1555C28FE92B800C580C3 /* Assets.xcassets */; };
 		88C1556028FE938400C580C3 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88C1555F28FE938400C580C3 /* IQKeyboardManagerSwift */; };
+		88F612BA290AA8B000E1435E /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 88F612B9290AA8B000E1435E /* RxCocoa */; };
+		88F612BC290AA8B000E1435E /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 88F612BB290AA8B000E1435E /* RxSwift */; };
+		88F612BE290AAAC600E1435E /* FolderListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F612BD290AAAC600E1435E /* FolderListTableViewCell.swift */; };
+		88F612C2290AAD2100E1435E /* FolderListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F612C1290AAD2100E1435E /* FolderListViewModel.swift */; };
+		88F612C5290AB46300E1435E /* MemoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88F612C4290AB46300E1435E /* MemoListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,8 @@
 		42C95A6929013E9600524175 /* FolderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewController.swift; sourceTree = "<group>"; };
 		42C95A6B2901453A00524175 /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
 		42C95A6E2901455200524175 /* CreateFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewController.swift; sourceTree = "<group>"; };
+		8804A704290B1C15001520FD /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
+		882C1118290B8B6A00D2DE16 /* FolderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderRepository.swift; sourceTree = "<group>"; };
 		8835AEAE28FE8EAB002DF77D /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8835AEB128FE8EAB002DF77D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8835AF0328FE9107002DF77D /* WriteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteViewController.swift; sourceTree = "<group>"; };
@@ -66,9 +74,11 @@
 		8835AF2A28FE9177002DF77D /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8835AF3028FE91AF002DF77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8835AF3228FE91AF002DF77D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
-		8835AF3528FE91C2002DF77D /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		88C1555A28FE92AE00C580C3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Memo/Info.plist; sourceTree = "<group>"; };
 		88C1555C28FE92B800C580C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Memo/Assets.xcassets; sourceTree = "<group>"; };
+		88F612BD290AAAC600E1435E /* FolderListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListTableViewCell.swift; sourceTree = "<group>"; };
+		88F612C1290AAD2100E1435E /* FolderListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewModel.swift; sourceTree = "<group>"; };
+		88F612C4290AB46300E1435E /* MemoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,11 +86,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88F612BA290AA8B000E1435E /* RxCocoa in Frameworks */,
 				88C1556028FE938400C580C3 /* IQKeyboardManagerSwift in Frameworks */,
 				8835AEEB28FE8FC8002DF77D /* Toast in Frameworks */,
 				8835AEE828FE8FC0002DF77D /* SnapKit in Frameworks */,
 				8835AEE528FE8F91002DF77D /* RealmSwift in Frameworks */,
 				8835AEE328FE8F91002DF77D /* Realm in Frameworks */,
+				88F612BC290AA8B000E1435E /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,7 +103,9 @@
 			isa = PBXGroup;
 			children = (
 				42C95A6629013E8600524175 /* FolderListView.swift */,
+				88F612C1290AAD2100E1435E /* FolderListViewModel.swift */,
 				42C95A6929013E9600524175 /* FolderListViewController.swift */,
+				88F612BD290AAAC600E1435E /* FolderListTableViewCell.swift */,
 			);
 			path = FolderList;
 			sourceTree = "<group>";
@@ -128,7 +142,6 @@
 			children = (
 				8835AEB128FE8EAB002DF77D /* AppDelegate.swift */,
 				8835AF2A28FE9177002DF77D /* SceneDelegate.swift */,
-				8835AF3528FE91C2002DF77D /* ViewController.swift */,
 				8835AF2E28FE91AF002DF77D /* Base.lproj */,
 				8835AF2328FE9126002DF77D /* Extension */,
 				8835AF1E28FE9121002DF77D /* Realm */,
@@ -153,8 +166,9 @@
 		8835AF0228FE9107002DF77D /* Write */ = {
 			isa = PBXGroup;
 			children = (
-				8835AF0328FE9107002DF77D /* WriteViewController.swift */,
 				8835AF0428FE9107002DF77D /* WriteView.swift */,
+				8804A704290B1C15001520FD /* WriteViewModel.swift */,
+				8835AF0328FE9107002DF77D /* WriteViewController.swift */,
 			);
 			path = Write;
 			sourceTree = "<group>";
@@ -162,8 +176,8 @@
 		8835AF0528FE9107002DF77D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
-				8835AF0628FE9107002DF77D /* PopUpViewController.swift */,
 				8835AF0728FE9107002DF77D /* PopUpView.swift */,
+				8835AF0628FE9107002DF77D /* PopUpViewController.swift */,
 			);
 			path = PopUp;
 			sourceTree = "<group>";
@@ -171,9 +185,10 @@
 		8835AF0828FE9107002DF77D /* MemoList */ = {
 			isa = PBXGroup;
 			children = (
-				8835AF0928FE9107002DF77D /* MemoListTableViewCell.swift */,
-				8835AF0A28FE9107002DF77D /* MemoListViewController.swift */,
 				8835AF0B28FE9107002DF77D /* MemoListView.swift */,
+				88F612C4290AB46300E1435E /* MemoListViewModel.swift */,
+				8835AF0A28FE9107002DF77D /* MemoListViewController.swift */,
+				8835AF0928FE9107002DF77D /* MemoListTableViewCell.swift */,
 			);
 			path = MemoList;
 			sourceTree = "<group>";
@@ -181,11 +196,9 @@
 		8835AF1328FE9116002DF77D /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				88F612B7290A947600E1435E /* Base */,
 				8835AF1428FE9116002DF77D /* UserDefaultHelper.swift */,
-				8835AF1528FE9116002DF77D /* BaseViewController.swift */,
-				8835AF1628FE9116002DF77D /* BaseTableViewCell.swift */,
-				8835AF1728FE9116002DF77D /* ReusableViewProtocol.swift */,
-				8835AF1828FE9116002DF77D /* BaseView.swift */,
+				88F612C3290AAE3800E1435E /* Protocol */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -195,6 +208,7 @@
 			children = (
 				8835AF1F28FE9121002DF77D /* RealmModel.swift */,
 				8835AF2028FE9121002DF77D /* MemoRepository.swift */,
+				882C1118290B8B6A00D2DE16 /* FolderRepository.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -215,6 +229,24 @@
 				8835AF3128FE91AF002DF77D /* Main.storyboard */,
 			);
 			path = Base.lproj;
+			sourceTree = "<group>";
+		};
+		88F612B7290A947600E1435E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				8835AF1528FE9116002DF77D /* BaseViewController.swift */,
+				8835AF1628FE9116002DF77D /* BaseTableViewCell.swift */,
+				8835AF1828FE9116002DF77D /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		88F612C3290AAE3800E1435E /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				8835AF1728FE9116002DF77D /* ReusableViewProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,6 +271,8 @@
 				8835AEE728FE8FC0002DF77D /* SnapKit */,
 				8835AEEA28FE8FC8002DF77D /* Toast */,
 				88C1555F28FE938400C580C3 /* IQKeyboardManagerSwift */,
+				88F612B9290AA8B000E1435E /* RxCocoa */,
+				88F612BB290AA8B000E1435E /* RxSwift */,
 			);
 			productName = Memo;
 			productReference = 8835AEAE28FE8EAB002DF77D /* Memo.app */;
@@ -273,6 +307,7 @@
 				8835AEE628FE8FC0002DF77D /* XCRemoteSwiftPackageReference "SnapKit" */,
 				8835AEE928FE8FC8002DF77D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				88C1555E28FE938400C580C3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				88F612B8290AA8B000E1435E /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = 8835AEAF28FE8EAB002DF77D /* Products */;
 			projectDirPath = "";
@@ -302,7 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8835AF2628FE9126002DF77D /* Extension+UIImage.swift in Sources */,
-				8835AF3628FE91C2002DF77D /* ViewController.swift in Sources */,
+				88F612BE290AAAC600E1435E /* FolderListTableViewCell.swift in Sources */,
 				8835AF1C28FE9116002DF77D /* ReusableViewProtocol.swift in Sources */,
 				8835AF1B28FE9116002DF77D /* BaseTableViewCell.swift in Sources */,
 				8835AF2128FE9121002DF77D /* RealmModel.swift in Sources */,
@@ -310,6 +345,7 @@
 				42C95A6729013E8600524175 /* FolderListView.swift in Sources */,
 				42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */,
 				8835AF1928FE9116002DF77D /* UserDefaultHelper.swift in Sources */,
+				8804A705290B1C15001520FD /* WriteViewModel.swift in Sources */,
 				8835AF1228FE9107002DF77D /* MemoListView.swift in Sources */,
 				8835AF1A28FE9116002DF77D /* BaseViewController.swift in Sources */,
 				8835AEB228FE8EAB002DF77D /* AppDelegate.swift in Sources */,
@@ -322,7 +358,10 @@
 				8835AF0E28FE9107002DF77D /* PopUpViewController.swift in Sources */,
 				42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */,
 				8835AF0C28FE9107002DF77D /* WriteViewController.swift in Sources */,
+				88F612C5290AB46300E1435E /* MemoListViewModel.swift in Sources */,
 				42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */,
+				882C1119290B8B6A00D2DE16 /* FolderRepository.swift in Sources */,
+				88F612C2290AAD2100E1435E /* FolderListViewModel.swift in Sources */,
 				8835AF2728FE9126002DF77D /* Extension+UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +616,14 @@
 				minimumVersion = 6.5.10;
 			};
 		};
+		88F612B8290AA8B000E1435E /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -604,6 +651,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 88C1555E28FE938400C580C3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		88F612B9290AA8B000E1435E /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88F612B8290AA8B000E1435E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		88F612BB290AA8B000E1435E /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 88F612B8290AA8B000E1435E /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

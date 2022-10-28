@@ -20,7 +20,7 @@ class BaseTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func  configureUI() {
+    func configureUI() {
         
     }
     

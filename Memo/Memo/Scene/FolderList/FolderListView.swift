@@ -10,10 +10,13 @@ import UIKit
 import SnapKit
 
 class FolderListView: BaseView {
-    let collectionView: UICollectionView = {
-        let config = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
-        let layout = UICollectionViewCompositionalLayout.list(using: config)
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+    
+    let tableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .insetGrouped)
+        view.separatorStyle = .singleLine
+        view.separatorInset = .init(top: .zero, left: 54, bottom: .zero, right: .zero)
+        view.register(FolderListTableViewCell.self, forCellReuseIdentifier: FolderListTableViewCell.reusableIdentifier)
+        view.backgroundColor = .backgroundColor
         return view
     }()
     
@@ -26,23 +29,23 @@ class FolderListView: BaseView {
     
     override func configureUI() {
         self.backgroundColor = .backgroundColor
-        [collectionView, toolBar].forEach {
+        [tableView, toolBar].forEach {
             self.addSubview($0)
         }
     }
     
     override func setConstraints() {
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide).offset(20)
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(self.safeAreaLayoutGuide).offset(36)
             make.leading.trailing.equalTo(self)
             make.bottom.equalTo(toolBar.snp.top)
         }
         
         toolBar.snp.makeConstraints { make in
-            make.top.equalTo(collectionView.snp.bottom)
+            make.top.equalTo(tableView.snp.bottom)
             make.leading.trailing.equalTo(self)
-            make.bottom.equalTo(self)
-            make.height.equalTo(self).multipliedBy(0.08)
+            make.bottom.equalTo(self).offset(-20)
+            make.height.equalTo(self).multipliedBy(0.06)
         }
     }
 }

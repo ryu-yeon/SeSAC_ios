@@ -18,15 +18,12 @@ class PopUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.okButton.addTarget(self, action: #selector(okButtonClicked), for: .touchUpInside)
     }
     
     override func viewWillLayoutSubviews() {
         mainView.viewContainer.layer.cornerRadius = mainView.viewContainer.bounds.width / 12
         mainView.okButton.layer.cornerRadius = mainView.okButton.bounds.width / 12
-    }
-    
-    override func configure() {
-        mainView.okButton.addTarget(self, action: #selector(okButtonClicked), for: .touchUpInside)
     }
     
     @objc func okButtonClicked() {
