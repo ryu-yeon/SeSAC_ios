@@ -23,12 +23,9 @@ class WriteViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        setNavigationBarButton()
         
-        let sharedButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"), style: .plain, target: self, action: #selector(sharedButtonClicked))
-        let saveButton = UIBarButtonItem(title: "완료", style: .plain, target: self, action: #selector(saveButtonClicked))
-        navigationItem.rightBarButtonItems = [saveButton, sharedButton]
         mainView.userTextView.becomeFirstResponder()
-
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -51,15 +48,27 @@ class WriteViewController: BaseViewController {
         viewModel.fetch()
     }
     
-    @objc func saveButtonClicked() {
-        navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func sharedButtonClicked() {
+    private func setNavigationBarButton() {
+        let sharedButton = UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"))
+        let saveButton = UIBarButtonItem(title: "완료")
         
-        guard let sharedText = mainView.userTextView.text else { return }
+        sharedButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                guard let sharedText = vc.mainView.userTextView.text else { return }
+                
+                let acitivityVC = UIActivityViewController(activityItems: [sharedText], applicationActivities: [])
+                vc.present(acitivityVC, animated: true)
+            }
+            .disposed(by: disposeBag)
         
-        let vc = UIActivityViewController(activityItems: [sharedText], applicationActivities: [])
-        present(vc, animated: true)
+        saveButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        navigationItem.rightBarButtonItems = [saveButton, sharedButton]
     }
 }

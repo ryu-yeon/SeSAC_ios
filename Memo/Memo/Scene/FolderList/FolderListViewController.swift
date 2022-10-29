@@ -76,20 +76,30 @@ class FolderListViewController: BaseViewController {
     }
     
     private func setToolbarButton() {
-        mainView.toolBar.items = [UIBarButtonItem(image: UIImage(systemName: "folder.badge.plus"), style: .plain, target: self, action: #selector(createFolderButtonClicked)), .flexibleSpace(), UIBarButtonItem(image: UIImage.writeImage, style: .plain, target: self, action: #selector(writeButtonClicked))]
+        let createFolderButton = UIBarButtonItem(image: UIImage(systemName: "folder.badge.plus"))
         
-    }
-    
-    @objc func createFolderButtonClicked() {
-        let vc = CreateFolderViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        present(nav, animated: true)
-    }
-    
-    @objc func writeButtonClicked() {
-        let vc = WriteViewController()
-        vc.viewModel.folder = viewModel.tasks.first
-        navigationController?.pushViewController(vc, animated: true)
+        let writeButton = UIBarButtonItem(image: UIImage.writeImage)
+        
+        createFolderButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                let nextVC = UINavigationController(rootViewController: CreateFolderViewController())
+                
+                nextVC.modalPresentationStyle = .fullScreen
+                vc.present(nextVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        writeButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                let nextVC = WriteViewController()
+                nextVC.viewModel.folder = vc.viewModel.tasks.first
+                vc.navigationController?.pushViewController(nextVC, animated: true)
+            }
+            .disposed(by: disposeBag)
+        
+        mainView.toolBar.items = [createFolderButton, .flexibleSpace(), writeButton]
+        
     }
 }

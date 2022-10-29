@@ -9,22 +9,21 @@ import UIKit
 
 import RxCocoa
 import RxSwift
-import RealmSwift
-import Toast
 
-enum Tasks: Int {
-    case fixed = 0
-    case normal = 1
-    case search = 2
-}
+//import RealmSwift
+//import Toast
+
+//enum Tasks: Int {
+//    case fixed = 0
+//    case normal = 1
+//    case search = 2
+//}
 
 class MemoListViewController: BaseViewController {
     
     private let mainView = MemoListView()
     let viewModel = MemoListViewModel()
     private let disposeBag = DisposeBag()
-
-    //    private let repository = MemoRepository()
     
     private let numberFormat: NumberFormatter = {
         let format = NumberFormatter()
@@ -45,7 +44,7 @@ class MemoListViewController: BaseViewController {
     override func loadView() {
         self.view = mainView
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -71,7 +70,7 @@ class MemoListViewController: BaseViewController {
                 vc.viewModel.removeMemo(index: indexPath.row)
             }
             .disposed(by: disposeBag)
-    
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,8 +88,7 @@ class MemoListViewController: BaseViewController {
         viewModel.list
             .withUnretained(self)
             .bind { (vc, item) in
-                let number = self.numberFormat.string(for: item.memo.count) ?? ""
-                vc.navigationItem.title = number + "개의 메모"
+                vc.navigationItem.title = vc.viewModel.setNumberFormat(number: item.memo.count)
             }
             .disposed(by: disposeBag)
         
@@ -98,25 +96,28 @@ class MemoListViewController: BaseViewController {
             .bind(to: mainView.tableView.rx.items(cellIdentifier: MemoListTableViewCell.reusableIdentifier, cellType: MemoListTableViewCell.self)) { (item, element, cell) in
                 cell.titleLabel.text = element.title
                 cell.contentLabel.text = element.content
-                let date = self.setDateFormat(date: element.registerDate)
-                cell.dateLabel.text = date
+                cell.dateLabel.text = self.viewModel.setDateFormat(date: element.registerDate)
             }
             .disposed(by: disposeBag)
-
+        
         viewModel.fetch()
     }
     
     private func setToolbarButton() {
-        mainView.toolBar.items = [.flexibleSpace(), UIBarButtonItem(image: UIImage.writeImage, style: .plain, target: self, action: #selector(writeButtonClicked))]
         
+        let writeButton = UIBarButtonItem(image: UIImage.writeImage)
+        mainView.toolBar.items = [.flexibleSpace(), writeButton]
+        
+        writeButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                let nextVC = WriteViewController()
+                nextVC.viewModel.folder = vc.viewModel.folder
+                vc.navigationController?.pushViewController(nextVC, animated: true)
+            }
+            .disposed(by: disposeBag)
     }
-    
-    @objc func writeButtonClicked() {
-        let vc = WriteViewController()
-        vc.viewModel.folder = viewModel.folder
-        navigationController?.pushViewController(vc, animated: true)
-    }
-
+}
 //
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
@@ -149,20 +150,6 @@ class MemoListViewController: BaseViewController {
 //        let memoCount = numberFormat.string(for: (tasks[Tasks.fixed.rawValue]?.count ?? 0) + (tasks[Tasks.normal.rawValue]?.count ?? 0))
 //        navigationItem.title = (memoCount ?? "0") + "개의 메모"
 //    }
-//
-    private func setDateFormat(date: Date) -> String {
-        if Calendar.current.isDateInToday(date) {
-            dateFormat.dateFormat = "a hh:mm"
-            
-        } else if NSCalendar.current.component(.weekOfYear, from: date) == NSCalendar.current.component(.weekOfYear, from: Date()) {
-            dateFormat.dateFormat = "EEEE"
-        } else {
-            dateFormat.dateFormat = "yyyy. MM. dd a hh:mm"
-        }
-        return dateFormat.string(from: date)
-    }
-}
-
 //    private func updateTasks() {
 //        tasks[Tasks.fixed.rawValue] = repository.fetchFiterSort(text: "isFixed = true", sort: "registerDate")
 //        tasks[Tasks.normal.rawValue] = repository.fetchFiterSort(text: "isFixed = false", sort: "registerDate")

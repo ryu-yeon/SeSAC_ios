@@ -7,9 +7,13 @@
 
 import UIKit
 
+import RxCocoa
+import RxSwift
+
 class PopUpViewController: BaseViewController {
     
     private let mainView = PopUpView()
+    private let disposeBag = DisposeBag()
     
     override func loadView() {
         self.view = mainView
@@ -18,15 +22,16 @@ class PopUpViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainView.okButton.addTarget(self, action: #selector(okButtonClicked), for: .touchUpInside)
+        mainView.okButton.rx.tap
+            .withUnretained(self)
+            .bind { (vc, _) in
+                vc.dismiss(animated: true)
+            }
+            .disposed(by: disposeBag)
     }
     
     override func viewWillLayoutSubviews() {
         mainView.viewContainer.layer.cornerRadius = mainView.viewContainer.bounds.width / 12
         mainView.okButton.layer.cornerRadius = mainView.okButton.bounds.width / 12
-    }
-    
-    @objc func okButtonClicked() {
-        dismiss(animated: true)
     }
 }
