@@ -28,6 +28,11 @@ class ValidationViewController: UIViewController {
 
     func bind() {
         
+//        let input = ValidationViewModel.Input(text: nameTextField.rx.text, tap: stepButton.rx.tap)
+//        let output = viewModel.transform(input: input)
+        
+//        output.validaion
+        
         viewModel.validText
             .asDriver()
             .drive(validationLabel.rx.text)

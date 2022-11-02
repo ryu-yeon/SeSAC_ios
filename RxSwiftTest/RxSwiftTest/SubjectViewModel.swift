@@ -10,14 +10,21 @@ import Foundation
 import RxCocoa
 import RxSwift
 
+//associated type == generic
+protocol CommonViewModel {
+    associatedtype Input
+    associatedtype Output
+    
+    func transform(input: Input) -> Output
+}
+
 struct Contact {
     var name: String
     var age: Int
     var number: String
 }
 
-class SubjectViewModel {
-
+class SubjectViewModel: CommonViewModel {
     
     var ContactData = [
         Contact(name: "Jack", age: 21, number: "01012341234"),
@@ -48,5 +55,30 @@ class SubjectViewModel {
     func filterData(query: String) {
         let result = query != "" ? ContactData.filter { $0.name.contains(query) } : ContactData
         list.onNext(result)
+    }
+    
+    struct Input {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        let searchText: ControlProperty<String?>
+    }
+    
+    struct Output {
+        let addTap: ControlEvent<Void>
+        let resetTap: ControlEvent<Void>
+        let newTap: ControlEvent<Void>
+        let list: PublishSubject<[Contact]>
+        let searchText: Observable<String>
+    }
+    
+    func transform(input: Input) -> Output {
+        let list = list
+        
+        let text = input.searchText
+            .orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+        
+        return Output(addTap: input.addTap, resetTap: input.resetTap, newTap: input.newTap, list: list, searchText: text)
     }
 }

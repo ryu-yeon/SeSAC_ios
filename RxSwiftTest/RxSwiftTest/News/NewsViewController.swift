@@ -59,6 +59,7 @@ class NewsViewController: UIViewController {
         viewModel.pageNumber.bind { value in
             self.numberTextField.text = value
         }
+        .disposed(by: disposeBag)
     }
     
     func configureViews() {
