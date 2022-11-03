@@ -24,7 +24,10 @@ class WriteViewController: BaseViewController {
         super.viewDidLoad()
         bind()
         setNavigationBarButton()
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         mainView.userTextView.becomeFirstResponder()
     }
     

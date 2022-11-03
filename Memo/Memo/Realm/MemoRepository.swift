@@ -77,4 +77,22 @@ class MemoRepository {
             print("실패🔴🔴🔴", #function)
         }
     }
+    
+    func sortMemo(list: List<Memo>) {
+        do {
+            try localRealm.write {
+                for start in 0..<list.count - 1 {
+                    var min = start
+                    for index in start+1..<list.count {
+                        if list[start].registerDate < list[index].registerDate {
+                            min = index
+                        }
+                    }
+                    list.swapAt(start, min)
+                }
+            }
+        } catch {
+            print("실패🔴🔴🔴", #function)
+        }
+    }
 }

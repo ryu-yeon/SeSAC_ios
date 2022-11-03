@@ -25,22 +25,6 @@ class MemoListViewController: BaseViewController {
     let viewModel = MemoListViewModel()
     private let disposeBag = DisposeBag()
     
-    private let numberFormat: NumberFormatter = {
-        let format = NumberFormatter()
-        format.numberStyle = .decimal
-        return format
-    }()
-    
-    private let dateFormat: DateFormatter = {
-        let format = DateFormatter()
-        format.locale = Locale(identifier: "ko_KR")
-        return format
-    }()
-    //
-    //    private var tasks: [Results<Memo>?] = [nil, nil, nil]
-    //
-    //    private var searchText: String?
-    //
     override func loadView() {
         self.view = mainView
     }
@@ -80,7 +64,18 @@ class MemoListViewController: BaseViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        navigationItem.title = ""
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        viewModel.list
+            .withUnretained(self)
+            .bind { (vc, item) in
+                vc.navigationItem.title = vc.viewModel.setNumberFormat(number: item.memo.count)
+            }
+            .disposed(by: disposeBag)
     }
     
     private func bind() {
@@ -99,8 +94,6 @@ class MemoListViewController: BaseViewController {
                 cell.dateLabel.text = self.viewModel.setDateFormat(date: element.registerDate)
             }
             .disposed(by: disposeBag)
-        
-        viewModel.fetch()
     }
     
     private func setToolbarButton() {

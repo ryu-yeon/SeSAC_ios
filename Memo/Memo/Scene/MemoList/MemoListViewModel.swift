@@ -21,6 +21,7 @@ class MemoListViewModel {
     var folder: Folder!
     
     func fetch() {
+        memoRepository.sortMemo(list: folder.memo)
         list.onNext(folder)
         memoList.onNext(folder.memo)
     }

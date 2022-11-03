@@ -9,9 +9,12 @@
 /* Begin PBXBuildFile section */
 		42C95A6729013E8600524175 /* FolderListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6629013E8600524175 /* FolderListView.swift */; };
 		42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6929013E9600524175 /* FolderListViewController.swift */; };
-		42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6B2901453A00524175 /* CreateFolderView.swift */; };
-		42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C95A6E2901455200524175 /* CreateFolderViewController.swift */; };
 		8804A705290B1C15001520FD /* WriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8804A704290B1C15001520FD /* WriteViewModel.swift */; };
+		8828607A290D847D001062E4 /* CreateFolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88286078290D847D001062E4 /* CreateFolderView.swift */; };
+		8828607B290D847D001062E4 /* CreateFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88286079290D847D001062E4 /* CreateFolderViewController.swift */; };
+		8828608629100B5A001062E4 /* RxAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 8828608529100B5A001062E4 /* RxAlamofire */; };
+		8828608929100C45001062E4 /* Differentiator in Frameworks */ = {isa = PBXBuildFile; productRef = 8828608829100C45001062E4 /* Differentiator */; };
+		8828608B29100C45001062E4 /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 8828608A29100C45001062E4 /* RxDataSources */; };
 		882C1119290B8B6A00D2DE16 /* FolderRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882C1118290B8B6A00D2DE16 /* FolderRepository.swift */; };
 		8835AEB228FE8EAB002DF77D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8835AEB128FE8EAB002DF77D /* AppDelegate.swift */; };
 		8835AEE328FE8F91002DF77D /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8835AEE228FE8F91002DF77D /* Realm */; };
@@ -49,9 +52,9 @@
 /* Begin PBXFileReference section */
 		42C95A6629013E8600524175 /* FolderListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListView.swift; sourceTree = "<group>"; };
 		42C95A6929013E9600524175 /* FolderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderListViewController.swift; sourceTree = "<group>"; };
-		42C95A6B2901453A00524175 /* CreateFolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
-		42C95A6E2901455200524175 /* CreateFolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFolderViewController.swift; sourceTree = "<group>"; };
 		8804A704290B1C15001520FD /* WriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteViewModel.swift; sourceTree = "<group>"; };
+		88286078290D847D001062E4 /* CreateFolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFolderView.swift; sourceTree = "<group>"; };
+		88286079290D847D001062E4 /* CreateFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateFolderViewController.swift; sourceTree = "<group>"; };
 		882C1118290B8B6A00D2DE16 /* FolderRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderRepository.swift; sourceTree = "<group>"; };
 		8835AEAE28FE8EAB002DF77D /* Memo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8835AEB128FE8EAB002DF77D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -89,9 +92,12 @@
 				88F612BA290AA8B000E1435E /* RxCocoa in Frameworks */,
 				88C1556028FE938400C580C3 /* IQKeyboardManagerSwift in Frameworks */,
 				8835AEEB28FE8FC8002DF77D /* Toast in Frameworks */,
+				8828608B29100C45001062E4 /* RxDataSources in Frameworks */,
 				8835AEE828FE8FC0002DF77D /* SnapKit in Frameworks */,
 				8835AEE528FE8F91002DF77D /* RealmSwift in Frameworks */,
+				8828608629100B5A001062E4 /* RxAlamofire in Frameworks */,
 				8835AEE328FE8F91002DF77D /* Realm in Frameworks */,
+				8828608929100C45001062E4 /* Differentiator in Frameworks */,
 				88F612BC290AA8B000E1435E /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,11 +116,11 @@
 			path = FolderList;
 			sourceTree = "<group>";
 		};
-		42C95A6D2901454500524175 /* CreateFolder */ = {
+		88286077290D847D001062E4 /* CreateFolder */ = {
 			isa = PBXGroup;
 			children = (
-				42C95A6B2901453A00524175 /* CreateFolderView.swift */,
-				42C95A6E2901455200524175 /* CreateFolderViewController.swift */,
+				88286078290D847D001062E4 /* CreateFolderView.swift */,
+				88286079290D847D001062E4 /* CreateFolderViewController.swift */,
 			);
 			path = CreateFolder;
 			sourceTree = "<group>";
@@ -147,7 +153,6 @@
 				8835AF1E28FE9121002DF77D /* Realm */,
 				8835AF1328FE9116002DF77D /* Utility */,
 				8835AF0128FE9107002DF77D /* Scene */,
-				42C95A6D2901454500524175 /* CreateFolder */,
 			);
 			path = Memo;
 			sourceTree = "<group>";
@@ -155,10 +160,11 @@
 		8835AF0128FE9107002DF77D /* Scene */ = {
 			isa = PBXGroup;
 			children = (
-				8835AF0228FE9107002DF77D /* Write */,
+				88286077290D847D001062E4 /* CreateFolder */,
 				8835AF0528FE9107002DF77D /* PopUp */,
-				8835AF0828FE9107002DF77D /* MemoList */,
 				42C95A6829013E8900524175 /* FolderList */,
+				8835AF0828FE9107002DF77D /* MemoList */,
+				8835AF0228FE9107002DF77D /* Write */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -273,6 +279,9 @@
 				88C1555F28FE938400C580C3 /* IQKeyboardManagerSwift */,
 				88F612B9290AA8B000E1435E /* RxCocoa */,
 				88F612BB290AA8B000E1435E /* RxSwift */,
+				8828608529100B5A001062E4 /* RxAlamofire */,
+				8828608829100C45001062E4 /* Differentiator */,
+				8828608A29100C45001062E4 /* RxDataSources */,
 			);
 			productName = Memo;
 			productReference = 8835AEAE28FE8EAB002DF77D /* Memo.app */;
@@ -308,6 +317,8 @@
 				8835AEE928FE8FC8002DF77D /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				88C1555E28FE938400C580C3 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				88F612B8290AA8B000E1435E /* XCRemoteSwiftPackageReference "RxSwift" */,
+				8828608429100B5A001062E4 /* XCRemoteSwiftPackageReference "RxAlamofire" */,
+				8828608729100C45001062E4 /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 8835AEAF28FE8EAB002DF77D /* Products */;
 			projectDirPath = "";
@@ -343,7 +354,8 @@
 				8835AF2128FE9121002DF77D /* RealmModel.swift in Sources */,
 				8835AF0D28FE9107002DF77D /* WriteView.swift in Sources */,
 				42C95A6729013E8600524175 /* FolderListView.swift in Sources */,
-				42C95A6F2901455200524175 /* CreateFolderViewController.swift in Sources */,
+				8828607B290D847D001062E4 /* CreateFolderViewController.swift in Sources */,
+				8828607A290D847D001062E4 /* CreateFolderView.swift in Sources */,
 				8835AF1928FE9116002DF77D /* UserDefaultHelper.swift in Sources */,
 				8804A705290B1C15001520FD /* WriteViewModel.swift in Sources */,
 				8835AF1228FE9107002DF77D /* MemoListView.swift in Sources */,
@@ -359,7 +371,6 @@
 				42C95A6A29013E9600524175 /* FolderListViewController.swift in Sources */,
 				8835AF0C28FE9107002DF77D /* WriteViewController.swift in Sources */,
 				88F612C5290AB46300E1435E /* MemoListViewModel.swift in Sources */,
-				42C95A6C2901453A00524175 /* CreateFolderView.swift in Sources */,
 				882C1119290B8B6A00D2DE16 /* FolderRepository.swift in Sources */,
 				88F612C2290AAD2100E1435E /* FolderListViewModel.swift in Sources */,
 				8835AF2728FE9126002DF77D /* Extension+UIColor.swift in Sources */,
@@ -584,6 +595,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8828608429100B5A001062E4 /* XCRemoteSwiftPackageReference "RxAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxAlamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 6.1.2;
+			};
+		};
+		8828608729100C45001062E4 /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		8835AEE128FE8F90002DF77D /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
@@ -627,6 +654,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8828608529100B5A001062E4 /* RxAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8828608429100B5A001062E4 /* XCRemoteSwiftPackageReference "RxAlamofire" */;
+			productName = RxAlamofire;
+		};
+		8828608829100C45001062E4 /* Differentiator */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8828608729100C45001062E4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = Differentiator;
+		};
+		8828608A29100C45001062E4 /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8828608729100C45001062E4 /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
+		};
 		8835AEE228FE8F91002DF77D /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8835AEE128FE8F90002DF77D /* XCRemoteSwiftPackageReference "realm-swift" */;
