@@ -10,16 +10,19 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-class ProfileViewModel {
+final class ProfileViewModel {
     
-    var list = PublishSubject<Profile>()
+    var profile = PublishSubject<Profile>()
     
-    var profile: Profile?
-    
-    func fetch() {
-        APIService().profile { [weak self] profile in
-            self?.profile = profile
-            self?.list.onNext(profile)
+    func fetchProfile() {
+        let api = SeSACAPI.profile
+        Network.shared.requestSeSAC(type: Profile.self, url: api.url, method: .get, headers: api.headers) {[weak self] response in
+            switch response {
+            case .success(let success):
+                self?.profile.onNext(success)
+            case .failure(let failure):
+                self?.profile.onError(failure)
+            }
         }
     }
 }
