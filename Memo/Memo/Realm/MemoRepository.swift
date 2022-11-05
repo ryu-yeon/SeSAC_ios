@@ -35,10 +35,10 @@ class MemoRepository {
         return localRealm.objects(Memo.self).filter(text).sorted(byKeyPath: sort, ascending: true)
     }
     
-    func updateIsFixed(task: Memo) {
+    func updateIsFixed(memo: Memo) {
         do {
             try localRealm.write {
-                task.isFixed = !task.isFixed
+                memo.isFixed = !memo.isFixed
             }
         } catch {
             print("실패🔴🔴🔴", #function)
@@ -81,14 +81,16 @@ class MemoRepository {
     func sortMemo(list: List<Memo>) {
         do {
             try localRealm.write {
-                for start in 0..<list.count - 1 {
-                    var min = start
-                    for index in start+1..<list.count {
-                        if list[start].registerDate < list[index].registerDate {
-                            min = index
+                if !list.isEmpty {
+                    for start in 0..<list.count - 1 {
+                        var min = start
+                        for index in start+1..<list.count {
+                            if list[start].registerDate < list[index].registerDate {
+                                min = index
+                            }
                         }
+                        list.swapAt(start, min)
                     }
-                    list.swapAt(start, min)
                 }
             }
         } catch {

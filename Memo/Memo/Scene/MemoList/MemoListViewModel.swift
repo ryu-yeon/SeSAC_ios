@@ -9,26 +9,61 @@ import Foundation
 
 import RealmSwift
 import RxCocoa
+import RxDataSources
 import RxSwift
+
+struct SectionOfCustomData {
+  var header: String
+  var items: [Item]
+}
+
+extension SectionOfCustomData: SectionModelType {
+    typealias Item = Memo
+    
+    init(original: SectionOfCustomData, items: [Item]) {
+        self = original
+        self.items = items
+    }
+}
+    
 
 class MemoListViewModel {
     
     let list = PublishSubject<Folder>()
-    let memoList = PublishSubject<List<Memo>>()
-    
+    let memoList = PublishSubject<[SectionOfCustomData]>()
     let memoRepository = MemoRepository()
+    
+    var data: [SectionOfCustomData] = []
     
     var folder: Folder!
     
     func fetch() {
         memoRepository.sortMemo(list: folder.memo)
         list.onNext(folder)
-        memoList.onNext(folder.memo)
+        memoListfilter()
+        memoList.onNext(data)
     }
     
-    func removeMemo(index: Int) {
-        memoRepository.deleteMemo(memo: folder.memo[index])
-        memoList.onNext(folder.memo)
+    func memoListfilter() {
+        data.removeAll()
+        if !(folder.memo.filter({ $0.isFixed == true}).isEmpty) {
+            data.append(SectionOfCustomData(header: "고정된 메모", items: folder.memo.filter { $0.isFixed == true}))
+        }
+        if !(folder.memo.filter({ $0.isFixed == false}).isEmpty) {
+            data.append(SectionOfCustomData(header: "메모", items: folder.memo.filter { $0.isFixed == false}))
+        }
+    }
+    
+    func removeMemo(indexPath: IndexPath) {
+        memoRepository.deleteMemo(memo: data[indexPath.section].items[indexPath.row])
+        memoListfilter()
+        memoList.onNext(data)
+    }
+    
+    func fixMemo(indexPath: IndexPath) {
+        memoRepository.updateIsFixed(memo: data[indexPath.section].items[indexPath.row])
+        memoListfilter()
+        memoList.onNext(data)
     }
     
     func setDateFormat(date: Date) -> String {

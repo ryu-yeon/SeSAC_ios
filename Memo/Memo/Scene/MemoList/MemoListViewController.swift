@@ -9,6 +9,7 @@ import UIKit
 
 import RxCocoa
 import RxSwift
+import RxDataSources
 
 //import RealmSwift
 //import Toast
@@ -24,6 +25,14 @@ class MemoListViewController: BaseViewController {
     private let mainView = MemoListView()
     let viewModel = MemoListViewModel()
     private let disposeBag = DisposeBag()
+    
+    lazy var dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData> { dataSource, tableView, indexPath, item in
+        let cell = tableView.dequeueReusableCell(withIdentifier: MemoListTableViewCell.reusableIdentifier, for: indexPath) as! MemoListTableViewCell
+        cell.titleLabel.text = item.title
+        cell.contentLabel.text = item.content
+        cell.dateLabel.text = self.viewModel.setDateFormat(date: item.registerDate)
+        return cell
+    }
     
     override func loadView() {
         self.view = mainView
@@ -42,7 +51,7 @@ class MemoListViewController: BaseViewController {
             .withUnretained(self)
             .bind { (vc, indexPath) in
                 let nextVC = WriteViewController()
-                nextVC.viewModel.memo = vc.viewModel.folder.memo[indexPath.row]
+                nextVC.viewModel.memo = vc.viewModel.data[indexPath.section].items[indexPath.row]
                 nextVC.viewModel.folder = vc.viewModel.folder
                 vc.navigationController?.pushViewController(nextVC, animated: true)
             }
@@ -51,8 +60,11 @@ class MemoListViewController: BaseViewController {
         mainView.tableView.rx.itemDeleted
             .withUnretained(self)
             .bind { (vc, indexPath) in
-                vc.viewModel.removeMemo(index: indexPath.row)
+                vc.viewModel.removeMemo(indexPath: indexPath)
             }
+            .disposed(by: disposeBag)
+        
+        mainView.tableView.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
     }
@@ -87,13 +99,16 @@ class MemoListViewController: BaseViewController {
             }
             .disposed(by: disposeBag)
         
+        mainView.tableView.register(MemoListTableViewCell.self, forCellReuseIdentifier: MemoListTableViewCell.reusableIdentifier)
+        
+        dataSource.titleForHeaderInSection = { dataSource, index in
+            return dataSource[index].header
+        }
+        
         viewModel.memoList
-            .bind(to: mainView.tableView.rx.items(cellIdentifier: MemoListTableViewCell.reusableIdentifier, cellType: MemoListTableViewCell.self)) { (item, element, cell) in
-                cell.titleLabel.text = element.title
-                cell.contentLabel.text = element.content
-                cell.dateLabel.text = self.viewModel.setDateFormat(date: element.registerDate)
-            }
-            .disposed(by: disposeBag)
+        .bind(to: mainView.tableView.rx.items(dataSource: dataSource))
+        .disposed(by: disposeBag)
+    
     }
     
     private func setToolbarButton() {
@@ -111,6 +126,19 @@ class MemoListViewController: BaseViewController {
             .disposed(by: disposeBag)
     }
 }
+
+extension MemoListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let fixButton = UIContextualAction(style: .normal, title: nil) { action, view, completionHander in
+            self.viewModel.fixMemo(indexPath: indexPath)
+        }
+        fixButton.image = viewModel.data[indexPath.section].items[indexPath.row].isFixed ? .fixedImage: .unfixedImage
+        fixButton.backgroundColor = .pointColor
+        return UISwipeActionsConfiguration(actions: [fixButton])
+    }
+}
+
 //
 //    override func viewWillAppear(_ animated: Bool) {
 //        super.viewWillAppear(animated)
