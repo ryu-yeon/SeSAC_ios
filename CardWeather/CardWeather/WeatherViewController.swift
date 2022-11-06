@@ -31,7 +31,7 @@ class WeatherViewController: UIViewController {
     let format = DateFormatter()
     let locationManger = CLLocationManager()
     
-    var weather: Weather?
+    var weather: WeatherData?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,15 +74,15 @@ class WeatherViewController: UIViewController {
     }
     
     func updateUI() {
-        locationLabel.text = weather?.location
-        temperatureLabel.text = "  지금은 \(weather?.temp ?? 0)°C에요.  "
-        humidityLabel.text = "  \(weather?.humidity ?? 0)%만큼 습해요.  "
-        windLabel.text = "  \(weather?.wind ?? 0)m/s의 바람이 불어요.  "
+        locationLabel.text = weather?.name
+        temperatureLabel.text = "  지금은 \(weather?.main.temp ?? 0)°C에요.  "
+        humidityLabel.text = "  \(weather?.main.humidity ?? 0)%만큼 습해요.  "
+        windLabel.text = "  \(weather?.wind.speed ?? 0)m/s의 바람이 불어요.  "
         
-        let url = URL(string: EndPoint.iconBaseURL + (weather?.icon ?? "") + "@2x.png")
+        let url = URL(string: EndPoint.iconBaseURL + (weather?.weather[0].icon ?? "") + "@2x.png")
         weatherImageView.kf.setImage(with: url)
     
-        greetingLabel.text = setGreeting(id: weather?.id ?? 0)
+        greetingLabel.text = setGreeting(id: weather?.weather[0].id ?? 0)
     }
     
     func setGreeting(id: Int) -> String {
@@ -131,16 +131,14 @@ extension WeatherViewController {
         } else {
             authorizationStatus = CLLocationManager.authorizationStatus()
         }
-        
-        if CLLocationManager.locationServicesEnabled() {
-            //권한요청
-            checkUserCurrentLocationAuthorization(authorizationStatus)
-        } else {
-            print("위치 서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                //권한요청
+                self.checkUserCurrentLocationAuthorization(authorizationStatus)
+            } else {
+                print("위치 서비스가 꺼져 있어서 위치 권한 요청을 못합니다.")
+            }
         }
-        
-        
-        
     }
     
     func checkUserCurrentLocationAuthorization(_ authorizationStatus: CLAuthorizationStatus) {
@@ -174,9 +172,23 @@ extension WeatherViewController: CLLocationManagerDelegate {
         locationManger.startUpdatingLocation()
         
         if let coordinate = locations.last?.coordinate {
-            WeatherAPIManager.shared.requestWeather(lat: coordinate.latitude, lon: coordinate.longitude) { weather in
-                self.weather = weather
-                self.updateUI()
+//            WeatherAPIManager.shared.requestWeather(lat: coordinate.latitude, lon: coordinate.longitude) { weather in
+//                self.weather = weather
+//                self.updateUI()
+//            }
+            
+            WeatherAPIManager.shared.requestWeather(lat: coordinate.latitude, lon: coordinate.longitude) { weather, error in
+
+                guard let weather = weather else {
+                    print(error)
+                    return
+                }
+
+                guard let error = error else {
+                    self.weather = weather
+                    self.updateUI()
+                    return
+                }
             }
         }
         locationManger.stopUpdatingLocation()
